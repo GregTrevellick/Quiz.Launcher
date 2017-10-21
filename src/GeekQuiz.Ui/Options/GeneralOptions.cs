@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.Shell;
+﻿using GeekQuiz.Ui;
+using Microsoft.VisualStudio.Shell;
 using System.ComponentModel;
 using Trivial.Ui.Common;
 
