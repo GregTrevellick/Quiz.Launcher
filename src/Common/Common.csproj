@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppName.cs" />
     <Compile Include="CommonConstants.cs" />
     <Compile Include="DecisionMaker.cs" />
     <Compile Include="GeneralOptionsDto.cs" />
@@ -67,10 +68,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entities\Entities.csproj">
-      <Project>{CFC917F7-B863-42B6-97F7-3EFAC6425C75}</Project>
-      <Name>Entities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Gateway\Gateway.csproj">
       <Project>{668A65E0-FFFC-4022-957E-736588C92231}</Project>
       <Name>Gateway</Name>

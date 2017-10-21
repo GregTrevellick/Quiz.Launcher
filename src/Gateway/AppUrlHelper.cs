@@ -1,10 +1,10 @@
-﻿using Trivial.Entities;
+﻿//using Trivial.Entities;
 
 namespace Trivial.Api.Gateway
 {
     public class AppUrlHelper
     {
-        public static string GetUrl(AppName appName)
+        public static string GetUrl()
         {
             string url = null;
             url = "https://opentdb.com/api.php?amount=1&category=18";

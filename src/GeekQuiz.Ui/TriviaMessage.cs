@@ -9,7 +9,8 @@ using Trivial.Api.Gateway.GeekQuiz;
 using Trivial.Entities;
 using Trivial.Ui.Common;
 
-namespace Trivial.Ui.GeekQuiz
+//namespace Trivial.Ui.GeekQuiz
+namespace GeekQuiz.Ui
 {
     public class TriviaMessage
     {
@@ -26,7 +27,7 @@ namespace Trivial.Ui.GeekQuiz
             HiddenOptionsDto hiddenOptionsDto = null;
 
             var clientGateway = new ClientGateway();
-            var gatewayResponse = clientGateway.GetGatewayResponse(appName, timeOutInMilliSeconds, CommonConstants.TimeOutInMilliSecondsOptionLabel, optionsName);
+            var gatewayResponse = clientGateway.GetGatewayResponse(timeOutInMilliSeconds, CommonConstants.TimeOutInMilliSecondsOptionLabel, optionsName);
 
             var gatewayResponseGeekQuiz = (GatewayResponseGeekQuiz)gatewayResponse;
             var triviaDialogGeekQuizDto = GetTriviaDialogGeekQuizDto(appName, popUpTitle, optionsName, gatewayResponseGeekQuiz);
@@ -58,7 +59,7 @@ namespace Trivial.Ui.GeekQuiz
 
         private void DisplayPopUpMessageGeekQuiz(TriviaDialogGeekQuizDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
-            var triviaDialog = new GeekQuiz.TriviaDialog(
+            var triviaDialog = new GeekQuiz.Ui.TriviaDialog(
                     triviaDialogDto.AppName,
                     triviaDialogDto.OptionsName) 
                 {

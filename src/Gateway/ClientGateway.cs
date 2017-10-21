@@ -2,15 +2,14 @@
 using System;
 using System.Diagnostics;
 using Trivial.Api.Gateway.GeekQuiz;
-using Trivial.Entities;
 
 namespace Trivial.Api.Gateway
 {
     public class ClientGateway
     {
-        public GatewayResponseBase GetGatewayResponse(AppName appName, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
+        public GatewayResponseBase GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
-            var url = AppUrlHelper.GetUrl(appName);
+            var url = AppUrlHelper.GetUrl();
 
             var gatewayResponse = new GatewayResponseBase();
 
