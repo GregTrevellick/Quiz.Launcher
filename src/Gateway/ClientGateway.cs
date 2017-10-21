@@ -2,9 +2,6 @@
 using System;
 using System.Diagnostics;
 using Trivial.Api.Gateway.GeekQuiz;
-//using Trivial.Api.Gateway.Jeopardy;
-//using Trivial.Api.Gateway.NumericTrivia;
-//using Trivial.Api.Gateway.TrumpQuotes;
 using Trivial.Entities;
 
 namespace Trivial.Api.Gateway
@@ -29,21 +26,7 @@ namespace Trivial.Api.Gateway
                 {
                     try
                     {
-                        switch (appName)
-                        {
-                            case AppName.GeekQuiz:
-                                gatewayResponse = ClientGatewayGeekQuiz.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
-                                break;
-                            //case AppName.Jeopardy:
-                            //    gatewayResponse = ClientGatewayJeopardy.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
-                            //    break;
-                            //case AppName.NumericTrivia:
-                            //    gatewayResponse = ClientGatewayNumericTrivia.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
-                            //    break;
-                            //case AppName.TrumpQuotes:
-                            //    gatewayResponse = ClientGatewayTrumpQuotes.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
-                            //    break;
-                        }
+                        gatewayResponse = ClientGatewayGeekQuiz.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
                     }
                     catch (Exception ex)
                     {

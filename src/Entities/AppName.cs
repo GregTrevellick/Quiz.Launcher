@@ -2,10 +2,6 @@
 {
     public enum AppName
     {
-        //Abracadabra,
-        GeekQuiz,
-        //Jeopardy,
-        //NumericTrivia,
-        //TrumpQuotes,
+        //GeekQuiz,
     }
 }
