@@ -1,8 +1,9 @@
-﻿using Microsoft.VisualStudio.Shell;
-using System;
+﻿using System;
+using Microsoft.VisualStudio.Shell;
+
 //using VsixRatingChaser;
 
-namespace Trivial.Ui.Options.GeekQuiz
+namespace GeekQuiz.Ui.Options
 {
     public class HiddenChaserOptions : DialogPage//, IHiddenChaserOptions
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Trivial.Ui.Common
+namespace GeekQuiz.Common
 {
     public class HiddenOptionsDto
     {

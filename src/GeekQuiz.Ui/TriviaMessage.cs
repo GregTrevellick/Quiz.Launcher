@@ -4,12 +4,10 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using Trivial.Api.Gateway;
-using Trivial.Api.Gateway.GeekQuiz;
-using Trivial.Entities;
-using Trivial.Ui.Common;
+using GeekQuiz.Common;
+using GeekQuiz.Gateway;
+using GeekQuiz.Gateway.GeekQuiz;
 
-//namespace Trivial.Ui.GeekQuiz
 namespace GeekQuiz.Ui
 {
     public class TriviaMessage
@@ -59,7 +57,7 @@ namespace GeekQuiz.Ui
 
         private void DisplayPopUpMessageGeekQuiz(TriviaDialogGeekQuizDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
-            var triviaDialog = new GeekQuiz.Ui.TriviaDialog(
+            var triviaDialog = new TriviaDialog(
                     triviaDialogDto.AppName,
                     triviaDialogDto.OptionsName) 
                 {

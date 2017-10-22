@@ -1,6 +1,4 @@
-﻿using Trivial.Entities;
-
-namespace Trivial.Ui.Common
+﻿namespace GeekQuiz.Common
 {
     public class TriviaDialogDtoBase
     {

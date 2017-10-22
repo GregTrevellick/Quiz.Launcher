@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.Shell;
-using System;
+﻿using System;
+using Microsoft.VisualStudio.Shell;
 
-namespace Trivial.Ui.GeekQuiz.Options
+namespace GeekQuiz.Ui.Options
 {
     public class HiddenOptions : DialogPage
     {

@@ -84,10 +84,26 @@
     <None Include="VsmpAssets\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\VsixExtensionIcon_16x16.png" />
-    <Content Include="Resources\VsixExtensionIcon_90x90.png" />
-    <Content Include="Resources\VsixExtensionIcon_90x90_Embedded.png" />
-    <Content Include="Resources\VsixExtensionPreview_175x175.png" />
+    <Content Include="..\..\LICENSE.txt">
+      <Link>LICENSE.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\VsixExtensionIcon_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\VsixExtensionIcon_90x90.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <EmbeddedResource Include="Resources\VsixExtensionIcon_90x90_Embedded.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Resources\VsixExtensionPreview_175x175.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="source.extension.ico">
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
     </Content>
@@ -207,13 +223,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
+    <ProjectReference Include="..\Common\GeekQuiz.Common.csproj">
       <Project>{C070B863-0490-4860-9654-44E38D0714E1}</Project>
-      <Name>Common</Name>
+      <Name>GeekQuiz.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Gateway\Gateway.csproj">
+    <ProjectReference Include="..\Gateway\GeekQuiz.Gateway.csproj">
       <Project>{668A65E0-FFFC-4022-957E-736588C92231}</Project>
-      <Name>Gateway</Name>
+      <Name>GeekQuiz.Gateway</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

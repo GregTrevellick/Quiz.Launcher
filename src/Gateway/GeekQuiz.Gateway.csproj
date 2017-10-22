@@ -7,8 +7,8 @@
     <ProjectGuid>{668A65E0-FFFC-4022-957E-736588C92231}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gateway</RootNamespace>
-    <AssemblyName>Gateway</AssemblyName>
+    <RootNamespace>GeekQuiz.Gateway</RootNamespace>
+    <AssemblyName>GeekQuiz.Gateway</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppUrlHelper.cs" />
     <Compile Include="ClientGateway.cs" />
     <Compile Include="GatewayResponseBase.cs" />
     <Compile Include="GeekQuiz\ClientGatewayGeekQuiz.cs" />

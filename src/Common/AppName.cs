@@ -1,4 +1,4 @@
-﻿namespace Trivial.Entities
+﻿namespace GeekQuiz.Common
 {
     public enum AppName
     {

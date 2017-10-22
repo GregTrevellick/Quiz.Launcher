@@ -1,15 +1,15 @@
-﻿using RestSharp;
-using System;
+﻿using System;
 using System.Diagnostics;
-using Trivial.Api.Gateway.GeekQuiz;
+using GeekQuiz.Gateway.GeekQuiz;
+using RestSharp;
 
-namespace Trivial.Api.Gateway
+namespace GeekQuiz.Gateway
 {
     public class ClientGateway
     {
         public GatewayResponseBase GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
-            var url = AppUrlHelper.GetUrl();
+            var url = "https://opentdb.com/api.php?amount=1&category=18";//AppUrlHelper.GetUrl();
 
             var gatewayResponse = new GatewayResponseBase();
 

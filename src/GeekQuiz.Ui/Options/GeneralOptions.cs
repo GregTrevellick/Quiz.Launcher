@@ -1,9 +1,8 @@
-﻿using GeekQuiz.Ui;
+﻿using System.ComponentModel;
+using GeekQuiz.Common;
 using Microsoft.VisualStudio.Shell;
-using System.ComponentModel;
-using Trivial.Ui.Common;
 
-namespace Trivial.Ui.GeekQuiz.Options
+namespace GeekQuiz.Ui.Options
 {
     public class GeneralOptions : DialogPage
     {

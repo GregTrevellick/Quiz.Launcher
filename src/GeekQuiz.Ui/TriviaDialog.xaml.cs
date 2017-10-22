@@ -3,11 +3,9 @@ using System;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Trivial.Api.Gateway;
-using Trivial.Entities;
-using Trivial.Ui.Common;
+using GeekQuiz.Common;
+using GeekQuiz.Gateway;
 
-//namespace Trivial.Ui.GeekQuiz
 namespace GeekQuiz.Ui
 {
     //public partial class TriviaDialog : UserControl

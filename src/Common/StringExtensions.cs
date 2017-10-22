@@ -1,4 +1,4 @@
-﻿namespace Trivial.Ui.Common
+﻿namespace GeekQuiz.Common
 {
     public static class StringExtensions
     {

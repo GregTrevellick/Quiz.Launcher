@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
 using System.Linq;
-using RestSharp.Extensions;
+using Newtonsoft.Json;
 
-namespace Trivial.Api.Gateway.GeekQuiz
+namespace GeekQuiz.Gateway.GeekQuiz
 {
     public class ClientGatewayGeekQuiz
     {

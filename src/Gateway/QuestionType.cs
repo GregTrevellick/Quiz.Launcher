@@ -1,4 +1,4 @@
-﻿namespace Trivial.Api.Gateway
+﻿namespace GeekQuiz.Gateway
 {
     public enum QuestionType
     {

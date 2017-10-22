@@ -5,9 +5,16 @@ VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekQuiz.Ui", "GeekQuiz.Ui\GeekQuiz.Ui.csproj", "{08C583D2-BECA-4159-92F6-055A177F1FD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "Gateway\Gateway.csproj", "{668A65E0-FFFC-4022-957E-736588C92231}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekQuiz.Gateway", "Gateway\GeekQuiz.Gateway.csproj", "{668A65E0-FFFC-4022-957E-736588C92231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{C070B863-0490-4860-9654-44E38D0714E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekQuiz.Common", "Common\GeekQuiz.Common.csproj", "{C070B863-0490-4860-9654-44E38D0714E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F6FD0A7B-3B93-4DA5-851F-9E3D7FF2B8A6}"
+	ProjectSection(SolutionItems) = preProject
+		..\CHANGELOG.md = ..\CHANGELOG.md
+		..\LICENSE.txt = ..\LICENSE.txt
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
