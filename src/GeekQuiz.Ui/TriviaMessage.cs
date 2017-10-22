@@ -15,12 +15,12 @@ namespace GeekQuiz.Ui
         public delegate void MyEventHandler2(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler2 PersistHiddenOptionsEventHandler2;//gregt rename to remove '2' suffix
 
-        public HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked)
+        public HiddenOptionsDto ShowTrivia(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked)
         {
-            return ShowTriviaMessage(appName, popUpTitle, lastPopUpDateTime, popUpCountToday, timeOutInMilliSeconds, optionsName, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
+            return ShowTriviaMessage(popUpTitle, lastPopUpDateTime, popUpCountToday, timeOutInMilliSeconds, optionsName, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
         }
 
-        private HiddenOptionsDto ShowTriviaMessage(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        private HiddenOptionsDto ShowTriviaMessage(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             HiddenOptionsDto hiddenOptionsDto = null;
 
@@ -28,7 +28,7 @@ namespace GeekQuiz.Ui
             var gatewayResponse = clientGateway.GetGatewayResponse(timeOutInMilliSeconds, CommonConstants.TimeOutInMilliSecondsOptionLabel, optionsName);
 
             var gatewayResponseGeekQuiz = (GatewayResponseGeekQuiz)gatewayResponse;
-            var triviaDialogGeekQuizDto = GetTriviaDialogGeekQuizDto(appName, popUpTitle, optionsName, gatewayResponseGeekQuiz);
+            var triviaDialogGeekQuizDto = GetTriviaDialogGeekQuizDto(popUpTitle, optionsName, gatewayResponseGeekQuiz);
             DisplayPopUpMessageGeekQuiz(triviaDialogGeekQuizDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
 
             hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
@@ -36,10 +36,10 @@ namespace GeekQuiz.Ui
             return hiddenOptionsDto;
         }
 
-        private static TriviaDialogGeekQuizDto GetTriviaDialogGeekQuizDto(AppName appName, string popUpTitle, string optionsName, GatewayResponseGeekQuiz gatewayResponseGeekQuiz)
+        private static TriviaDialogGeekQuizDto GetTriviaDialogGeekQuizDto(string popUpTitle, string optionsName, GatewayResponseGeekQuiz gatewayResponseGeekQuiz)
         {
             var triviaDialogGeekQuizDto =
-                new TriviaDialogGeekQuizDto(appName, optionsName, popUpTitle, gatewayResponseGeekQuiz.ErrorDetails)
+                new TriviaDialogGeekQuizDto(optionsName, popUpTitle, gatewayResponseGeekQuiz.ErrorDetails)
                 {
                     GeekQuizDifficulty = gatewayResponseGeekQuiz.DifficultyLevel,
                     GeekQuizMultipleChoiceAnswers = gatewayResponseGeekQuiz.MultipleChoiceAnswers,
@@ -58,7 +58,7 @@ namespace GeekQuiz.Ui
         private void DisplayPopUpMessageGeekQuiz(TriviaDialogGeekQuizDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             var triviaDialog = new TriviaDialog(
-                    triviaDialogDto.AppName,
+                    //triviaDialogDto.AppName,
                     triviaDialogDto.OptionsName) 
                 {
                     AppTextBlockErrorDetails = {Text = triviaDialogDto.ErrorDetails},
@@ -165,10 +165,10 @@ namespace GeekQuiz.Ui
             return lastPopUpDateTime.Date < baseDateTime.Date;
         }
 
-        public Uri GetIconUri(AppName appName)
+        public Uri GetIconUri()
         {
             var assemblyName = Assembly.GetExecutingAssembly().GetName();
-            var imageSubDirectory = appName.ToString();
+            var imageSubDirectory = "";//appName.ToString();
             var packUri = $"pack://application:,,,/{assemblyName.Name};component/Resources/{imageSubDirectory}/VsixExtensionIcon_16x16.png";
             return new Uri(packUri);
         }

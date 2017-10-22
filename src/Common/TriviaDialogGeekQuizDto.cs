@@ -5,7 +5,7 @@ namespace GeekQuiz.Common
 {
     public class TriviaDialogGeekQuizDto : TriviaDialogDtoBase
     {
-        public TriviaDialogGeekQuizDto(AppName appName, string optionsName, string popUpTitle, string errorDetails) : base(appName, optionsName, popUpTitle, errorDetails)
+        public TriviaDialogGeekQuizDto(string optionsName, string popUpTitle, string errorDetails) : base(optionsName, popUpTitle, errorDetails)
         {
         }
 
