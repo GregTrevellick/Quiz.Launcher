@@ -1,20 +1,28 @@
-﻿using Microsoft.VisualStudio.PlatformUI;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 using GeekQuiz.Ui.GeekQuiz.Common;
 using GeekQuiz.Ui.GeekQuiz.Gateway;
+using Microsoft.VisualStudio.PlatformUI;
 
 namespace GeekQuiz.Ui
 {
-    //public partial class TriviaDialog : UserControl
-    //{
-    //}
-
-    public partial class TriviaDialog : DialogWindow
+    /// <summary>
+    /// Interaction logic for GeekQuizDialog.xaml
+    /// </summary>
+    public partial class GeekQuizDialog : DialogWindow//: UserControl
     {
-        //private AppName _appName;
         private string _correctAnswer;
         private string _optionsName;
         public QuestionType _questionType;
@@ -25,13 +33,14 @@ namespace GeekQuiz.Ui
         public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
 
-        public TriviaDialog(string optionsName)
+
+        public GeekQuizDialog(string optionsName)
         {
-            //_appName = appName;
             _optionsName = optionsName;
             _userStatusTotalsIncremented = false;
 
-            InitializceComponent();
+            InitializeComponent();
+
             InitializeTriviaDialog();
 
             DataContext = this;

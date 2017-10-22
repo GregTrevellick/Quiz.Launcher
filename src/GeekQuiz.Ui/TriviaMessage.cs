@@ -57,7 +57,7 @@ namespace GeekQuiz.Ui
 
         private void DisplayPopUpMessageGeekQuiz(TriviaDialogGeekQuizDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
-            var triviaDialog = new TriviaDialog(
+            var triviaDialog = new GeekQuizDialog(//)TriviaDialog(
                     //triviaDialogDto.AppName,
                     triviaDialogDto.OptionsName) 
                 {
