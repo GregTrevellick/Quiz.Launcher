@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppName.cs" />
     <Compile Include="CommonConstants.cs" />
     <Compile Include="DecisionMaker.cs" />
     <Compile Include="GeneralOptionsDto.cs" />
