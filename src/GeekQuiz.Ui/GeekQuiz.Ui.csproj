@@ -9,7 +9,7 @@
     <UseCodebase>true</UseCodebase>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
@@ -54,6 +54,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GeekQuiz.Common\CommonConstants.cs" />
+    <Compile Include="GeekQuiz.Common\DecisionMaker.cs" />
+    <Compile Include="GeekQuiz.Common\GeneralOptionsDto.cs" />
+    <Compile Include="GeekQuiz.Common\HiddenOptionsDto.cs" />
+    <Compile Include="GeekQuiz.Common\IntegerExtensions.cs" />
+    <Compile Include="GeekQuiz.Common\MessageBoxes.cs" />
+    <Compile Include="GeekQuiz.Common\Ratings\RatingChaser.cs" />
+    <Compile Include="GeekQuiz.Common\Ratings\RatingInstructionsDto.cs" />
+    <Compile Include="GeekQuiz.Common\StringExtensions.cs" />
+    <Compile Include="GeekQuiz.Common\TriviaDialogDtoBase.cs" />
+    <Compile Include="GeekQuiz.Common\TriviaDialogGeekQuizDto.cs" />
+    <Compile Include="GeekQuiz.Gateway\ClientGateway.cs" />
+    <Compile Include="GeekQuiz.Gateway\GatewayResponseBase.cs" />
+    <Compile Include="GeekQuiz.Gateway\GeekQuiz\ClientGatewayGeekQuiz.cs" />
+    <Compile Include="GeekQuiz.Gateway\GeekQuiz\GatewayResponseGeekQuiz.cs" />
+    <Compile Include="GeekQuiz.Gateway\GeekQuiz\GeekQuizRootObject.cs" />
+    <Compile Include="GeekQuiz.Gateway\QuestionType.cs" />
+    <Compile Include="GeekQuiz.Gateway\ResponseDto.cs" />
     <Compile Include="Options\GeneralOptions.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -89,6 +107,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="GeekQuiz.Common\Resources\CorrectAnswer.png" />
+    <Content Include="GeekQuiz.Common\Resources\Generic_ReadMeScreenShot_OptionsGeneral.png" />
+    <Content Include="GeekQuiz.Common\Resources\IncorrectAnswer.png" />
     <Content Include="Resources\VsixExtensionIcon_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -199,8 +220,15 @@
       <HintPath>..\packages\Microsoft.VisualStudio.Validation.15.3.15\lib\net45\Microsoft.VisualStudio.Validation.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
@@ -223,20 +251,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\GeekQuiz.Common.csproj">
-      <Project>{C070B863-0490-4860-9654-44E38D0714E1}</Project>
-      <Name>GeekQuiz.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gateway\GeekQuiz.Gateway.csproj">
-      <Project>{668A65E0-FFFC-4022-957E-736588C92231}</Project>
-      <Name>GeekQuiz.Gateway</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="TriviaDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GeekQuiz.Common\Resources\GeekQuiz\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />

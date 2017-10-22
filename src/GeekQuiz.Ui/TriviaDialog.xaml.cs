@@ -3,8 +3,8 @@ using System;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using GeekQuiz.Common;
-using GeekQuiz.Gateway;
+using GeekQuiz.Ui.GeekQuiz.Common;
+using GeekQuiz.Ui.GeekQuiz.Gateway;
 
 namespace GeekQuiz.Ui
 {

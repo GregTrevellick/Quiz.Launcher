@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using EnvDTE;
-using GeekQuiz.Common;
+using GeekQuiz.Ui.GeekQuiz.Common;
 using GeekQuiz.Ui.Options;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.OLE.Interop;

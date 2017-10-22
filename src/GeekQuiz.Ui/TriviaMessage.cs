@@ -4,9 +4,9 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using GeekQuiz.Common;
-using GeekQuiz.Gateway;
-using GeekQuiz.Gateway.GeekQuiz;
+using GeekQuiz.Ui.GeekQuiz.Common;
+using GeekQuiz.Ui.GeekQuiz.Gateway;
+using GeekQuiz.Ui.GeekQuiz.Gateway.GeekQuiz;
 
 namespace GeekQuiz.Ui
 {

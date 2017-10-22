@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-using GeekQuiz.Common;
+using GeekQuiz.Ui.GeekQuiz.Common;
 using Microsoft.VisualStudio.Shell;
 
 namespace GeekQuiz.Ui.Options
