@@ -57,21 +57,21 @@ namespace GeekQuiz.Ui
 
         private void DisplayPopUpMessageGeekQuiz(TriviaDialogGeekQuizDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
-            var triviaDialog = new GeekQuizDialog(//)TriviaDialog(
-                    //triviaDialogDto.AppName,
-                    triviaDialogDto.OptionsName) 
-                {
-                    AppTextBlockErrorDetails = {Text = triviaDialogDto.ErrorDetails},
-                    Title = triviaDialogDto.PopUpTitle,
-                    _suppressClosingWithoutSubmitingAnswerWarning =
+            var triviaDialog = new GeekDialog(//)TriviaDialog(
+                                                  //triviaDialogDto.AppName,
+                    triviaDialogDto.OptionsName)
+            {
+                AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
+                //Title = triviaDialogDto.PopUpTitle,
+                _suppressClosingWithoutSubmitingAnswerWarning =
                         suppressClosingWithoutSubmitingAnswerWarning.HasValue
                             ? suppressClosingWithoutSubmitingAnswerWarning.Value
                             : false,
-                    AppTextBlockQuestionGeekQuiz = {Text = triviaDialogDto.GeekQuizMultipleChoiceCorrectAnswer},
-                    _questionType = triviaDialogDto.GeekQuizQuestionType,
-                    _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly,
-                    _totalQuestionsAsked = totalQuestionsAsked
-                };
+                AppTextBlockQuestionGeekQuiz = { Text = triviaDialogDto.GeekQuizMultipleChoiceCorrectAnswer },
+                _questionType = triviaDialogDto.GeekQuizQuestionType,
+                _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly,
+                _totalQuestionsAsked = totalQuestionsAsked
+            };
 
             triviaDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptionsGeekQuiz;
 
@@ -97,7 +97,7 @@ namespace GeekQuiz.Ui
 
             if (triviaDialogDto.GeekQuizQuestionType != QuestionType.None)
             {
-                triviaDialog.AppBtnGeekQuizSubmitMultiChoiceAnwser.Visibility= Visibility.Visible;
+                triviaDialog.AppBtnGeekQuizSubmitMultiChoiceAnwser.Visibility = Visibility.Visible;
 
                 if (triviaDialogDto.GeekQuizQuestionType == QuestionType.TrueFalse)
                 {
@@ -128,7 +128,8 @@ namespace GeekQuiz.Ui
                 triviaDialog.AppTextBlockGeekQuizUserStatus.Visibility = Visibility.Visible;
             }
 
-            triviaDialog.Show();
+            //triviaDialog.Show();
+            triviaDialog.Visibility = Visibility.Visible;
         }
 
         private void GeekQuizSetRadioButtonVisibility(RadioButton radioButton)

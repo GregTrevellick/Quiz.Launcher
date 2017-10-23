@@ -14,15 +14,13 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GeekQuiz.Ui.GeekQuiz.Common;
 using GeekQuiz.Ui.GeekQuiz.Gateway;
-using Microsoft.VisualStudio.PlatformUI;
 
 namespace GeekQuiz.Ui
 {
     /// <summary>
-    /// Interaction logic for GeekQuizDialog.xaml
+    /// Interaction logic for GeekDialog.xaml
     /// </summary>
-    //public partial class GeekQuizDialog : UserControl
-    public partial class GeekQuizDialog : DialogWindow
+    public partial class GeekDialog : UserControl
     {
         private string _correctAnswer;
         private string _optionsName;
@@ -34,10 +32,7 @@ namespace GeekQuiz.Ui
         public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
 
-        //public GeekQuizDialog() { }
-
-
-        public GeekQuizDialog(string optionsName)
+        public GeekDialog(string optionsName)
         {
             _optionsName = optionsName;
             _userStatusTotalsIncremented = false;
@@ -53,13 +48,13 @@ namespace GeekQuiz.Ui
 
         private void InitializeTriviaDialog()
         {
-            HasMaximizeButton = true;
-            HasMinimizeButton = true;
-            SizeToContent = SizeToContent.WidthAndHeight;
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //HasMaximizeButton = true;
+            //HasMinimizeButton = true;
+            //SizeToContent = SizeToContent.WidthAndHeight;
+            //WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
-            var iconUri = new TriviaMessage().GetIconUri();
-            Icon = new BitmapImage(iconUri);
+            //var iconUri = new TriviaMessage().GetIconUri();
+            //Icon = new BitmapImage(iconUri);
         }
 
         private void AppBtnHelp_OnClick(object sender, RoutedEventArgs e)
@@ -97,7 +92,7 @@ namespace GeekQuiz.Ui
 
             if (shouldClose)
             {
-                Close();
+                //Close();
             }
         }
 
@@ -233,5 +228,6 @@ namespace GeekQuiz.Ui
 
             return rightAnswer;
         }
+
     }
 }

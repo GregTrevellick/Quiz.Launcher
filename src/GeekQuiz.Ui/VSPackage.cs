@@ -69,6 +69,8 @@ namespace GeekQuiz.Ui
         {
             //ChaseRatings();
 
+            ////////////////////MessageBoxes.ConfirmCloseWithoutSubmitingAnswer("foo");
+
             var shouldShowTrivia = new DecisionMaker().ShouldShowTrivia(GeneralOptionsDto);
 
             if (shouldShowTrivia)
