@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz2", "Quiz2\Quiz2.csproj", "{CE2ABD86-DA2B-432D-B218-F7C222882061}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1BBA3994-F8FB-4140-AD5B-5C137A7B8FBF}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\CHANGELOG.md = ..\..\CHANGELOG.md
+		..\..\LICENSE.txt = ..\..\LICENSE.txt
+		..\..\README.md = ..\..\README.md
+		..\..\TODO.txt = ..\..\TODO.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE2ABD86-DA2B-432D-B218-F7C222882061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE2ABD86-DA2B-432D-B218-F7C222882061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE2ABD86-DA2B-432D-B218-F7C222882061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE2ABD86-DA2B-432D-B218-F7C222882061}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAB86097-3A69-4D5F-B6FE-EEC289720639}
+	EndGlobalSection
+EndGlobal
