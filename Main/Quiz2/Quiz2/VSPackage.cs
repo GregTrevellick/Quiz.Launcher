@@ -47,7 +47,7 @@ namespace Quiz2
         {
             //ChaseRatings();
 
-            MessageBoxes.ConfirmCloseWithoutSubmitingAnswer("foo quiz2");
+            ////////////MessageBoxes.ConfirmCloseWithoutSubmitingAnswer("foo quiz2");
 
             var shouldShowTrivia = new DecisionMaker().ShouldShowTrivia(GeneralOptionsDto);
 
