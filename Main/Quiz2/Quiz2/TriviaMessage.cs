@@ -129,7 +129,12 @@ namespace Quiz2
             }
 
             //triviaDialog.Show();
-            triviaDialog.Visibility = Visibility.Visible;
+            Window window = new Window
+            {
+                Title = "My User Control Dialog",
+                Content = triviaDialog
+            };
+            window.ShowDialog();
         }
 
         private void GeekQuizSetRadioButtonVisibility(RadioButton radioButton)
