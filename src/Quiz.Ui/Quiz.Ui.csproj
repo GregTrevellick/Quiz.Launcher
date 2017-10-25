@@ -61,8 +61,6 @@
     <Compile Include="Core\HiddenOptionsDto.cs" />
     <Compile Include="Core\IntegerExtensions.cs" />
     <Compile Include="Core\MessageBoxes.cs" />
-    <Compile Include="Core\Ratings\RatingChaser.cs" />
-    <Compile Include="Core\Ratings\RatingInstructionsDto.cs" />
     <Compile Include="Core\StringExtensions.cs" />
     <Compile Include="Core\TriviaDialogDtoBase.cs" />
     <Compile Include="Core\TriviaDialogGeekQuizDto.cs" />
