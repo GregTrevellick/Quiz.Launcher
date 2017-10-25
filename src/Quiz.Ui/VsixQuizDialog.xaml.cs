@@ -7,9 +7,6 @@ using Quiz.Ui.Gateway;
 
 namespace Quiz.Ui
 {
-    /// <summary>
-    /// Interaction logic for VsixQuizDialog.xaml
-    /// </summary>
     public partial class VsixQuizDialog : UserControl
     {
         private string _correctAnswer;
@@ -22,10 +19,6 @@ namespace Quiz.Ui
         public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
 
-        //public VsixQuizDialog()
-        //{
-        //    InitializeComponent();
-        //}
         public VsixQuizDialog(string optionsName)
         {
             _optionsName = optionsName;

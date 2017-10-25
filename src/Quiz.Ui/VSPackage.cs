@@ -46,8 +46,6 @@ namespace Quiz.Ui
         {
             //ChaseRatings();
 
-            ////////////MessageBoxes.ConfirmCloseWithoutSubmitingAnswer("foo quiz2");
-
             var shouldShowTrivia = new DecisionMaker().ShouldShowTrivia(GeneralOptionsDto);
 
             if (shouldShowTrivia)
@@ -85,29 +83,29 @@ namespace Quiz.Ui
         //    RatingChaser.ChaseRatings(hiddenChaserOptions, ratingInstructionsDto);
         //}
 
-        private static byte[] GetImageByteArray()
-        {
-            byte[] imageByteArray;
-            ////////////////////var imageResourceNameArray = Assembly.GetExecutingAssembly().GetManifestResourceNames();
-            var imageResourceName = "Trivial.Ui.GeekQuiz.Resources.VsixExtensionIcon_90x90_Embedded.png";//imageResourceNameArray[2];
-            var assembly = Assembly.GetExecutingAssembly();
-            var stream = assembly.GetManifestResourceStream(imageResourceName);
+        //private static byte[] GetImageByteArray()
+        //{
+        //    byte[] imageByteArray;
+        //    ////////////////////var imageResourceNameArray = Assembly.GetExecutingAssembly().GetManifestResourceNames();
+        //    var imageResourceName = "Trivial.Ui.GeekQuiz.Resources.VsixExtensionIcon_90x90_Embedded.png";//imageResourceNameArray[2];
+        //    var assembly = Assembly.GetExecutingAssembly();
+        //    var stream = assembly.GetManifestResourceStream(imageResourceName);
 
-            if (stream == null)
-            {
-                imageByteArray = null;
-            }
-            else
-            {
-                using (stream)
-                {
-                    imageByteArray = new byte[stream.Length];
-                    stream.Read(imageByteArray, 0, imageByteArray.Length);
-                }
-            }
+        //    if (stream == null)
+        //    {
+        //        imageByteArray = null;
+        //    }
+        //    else
+        //    {
+        //        using (stream)
+        //        {
+        //            imageByteArray = new byte[stream.Length];
+        //            stream.Read(imageByteArray, 0, imageByteArray.Length);
+        //        }
+        //    }
 
-            return imageByteArray;
-        }
+        //    return imageByteArray;
+        //}
 
         private void UpdateHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
         {
