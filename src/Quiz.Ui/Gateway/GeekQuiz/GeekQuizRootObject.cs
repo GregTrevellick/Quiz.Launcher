@@ -1,4 +1,4 @@
-﻿namespace Quiz2.GeekQuiz.Gateway.GeekQuiz
+﻿namespace Quiz.Ui.Gateway.GeekQuiz
 {
     public class GeekQuizRootObject
     {

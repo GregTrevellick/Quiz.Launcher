@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using Microsoft.VisualStudio.Shell;
-using Quiz2.GeekQuiz.Common;
+using Quiz.Ui.Core;
 
 namespace Quiz.Ui.Options
 {

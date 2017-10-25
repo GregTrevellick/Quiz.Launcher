@@ -1,13 +1,13 @@
 ﻿using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using Quiz2.GeekQuiz.Common;
 using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using Quiz.Ui;
+using Quiz.Ui.Core;
 using Quiz.Ui.Options;
 
 namespace Quiz2

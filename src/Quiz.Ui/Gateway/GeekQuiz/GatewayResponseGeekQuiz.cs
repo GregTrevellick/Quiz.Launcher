@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Quiz2.GeekQuiz.Gateway.GeekQuiz
+namespace Quiz.Ui.Gateway.GeekQuiz
 {
     public class GatewayResponseGeekQuiz : GatewayResponseBase
     {

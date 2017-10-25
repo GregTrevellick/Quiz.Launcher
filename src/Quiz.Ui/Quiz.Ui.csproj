@@ -55,24 +55,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="GeekQuiz.Common\CommonConstants.cs" />
-    <Compile Include="GeekQuiz.Common\DecisionMaker.cs" />
-    <Compile Include="GeekQuiz.Common\GeneralOptionsDto.cs" />
-    <Compile Include="GeekQuiz.Common\HiddenOptionsDto.cs" />
-    <Compile Include="GeekQuiz.Common\IntegerExtensions.cs" />
-    <Compile Include="GeekQuiz.Common\MessageBoxes.cs" />
-    <Compile Include="GeekQuiz.Common\Ratings\RatingChaser.cs" />
-    <Compile Include="GeekQuiz.Common\Ratings\RatingInstructionsDto.cs" />
-    <Compile Include="GeekQuiz.Common\StringExtensions.cs" />
-    <Compile Include="GeekQuiz.Common\TriviaDialogDtoBase.cs" />
-    <Compile Include="GeekQuiz.Common\TriviaDialogGeekQuizDto.cs" />
-    <Compile Include="GeekQuiz.Gateway\ClientGateway.cs" />
-    <Compile Include="GeekQuiz.Gateway\GatewayResponseBase.cs" />
-    <Compile Include="GeekQuiz.Gateway\GeekQuiz\ClientGatewayGeekQuiz.cs" />
-    <Compile Include="GeekQuiz.Gateway\GeekQuiz\GatewayResponseGeekQuiz.cs" />
-    <Compile Include="GeekQuiz.Gateway\GeekQuiz\GeekQuizRootObject.cs" />
-    <Compile Include="GeekQuiz.Gateway\QuestionType.cs" />
-    <Compile Include="GeekQuiz.Gateway\ResponseDto.cs" />
+    <Compile Include="Core\CommonConstants.cs" />
+    <Compile Include="Core\DecisionMaker.cs" />
+    <Compile Include="Core\GeneralOptionsDto.cs" />
+    <Compile Include="Core\HiddenOptionsDto.cs" />
+    <Compile Include="Core\IntegerExtensions.cs" />
+    <Compile Include="Core\MessageBoxes.cs" />
+    <Compile Include="Core\Ratings\RatingChaser.cs" />
+    <Compile Include="Core\Ratings\RatingInstructionsDto.cs" />
+    <Compile Include="Core\StringExtensions.cs" />
+    <Compile Include="Core\TriviaDialogDtoBase.cs" />
+    <Compile Include="Core\TriviaDialogGeekQuizDto.cs" />
+    <Compile Include="Gateway\ClientGateway.cs" />
+    <Compile Include="Gateway\GatewayResponseBase.cs" />
+    <Compile Include="Gateway\GeekQuiz\ClientGatewayGeekQuiz.cs" />
+    <Compile Include="Gateway\GeekQuiz\GatewayResponseGeekQuiz.cs" />
+    <Compile Include="Gateway\GeekQuiz\GeekQuizRootObject.cs" />
+    <Compile Include="Gateway\QuestionType.cs" />
+    <Compile Include="Gateway\ResponseDto.cs" />
     <Compile Include="Options\GeneralOptions.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -215,9 +215,9 @@
     <Content Include="..\..\..\LICENSE.txt">
       <Link>LICENSE.txt</Link>
     </Content>
-    <Content Include="GeekQuiz.Common\Resources\CorrectAnswer.png" />
-    <Content Include="GeekQuiz.Common\Resources\Generic_ReadMeScreenShot_OptionsGeneral.png" />
-    <Content Include="GeekQuiz.Common\Resources\IncorrectAnswer.png" />
+    <Content Include="Core\Resources\CorrectAnswer.png" />
+    <Content Include="Core\Resources\Generic_ReadMeScreenShot_OptionsGeneral.png" />
+    <Content Include="Core\Resources\IncorrectAnswer.png" />
     <Content Include="Resources\VsixExtensionIcon_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -237,7 +237,7 @@
     <Content Include="VsmpAssets\ReadMeScreenShot_Answer.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GeekQuiz.Common\Resources\GeekQuiz\" />
+    <Folder Include="Core\Resources\GeekQuiz\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="source.extension.resx">

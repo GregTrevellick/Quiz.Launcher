@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Quiz2.GeekQuiz.Common
+namespace Quiz.Ui.Core
 {
     public class MessageBoxes
     {

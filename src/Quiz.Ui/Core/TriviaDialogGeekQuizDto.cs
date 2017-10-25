@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Quiz2.GeekQuiz.Gateway;
+using Quiz.Ui.Gateway;
 
-namespace Quiz2.GeekQuiz.Common
+namespace Quiz.Ui.Core
 {
     public class TriviaDialogGeekQuizDto : TriviaDialogDtoBase
     {

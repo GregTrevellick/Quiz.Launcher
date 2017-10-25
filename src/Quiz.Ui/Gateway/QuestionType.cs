@@ -1,4 +1,4 @@
-﻿namespace Quiz2.GeekQuiz.Gateway
+﻿namespace Quiz.Ui.Gateway
 {
     public enum QuestionType
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
-using Quiz2.GeekQuiz.Gateway.GeekQuiz;
+using Quiz.Ui.Gateway.GeekQuiz;
 using RestSharp;
 
-namespace Quiz2.GeekQuiz.Gateway
+namespace Quiz.Ui.Gateway
 {
     public class ClientGateway
     {

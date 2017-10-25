@@ -1,4 +1,4 @@
-﻿namespace Quiz2.GeekQuiz.Common
+﻿namespace Quiz.Ui.Core
 {
     public class TriviaDialogDtoBase
     {

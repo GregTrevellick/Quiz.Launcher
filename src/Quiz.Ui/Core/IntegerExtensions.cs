@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Quiz2.GeekQuiz.Common
+namespace Quiz.Ui.Core
 {
     public static class IntegerExtensions
     {
