@@ -1,6 +1,6 @@
 ﻿namespace Quiz.Ui.Gateway
 {
-    public class GeekQuizRootObject
+    public class RootObject
     {
         public int response_code { get; set; }
         public Result[] results { get; set; }

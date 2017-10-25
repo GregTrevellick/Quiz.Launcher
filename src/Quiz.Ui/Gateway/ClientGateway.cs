@@ -6,11 +6,11 @@ namespace Quiz.Ui.Gateway
 {
     public class ClientGateway
     {
-        public GatewayResponseBase GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
+        public GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             var url = "https://opentdb.com/api.php?amount=1&category=18";//AppUrlHelper.GetUrl();
 
-            var gatewayResponse = new GatewayResponseBase();
+            var gatewayResponse = new GatewayResponse();
 
             if (!string.IsNullOrEmpty(url))
             {
@@ -120,7 +120,7 @@ namespace Quiz.Ui.Gateway
             return errorDetails;
         }
 
-        private void SetGatewayResponseFromErrorDetails(GatewayResponseBase gatewayResponse, string errorDetails)
+        private void SetGatewayResponseFromErrorDetails(GatewayResponse gatewayResponse, string errorDetails)
         {
             gatewayResponse.ErrorDetails = errorDetails;
         }

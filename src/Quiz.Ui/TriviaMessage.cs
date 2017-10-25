@@ -26,7 +26,7 @@ namespace Quiz.Ui
             var clientGateway = new ClientGateway();
             var gatewayResponse = clientGateway.GetGatewayResponse(timeOutInMilliSeconds, CommonConstants.TimeOutInMilliSecondsOptionLabel, optionsName);
 
-            var gatewayResponseGeekQuiz = (GatewayResponseGeekQuiz)gatewayResponse;
+            var gatewayResponseGeekQuiz = (GatewayResponse)gatewayResponse;
             var triviaDialogGeekQuizDto = GetTriviaDialogGeekQuizDto(popUpTitle, optionsName, gatewayResponseGeekQuiz);
             DisplayPopUpMessageGeekQuiz(triviaDialogGeekQuizDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
 
@@ -35,10 +35,10 @@ namespace Quiz.Ui
             return hiddenOptionsDto;
         }
 
-        private static TriviaDialogGeekQuizDto GetTriviaDialogGeekQuizDto(string popUpTitle, string optionsName, GatewayResponseGeekQuiz gatewayResponseGeekQuiz)
+        private static TriviaDialogGeekQuizDto GetTriviaDialogGeekQuizDto(string popUpTitle, string optionsName, GatewayResponse gatewayResponseGeekQuiz)
         {
             var triviaDialogGeekQuizDto =
-                new TriviaDialogGeekQuizDto(optionsName, popUpTitle, gatewayResponseGeekQuiz.ErrorDetails)
+                new TriviaDialogGeekQuizDto()//////(optionsName, popUpTitle, gatewayResponseGeekQuiz.ErrorDetails)
                 {
                     GeekQuizDifficulty = gatewayResponseGeekQuiz.DifficultyLevel,
                     GeekQuizMultipleChoiceAnswers = gatewayResponseGeekQuiz.MultipleChoiceAnswers,

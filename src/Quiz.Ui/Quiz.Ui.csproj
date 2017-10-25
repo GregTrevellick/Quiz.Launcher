@@ -62,19 +62,14 @@
     <Compile Include="Core\IntegerExtensions.cs" />
     <Compile Include="Core\MessageBoxes.cs" />
     <Compile Include="Core\StringExtensions.cs" />
-    <Compile Include="Core\TriviaDialogDtoBase.cs" />
     <Compile Include="Core\TriviaDialogGeekQuizDto.cs" />
     <Compile Include="Gateway\ClientGateway.cs" />
-    <Compile Include="Gateway\GatewayResponseBase.cs" />
     <Compile Include="Gateway\ClientGatewayGeekQuiz.cs" />
-    <Compile Include="Gateway\GatewayResponseGeekQuiz.cs" />
-    <Compile Include="Gateway\GeekQuizRootObject.cs" />
+    <Compile Include="Gateway\GatewayResponse.cs" />
+    <Compile Include="Gateway\RootObject.cs" />
     <Compile Include="Gateway\QuestionType.cs" />
     <Compile Include="Gateway\ResponseDto.cs" />
     <Compile Include="Options\GeneralOptions.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Options\HiddenChaserOptions.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Options\HiddenOptions.cs">

@@ -6,14 +6,14 @@ namespace Quiz.Ui.Gateway
 {
     public class ClientGatewayGeekQuiz
     {
-        public static GatewayResponseGeekQuiz SetGatewayResponseFromRestResponse(string responseContent)
+        public static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
         {
-            var rootObject = JsonConvert.DeserializeObject<GeekQuizRootObject>(responseContent);
+            var rootObject = JsonConvert.DeserializeObject<RootObject>(responseContent);
             var gatewayResponse = GetGatewayResponse(rootObject);
             return gatewayResponse;
         }
 
-        private static GatewayResponseGeekQuiz GetGatewayResponse(GeekQuizRootObject rootObject)
+        private static GatewayResponse GetGatewayResponse(RootObject rootObject)
         {
             var firstOfOne = rootObject.results.First();
 
@@ -25,7 +25,7 @@ namespace Quiz.Ui.Gateway
 
             var difficultyLevel = UppercaseFirst(firstOfOne.difficulty);
 
-            var gatewayResponse = new GatewayResponseGeekQuiz
+            var gatewayResponse = new GatewayResponse
             {
                 DifficultyLevel = difficultyLevel + ": ",
                 MultipleChoiceAnswers = multipleChoiceAnswers,
