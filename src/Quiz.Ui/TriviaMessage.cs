@@ -35,16 +35,16 @@ namespace Quiz.Ui
             return hiddenOptionsDto;
         }
 
-        private static TriviaDialogGeekQuizDto GetTriviaDialogGeekQuizDto(string popUpTitle, string optionsName, GatewayResponse gatewayResponseGeekQuiz)
+        private static TriviaDialogDto GetTriviaDialogGeekQuizDto(string popUpTitle, string optionsName, GatewayResponse gatewayResponseGeekQuiz)
         {
             var triviaDialogGeekQuizDto =
-                new TriviaDialogGeekQuizDto()//////(optionsName, popUpTitle, gatewayResponseGeekQuiz.ErrorDetails)
+                new TriviaDialogDto()//////(optionsName, popUpTitle, gatewayResponseGeekQuiz.ErrorDetails)
                 {
-                    GeekQuizDifficulty = gatewayResponseGeekQuiz.DifficultyLevel,
-                    GeekQuizMultipleChoiceAnswers = gatewayResponseGeekQuiz.MultipleChoiceAnswers,
-                    GeekQuizMultipleChoiceCorrectAnswer = gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer,
-                    GeekQuizQuestion = gatewayResponseGeekQuiz.Question,
-                    GeekQuizQuestionType = gatewayResponseGeekQuiz.QuestionType,
+                    QuestionDifficulty = gatewayResponseGeekQuiz.DifficultyLevel,
+                    MultipleChoiceAnswers = gatewayResponseGeekQuiz.MultipleChoiceAnswers,
+                    MultipleChoiceCorrectAnswer = gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer,
+                    QuizQuestion = gatewayResponseGeekQuiz.Question,
+                    QuestionType = gatewayResponseGeekQuiz.QuestionType,
                 };
             return triviaDialogGeekQuizDto;
         }
@@ -54,7 +54,7 @@ namespace Quiz.Ui
             PersistHiddenOptionsEventHandler2?.Invoke(totalQuestionsAsked, totalQuestionsAnsweredCorrectly);
         }
 
-        private void DisplayPopUpMessageGeekQuiz(TriviaDialogGeekQuizDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        private void DisplayPopUpMessageGeekQuiz(TriviaDialogDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             var triviaDialog = new VsixQuizDialog(//)TriviaDialog(
                                               //triviaDialogDto.AppName,
@@ -66,23 +66,23 @@ namespace Quiz.Ui
                         suppressClosingWithoutSubmitingAnswerWarning.HasValue
                             ? suppressClosingWithoutSubmitingAnswerWarning.Value
                             : false,
-                AppTextBlockQuestionGeekQuiz = { Text = triviaDialogDto.GeekQuizMultipleChoiceCorrectAnswer },
-                _questionType = triviaDialogDto.GeekQuizQuestionType,
+                AppTextBlockQuestionGeekQuiz = { Text = triviaDialogDto.MultipleChoiceCorrectAnswer },
+                _questionType = triviaDialogDto.QuestionType,
                 _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly,
                 _totalQuestionsAsked = totalQuestionsAsked
             };
 
             triviaDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptionsGeekQuiz;
 
-            if (!string.IsNullOrWhiteSpace(triviaDialogDto.GeekQuizDifficulty))
+            if (!string.IsNullOrWhiteSpace(triviaDialogDto.QuestionDifficulty))
             {
-                var run = new Run(triviaDialogDto.GeekQuizDifficulty);
+                var run = new Run(triviaDialogDto.QuestionDifficulty);
                 triviaDialog.AppTextBlockQuestionGeekQuiz.Inlines.Add(run);
             }
 
-            if (!string.IsNullOrWhiteSpace(triviaDialogDto.GeekQuizQuestion))
+            if (!string.IsNullOrWhiteSpace(triviaDialogDto.QuizQuestion))
             {
-                var run = new Run(triviaDialogDto.GeekQuizQuestion)
+                var run = new Run(triviaDialogDto.QuizQuestion)
                 {
                     FontWeight = FontWeights.Bold
                 };
@@ -94,20 +94,20 @@ namespace Quiz.Ui
                 triviaDialog.AppTextBlockErrorDetails.Visibility = Visibility.Visible;
             }
 
-            if (triviaDialogDto.GeekQuizQuestionType != QuestionType.None)
+            if (triviaDialogDto.QuestionType != QuestionType.None)
             {
                 triviaDialog.AppBtnGeekQuizSubmitMultiChoiceAnwser.Visibility = Visibility.Visible;
 
-                if (triviaDialogDto.GeekQuizQuestionType == QuestionType.TrueFalse)
+                if (triviaDialogDto.QuestionType == QuestionType.TrueFalse)
                 {
-                    var trueFollowedByFalseAnswers = triviaDialogDto.GeekQuizMultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();
+                    var trueFollowedByFalseAnswers = triviaDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();
                     triviaDialog.RadioBtn1.Content = trueFollowedByFalseAnswers[0];
                     triviaDialog.RadioBtn2.Content = trueFollowedByFalseAnswers[1];
                 }
                 else
                 {
                     var random = new Random();
-                    var randomlySortedAnswers = triviaDialogDto.GeekQuizMultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray();
+                    var randomlySortedAnswers = triviaDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray();
                     triviaDialog.RadioBtn1.Content = randomlySortedAnswers[0];
                     triviaDialog.RadioBtn2.Content = randomlySortedAnswers[1];
                     triviaDialog.RadioBtn3.Content = randomlySortedAnswers[2];

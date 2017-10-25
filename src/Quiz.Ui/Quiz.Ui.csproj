@@ -62,9 +62,9 @@
     <Compile Include="Core\IntegerExtensions.cs" />
     <Compile Include="Core\MessageBoxes.cs" />
     <Compile Include="Core\StringExtensions.cs" />
-    <Compile Include="Core\TriviaDialogGeekQuizDto.cs" />
+    <Compile Include="Core\TriviaDialogDto.cs" />
     <Compile Include="Gateway\ClientGateway.cs" />
-    <Compile Include="Gateway\ClientGatewayGeekQuiz.cs" />
+    <Compile Include="Gateway\ClientGatewayQuiz.cs" />
     <Compile Include="Gateway\GatewayResponse.cs" />
     <Compile Include="Gateway\RootObject.cs" />
     <Compile Include="Gateway\QuestionType.cs" />

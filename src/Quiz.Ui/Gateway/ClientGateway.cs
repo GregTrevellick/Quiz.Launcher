@@ -24,7 +24,7 @@ namespace Quiz.Ui.Gateway
                 {
                     try
                     {
-                        gatewayResponse = ClientGatewayGeekQuiz.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
+                        gatewayResponse = ClientGatewayQuiz.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
                     }
                     catch (Exception ex)
                     {

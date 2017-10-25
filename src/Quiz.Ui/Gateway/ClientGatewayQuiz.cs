@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Quiz.Ui.Gateway
 {
-    public class ClientGatewayGeekQuiz
+    public class ClientGatewayQuiz
     {
         public static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
         {
