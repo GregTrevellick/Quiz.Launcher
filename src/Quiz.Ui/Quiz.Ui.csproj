@@ -68,9 +68,9 @@
     <Compile Include="Core\TriviaDialogGeekQuizDto.cs" />
     <Compile Include="Gateway\ClientGateway.cs" />
     <Compile Include="Gateway\GatewayResponseBase.cs" />
-    <Compile Include="Gateway\GeekQuiz\ClientGatewayGeekQuiz.cs" />
-    <Compile Include="Gateway\GeekQuiz\GatewayResponseGeekQuiz.cs" />
-    <Compile Include="Gateway\GeekQuiz\GeekQuizRootObject.cs" />
+    <Compile Include="Gateway\ClientGatewayGeekQuiz.cs" />
+    <Compile Include="Gateway\GatewayResponseGeekQuiz.cs" />
+    <Compile Include="Gateway\GeekQuizRootObject.cs" />
     <Compile Include="Gateway\QuestionType.cs" />
     <Compile Include="Gateway\ResponseDto.cs" />
     <Compile Include="Options\GeneralOptions.cs">

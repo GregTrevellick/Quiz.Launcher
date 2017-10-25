@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using Quiz.Ui.Gateway.GeekQuiz;
 using RestSharp;
 
 namespace Quiz.Ui.Gateway

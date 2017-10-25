@@ -6,7 +6,6 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using Quiz.Ui.Core;
 using Quiz.Ui.Gateway;
-using Quiz.Ui.Gateway.GeekQuiz;
 
 namespace Quiz.Ui
 {

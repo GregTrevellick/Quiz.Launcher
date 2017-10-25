@@ -2,7 +2,7 @@
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace Quiz.Ui.Gateway.GeekQuiz
+namespace Quiz.Ui.Gateway
 {
     public class ClientGatewayGeekQuiz
     {
