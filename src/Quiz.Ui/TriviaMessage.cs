@@ -8,7 +8,7 @@ using Quiz.Ui.Core;
 using Quiz.Ui.Gateway;
 using Quiz.Ui.Gateway.GeekQuiz;
 
-namespace Quiz2
+namespace Quiz.Ui
 {
     public class TriviaMessage
     {

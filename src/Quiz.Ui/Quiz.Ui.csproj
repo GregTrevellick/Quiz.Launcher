@@ -236,9 +236,7 @@
     <Content Include="VsmpAssets\ReadMeScreenShot.png" />
     <Content Include="VsmpAssets\ReadMeScreenShot_Answer.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\Resources\GeekQuiz\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="source.extension.resx">
       <AutoGen>True</AutoGen>
