@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.Shell;
 
 //using VsixRatingChaser;
 
-namespace Quiz2.Options
+namespace Quiz.Ui.Options
 {
     public class HiddenChaserOptions : DialogPage//, IHiddenChaserOptions
     {

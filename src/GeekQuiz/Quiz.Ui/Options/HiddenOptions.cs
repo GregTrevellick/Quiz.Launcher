@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.Shell;
 
-namespace Quiz2.Options
+namespace Quiz.Ui.Options
 {
     public class HiddenOptions : DialogPage
     {

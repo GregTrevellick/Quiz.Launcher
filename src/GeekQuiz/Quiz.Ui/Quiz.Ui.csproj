@@ -24,8 +24,8 @@
     <ProjectGuid>{CE2ABD86-DA2B-432D-B218-F7C222882061}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Quiz2</RootNamespace>
-    <AssemblyName>Quiz2</AssemblyName>
+    <RootNamespace>Quiz.Ui</RootNamespace>
+    <AssemblyName>Quiz.Ui</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>

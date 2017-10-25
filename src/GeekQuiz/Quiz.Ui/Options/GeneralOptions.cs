@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.Shell;
 using Quiz2.GeekQuiz.Common;
 
-namespace Quiz2.Options
+namespace Quiz.Ui.Options
 {
     public class GeneralOptions : DialogPage
     {
