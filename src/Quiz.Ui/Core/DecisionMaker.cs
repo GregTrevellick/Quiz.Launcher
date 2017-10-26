@@ -4,7 +4,7 @@ namespace Quiz.Ui.Core
 {
     public class DecisionMaker
     {
-        public bool ShouldShowTrivia(GeneralOptionsDto generalOptionsDto)
+        public bool ShouldShowQuiz(GeneralOptionsDto generalOptionsDto)
         {
             var dateTimeNow = DateTime.Now;
 

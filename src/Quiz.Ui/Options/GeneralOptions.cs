@@ -117,14 +117,14 @@ namespace Quiz.Ui.Options
         }
 
         [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName(CommonConstants.ShowTriviaUponClosingSolutionOptionLabel)]
-        [Description(CommonConstants.ShowTriviaUponClosingSolutionOptionDetailedDescription)]
-        public bool ShowTriviaUponClosingSolution { get; set; } = false;
+        [DisplayName(CommonConstants.ShowQuizUponClosingSolutionOptionLabel)]
+        [Description(CommonConstants.ShowQuizUponClosingSolutionOptionDetailedDescription)]
+        public bool ShowQuizUponClosingSolution { get; set; } = false;
 
         [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName(CommonConstants.ShowTriviaUponOpeningSolutionOptionLabel)]
-        [Description(CommonConstants.ShowTriviaUponOpeningSolutionOptionDetailedDescription)]
-        public bool ShowTriviaUponOpeningSolution { get; set; } = true;
+        [DisplayName(CommonConstants.ShowQuizUponOpeningSolutionOptionLabel)]
+        [Description(CommonConstants.ShowQuizUponOpeningSolutionOptionDetailedDescription)]
+        public bool ShowQuizUponOpeningSolution { get; set; } = true;
 
         [Category(CommonConstants.CategorySubLevel)]
         [DisplayName(CommonConstants.SuppressClosingWithoutSubmitingAnswerWarningOptionLabel)]

@@ -31,12 +31,12 @@ namespace Quiz.Ui
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
             solutionEvents = dte.Events.SolutionEvents;
 
-            if (GeneralOptionsDto.ShowTriviaUponOpeningSolution)
+            if (GeneralOptionsDto.ShowQuizUponOpeningSolution)
             {
                 solutionEvents.Opened += OnSolutionOpenedAndOrClosed;
             }
 
-            if (GeneralOptionsDto.ShowTriviaUponClosingSolution)
+            if (GeneralOptionsDto.ShowQuizUponClosingSolution)
             {
                 solutionEvents.AfterClosing += OnSolutionOpenedAndOrClosed;
             }
@@ -46,14 +46,14 @@ namespace Quiz.Ui
         {
             //ChaseRatings();
 
-            var shouldShowTrivia = new DecisionMaker().ShouldShowTrivia(GeneralOptionsDto);
+            var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(GeneralOptionsDto);
 
-            if (shouldShowTrivia)
+            if (shouldShowQuiz)
             {
                 var popUpTitle = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
                 var triviaMessage = new TriviaMessage();
 
-                var hiddenOptionsDto = triviaMessage.ShowTrivia(popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name, GeneralOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, GeneralOptionsDto.TotalQuestionsAnsweredCorrectly, GeneralOptionsDto.TotalQuestionsAsked);
+                var hiddenOptionsDto = triviaMessage.ShowQuiz(popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name, GeneralOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, GeneralOptionsDto.TotalQuestionsAnsweredCorrectly, GeneralOptionsDto.TotalQuestionsAsked);
 
                 if (hiddenOptionsDto != null)
                 {
@@ -137,8 +137,8 @@ namespace Quiz.Ui
                     MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
                     PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
                     PopUpCountToday = hiddenOptions.PopUpCountToday,
-                    ShowTriviaUponClosingSolution = generalOptions.ShowTriviaUponClosingSolution,
-                    ShowTriviaUponOpeningSolution = generalOptions.ShowTriviaUponOpeningSolution,
+                    ShowQuizUponClosingSolution = generalOptions.ShowQuizUponClosingSolution,
+                    ShowQuizUponOpeningSolution = generalOptions.ShowQuizUponOpeningSolution,
                     SuppressClosingWithoutSubmitingAnswerWarning = generalOptions.SuppressClosingWithoutSubmitingAnswerWarning,
                     TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
                     TotalQuestionsAnsweredCorrectly = hiddenOptions.TotalQuestionsAnsweredCorrectly,

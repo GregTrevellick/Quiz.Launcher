@@ -15,7 +15,7 @@ namespace Quiz.Ui
         public delegate void MyEventHandler2(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler2 PersistHiddenOptionsEventHandler2;//gregt rename to remove '2' suffix
 
-        public HiddenOptionsDto ShowTrivia(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked)
+        public HiddenOptionsDto ShowQuiz(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked)
         {
             HiddenOptionsDto hiddenOptionsDto = null;
 
