@@ -17,18 +17,17 @@ namespace Quiz.Ui
 
         public HiddenOptionsDto ShowTrivia(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked)
         {
-            return ShowTriviaMessage(popUpTitle, lastPopUpDateTime, popUpCountToday, timeOutInMilliSeconds, optionsName, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
-        }
+            //return ShowTriviaMessage(popUpTitle, lastPopUpDateTime, popUpCountToday, timeOutInMilliSeconds, optionsName, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
+        //}
 
-        private HiddenOptionsDto ShowTriviaMessage(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
-        {
+        //private HiddenOptionsDto ShowTriviaMessage(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        //{
             HiddenOptionsDto hiddenOptionsDto = null;
 
             var clientGateway = new ClientGateway();
             var gatewayResponse = clientGateway.GetGatewayResponse(timeOutInMilliSeconds, CommonConstants.TimeOutInMilliSecondsOptionLabel, optionsName);
 
-            //var gatewayResponseGeekQuiz = (GatewayResponse)gatewayResponse;
-            var triviaDialogGeekQuizDto = GetTriviaDialogGeekQuizDto(gatewayResponse);///////GeekQuiz);
+            var triviaDialogGeekQuizDto = GetTriviaDialogGeekQuizDto(gatewayResponse);
             DisplayPopUpMessageGeekQuiz(triviaDialogGeekQuizDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
 
             hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
@@ -57,12 +56,10 @@ namespace Quiz.Ui
 
         private void DisplayPopUpMessageGeekQuiz(TriviaDialogDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
-            var triviaDialog = new VsixQuizDialog(//)TriviaDialog(
-                                              //triviaDialogDto.AppName,
-                    triviaDialogDto.OptionsName)
+            var triviaDialog = new VsixQuizDialog(triviaDialogDto.OptionsName)
             {
                 AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
-                //Title = triviaDialogDto.PopUpTitle,
+                /////////////////////////Title = triviaDialogDto.PopUpTitle,
                 _suppressClosingWithoutSubmitingAnswerWarning =
                         suppressClosingWithoutSubmitingAnswerWarning.HasValue
                             ? suppressClosingWithoutSubmitingAnswerWarning.Value
@@ -129,16 +126,13 @@ namespace Quiz.Ui
             }
 
             //triviaDialog.Show();
-            Window window = new Window
+            var window = new Window
             {
                 Title = "My User Control Dialog",
-                //Title = triviaDialogDto.PopUpTitle,
                 Content = triviaDialog,
                 SizeToContent = SizeToContent.WidthAndHeight,
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
-            //    HasMaximizeButton = true;
-            //    HasMinimizeButton = true;
            // var iconUri = new TriviaMessage().GetIconUri();
            // window.Icon = new BitmapImage(iconUri);
             window.ShowDialog();
