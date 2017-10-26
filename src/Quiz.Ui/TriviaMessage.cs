@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Media.Imaging;
 using Quiz.Ui.Core;
 using Quiz.Ui.Gateway;
 
@@ -131,8 +132,15 @@ namespace Quiz.Ui
             Window window = new Window
             {
                 Title = "My User Control Dialog",
-                Content = triviaDialog
+                //Title = triviaDialogDto.PopUpTitle,
+                Content = triviaDialog,
+                SizeToContent = SizeToContent.WidthAndHeight,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
+            //    HasMaximizeButton = true;
+            //    HasMinimizeButton = true;
+           // var iconUri = new TriviaMessage().GetIconUri();
+           // window.Icon = new BitmapImage(iconUri);
             window.ShowDialog();
         }
 

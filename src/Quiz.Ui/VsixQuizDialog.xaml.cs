@@ -19,6 +19,10 @@ namespace Quiz.Ui
         public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
 
+        public VsixQuizDialog()
+        {
+        }
+
         public VsixQuizDialog(string optionsName)
         {
             _optionsName = optionsName;
@@ -39,7 +43,6 @@ namespace Quiz.Ui
         //    HasMinimizeButton = true;
         //    SizeToContent = SizeToContent.WidthAndHeight;
         //    WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
         //    var iconUri = new TriviaMessage().GetIconUri();
         //    Icon = new BitmapImage(iconUri);
         //}
