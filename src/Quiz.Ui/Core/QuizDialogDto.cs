@@ -3,7 +3,7 @@ using Quiz.Ui.Gateway;
 
 namespace Quiz.Ui.Core
 {
-    public class TriviaDialogDto
+    public class QuizDialogDto
     {
         public IEnumerable<string> MultipleChoiceAnswers { get; set; }
         public QuestionType QuestionType { get; set; }
