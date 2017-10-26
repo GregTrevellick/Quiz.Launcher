@@ -33,6 +33,16 @@ namespace Quiz.Ui
             StackPanelGeekQuiz.Visibility = Visibility.Visible;
         }
 
+        //private void InitializeTriviaDialog()
+        //{
+        //    HasMaximizeButton = true;
+        //    HasMinimizeButton = true;
+        //    SizeToContent = SizeToContent.WidthAndHeight;
+        //    WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
+        //    var iconUri = new TriviaMessage().GetIconUri();
+        //    Icon = new BitmapImage(iconUri);
+        //}
 
         private void AppBtnHelp_OnClick(object sender, RoutedEventArgs e)
         {
