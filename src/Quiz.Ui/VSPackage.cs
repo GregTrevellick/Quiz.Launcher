@@ -51,16 +51,16 @@ namespace Quiz.Ui
             if (shouldShowQuiz)
             {
                 var popUpTitle = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
-                var triviaMessage = new TriviaMessage();
+                var quizHelper = new QuizHelper();
 
-                var hiddenOptionsDto = triviaMessage.ShowQuiz(popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name, GeneralOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, GeneralOptionsDto.TotalQuestionsAnsweredCorrectly, GeneralOptionsDto.TotalQuestionsAsked);
+                var hiddenOptionsDto = quizHelper.ShowQuiz(popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name, GeneralOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, GeneralOptionsDto.TotalQuestionsAnsweredCorrectly, GeneralOptionsDto.TotalQuestionsAsked);
 
                 if (hiddenOptionsDto != null)
                 {
                     UpdateHiddenOptions(hiddenOptionsDto);
                 }
 
-                triviaMessage.PersistHiddenOptionsEventHandler2 += UpdateHiddenOptions;
+                quizHelper.PersistHiddenOptionsEventHandler2 += UpdateHiddenOptions;
             }
         }
 

@@ -79,7 +79,7 @@
     <Compile Include="source.extension.cs">
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
     </Compile>
-    <Compile Include="TriviaMessage.cs" />
+    <Compile Include="QuizHelper.cs" />
     <Compile Include="VsixQuizDialog.xaml.cs">
       <DependentUpon>VsixQuizDialog.xaml</DependentUpon>
     </Compile>

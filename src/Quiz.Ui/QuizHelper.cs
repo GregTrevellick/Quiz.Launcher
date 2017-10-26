@@ -10,7 +10,7 @@ using Quiz.Ui.Gateway;
 
 namespace Quiz.Ui
 {
-    public class TriviaMessage
+    public class QuizHelper
     {
         public delegate void MyEventHandler2(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler2 PersistHiddenOptionsEventHandler2;//gregt rename to remove '2' suffix

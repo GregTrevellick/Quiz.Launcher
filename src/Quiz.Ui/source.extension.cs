@@ -13,6 +13,6 @@ namespace Quiz.Ui
         public const string Language = "en-US";
         public const string Version = "1.0";
         public const string Author = "Greg Trevellick";
-        public const string Tags = "GeekQuiz, geek, quiz, fun, trivia";
+        public const string Tags = "GeekQuiz, geek, quiz, fun, trivia, trivial";
     }
 }
