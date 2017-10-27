@@ -9,7 +9,7 @@ namespace Quiz.Ui
 {
     public partial class VsixQuizDialog : UserControl
     {
-        private string _correctAnswer;
+        public string _correctAnswer;
         private string _optionsName;
         public QuestionType _questionType;
         public bool _suppressClosingWithoutSubmitingAnswerWarning;

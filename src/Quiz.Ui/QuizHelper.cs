@@ -62,7 +62,8 @@ namespace Quiz.Ui
                 ////////////////////////////////////////////////////////////////////////////////////TextBlockQuestion = { Text = quizDialogDto.MultipleChoiceCorrectAnswer },
                 _questionType = quizDialogDto.QuestionType,
                 _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly,
-                _totalQuestionsAsked = totalQuestionsAsked
+                _totalQuestionsAsked = totalQuestionsAsked,
+                _correctAnswer = quizDialogDto.MultipleChoiceCorrectAnswer
             };
 
             vsixQuizDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptions;

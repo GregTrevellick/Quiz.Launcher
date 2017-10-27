@@ -8,7 +8,7 @@ namespace Quiz.Ui.Gateway
     {
         public GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
-            var url = "https://opentdb.com/api.php?amount=1&category=18";//AppUrlHelper.GetUrl();
+            var url = "https://opentdb.com/api.php?amount=1&category=18";
 
             var gatewayResponse = new GatewayResponse();
 
