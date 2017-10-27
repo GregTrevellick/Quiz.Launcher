@@ -31,6 +31,20 @@ namespace Quiz.Ui
             InitializeComponent();
             DataContext = this;
             StackPanelQuiz.Visibility = Visibility.Visible;
+            this.Loaded += UserControl1_Loaded;
+        }
+
+        void UserControl1_Loaded(object sender, RoutedEventArgs e)
+        {
+            Window window = Window.GetWindow(this);
+            window.Closing += window_Closing;
+        }
+
+        void window_Closing(object sender, global::System.ComponentModel.CancelEventArgs e)
+        {
+            //do something before the window is closed...
+            e.Cancel = true;
+            ButtonClose_OnClick(sender, null);
         }
 
         private void ButtonHelp_OnClick(object sender, RoutedEventArgs e)
@@ -69,6 +83,7 @@ namespace Quiz.Ui
             if (shouldClose)
             {
                 //Close();
+                //((Window) sender).Close();
             }
         }
 
