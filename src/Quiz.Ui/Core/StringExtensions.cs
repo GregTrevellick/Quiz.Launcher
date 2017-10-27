@@ -23,8 +23,8 @@
 
             if (isInteger)
             {
-                if (x >= CommonConstants.RecommendedMinimumTimeoutMilliSeconds && 
-                    x <= CommonConstants.RecommendedMaximumTimeoutMilliSeconds)
+                if (x >= Constants.RecommendedMinimumTimeoutMilliSeconds && 
+                    x <= Constants.RecommendedMaximumTimeoutMilliSeconds)
                 {
                     isWithinRecommendedTimeoutLimits = true;
                 }

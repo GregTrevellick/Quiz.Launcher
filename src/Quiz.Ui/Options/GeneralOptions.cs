@@ -6,7 +6,7 @@ namespace Quiz.Ui.Options
 {
     public class GeneralOptions : DialogPage
     {
-        private string caption = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
+        private string caption = Constants.GetCaption(Vsix.Name, Vsix.Version);
         private bool firstTimeOpeningOptions = true;
         private string maximumPopUpsWeekDay;
         private string maximumPopUpsWeekEnd;
@@ -14,12 +14,12 @@ namespace Quiz.Ui.Options
         private bool proceedToSaveOptions;
         private string timeOutInMilliSeconds;
 
-        [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName(CommonConstants.MaximumPopUpsWeekDayOptionLabel)]
-        [Description(CommonConstants.MaximumPopUpsWeekDayDetailedDescription)]
+        [Category(Constants.CategorySubLevel)]
+        [DisplayName(Constants.MaximumPopUpsWeekDayOptionLabel)]
+        [Description(Constants.MaximumPopUpsWeekDayDetailedDescription)]
         public string MaximumPopUpsWeekDay 
         {
-            get => string.IsNullOrEmpty(maximumPopUpsWeekDay) ? CommonConstants.DefaultMaximumPopUpsWeekDay : maximumPopUpsWeekDay;
+            get => string.IsNullOrEmpty(maximumPopUpsWeekDay) ? Constants.DefaultMaximumPopUpsWeekDay : maximumPopUpsWeekDay;
             set
             {
                 if (value.IsNonNegativeInteger())
@@ -28,17 +28,17 @@ namespace Quiz.Ui.Options
                 }
                 else
                 {
-                    MessageBoxes.DisplayInvalidIntegerError(CommonConstants.MaximumPopUpsWeekDayOptionLabel, caption);
+                    MessageBoxes.DisplayInvalidIntegerError(Constants.MaximumPopUpsWeekDayOptionLabel, caption);
                 }
             }
         }
 
-        [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName(CommonConstants.MaximumPopUpsWeekEndOptionLabel)]
-        [Description(CommonConstants.MaximumPopUpsWeekEndDetailedDescription)]
+        [Category(Constants.CategorySubLevel)]
+        [DisplayName(Constants.MaximumPopUpsWeekEndOptionLabel)]
+        [Description(Constants.MaximumPopUpsWeekEndDetailedDescription)]
         public string MaximumPopUpsWeekEnd 
         {
-            get => string.IsNullOrEmpty(maximumPopUpsWeekEnd) ? CommonConstants.DefaultMaximumPopUpsWeekEnd : maximumPopUpsWeekEnd;
+            get => string.IsNullOrEmpty(maximumPopUpsWeekEnd) ? Constants.DefaultMaximumPopUpsWeekEnd : maximumPopUpsWeekEnd;
             set
             {
                 if (value.IsNonNegativeInteger())
@@ -47,17 +47,17 @@ namespace Quiz.Ui.Options
                 }
                 else
                 {
-                    MessageBoxes.DisplayInvalidIntegerError(CommonConstants.MaximumPopUpsWeekEndOptionLabel, caption);
+                    MessageBoxes.DisplayInvalidIntegerError(Constants.MaximumPopUpsWeekEndOptionLabel, caption);
                 }
             }
         }
 
-        [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName(CommonConstants.PopUpIntervalInMinsOptionLabel)]
-        [Description(CommonConstants.PopUpIntervalInMinsOptionDetailedDescription)]
+        [Category(Constants.CategorySubLevel)]
+        [DisplayName(Constants.PopUpIntervalInMinsOptionLabel)]
+        [Description(Constants.PopUpIntervalInMinsOptionDetailedDescription)]
         public string PopUpIntervalInMins
         {
-            get => string.IsNullOrEmpty(popUpIntervalInMins) ? CommonConstants.DefaultPopUpIntervalInMins : popUpIntervalInMins;
+            get => string.IsNullOrEmpty(popUpIntervalInMins) ? Constants.DefaultPopUpIntervalInMins : popUpIntervalInMins;
             set
             {
                 if (value.IsNonNegativeInteger())
@@ -66,17 +66,17 @@ namespace Quiz.Ui.Options
                 }
                 else
                 {
-                    MessageBoxes.DisplayInvalidIntegerError(CommonConstants.PopUpIntervalInMinsOptionLabel, caption);
+                    MessageBoxes.DisplayInvalidIntegerError(Constants.PopUpIntervalInMinsOptionLabel, caption);
                 }
             }
         }
 
-        [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName(CommonConstants.TimeOutInMilliSecondsOptionLabel)]
-        [Description(CommonConstants.TimeOutInMilliSecondsOptionDetailedDescription)]
+        [Category(Constants.CategorySubLevel)]
+        [DisplayName(Constants.TimeOutInMilliSecondsOptionLabel)]
+        [Description(Constants.TimeOutInMilliSecondsOptionDetailedDescription)]
         public string TimeOutInMilliSeconds
         {
-            get => string.IsNullOrEmpty(timeOutInMilliSeconds) ? CommonConstants.DefaultTimeOutInMilliSeconds : timeOutInMilliSeconds;
+            get => string.IsNullOrEmpty(timeOutInMilliSeconds) ? Constants.DefaultTimeOutInMilliSeconds : timeOutInMilliSeconds;
             set
             {
                 if (value.IsNonNegativeInteger())
@@ -111,24 +111,24 @@ namespace Quiz.Ui.Options
                 }
                 else
                 {
-                    MessageBoxes.DisplayInvalidIntegerError(CommonConstants.TimeOutInMilliSecondsOptionLabel, caption);
+                    MessageBoxes.DisplayInvalidIntegerError(Constants.TimeOutInMilliSecondsOptionLabel, caption);
                 }
             }
         }
 
-        [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName(CommonConstants.ShowQuizUponClosingSolutionOptionLabel)]
-        [Description(CommonConstants.ShowQuizUponClosingSolutionOptionDetailedDescription)]
+        [Category(Constants.CategorySubLevel)]
+        [DisplayName(Constants.ShowQuizUponClosingSolutionOptionLabel)]
+        [Description(Constants.ShowQuizUponClosingSolutionOptionDetailedDescription)]
         public bool ShowQuizUponClosingSolution { get; set; } = false;
 
-        [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName(CommonConstants.ShowQuizUponOpeningSolutionOptionLabel)]
-        [Description(CommonConstants.ShowQuizUponOpeningSolutionOptionDetailedDescription)]
+        [Category(Constants.CategorySubLevel)]
+        [DisplayName(Constants.ShowQuizUponOpeningSolutionOptionLabel)]
+        [Description(Constants.ShowQuizUponOpeningSolutionOptionDetailedDescription)]
         public bool ShowQuizUponOpeningSolution { get; set; } = true;
 
-        [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName(CommonConstants.SuppressClosingWithoutSubmitingAnswerWarningOptionLabel)]
-        [Description(CommonConstants.SuppressClosingWithoutSubmitingAnswerWarningOptionDetailedDescription)]
+        [Category(Constants.CategorySubLevel)]
+        [DisplayName(Constants.SuppressClosingWithoutSubmitingAnswerWarningOptionLabel)]
+        [Description(Constants.SuppressClosingWithoutSubmitingAnswerWarningOptionDetailedDescription)]
         public bool SuppressClosingWithoutSubmitingAnswerWarning { get; set; } = false;
     }
 }

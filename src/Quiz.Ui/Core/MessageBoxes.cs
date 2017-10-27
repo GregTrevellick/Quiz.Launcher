@@ -26,7 +26,7 @@ namespace Quiz.Ui.Core
         public static void DisplayInvalidIntegerError(string labelName, string caption)
         {
             MessageBox.Show(
-                CommonConstants.GetInvalidInteger(labelName),
+                Constants.GetInvalidInteger(labelName),
                 caption,
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
@@ -37,7 +37,7 @@ namespace Quiz.Ui.Core
             var proceedToSave = false;
 
             var box = MessageBox.Show(
-                CommonConstants.TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits,
+                Constants.TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits,
                 caption,
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Warning);

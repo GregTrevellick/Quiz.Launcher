@@ -20,7 +20,7 @@ namespace Quiz.Ui
             HiddenOptionsDto hiddenOptionsDto = null;
 
             var clientGateway = new ClientGateway();
-            var gatewayResponse = clientGateway.GetGatewayResponse(timeOutInMilliSeconds, CommonConstants.TimeOutInMilliSecondsOptionLabel, optionsName);
+            var gatewayResponse = clientGateway.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
 
             var quizDialogDto = GetQuizDialogDto(gatewayResponse);
             DisplayPopUpMessage(quizDialogDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);

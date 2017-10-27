@@ -2,7 +2,7 @@
 
 namespace Quiz.Ui.Core
 {
-    public static class CommonConstants
+    public static class Constants
     {
         public const string CategorySubLevel = "General";
         public const string DefaultMaximumPopUpsWeekDay = "7";

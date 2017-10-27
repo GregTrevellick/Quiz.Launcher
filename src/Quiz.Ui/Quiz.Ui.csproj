@@ -55,7 +55,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Core\CommonConstants.cs" />
+    <Compile Include="Core\Constants.cs" />
     <Compile Include="Core\DecisionMaker.cs" />
     <Compile Include="Core\GeneralOptionsDto.cs" />
     <Compile Include="Core\HiddenOptionsDto.cs" />
