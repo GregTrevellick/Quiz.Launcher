@@ -16,39 +16,39 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelGeekQuiz">
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelQuiz">
             <StackPanel Orientation="Vertical">
                 <!--<Image Margin="10,10,10,10" Name="AppImageGeekQuiz" Stretch="None" Source="Resources/GeekQuiz/VsixExtensionIcon_16x16.png"/>-->
-                <TextBlock Margin="10,10,10,10" Name="AppTextBlockQuestionGeekQuiz" />
-                <RadioButton Margin="10,5,5,5" Name="RadioBtn1"/>
-                <RadioButton Margin="10,5,5,5" Name="RadioBtn2"/>
-                <RadioButton Margin="10,5,5,5" Name="RadioBtn3"/>
-                <RadioButton Margin="10,5,5,5" Name="RadioBtn4"/>
+                <TextBlock Margin="10,10,10,10" Name="TextBlockQuestion" />
+                <RadioButton Margin="10,5,5,5" Name="RadioButton1"/>
+                <RadioButton Margin="10,5,5,5" Name="RadioButton2"/>
+                <RadioButton Margin="10,5,5,5" Name="RadioButton3"/>
+                <RadioButton Margin="10,5,5,5" Name="RadioButton4"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Image Margin="10,10,10,10" Visibility="Collapsed" Name="GeekQuizReplyEmoticonCorrect" Stretch="None" Source="GeekQuiz.Common/Resources/CorrectAnswer.png" />
-                <Image Margin="10,10,10,10" Visibility="Collapsed" Name="GeekQuizReplyEmoticonIncorrect" Stretch="None" Source="GeekQuiz.Common/Resources/IncorrectAnswer.png" />
-                <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockGeekQuizReply" />
+                <Image Margin="10,10,10,10" Visibility="Collapsed" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
+                <Image Margin="10,10,10,10" Visibility="Collapsed" Name="QuizReplyEmoticonIncorrect" Stretch="None" Source="Core/Resources/IncorrectAnswer.png" />
+                <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockQuizReply" />
             </StackPanel>
             <StackPanel>
-                <TextBlock Margin="10,10,10,10" Name="AppTextBlockGeekQuizUserStatus" />
+                <TextBlock Margin="10,10,10,10" Name="TextBlockUserStatus" />
             </StackPanel>
             <StackPanel>
-                <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" Click="AppBtnSubmitMultiChoiceAnwser_OnClick" Name="AppBtnGeekQuizSubmitMultiChoiceAnwser"/>
+                <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonSubmitMultiChoiceAnwser_OnClick" Name="ButtonSubmitMultiChoiceAnwser"/>
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Name="StackPanelFooter">
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Name="StackPanelFooter2">
             <StackPanel Orientation="Horizontal">
-                <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
-                <Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnHelp_OnClick" Name="AppBtnHelp"/>
+                <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="ButtonClose_OnClick" Name="ButtonClose"/>
+                <Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="ButtonHelp_OnClick" Name="ButtonHelp"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp" />
+                <TextBlock Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp2" />
             </StackPanel>
         </StackPanel>
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockErrorDetails" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="TextBlockErrorDetails" />
 
     </Grid>
 

@@ -30,29 +30,29 @@ namespace Quiz.Ui
 
             InitializeComponent();
             DataContext = this;
-            StackPanelGeekQuiz.Visibility = Visibility.Visible;
+            StackPanelQuiz.Visibility = Visibility.Visible;
         }
 
-        private void AppBtnHelp_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonHelp_OnClick(object sender, RoutedEventArgs e)
         {
-            if (TextBlockHelp.Visibility == Visibility.Visible)
+            if (TextBlockHelp2.Visibility == Visibility.Visible)
             {
-                TextBlockHelp.Visibility = Visibility.Collapsed;
+                TextBlockHelp2.Visibility = Visibility.Collapsed;
             }
             else
             {
-                TextBlockHelp.Text = $"To alter frequency and volume of delivery go to Tools | Options | {_optionsName}";
-                TextBlockHelp.Visibility = Visibility.Visible;
+                TextBlockHelp2.Text = $"To alter frequency and volume of delivery go to Tools | Options | {_optionsName}";
+                TextBlockHelp2.Visibility = Visibility.Visible;
             }
         }
 
-        private void AppBtnClose_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
         {
             var shouldClose = true;
 
             if (_questionType != QuestionType.None)
             {
-                if (AppBtnGeekQuizSubmitMultiChoiceAnwser.IsEnabled)
+                if (ButtonSubmitMultiChoiceAnwser.IsEnabled)
                 {
                     if (!_suppressClosingWithoutSubmitingAnswerWarning)
                     {
@@ -72,31 +72,31 @@ namespace Quiz.Ui
             }
         }
 
-        private void AppBtnSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)//GeekQuiz
+        private void ButtonSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)
         {
             string response;
 
-            if (RadioBtn1.IsChecked == true)
+            if (RadioButton1.IsChecked == true)
             {
-                response = RadioBtn1.Content.ToString();
+                response = RadioButton1.Content.ToString();
             }
             else
             {
-                if (RadioBtn2.IsChecked == true)
+                if (RadioButton2.IsChecked == true)
                 {
-                    response = RadioBtn2.Content.ToString();
+                    response = RadioButton2.Content.ToString();
                 }
                 else
                 {
-                    if (RadioBtn3.IsChecked == true)
+                    if (RadioButton3.IsChecked == true)
                     {
-                        response = RadioBtn3.Content.ToString();
+                        response = RadioButton3.Content.ToString();
                     }
                     else
                     {
-                        if (RadioBtn4.IsChecked == true)
+                        if (RadioButton4.IsChecked == true)
                         {
-                            response = RadioBtn4.Content.ToString();
+                            response = RadioButton4.Content.ToString();
                         }
                         else
                         {
@@ -106,22 +106,22 @@ namespace Quiz.Ui
                 }
             }
 
-            ActOnAnswerGivenGeekQuiz(response);
+            ActOnAnswerGiven(response);
         }
 
-        private void ActOnAnswerGivenGeekQuiz(string response)
+        private void ActOnAnswerGiven(string response)
         {
-            GeekQuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
-            GeekQuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
+            QuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
+            QuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
 
-            var isResponseCorrect = IsResponseCorrectGeekQuiz(response);
+            var isResponseCorrect = IsResponseCorrect(response);
 
             if (isResponseCorrect)
             {
-                TextBlockGeekQuizReply.Text = "Well,done - correct answer !";
-                SetQuizReplyColourGeekQuiz(Colors.Green);
-                AppBtnGeekQuizSubmitMultiChoiceAnwser.IsEnabled = false;
-                GeekQuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
+                TextBlockQuizReply.Text = "Well,done - correct answer !";
+                SetQuizReplyColour(Colors.Green);
+                ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
+                QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
 
                 if (!_userStatusTotalsIncremented && _totalQuestionsAnsweredCorrectly.HasValue)
                 {
@@ -132,38 +132,38 @@ namespace Quiz.Ui
             {
                 if (response == null)
                 {
-                    TextBlockGeekQuizReply.Text = "No cheating please - you must supply an answer.";
-                    SetQuizReplyColourGeekQuiz(Colors.Orange);
+                    TextBlockQuizReply.Text = "No cheating please - you must supply an answer.";
+                    SetQuizReplyColour(Colors.Orange);
                 }
                 else
                 {
-                    TextBlockGeekQuizReply.Text = "Oh dear - wrong answer.";
+                    TextBlockQuizReply.Text = "Oh dear - wrong answer.";
 
                     if (_questionType == QuestionType.MultiChoice)
                     {
-                        TextBlockGeekQuizReply.Text += $" The correct answer is {_correctAnswer}";
+                        TextBlockQuizReply.Text += $" The correct answer is {_correctAnswer}";
                     }
 
-                    AppBtnGeekQuizSubmitMultiChoiceAnwser.IsEnabled = false;
-                    SetQuizReplyColourGeekQuiz(Colors.Red);
-                    GeekQuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
+                    ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
+                    SetQuizReplyColour(Colors.Red);
+                    QuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
                 }
             }
 
-            TextBlockGeekQuizReply.Visibility = Visibility.Visible;
+            TextBlockQuizReply.Visibility = Visibility.Visible;
 
             if (!_userStatusTotalsIncremented && _totalQuestionsAsked.HasValue)
             {
                 _totalQuestionsAsked++;
                 _userStatusTotalsIncremented = true;
             }
-            var userStatus = GetUserStatusGeekQuiz(_totalQuestionsAnsweredCorrectly, _totalQuestionsAsked);
-            AppTextBlockGeekQuizUserStatus.Text = userStatus;
+            var userStatus = GetUserStatus(_totalQuestionsAnsweredCorrectly, _totalQuestionsAsked);
+            TextBlockUserStatus.Text = userStatus;
 
             PersistHiddenOptionsEventHandler?.Invoke(_totalQuestionsAsked, _totalQuestionsAnsweredCorrectly);
         }
 
-        internal string GetUserStatusGeekQuiz(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        internal string GetUserStatus(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             int percentageSuccess;
 
@@ -193,17 +193,15 @@ namespace Quiz.Ui
             return userStatus;
         }
 
-        private void SetQuizReplyColourGeekQuiz(Color color)
+        private void SetQuizReplyColour(Color color)
         {
-            TextBlockGeekQuizReply.Foreground = new SolidColorBrush(color);
+            TextBlockQuizReply.Foreground = new SolidColorBrush(color);
         }
 
-        private bool IsResponseCorrectGeekQuiz(string response)
+        private bool IsResponseCorrect(string response)
         {
             var rightAnswer = response == _correctAnswer;
-
             return rightAnswer;
         }
-
     }
 }

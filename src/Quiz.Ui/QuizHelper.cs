@@ -53,13 +53,13 @@ namespace Quiz.Ui
         {
             var vsixQuizDialog = new VsixQuizDialog(quizDialogDto.OptionsName)
             {
-                AppTextBlockErrorDetails = { Text = quizDialogDto.ErrorDetails },
+                TextBlockErrorDetails = { Text = quizDialogDto.ErrorDetails },
                 /////////////////////////Title = quizDialogDto.PopUpTitle,
                 _suppressClosingWithoutSubmitingAnswerWarning =
                         suppressClosingWithoutSubmitingAnswerWarning.HasValue
                             ? suppressClosingWithoutSubmitingAnswerWarning.Value
                             : false,
-                AppTextBlockQuestionGeekQuiz = { Text = quizDialogDto.MultipleChoiceCorrectAnswer },
+                TextBlockQuestion = { Text = quizDialogDto.MultipleChoiceCorrectAnswer },
                 _questionType = quizDialogDto.QuestionType,
                 _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly,
                 _totalQuestionsAsked = totalQuestionsAsked
@@ -70,7 +70,7 @@ namespace Quiz.Ui
             if (!string.IsNullOrWhiteSpace(quizDialogDto.QuestionDifficulty))
             {
                 var run = new Run(quizDialogDto.QuestionDifficulty);
-                vsixQuizDialog.AppTextBlockQuestionGeekQuiz.Inlines.Add(run);
+                vsixQuizDialog.TextBlockQuestion.Inlines.Add(run);
             }
 
             if (!string.IsNullOrWhiteSpace(quizDialogDto.QuizQuestion))
@@ -79,45 +79,45 @@ namespace Quiz.Ui
                 {
                     FontWeight = FontWeights.Bold
                 };
-                vsixQuizDialog.AppTextBlockQuestionGeekQuiz.Inlines.Add(run);
+                vsixQuizDialog.TextBlockQuestion.Inlines.Add(run);
             }
 
-            if (!string.IsNullOrWhiteSpace(vsixQuizDialog.AppTextBlockErrorDetails.Text))
+            if (!string.IsNullOrWhiteSpace(vsixQuizDialog.TextBlockErrorDetails.Text))
             {
-                vsixQuizDialog.AppTextBlockErrorDetails.Visibility = Visibility.Visible;
+                vsixQuizDialog.TextBlockErrorDetails.Visibility = Visibility.Visible;
             }
 
             if (quizDialogDto.QuestionType != QuestionType.None)
             {
-                vsixQuizDialog.AppBtnGeekQuizSubmitMultiChoiceAnwser.Visibility = Visibility.Visible;
+                vsixQuizDialog.ButtonSubmitMultiChoiceAnwser.Visibility = Visibility.Visible;
 
                 if (quizDialogDto.QuestionType == QuestionType.TrueFalse)
                 {
                     var trueFollowedByFalseAnswers = quizDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();
-                    vsixQuizDialog.RadioBtn1.Content = trueFollowedByFalseAnswers[0];
-                    vsixQuizDialog.RadioBtn2.Content = trueFollowedByFalseAnswers[1];
+                    vsixQuizDialog.RadioButton1.Content = trueFollowedByFalseAnswers[0];
+                    vsixQuizDialog.RadioButton2.Content = trueFollowedByFalseAnswers[1];
                 }
                 else
                 {
                     var random = new Random();
                     var randomlySortedAnswers = quizDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray();
-                    vsixQuizDialog.RadioBtn1.Content = randomlySortedAnswers[0];
-                    vsixQuizDialog.RadioBtn2.Content = randomlySortedAnswers[1];
-                    vsixQuizDialog.RadioBtn3.Content = randomlySortedAnswers[2];
-                    vsixQuizDialog.RadioBtn4.Content = randomlySortedAnswers[3];
+                    vsixQuizDialog.RadioButton1.Content = randomlySortedAnswers[0];
+                    vsixQuizDialog.RadioButton2.Content = randomlySortedAnswers[1];
+                    vsixQuizDialog.RadioButton3.Content = randomlySortedAnswers[2];
+                    vsixQuizDialog.RadioButton4.Content = randomlySortedAnswers[3];
                 }
             }
 
-            SetRadioButtonVisibility(vsixQuizDialog.RadioBtn1);
-            SetRadioButtonVisibility(vsixQuizDialog.RadioBtn2);
-            SetRadioButtonVisibility(vsixQuizDialog.RadioBtn3);
-            SetRadioButtonVisibility(vsixQuizDialog.RadioBtn4);
+            SetRadioButtonVisibility(vsixQuizDialog.RadioButton1);
+            SetRadioButtonVisibility(vsixQuizDialog.RadioButton2);
+            SetRadioButtonVisibility(vsixQuizDialog.RadioButton3);
+            SetRadioButtonVisibility(vsixQuizDialog.RadioButton4);
 
             if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
             {
-                var userStatus = vsixQuizDialog.GetUserStatusGeekQuiz(totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
-                vsixQuizDialog.AppTextBlockGeekQuizUserStatus.Text = userStatus;
-                vsixQuizDialog.AppTextBlockGeekQuizUserStatus.Visibility = Visibility.Visible;
+                var userStatus = vsixQuizDialog.GetUserStatus(totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
+                vsixQuizDialog.TextBlockUserStatus.Text = userStatus;
+                vsixQuizDialog.TextBlockUserStatus.Visibility = Visibility.Visible;
             }
 
             //triviaDialog.Show();
