@@ -83,7 +83,7 @@ namespace Quiz.Ui
             if (shouldClose)
             {
                 //Close();
-                //((Window) sender).Close();
+                ((Window) sender).Close();
             }
         }
 
