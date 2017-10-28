@@ -129,8 +129,9 @@ namespace Quiz.Ui
                 SizeToContent = SizeToContent.WidthAndHeight,
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
-           // var iconUri = new TriviaMessage().GetIconUri();
-           // window.Icon = new BitmapImage(iconUri);
+            // var iconUri = new TriviaMessage().GetIconUri();
+            // window.Icon = new BitmapImage(iconUri);
+            window.ResizeMode = ResizeMode.CanResize;
             window.ShowDialog();
         }
 

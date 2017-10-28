@@ -82,8 +82,11 @@ namespace Quiz.Ui
 
             if (shouldClose)
             {
-                //Close();
-                ((Window) sender).Close();
+                //((Window) sender).Close();
+                //               var myWindow = (Window)VisualParent.GetSelfAndAncestors().FirstOrDefault(a => a is Window);
+                //               myWindow.Close()
+
+                var window = Window.GetWindow(this);
             }
         }
 

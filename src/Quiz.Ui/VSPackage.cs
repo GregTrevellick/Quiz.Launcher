@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
+//using System.Reflection;
 using System.Runtime.InteropServices;
 using EnvDTE;
 using Microsoft.VisualStudio.Shell;
