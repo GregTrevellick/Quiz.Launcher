@@ -43,39 +43,35 @@ namespace Quiz.Ui
         void window_Closing(object sender, global::System.ComponentModel.CancelEventArgs e)
         {
             //Intercept the closing of window (top right hand corner 'X') and cancel the close if appropriate (i.e. when no answer yet supplied, so user probably closing prematurely by mistake)
-            var shouldCloseWindow = ShouldCloseWindow(sender, e);
+            var shouldCloseWindow = ShouldCloseWindow();
             if (!shouldCloseWindow)
             { 
                 e.Cancel = false;
             }
         }
 
-        private void ButtonHelp_OnClick(object sender, RoutedEventArgs e)
-        {
-            if (TextBlockHelp2.Visibility == Visibility.Visible)
-            {
-                TextBlockHelp2.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                TextBlockHelp2.Text = $"To alter frequency and volume of delivery go to Tools | Options | {_optionsName}";
-                TextBlockHelp2.Visibility = Visibility.Visible;
-            }
-        }
-
         private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
         {
-            var shouldCloseWindow = ShouldCloseWindow(sender, e);
+            var shouldCloseWindow = ShouldCloseWindow();
             if (shouldCloseWindow)
             {
                 //TODO close the window somehow
-                window_Closing(sender, e);
+                //window_Closing(sender, e);
+
                 //////////////////e.Close();
                 //////////////////e.Cancel = false;
+
+
+                var parentWindow = Window.GetWindow((DependencyObject)sender);
+                if (parentWindow != null)
+                {
+                    parentWindow.Close();
+                }
+
             }
         }
-
-        private bool ShouldCloseWindow(object sender, RoutedEventArgs e)
+        
+        private bool ShouldCloseWindow()
         {
             var shouldClose = true;
 
@@ -111,6 +107,19 @@ namespace Quiz.Ui
             else
             {
                 return false;
+            }
+        }
+
+        private void ButtonHelp_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (TextBlockHelp2.Visibility == Visibility.Visible)
+            {
+                TextBlockHelp2.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                TextBlockHelp2.Text = $"To alter frequency and volume of delivery go to Tools | Options | {_optionsName}";
+                TextBlockHelp2.Visibility = Visibility.Visible;
             }
         }
 
