@@ -55,19 +55,11 @@ namespace Quiz.Ui
             var shouldCloseWindow = ShouldCloseWindow();
             if (shouldCloseWindow)
             {
-                //TODO close the window somehow
-                //window_Closing(sender, e);
-
-                //////////////////e.Close();
-                //////////////////e.Cancel = false;
-
-
                 var parentWindow = Window.GetWindow((DependencyObject)sender);
                 if (parentWindow != null)
                 {
                     parentWindow.Close();
                 }
-
             }
         }
         
