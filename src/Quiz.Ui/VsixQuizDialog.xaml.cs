@@ -42,9 +42,12 @@ namespace Quiz.Ui
 
         void window_Closing(object sender, global::System.ComponentModel.CancelEventArgs e)
         {
-            //do something before the window is closed...
-            e.Cancel = true;
-            ButtonClose_OnClick(sender, null);
+            //Intercept the closing of window (top right hand corner 'X') and cancel the close if appropriate (i.e. when no answer yet supplied, so user probably closing prematurely by mistake)
+            var shouldCloseWindow = ShouldCloseWindow(sender, e);
+            if (!shouldCloseWindow)
+            { 
+                e.Cancel = false;
+            }
         }
 
         private void ButtonHelp_OnClick(object sender, RoutedEventArgs e)
@@ -61,6 +64,18 @@ namespace Quiz.Ui
         }
 
         private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
+        {
+            var shouldCloseWindow = ShouldCloseWindow(sender, e);
+            if (shouldCloseWindow)
+            {
+                //TODO close the window somehow
+                window_Closing(sender, e);
+                //////////////////e.Close();
+                //////////////////e.Cancel = false;
+            }
+        }
+
+        private bool ShouldCloseWindow(object sender, RoutedEventArgs e)
         {
             var shouldClose = true;
 
@@ -86,7 +101,16 @@ namespace Quiz.Ui
                 //               var myWindow = (Window)VisualParent.GetSelfAndAncestors().FirstOrDefault(a => a is Window);
                 //               myWindow.Close()
 
-                var window = Window.GetWindow(this);
+
+                //var parentWindow = Window.GetWindow(this);
+                //parentWindow.Close();
+
+               // e.Cancel = true;
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
