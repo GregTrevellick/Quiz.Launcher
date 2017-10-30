@@ -60,7 +60,6 @@ namespace Quiz.Ui
                         suppressClosingWithoutSubmitingAnswerWarning.HasValue
                             ? suppressClosingWithoutSubmitingAnswerWarning.Value
                             : false,
-                ////////////////////////////////////////////////////////////////////////////////////TextBlockQuestion = { Text = quizDialogDto.MultipleChoiceCorrectAnswer },
                 QuestionType = quizDialogDto.QuestionType,
                 TotalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly,
                 TotalQuestionsAsked = totalQuestionsAsked,
