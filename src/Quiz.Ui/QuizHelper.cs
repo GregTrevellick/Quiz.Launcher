@@ -2,9 +2,11 @@
 using Quiz.Ui.Gateway;
 using System;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Media.Imaging;
 
 namespace Quiz.Ui
 {
@@ -127,11 +129,8 @@ namespace Quiz.Ui
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
 
-           // var iconUri = GetIconUri();
-           // window.Icon = new BitmapImage(iconUri);
-          //  window.Icon = new BitmapImage(new Uri("pack://application:,,,/Resources/VsixExtensionIcon_16x16.png"));
-
-
+            var iconUri = GetIconUri();
+            window.Icon = new BitmapImage(iconUri);
             window.ResizeMode = ResizeMode.CanResize;
             window.ShowDialog();
         }
@@ -172,15 +171,9 @@ namespace Quiz.Ui
 
         public Uri GetIconUri()
         {
-            // var assemblyName = Assembly.GetExecutingAssembly().GetName();
-            //var imageSubDirectory = "";//appName.ToString();
-            //var packUri = $"pack://application:,,,/{assemblyName.Name};component/Resources/{imageSubDirectory}/VsixExtensionIcon_16x16.png";
-            // return new Uri(packUri);
-
-
-            var iconUri = new Uri("pack://application:,,,/source.extension.ico", UriKind.RelativeOrAbsolute);
-            //this.Icon = BitmapFrame.Create(iconUri);
-            return iconUri;
+            var assemblyName = Assembly.GetExecutingAssembly().GetName();
+            var packUri = $"pack://application:,,,/{assemblyName.Name};component/Resources/VsixExtensionIcon_90x90_Embedded.png";
+            return new Uri(packUri, UriKind.RelativeOrAbsolute);
         }
     }
 }
