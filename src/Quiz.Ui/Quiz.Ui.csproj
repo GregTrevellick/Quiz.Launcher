@@ -223,7 +223,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Resource Include="Resources\VsixExtensionIcon_90x90_Embedded.png">
+    <Resource Include="Resources\VsixExtensionIcon_90x90_Resource.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Content Include="source.extension.ico">

@@ -172,7 +172,7 @@ namespace Quiz.Ui
         public Uri GetIconUri()
         {
             var assemblyName = Assembly.GetExecutingAssembly().GetName();
-            var packUri = $"pack://application:,,,/{assemblyName.Name};component/Resources/VsixExtensionIcon_90x90_Embedded.png";
+            var packUri = $"pack://application:,,,/{assemblyName.Name};component/Resources/VsixExtensionIcon_90x90_Resource.png";
             return new Uri(packUri, UriKind.RelativeOrAbsolute);
         }
     }
