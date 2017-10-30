@@ -22,6 +22,7 @@ namespace Quiz.Ui
 
         private DTE dte;
         private SolutionEvents solutionEvents;
+        private GeneralOptionsDto generalOptionsDto;
 
         protected override void Initialize()
         {
@@ -31,12 +32,14 @@ namespace Quiz.Ui
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
             solutionEvents = dte.Events.SolutionEvents;
 
-            if (GeneralOptionsDto.ShowQuizUponOpeningSolution)
+            generalOptionsDto = GetGeneralOptionsDto();
+
+            if (generalOptionsDto.ShowQuizUponOpeningSolution)
             {
                 solutionEvents.Opened += OnSolutionOpenedAndOrClosed;
             }
 
-            if (GeneralOptionsDto.ShowQuizUponClosingSolution)
+            if (generalOptionsDto.ShowQuizUponClosingSolution)
             {
                 solutionEvents.AfterClosing += OnSolutionOpenedAndOrClosed;
             }
@@ -46,7 +49,9 @@ namespace Quiz.Ui
         {
             //ChaseRatings();
 
-            var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(GeneralOptionsDto);
+            generalOptionsDto = GetGeneralOptionsDto();
+
+            var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(generalOptionsDto);
 
             if (shouldShowQuiz)
             {
@@ -54,7 +59,7 @@ namespace Quiz.Ui
                 var quizHelper = new QuizHelper();
                 quizHelper.PersistHiddenOptionsEventHandler2 += UpdateHiddenOptions3;
 
-                var hiddenOptionsDto = quizHelper.ShowQuiz(popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name, GeneralOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, GeneralOptionsDto.TotalQuestionsAnsweredCorrectly, GeneralOptionsDto.TotalQuestionsAsked);
+                var hiddenOptionsDto = quizHelper.ShowQuiz(popUpTitle, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpCountToday, generalOptionsDto.TimeOutInMilliSeconds, Vsix.Name, generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, generalOptionsDto.TotalQuestionsAnsweredCorrectly, generalOptionsDto.TotalQuestionsAsked);
 
                 if (hiddenOptionsDto != null)
                 {
@@ -122,28 +127,26 @@ namespace Quiz.Ui
             hiddenOptions.SaveSettingsToStorage();
         }
 
-        private GeneralOptionsDto GeneralOptionsDto
+        private GeneralOptionsDto GetGeneralOptionsDto()
         {
-            get
-            {
-                var generalOptions = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
-                var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
+            var generalOptions = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
+            var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
 
-                return new GeneralOptionsDto
-                {
-                    LastPopUpDateTime = hiddenOptions.LastPopUpDateTime,
-                    MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay.GetAsInteger(),
-                    MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
-                    PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
-                    PopUpCountToday = hiddenOptions.PopUpCountToday,
-                    ShowQuizUponClosingSolution = generalOptions.ShowQuizUponClosingSolution,
-                    ShowQuizUponOpeningSolution = generalOptions.ShowQuizUponOpeningSolution,
-                    SuppressClosingWithoutSubmitingAnswerWarning = generalOptions.SuppressClosingWithoutSubmitingAnswerWarning,
-                    TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
-                    TotalQuestionsAnsweredCorrectly = hiddenOptions.TotalQuestionsAnsweredCorrectly,
-                    TotalQuestionsAsked = hiddenOptions.TotalQuestionsAsked,
-                };
-            }
+            return new GeneralOptionsDto
+            {
+                LastPopUpDateTime = hiddenOptions.LastPopUpDateTime,
+                MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay.GetAsInteger(),
+                MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
+                PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
+                PopUpCountToday = hiddenOptions.PopUpCountToday,
+                ShowQuizUponClosingSolution = generalOptions.ShowQuizUponClosingSolution,
+                ShowQuizUponOpeningSolution = generalOptions.ShowQuizUponOpeningSolution,
+                SuppressClosingWithoutSubmitingAnswerWarning =
+                    generalOptions.SuppressClosingWithoutSubmitingAnswerWarning,
+                TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
+                TotalQuestionsAnsweredCorrectly = hiddenOptions.TotalQuestionsAnsweredCorrectly,
+                TotalQuestionsAsked = hiddenOptions.TotalQuestionsAsked,
+            };
         }
     }
 }
