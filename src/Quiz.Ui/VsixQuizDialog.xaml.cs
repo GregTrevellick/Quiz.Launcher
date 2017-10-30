@@ -9,12 +9,12 @@ namespace Quiz.Ui
 {
     public partial class VsixQuizDialog : UserControl
     {
-        public string _correctAnswer;
-        private string _optionsName;
-        public QuestionType _questionType;
-        public bool _suppressClosingWithoutSubmitingAnswerWarning;
-        public int? _totalQuestionsAnsweredCorrectly;
-        public int? _totalQuestionsAsked;
+        public string CorrectAnswer;
+        private readonly string _optionsName;
+        public QuestionType QuestionType;
+        public bool SuppressClosingWithoutSubmitingAnswerWarning;
+        public int? TotalQuestionsAnsweredCorrectly;
+        public int? TotalQuestionsAsked;
         private bool _userStatusTotalsIncremented;
         public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
@@ -34,72 +34,54 @@ namespace Quiz.Ui
             this.Loaded += UserControl1_Loaded;
         }
 
+        private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
+        {
+            var parentWindow = Window.GetWindow((DependencyObject)sender);
+
+            if (parentWindow != null)
+            {
+                parentWindow.Close();
+            }
+        }
+
         void UserControl1_Loaded(object sender, RoutedEventArgs e)
         {
             Window window = Window.GetWindow(this);
             window.Closing += window_Closing;
         }
-
+        
         void window_Closing(object sender, global::System.ComponentModel.CancelEventArgs e)
         {
-            //Intercept the closing of window (top right hand corner 'X') and cancel the close if appropriate (i.e. when no answer yet supplied, so user probably closing prematurely by mistake)
+            //Intercept the closing of window (top right hand corner 'X' or bespoke close button ) and cancel the close if appropriate (i.e. when no answer yet supplied, so user probably closing prematurely by mistake)
             var shouldCloseWindow = ShouldCloseWindow();
+
             if (!shouldCloseWindow)
             { 
                 e.Cancel = false;
             }
         }
-
-        private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
-        {
-            var shouldCloseWindow = ShouldCloseWindow();
-            if (shouldCloseWindow)
-            {
-                var parentWindow = Window.GetWindow((DependencyObject)sender);
-                if (parentWindow != null)
-                {
-                    parentWindow.Close();
-                }
-            }
-        }
         
         private bool ShouldCloseWindow()
         {
-            var shouldClose = true;
+            var shouldCloseWindow = true;
 
-            if (_questionType != QuestionType.None)
+            if (QuestionType != QuestionType.None)
             {
                 if (ButtonSubmitMultiChoiceAnwser.IsEnabled)
                 {
-                    if (!_suppressClosingWithoutSubmitingAnswerWarning)
+                    if (!SuppressClosingWithoutSubmitingAnswerWarning)
                     {
                         var closeWithoutSubmitingAnswer = MessageBoxes.ConfirmCloseWithoutSubmitingAnswer(_optionsName);
 
                         if (!closeWithoutSubmitingAnswer)
                         {
-                            shouldClose = false;
+                            shouldCloseWindow = false;
                         }
                     }
                 }
             }
 
-            if (shouldClose)
-            {
-                //((Window) sender).Close();
-                //               var myWindow = (Window)VisualParent.GetSelfAndAncestors().FirstOrDefault(a => a is Window);
-                //               myWindow.Close()
-
-
-                //var parentWindow = Window.GetWindow(this);
-                //parentWindow.Close();
-
-               // e.Cancel = true;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return shouldCloseWindow;
         }
 
         private void ButtonHelp_OnClick(object sender, RoutedEventArgs e)
@@ -166,9 +148,9 @@ namespace Quiz.Ui
                 ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
                 QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
 
-                if (!_userStatusTotalsIncremented && _totalQuestionsAnsweredCorrectly.HasValue)
+                if (!_userStatusTotalsIncremented && TotalQuestionsAnsweredCorrectly.HasValue)
                 {
-                    _totalQuestionsAnsweredCorrectly++;
+                    TotalQuestionsAnsweredCorrectly++;
                 }
             }
             else
@@ -182,9 +164,9 @@ namespace Quiz.Ui
                 {
                     TextBlockQuizReply.Text = "Oh dear - wrong answer.";
 
-                    if (_questionType == QuestionType.MultiChoice)
+                    if (QuestionType == QuestionType.MultiChoice)
                     {
-                        TextBlockQuizReply.Text += $" The correct answer is {_correctAnswer}";
+                        TextBlockQuizReply.Text += $" The correct answer is {CorrectAnswer}";
                     }
 
                     ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
@@ -195,15 +177,15 @@ namespace Quiz.Ui
 
             TextBlockQuizReply.Visibility = Visibility.Visible;
 
-            if (!_userStatusTotalsIncremented && _totalQuestionsAsked.HasValue)
+            if (!_userStatusTotalsIncremented && TotalQuestionsAsked.HasValue)
             {
-                _totalQuestionsAsked++;
+                TotalQuestionsAsked++;
                 _userStatusTotalsIncremented = true;
             }
-            var userStatus = GetUserStatus(_totalQuestionsAnsweredCorrectly, _totalQuestionsAsked);
+            var userStatus = GetUserStatus(TotalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
             TextBlockUserStatus.Text = userStatus;
 
-            PersistHiddenOptionsEventHandler?.Invoke(_totalQuestionsAsked, _totalQuestionsAnsweredCorrectly);
+            PersistHiddenOptionsEventHandler?.Invoke(TotalQuestionsAsked, TotalQuestionsAnsweredCorrectly);
         }
 
         internal string GetUserStatus(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
@@ -243,7 +225,7 @@ namespace Quiz.Ui
 
         private bool IsResponseCorrect(string response)
         {
-            var rightAnswer = response == _correctAnswer;
+            var rightAnswer = response == CorrectAnswer;
             return rightAnswer;
         }
     }

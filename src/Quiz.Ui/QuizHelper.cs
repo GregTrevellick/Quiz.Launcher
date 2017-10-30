@@ -55,15 +55,15 @@ namespace Quiz.Ui
             {
                 TextBlockErrorDetails = { Text = quizDialogDto.ErrorDetails },
                 /////////////////////////Title = quizDialogDto.PopUpTitle,
-                _suppressClosingWithoutSubmitingAnswerWarning =
+                SuppressClosingWithoutSubmitingAnswerWarning =
                         suppressClosingWithoutSubmitingAnswerWarning.HasValue
                             ? suppressClosingWithoutSubmitingAnswerWarning.Value
                             : false,
                 ////////////////////////////////////////////////////////////////////////////////////TextBlockQuestion = { Text = quizDialogDto.MultipleChoiceCorrectAnswer },
-                _questionType = quizDialogDto.QuestionType,
-                _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly,
-                _totalQuestionsAsked = totalQuestionsAsked,
-                _correctAnswer = quizDialogDto.MultipleChoiceCorrectAnswer
+                QuestionType = quizDialogDto.QuestionType,
+                TotalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly,
+                TotalQuestionsAsked = totalQuestionsAsked,
+                CorrectAnswer = quizDialogDto.MultipleChoiceCorrectAnswer
             };
 
             vsixQuizDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptions;
