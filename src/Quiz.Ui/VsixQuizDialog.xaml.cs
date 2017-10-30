@@ -92,7 +92,7 @@ namespace Quiz.Ui
             }
             else
             {
-                TextBlockHelp2.Text = $"To alter frequency and volume of delivery go to Tools | Options | {_optionsName}";
+                TextBlockHelp2.Text = Constants.HelpText(_optionsName);//$"To alter the frequency and volume of quiz questions go to Tools | Options | {}";
                 TextBlockHelp2.Visibility = Visibility.Visible;
             }
         }

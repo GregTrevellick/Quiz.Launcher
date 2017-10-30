@@ -20,10 +20,10 @@
             <StackPanel Orientation="Vertical">
                 <!--<Image Margin="10,10,10,10" Name="AppImageGeekQuiz" Stretch="None" Source="Resources/GeekQuiz/VsixExtensionIcon_16x16.png"/>-->
                 <TextBlock Margin="10,10,10,10" Name="TextBlockQuestion" />
-                <RadioButton Margin="10,5,5,5" Name="RadioButton1"/>
-                <RadioButton Margin="10,5,5,5" Name="RadioButton2"/>
-                <RadioButton Margin="10,5,5,5" Name="RadioButton3"/>
-                <RadioButton Margin="10,5,5,5" Name="RadioButton4"/>
+                <RadioButton Margin="10,5,5,5" Name="RadioButton1" Visibility="Collapsed" />
+                <RadioButton Margin="10,5,5,5" Name="RadioButton2" Visibility="Collapsed" />
+                <RadioButton Margin="10,5,5,5" Name="RadioButton3" Visibility="Collapsed" />
+                <RadioButton Margin="10,5,5,5" Name="RadioButton4" Visibility="Collapsed" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Image Margin="10,10,10,10" Visibility="Collapsed" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
