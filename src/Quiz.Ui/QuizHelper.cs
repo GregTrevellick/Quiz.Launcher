@@ -35,11 +35,12 @@ namespace Quiz.Ui
             var quizDialogDto =
                 new QuizDialogDto
                 {
-                    QuestionDifficulty = gatewayResponse.DifficultyLevel,
                     MultipleChoiceAnswers = gatewayResponse.MultipleChoiceAnswers,
                     MultipleChoiceCorrectAnswer = gatewayResponse.MultipleChoiceCorrectAnswer,
-                    QuizQuestion = gatewayResponse.Question,
+                    OptionsName = Vsix.Name,
+                    QuestionDifficulty = gatewayResponse.DifficultyLevel,
                     QuestionType = gatewayResponse.QuestionType,
+                    QuizQuestion = gatewayResponse.Question,
                 };
             return quizDialogDto;
         }
