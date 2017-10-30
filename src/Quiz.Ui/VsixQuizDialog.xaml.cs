@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Quiz.Ui.Core;
+using Quiz.Ui.Gateway;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using Quiz.Ui.Core;
-using Quiz.Ui.Gateway;
 
 namespace Quiz.Ui
 {

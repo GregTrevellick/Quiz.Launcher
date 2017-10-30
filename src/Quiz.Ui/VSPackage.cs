@@ -1,12 +1,11 @@
-﻿using System.ComponentModel.Design;
-using System.Diagnostics.CodeAnalysis;
-//using System.Reflection;
-using System.Runtime.InteropServices;
-using EnvDTE;
+﻿using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Quiz.Ui.Core;
 using Quiz.Ui.Options;
+using System.ComponentModel.Design;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
 
 namespace Quiz.Ui
 {
