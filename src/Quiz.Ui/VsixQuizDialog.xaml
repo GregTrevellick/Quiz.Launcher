@@ -44,7 +44,7 @@
                 <Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="ButtonHelp_OnClick" Name="ButtonHelp"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp2" />
+                <TextBlock Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp2" Visibility="Collapsed"/>
             </StackPanel>
         </StackPanel>
 
