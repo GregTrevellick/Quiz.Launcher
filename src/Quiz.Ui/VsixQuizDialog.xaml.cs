@@ -87,14 +87,14 @@ namespace Quiz.Ui
 
         private void ButtonHelp_OnClick(object sender, RoutedEventArgs e)
         {
-            if (TextBlockHelp2.Visibility == Visibility.Visible)
+            if (TextBlockHelp.Visibility == Visibility.Visible)
             {
-                TextBlockHelp2.Visibility = Visibility.Collapsed;
+                TextBlockHelp.Visibility = Visibility.Collapsed;
             }
             else
             {
-                TextBlockHelp2.Text = Constants.HelpText(_optionsName);
-                TextBlockHelp2.Visibility = Visibility.Visible;
+                TextBlockHelp.Text = Constants.HelpText(_optionsName);
+                TextBlockHelp.Visibility = Visibility.Visible;
             }
         }
 
