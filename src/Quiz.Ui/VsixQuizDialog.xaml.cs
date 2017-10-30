@@ -13,8 +13,6 @@ namespace Quiz.Ui
         //https://stackoverflow.com/questions/18913208/colors-in-visual-studio-extension
         //https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.platformui.environmentcolors?redirectedfrom=MSDN&view=visualstudiosdk-2017
 
-
-
         public string CorrectAnswer;
         private readonly string _optionsName;
         public QuestionType QuestionType;

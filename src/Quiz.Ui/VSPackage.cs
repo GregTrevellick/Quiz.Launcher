@@ -52,6 +52,7 @@ namespace Quiz.Ui
             {
                 var popUpTitle = Core.Constants.GetCaption(Vsix.Name, Vsix.Version);
                 var quizHelper = new QuizHelper();
+                quizHelper.PersistHiddenOptionsEventHandler2 += UpdateHiddenOptions3;
 
                 var hiddenOptionsDto = quizHelper.ShowQuiz(popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name, GeneralOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, GeneralOptionsDto.TotalQuestionsAnsweredCorrectly, GeneralOptionsDto.TotalQuestionsAsked);
 
@@ -59,8 +60,6 @@ namespace Quiz.Ui
                 {
                     UpdateHiddenOptions(hiddenOptionsDto);
                 }
-
-                quizHelper.PersistHiddenOptionsEventHandler2 += UpdateHiddenOptions;
             }
         }
 
@@ -107,7 +106,7 @@ namespace Quiz.Ui
         //    return imageByteArray;
         //}
 
-        private void UpdateHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
+        private void UpdateHiddenOptions3(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
         {
             var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
             hiddenOptions.TotalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly.HasValue ? totalQuestionsAnsweredCorrectly.Value : 0;

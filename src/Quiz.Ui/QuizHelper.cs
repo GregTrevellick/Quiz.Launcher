@@ -128,8 +128,12 @@ namespace Quiz.Ui
                 SizeToContent = SizeToContent.WidthAndHeight,
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
-            // var iconUri = new TriviaMessage().GetIconUri();
-            // window.Icon = new BitmapImage(iconUri);
+
+           // var iconUri = GetIconUri();
+           // window.Icon = new BitmapImage(iconUri);
+          //  window.Icon = new BitmapImage(new Uri("pack://application:,,,/Resources/VsixExtensionIcon_16x16.png"));
+
+
             window.ResizeMode = ResizeMode.CanResize;
             window.ShowDialog();
         }
@@ -170,10 +174,15 @@ namespace Quiz.Ui
 
         public Uri GetIconUri()
         {
-            var assemblyName = Assembly.GetExecutingAssembly().GetName();
-            var imageSubDirectory = "";//appName.ToString();
-            var packUri = $"pack://application:,,,/{assemblyName.Name};component/Resources/{imageSubDirectory}/VsixExtensionIcon_16x16.png";
-            return new Uri(packUri);
+            // var assemblyName = Assembly.GetExecutingAssembly().GetName();
+            //var imageSubDirectory = "";//appName.ToString();
+            //var packUri = $"pack://application:,,,/{assemblyName.Name};component/Resources/{imageSubDirectory}/VsixExtensionIcon_16x16.png";
+            // return new Uri(packUri);
+
+
+            var iconUri = new Uri("pack://application:,,,/source.extension.ico", UriKind.RelativeOrAbsolute);
+            //this.Icon = BitmapFrame.Create(iconUri);
+            return iconUri;
         }
     }
 }
