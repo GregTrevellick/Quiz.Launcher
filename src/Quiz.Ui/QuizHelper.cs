@@ -55,7 +55,6 @@ namespace Quiz.Ui
             var vsixQuizDialog = new VsixQuizDialog
             {
                 TextBlockErrorDetails = { Text = quizDialogDto.ErrorDetails },
-                /////////////////////////Title = quizDialogDto.PopUpTitle,
                 SuppressClosingWithoutSubmitingAnswerWarning =
                         suppressClosingWithoutSubmitingAnswerWarning.HasValue
                             ? suppressClosingWithoutSubmitingAnswerWarning.Value
@@ -124,7 +123,7 @@ namespace Quiz.Ui
             //triviaDialog.Show();
             var window = new Window
             {
-                Title = quizDialogDto.PopUpTitle,//"My User Control Dialog",
+                Title = quizDialogDto.PopUpTitle,
                 Content = vsixQuizDialog,
                 SizeToContent = SizeToContent.WidthAndHeight,
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
