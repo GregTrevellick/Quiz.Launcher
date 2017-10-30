@@ -40,8 +40,8 @@
 
         <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Name="StackPanelFooter2">
             <StackPanel Orientation="Horizontal">
-                <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="ButtonClose_OnClick" Name="ButtonClose"/>
-                <Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="ButtonHelp_OnClick" Name="ButtonHelp"/>
+                <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Center" Click="ButtonClose_OnClick" Name="ButtonClose"/>
+                <Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Right" Click="ButtonHelp_OnClick" Name="ButtonHelp"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp2" Visibility="Collapsed"/>
