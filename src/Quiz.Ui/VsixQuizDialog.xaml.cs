@@ -21,16 +21,11 @@ namespace Quiz.Ui
 
         public VsixQuizDialog()
         {
-        }
-
-        public VsixQuizDialog(string optionsName)
-        {
-            _optionsName = optionsName;
+            _optionsName = Vsix.Name;
             _userStatusTotalsIncremented = false;
 
             InitializeComponent();
             DataContext = this;
-            StackPanelQuiz.Visibility = Visibility.Visible;
             this.Loaded += UserControl1_Loaded;
         }
 
@@ -92,7 +87,7 @@ namespace Quiz.Ui
             }
             else
             {
-                TextBlockHelp2.Text = Constants.HelpText(_optionsName);//$"To alter the frequency and volume of quiz questions go to Tools | Options | {}";
+                TextBlockHelp2.Text = Constants.HelpText(_optionsName);
                 TextBlockHelp2.Visibility = Visibility.Visible;
             }
         }

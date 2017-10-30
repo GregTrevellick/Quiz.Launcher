@@ -16,7 +16,7 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelQuiz">
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Name="StackPanelQuiz">
             <StackPanel Orientation="Vertical">
                 <!--<Image Margin="10,10,10,10" Name="AppImageGeekQuiz" Stretch="None" Source="Resources/GeekQuiz/VsixExtensionIcon_16x16.png"/>-->
                 <TextBlock Margin="10,10,10,10" Name="TextBlockQuestion" />

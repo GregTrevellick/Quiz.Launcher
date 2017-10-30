@@ -37,7 +37,6 @@ namespace Quiz.Ui
                 {
                     MultipleChoiceAnswers = gatewayResponse.MultipleChoiceAnswers,
                     MultipleChoiceCorrectAnswer = gatewayResponse.MultipleChoiceCorrectAnswer,
-                    OptionsName = Vsix.Name,
                     QuestionDifficulty = gatewayResponse.DifficultyLevel,
                     QuestionType = gatewayResponse.QuestionType,
                     QuizQuestion = gatewayResponse.Question,
@@ -52,7 +51,7 @@ namespace Quiz.Ui
 
         private void DisplayPopUpMessage(QuizDialogDto quizDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
-            var vsixQuizDialog = new VsixQuizDialog(quizDialogDto.OptionsName)
+            var vsixQuizDialog = new VsixQuizDialog
             {
                 TextBlockErrorDetails = { Text = quizDialogDto.ErrorDetails },
                 /////////////////////////Title = quizDialogDto.PopUpTitle,
