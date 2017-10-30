@@ -34,7 +34,7 @@
                 <TextBlock Margin="10,10,10,10" Name="TextBlockUserStatus" />
             </StackPanel>
             <StackPanel>
-                <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonSubmitMultiChoiceAnwser_OnClick" Name="ButtonSubmitMultiChoiceAnwser"/>
+                <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonSubmitMultiChoiceAnwser_OnClick" Name="ButtonSubmitMultiChoiceAnwser"/>
             </StackPanel>
         </StackPanel>
 
