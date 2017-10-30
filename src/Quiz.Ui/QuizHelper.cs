@@ -40,6 +40,7 @@ namespace Quiz.Ui
                     QuestionDifficulty = gatewayResponse.DifficultyLevel,
                     QuestionType = gatewayResponse.QuestionType,
                     QuizQuestion = gatewayResponse.Question,
+                    PopUpTitle = Vsix.Name,
                 };
             return quizDialogDto;
         }
@@ -123,7 +124,7 @@ namespace Quiz.Ui
             //triviaDialog.Show();
             var window = new Window
             {
-                Title = "My User Control Dialog",
+                Title = quizDialogDto.PopUpTitle,//"My User Control Dialog",
                 Content = vsixQuizDialog,
                 SizeToContent = SizeToContent.WidthAndHeight,
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
