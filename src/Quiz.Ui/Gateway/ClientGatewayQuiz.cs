@@ -27,7 +27,7 @@ namespace Quiz.Ui.Gateway
 
             var gatewayResponse = new GatewayResponse
             {
-                DifficultyLevel = difficultyLevel + ": ",
+                DifficultyLevel = difficultyLevel,
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,
                 Question = firstOfOne.question,
