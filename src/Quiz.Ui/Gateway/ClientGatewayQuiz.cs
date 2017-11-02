@@ -30,13 +30,13 @@ namespace Quiz.Ui.Gateway
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,
                 Question = question,
-                QuestionType = firstOfOne.type == "boolean" ? QuestionType.TrueFalse : QuestionType.MultiChoice
+                QuestionType = firstOfOne.type == "boolean" ? QuestionType.TrueFalse : QuestionType.MultiChoice//gregt unit test reqd
             };
 
             return gatewayResponse;
         }
 
-        static string UppercaseFirst(string str)
+        static string UppercaseFirst(string str)//gregt unit test reqd
         {
             if (string.IsNullOrEmpty(str))
             {
@@ -46,7 +46,7 @@ namespace Quiz.Ui.Gateway
             return char.ToUpper(str[0]) + str.Substring(1);
         }
 
-        internal static string CharacterHandler(string str)
+        static string CharacterHandler(string str)//gregt unit test reqd
         {
             str = str.Replace("<i>", string.Empty);
             str = str.Replace("</i>", string.Empty);

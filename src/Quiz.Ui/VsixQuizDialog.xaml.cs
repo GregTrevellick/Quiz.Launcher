@@ -212,7 +212,7 @@ namespace Quiz.Ui
 
             if (totalQuestionsAsked == 0 ||
                 !totalQuestionsAnsweredCorrectly.HasValue ||
-                !totalQuestionsAsked.HasValue)
+                !totalQuestionsAsked.HasValue)//gregt unit test reqd
             {
                 percentageSuccess = 0;
             }
