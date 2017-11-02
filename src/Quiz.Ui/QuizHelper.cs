@@ -54,7 +54,6 @@ namespace Quiz.Ui
         {
             var vsixQuizDialog = new VsixQuizDialog
             {
-                /////////////// TextBlockErrorDetails = { Text = quizDialogDto.ErrorDetails },
                 SuppressClosingWithoutSubmitingAnswerWarning =
                         suppressClosingWithoutSubmitingAnswerWarning.HasValue
                             ? suppressClosingWithoutSubmitingAnswerWarning.Value
@@ -65,8 +64,7 @@ namespace Quiz.Ui
                 CorrectAnswer = quizDialogDto.MultipleChoiceCorrectAnswer
             };
 
-            //vsixQuizDialog.TextBlockErrorDetails.Text = quizDialogDto.ErrorDetails;
-            vsixQuizDialog.TextBlockErrorDetails.Text = "eeeeeeeee";
+            vsixQuizDialog.TextBlockErrorDetails.Text = quizDialogDto.ErrorDetails;
 
             vsixQuizDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptions;
 
@@ -132,6 +130,7 @@ namespace Quiz.Ui
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
 
+            // avoid conversion by using .ico or .bmp ?
             var iconUri = GetIconUri();
             window.Icon = new BitmapImage(iconUri);
             window.ResizeMode = ResizeMode.CanResize;
