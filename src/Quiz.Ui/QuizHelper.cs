@@ -115,9 +115,15 @@ namespace Quiz.Ui
 
             if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
             {
-                var userStatus = vsixQuizDialog.GetUserStatus(totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
+                var percentageSuccess = vsixQuizDialog.GetPercentageSuccess(totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
+
+                var userStatus = vsixQuizDialog.GetUserStatus(percentageSuccess, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
                 vsixQuizDialog.TextBlockUserStatus.Text = userStatus;
                 vsixQuizDialog.TextBlockUserStatus.Visibility = Visibility.Visible;
+
+                var userRank = vsixQuizDialog.GetUserRank(percentageSuccess);
+                vsixQuizDialog.TextBlockUserRank.Text = userRank;
+                vsixQuizDialog.TextBlockUserRank.Visibility = Visibility.Visible;
             }
 
             //triviaDialog.Show();

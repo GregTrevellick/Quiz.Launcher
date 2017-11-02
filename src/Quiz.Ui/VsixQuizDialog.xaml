@@ -6,35 +6,39 @@
              xmlns:local="clr-namespace:Quiz.Ui"
              mc:Ignorable="d">
 
-        <StackPanel Orientation="Vertical" Name="StackPanelQuiz">
-            <StackPanel Orientation="Vertical">
+    <StackPanel Orientation="Vertical" Name="StackPanelQuiz">
+        <StackPanel Orientation="Vertical">
             <TextBlock Margin="10,10,10,10" Name="TextBlockDifficulty" />
             <TextBlock Margin="10,10,10,10" Name="TextBlockQuestion" />
-                <RadioButton Margin="10,5,5,5" Name="RadioButton1" Visibility="Collapsed" />
-                <RadioButton Margin="10,5,5,5" Name="RadioButton2" Visibility="Collapsed" />
-                <RadioButton Margin="10,5,5,5" Name="RadioButton3" Visibility="Collapsed" />
-                <RadioButton Margin="10,5,5,5" Name="RadioButton4" Visibility="Collapsed" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Image Margin="10,10,10,10" Visibility="Collapsed" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
-                <Image Margin="10,10,10,10" Visibility="Collapsed" Name="QuizReplyEmoticonIncorrect" Stretch="None" Source="Core/Resources/IncorrectAnswer.png" />
-                <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockQuizReply" />
-            </StackPanel>
-            <StackPanel>
-                <TextBlock Margin="10,10,10,10" Name="TextBlockUserStatus" />
-            </StackPanel>
-            <StackPanel>
-                <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonSubmitMultiChoiceAnwser_OnClick" Name="ButtonSubmitMultiChoiceAnwser"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonClose_OnClick" Name="ButtonClose"/>
-                <Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonHelp_OnClick" Name="ButtonHelp"/>
-            </StackPanel>
-            <StackPanel>
-                <TextBlock Margin="10,10,10,10" Name="TextBlockHelp" Visibility="Collapsed"/>
-            </StackPanel>
-            <StackPanel>
-                <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockErrorDetails" />
-            </StackPanel>
+            <RadioButton Margin="10,5,5,5" Name="RadioButton1" Visibility="Collapsed" />
+            <RadioButton Margin="10,5,5,5" Name="RadioButton2" Visibility="Collapsed" />
+            <RadioButton Margin="10,5,5,5" Name="RadioButton3" Visibility="Collapsed" />
+            <RadioButton Margin="10,5,5,5" Name="RadioButton4" Visibility="Collapsed" />
         </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Image Margin="10,10,10,10" Visibility="Collapsed" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
+            <Image Margin="10,10,10,10" Visibility="Collapsed" Name="QuizReplyEmoticonIncorrect" Stretch="None" Source="Core/Resources/IncorrectAnswer.png" />
+            <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockQuizReply" />
+        </StackPanel>
+        <StackPanel>
+            <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonSubmitMultiChoiceAnwser_OnClick" Name="ButtonSubmitMultiChoiceAnwser"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Margin="10,10,10,10" Name="TextBlockUserStatus" />
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Margin="10,10,10,10" Name="TextBlockUserRank" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonClose_OnClick" Name="ButtonClose"/>
+            <Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonHelp_OnClick" Name="ButtonHelp"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Margin="10,10,10,10" Name="TextBlockHelp" Visibility="Collapsed"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockErrorDetails" />
+        </StackPanel>
+    </StackPanel>
+
 </UserControl>

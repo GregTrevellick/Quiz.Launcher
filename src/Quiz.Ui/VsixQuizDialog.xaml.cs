@@ -142,7 +142,7 @@ namespace Quiz.Ui
 
             if (isResponseCorrect)
             {
-                TextBlockQuizReply.Text = "Well,done - correct answer !";
+                TextBlockQuizReply.Text = "Well done - correct answer.";
                 SetQuizReplyColour(Colors.Green);
                 ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
                 QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
@@ -181,13 +181,32 @@ namespace Quiz.Ui
                 TotalQuestionsAsked++;
                 _userStatusTotalsIncremented = true;
             }
-            var userStatus = GetUserStatus(TotalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
+
+            var percentageSuccess = GetPercentageSuccess(TotalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
+
+            var userStatus = GetUserStatus(percentageSuccess, TotalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
             TextBlockUserStatus.Text = userStatus;
+
+            var userRank = GetUserRank(percentageSuccess);
+            TextBlockUserRank.Text = userRank;
 
             PersistHiddenOptionsEventHandler?.Invoke(TotalQuestionsAsked, TotalQuestionsAnsweredCorrectly);
         }
 
-        internal string GetUserStatus(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        internal string GetUserStatus(int percentageSuccess, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        {
+            var successRate = $"Success rate: {percentageSuccess}% ({totalQuestionsAnsweredCorrectly} correct answers out of {totalQuestionsAsked})";
+            return successRate;
+        }
+
+        internal string GetUserRank(int percentageSuccess)
+        {
+            var userStatusDescription = percentageSuccess.UserStatusDescription();
+            var ranking = "Rank: " + userStatusDescription;
+            return ranking;
+        }
+
+        internal int GetPercentageSuccess(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             int percentageSuccess;
 
@@ -200,24 +219,11 @@ namespace Quiz.Ui
             else
             {
                 //gregt unit test required
-                double percentage = ((double)totalQuestionsAnsweredCorrectly.Value / totalQuestionsAsked.Value) * 100;
-                percentageSuccess = (int)Math.Round(percentage, MidpointRounding.AwayFromZero);
+                double percentage = ((double) totalQuestionsAnsweredCorrectly.Value / totalQuestionsAsked.Value) * 100;
+                percentageSuccess = (int) Math.Round(percentage, MidpointRounding.AwayFromZero);
             }
 
-            var userStatusDescription = percentageSuccess.UserStatusDescription();
-
-            var ranking = "Rank: " + userStatusDescription;
-
-            var successRate =
-                "Success rate: " +
-                percentageSuccess +
-                "% ("+
-                              totalQuestionsAnsweredCorrectly + " correct answers out of " +
-                              totalQuestionsAsked + ")";
-
-            var userStatus = successRate + Environment.NewLine + ranking;
-
-            return userStatus;
+            return percentageSuccess;
         }
 
         private void SetQuizReplyColour(Color color)
