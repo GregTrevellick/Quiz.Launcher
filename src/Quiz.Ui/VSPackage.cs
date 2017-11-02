@@ -70,9 +70,7 @@ namespace Quiz.Ui
         //private void ChaseRatings()
         //{
         //    var hiddenChaserOptions = (IHiddenChaserOptions)GetDialogPage(typeof(HiddenChaserOptions));
-
         //    var imageByteArray = GetImageByteArray();
-
         //    var ratingInstructionsDto = new RatingInstructionsDto
         //    {
         //        AggressionLevel = AggressionLevel.High,
@@ -82,33 +80,8 @@ namespace Quiz.Ui
         //        VsixAuthor = Vsix.Author,
         //        VsixName = Vsix.Name,
         //    };
-
         //    RatingChaser.ChaseRatings(hiddenChaserOptions, ratingInstructionsDto);
-        //}
-
-        //private static byte[] GetImageByteArray()
-        //{
-        //    byte[] imageByteArray;
-        //    ////////////////////var imageResourceNameArray = Assembly.GetExecutingAssembly().GetManifestResourceNames();
-        //    var imageResourceName = "Trivial.Ui.GeekQuiz.Resources.VsixExtensionIcon_90x90_Embedded.png";//imageResourceNameArray[2];
-        //    var assembly = Assembly.GetExecutingAssembly();
-        //    var stream = assembly.GetManifestResourceStream(imageResourceName);
-
-        //    if (stream == null)
-        //    {
-        //        imageByteArray = null;
-        //    }
-        //    else
-        //    {
-        //        using (stream)
-        //        {
-        //            imageByteArray = new byte[stream.Length];
-        //            stream.Read(imageByteArray, 0, imageByteArray.Length);
-        //        }
-        //    }
-
-        //    return imageByteArray;
-        //}
+        //}     
 
         private void UpdateHiddenOptions3(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
         {
@@ -149,3 +122,25 @@ namespace Quiz.Ui
         }
     }
 }
+
+//private static byte[] GetImageByteArray()
+//{
+//    byte[] imageByteArray;
+//    ////////////////////var imageResourceNameArray = Assembly.GetExecutingAssembly().GetManifestResourceNames();
+//    var imageResourceName = "Trivial.Ui.GeekQuiz.Resources.VsixExtensionIcon_90x90_Embedded.png";//imageResourceNameArray[2];
+//    var assembly = Assembly.GetExecutingAssembly();
+//    var stream = assembly.GetManifestResourceStream(imageResourceName);
+//    if (stream == null)
+//    {
+//        imageByteArray = null;
+//    }
+//    else
+//    {
+//        using (stream)
+//        {
+//            imageByteArray = new byte[stream.Length];
+//            stream.Read(imageByteArray, 0, imageByteArray.Length);
+//        }
+//    }
+//    return imageByteArray;
+//}
