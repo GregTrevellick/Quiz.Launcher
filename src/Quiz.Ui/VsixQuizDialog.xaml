@@ -6,17 +6,7 @@
              xmlns:local="clr-namespace:Quiz.Ui"
              mc:Ignorable="d">
 
-    <Grid ShowGridLines="False">
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions> 
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Name="StackPanelQuiz">
+        <StackPanel Orientation="Vertical" Name="StackPanelQuiz">
             <StackPanel Orientation="Vertical">
                 <TextBlock Margin="10,10,10,10" Name="TextBlockQuestion" />
                 <RadioButton Margin="10,5,5,5" Name="RadioButton1" Visibility="Collapsed" />
@@ -35,21 +25,15 @@
             <StackPanel>
                 <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonSubmitMultiChoiceAnwser_OnClick" Name="ButtonSubmitMultiChoiceAnwser"/>
             </StackPanel>
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Name="StackPanelFooter">
             <StackPanel Orientation="Horizontal">
                 <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonClose_OnClick" Name="ButtonClose"/>
                 <Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonHelp_OnClick" Name="ButtonHelp"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel>
                 <TextBlock Margin="10,10,10,10" Name="TextBlockHelp" Visibility="Collapsed"/>
             </StackPanel>
+            <StackPanel>
+                <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockErrorDetails" />
+            </StackPanel>
         </StackPanel>
-
-        <TextBlock Grid.Row="1" Grid.Column="0" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="TextBlockErrorDetails" />
-
-    </Grid>
-
-
 </UserControl>
