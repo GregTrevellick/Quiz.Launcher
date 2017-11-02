@@ -54,7 +54,7 @@ namespace Quiz.Ui
         {
             var vsixQuizDialog = new VsixQuizDialog
             {
-                TextBlockErrorDetails = { Text = quizDialogDto.ErrorDetails },
+                /////////////// TextBlockErrorDetails = { Text = quizDialogDto.ErrorDetails },
                 SuppressClosingWithoutSubmitingAnswerWarning =
                         suppressClosingWithoutSubmitingAnswerWarning.HasValue
                             ? suppressClosingWithoutSubmitingAnswerWarning.Value
@@ -64,6 +64,9 @@ namespace Quiz.Ui
                 TotalQuestionsAsked = totalQuestionsAsked,
                 CorrectAnswer = quizDialogDto.MultipleChoiceCorrectAnswer
             };
+
+            //vsixQuizDialog.TextBlockErrorDetails.Text = quizDialogDto.ErrorDetails;
+            vsixQuizDialog.TextBlockErrorDetails.Text = "eeeeeeeee";
 
             vsixQuizDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptions;
 

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Quiz.Ui"
              mc:Ignorable="d">
 
-    <Grid ShowGridLines="True">
+    <Grid ShowGridLines="False">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -18,7 +18,6 @@
 
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Name="StackPanelQuiz">
             <StackPanel Orientation="Vertical">
-                <!--<Image Margin="10,10,10,10" Name="AppImageGeekQuiz" Stretch="None" Source="Resources/GeekQuiz/VsixExtensionIcon_16x16.png"/>-->
                 <TextBlock Margin="10,10,10,10" Name="TextBlockQuestion" />
                 <RadioButton Margin="10,5,5,5" Name="RadioButton1" Visibility="Collapsed" />
                 <RadioButton Margin="10,5,5,5" Name="RadioButton2" Visibility="Collapsed" />
