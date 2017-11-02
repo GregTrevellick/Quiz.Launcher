@@ -12,8 +12,8 @@ namespace Quiz.Ui
 {
     public class QuizHelper
     {
-        public delegate void MyEventHandler2(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
-        public event MyEventHandler2 PersistHiddenOptionsEventHandler2;//gregt rename to remove '2' suffix
+        public delegate void QuizHelperEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
+        public event QuizHelperEventHandler PersistHiddenOptionsQuizHelperEventHandlerEventHandler;
 
         public HiddenOptionsDto ShowQuiz(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked)
         {
@@ -47,7 +47,7 @@ namespace Quiz.Ui
 
         void PersistHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
         {
-            PersistHiddenOptionsEventHandler2?.Invoke(totalQuestionsAsked, totalQuestionsAnsweredCorrectly);
+            PersistHiddenOptionsQuizHelperEventHandlerEventHandler?.Invoke(totalQuestionsAsked, totalQuestionsAnsweredCorrectly);
         }
 
         private void DisplayPopUpMessage(QuizDialogDto quizDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
@@ -135,7 +135,7 @@ namespace Quiz.Ui
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
 
-            // avoid conversion by using .ico or .bmp ?
+            // gregt avoid conversion by using .ico or .bmp ?
             var iconUri = GetIconUri();
             window.Icon = new BitmapImage(iconUri);
             window.ResizeMode = ResizeMode.CanResize;
