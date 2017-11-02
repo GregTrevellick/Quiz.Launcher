@@ -206,13 +206,16 @@ namespace Quiz.Ui
 
             var userStatusDescription = percentageSuccess.UserStatusDescription();
 
-            var ranking = "Your rank: " + userStatusDescription;
+            var ranking = "Rank: " + userStatusDescription;
 
-            var successRate = percentageSuccess + "% success rate (" +
-                              totalQuestionsAnsweredCorrectly + " out of " +
+            var successRate =
+                "Success rate: " +
+                percentageSuccess +
+                "% ("+
+                              totalQuestionsAnsweredCorrectly + " correct answers out of " +
                               totalQuestionsAsked + ")";
 
-            var userStatus = ranking + " " + successRate;
+            var userStatus = successRate + Environment.NewLine + ranking;
 
             return userStatus;
         }
