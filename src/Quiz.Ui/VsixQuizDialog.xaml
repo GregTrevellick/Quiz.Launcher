@@ -8,7 +8,8 @@
 
         <StackPanel Orientation="Vertical" Name="StackPanelQuiz">
             <StackPanel Orientation="Vertical">
-                <TextBlock Margin="10,10,10,10" Name="TextBlockQuestion" />
+            <TextBlock Margin="10,10,10,10" Name="TextBlockDifficulty" />
+            <TextBlock Margin="10,10,10,10" Name="TextBlockQuestion" />
                 <RadioButton Margin="10,5,5,5" Name="RadioButton1" Visibility="Collapsed" />
                 <RadioButton Margin="10,5,5,5" Name="RadioButton2" Visibility="Collapsed" />
                 <RadioButton Margin="10,5,5,5" Name="RadioButton3" Visibility="Collapsed" />

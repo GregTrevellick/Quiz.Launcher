@@ -70,8 +70,7 @@ namespace Quiz.Ui
 
             if (!string.IsNullOrWhiteSpace(quizDialogDto.QuestionDifficulty))
             {
-                var run = new Run(quizDialogDto.QuestionDifficulty);
-                vsixQuizDialog.TextBlockQuestion.Inlines.Add(run);
+                vsixQuizDialog.TextBlockDifficulty.Text = "Difficulty: " + quizDialogDto.QuestionDifficulty;
             }
 
             if (!string.IsNullOrWhiteSpace(quizDialogDto.QuizQuestion))
