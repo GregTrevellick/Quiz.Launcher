@@ -21,8 +21,7 @@ namespace Quiz.Ui.Gateway
             var multipleChoiceCorrectAnswerAsCollection = new List<string> {multipleChoiceCorrectAnswer};
             var multipleChoiceAnswers = multipleChoiceCorrectAnswerAsCollection.Union(firstOfOne.incorrect_answers);
 
-            //gregt CharacterHandler(rootObject.answer); like jeopardy
-
+            var question = CharacterHandler(firstOfOne.question);
             var difficultyLevel = UppercaseFirst(firstOfOne.difficulty);
 
             var gatewayResponse = new GatewayResponse
@@ -30,7 +29,7 @@ namespace Quiz.Ui.Gateway
                 DifficultyLevel = difficultyLevel,
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,
-                Question = firstOfOne.question,
+                Question = question,
                 QuestionType = firstOfOne.type == "boolean" ? QuestionType.TrueFalse : QuestionType.MultiChoice
             };
 
@@ -45,6 +44,16 @@ namespace Quiz.Ui.Gateway
             }
 
             return char.ToUpper(str[0]) + str.Substring(1);
+        }
+
+        internal static string CharacterHandler(string str)
+        {
+            str = str.Replace("<i>", string.Empty);
+            str = str.Replace("</i>", string.Empty);
+            str = str.Replace(@"\'", "'");
+            str = char.ToUpper(str[0]) + str.Substring(1);
+
+            return str;
         }
     }
 }
