@@ -150,24 +150,16 @@ namespace Quiz.Ui
             }
             else
             {
-                //if (response == null)
-                //{
-                //    TextBlockQuizReply.Text = "No cheating please - you must supply an answer.";
-                //    SetQuizReplyColour(Colors.Orange);
-                //}
-                //else
-                //{
-                    TextBlockQuizReply.Text = "Oh dear - wrong answer.";
+                TextBlockQuizReply.Text = "Oh dear - wrong answer.";
 
-                    if (QuestionType == QuestionType.MultiChoice)
-                    {
-                        TextBlockQuizReply.Text += $" The correct answer is {CorrectAnswer}";
-                    }
+                if (QuestionType == QuestionType.MultiChoice)
+                {
+                    TextBlockQuizReply.Text += $" The correct answer is {CorrectAnswer}";
+                }
 
-                    ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
-                    SetQuizReplyColour(Colors.Red);
-                    QuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
-                //}
+                ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
+                SetQuizReplyColour(Colors.Red);
+                QuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
             }
 
             TextBlockQuizReply.Visibility = Visibility.Visible;
