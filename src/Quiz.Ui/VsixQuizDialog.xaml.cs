@@ -182,19 +182,14 @@ namespace Quiz.Ui
 
             TextBlockTotalQuestionsAsked.Text = TotalQuestionsAsked.ToString();
             TextBlockTotalQuestionsAnsweredCorrectly.Text= TotalQuestionsAnsweredCorrectly.ToString();
-
-            var userStatus = GetUserStatus(percentageSuccess, TotalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
-            TextBlockUserStatus.Text = userStatus;
-
-            var userRank = GetUserRank(percentageSuccess);
-            TextBlockUserRank.Text = userRank;
+            TextBlockUserStatus.Text = GetUserStatus(percentageSuccess);
+            TextBlockUserRank.Text = GetUserRank(percentageSuccess);          
 
             PersistHiddenOptionsEventHandler?.Invoke(TotalQuestionsAsked, TotalQuestionsAnsweredCorrectly);
         }
 
-        internal string GetUserStatus(int percentageSuccess, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        internal string GetUserStatus(int percentageSuccess)
         {
-            //var successRate = $"Success rate: {percentageSuccess}% ({totalQuestionsAnsweredCorrectly} correct answers out of {totalQuestionsAsked})";
             var successRate = $"{percentageSuccess}%";
             return successRate;
         }
@@ -202,8 +197,6 @@ namespace Quiz.Ui
         internal string GetUserRank(int percentageSuccess)
         {
             var userStatusDescription = percentageSuccess.UserStatusDescription();
-            //var ranking = "Rank: " + userStatusDescription;
-            //return ranking;
             return userStatusDescription;
         }
 

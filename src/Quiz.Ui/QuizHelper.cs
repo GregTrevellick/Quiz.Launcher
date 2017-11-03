@@ -89,8 +89,6 @@ namespace Quiz.Ui
 
             if (quizDialogDto.QuestionType != QuestionType.None)
             {
-               ////// vsixQuizDialog.ButtonSubmitMultiChoiceAnwser.IsEnabled = true;
-
                 if (quizDialogDto.QuestionType == QuestionType.TrueFalse)
                 {
                     var trueFollowedByFalseAnswers = quizDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();
@@ -121,13 +119,11 @@ namespace Quiz.Ui
 
                 var percentageSuccess = vsixQuizDialog.GetPercentageSuccess(totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
 
-                var userStatus = vsixQuizDialog.GetUserStatus(percentageSuccess, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
+                var userStatus = vsixQuizDialog.GetUserStatus(percentageSuccess);
                 vsixQuizDialog.TextBlockUserStatus.Text = userStatus;
-                //vsixQuizDialog.TextBlockUserStatus.Visibility = Visibility.Visible;
 
                 var userRank = vsixQuizDialog.GetUserRank(percentageSuccess);
                 vsixQuizDialog.TextBlockUserRank.Text = userRank;
-                //vsixQuizDialog.TextBlockUserRank.Visibility = Visibility.Visible;
             }
 
             //triviaDialog.Show();
