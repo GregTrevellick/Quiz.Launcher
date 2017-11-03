@@ -24,10 +24,26 @@
             <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonSubmitMultiChoiceAnwser_OnClick" Name="ButtonSubmitMultiChoiceAnwser"/>
         </StackPanel>
         <StackPanel>
-            <TextBlock Margin="10,10,10,10" Name="TextBlockUserStatus" />
-        </StackPanel>
-        <StackPanel>
-            <TextBlock Margin="10,10,10,10" Name="TextBlockUserRank" />
+            <Grid ShowGridLines="true">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,10,10,10" Text="Total Questions:" />
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,10,10,10" Text="Correct Answers:" />
+                <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,10,10,10" Text="Success Rate:" />
+                <TextBlock Grid.Row="3" Grid.Column="0" Margin="10,10,10,10" Text="Your Status:" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,10,10,10" Name="TextBlockTotalQuestionsAsked" />
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,10,10,10" Name="TextBlockTotalQuestionsAnsweredCorrectly" />
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,10,10,10" Name="TextBlockUserStatus" />
+                <TextBlock Grid.Row="3" Grid.Column="1" Margin="10,10,10,10" Name="TextBlockUserRank" />
+            </Grid>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonClose_OnClick" Name="ButtonClose"/>

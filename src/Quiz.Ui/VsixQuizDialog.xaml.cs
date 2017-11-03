@@ -9,8 +9,6 @@ namespace Quiz.Ui
 {
     public partial class VsixQuizDialog : UserControl
     {
-
-
         public string CorrectAnswer;
         private readonly string _optionsName;
         public QuestionType QuestionType;
@@ -182,6 +180,9 @@ namespace Quiz.Ui
 
             var percentageSuccess = GetPercentageSuccess(TotalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
 
+            TextBlockTotalQuestionsAsked.Text = TotalQuestionsAsked.ToString();
+            TextBlockTotalQuestionsAnsweredCorrectly.Text= TotalQuestionsAnsweredCorrectly.ToString();
+
             var userStatus = GetUserStatus(percentageSuccess, TotalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
             TextBlockUserStatus.Text = userStatus;
 
@@ -193,15 +194,17 @@ namespace Quiz.Ui
 
         internal string GetUserStatus(int percentageSuccess, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
-            var successRate = $"Success rate: {percentageSuccess}% ({totalQuestionsAnsweredCorrectly} correct answers out of {totalQuestionsAsked})";
+            //var successRate = $"Success rate: {percentageSuccess}% ({totalQuestionsAnsweredCorrectly} correct answers out of {totalQuestionsAsked})";
+            var successRate = $"{percentageSuccess}%";
             return successRate;
         }
 
         internal string GetUserRank(int percentageSuccess)
         {
             var userStatusDescription = percentageSuccess.UserStatusDescription();
-            var ranking = "Rank: " + userStatusDescription;
-            return ranking;
+            //var ranking = "Rank: " + userStatusDescription;
+            //return ranking;
+            return userStatusDescription;
         }
 
         internal int GetPercentageSuccess(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
