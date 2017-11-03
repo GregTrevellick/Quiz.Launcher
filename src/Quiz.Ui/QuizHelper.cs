@@ -89,7 +89,7 @@ namespace Quiz.Ui
 
             if (quizDialogDto.QuestionType != QuestionType.None)
             {
-                vsixQuizDialog.ButtonSubmitMultiChoiceAnwser.Visibility = Visibility.Visible;
+               ////// vsixQuizDialog.ButtonSubmitMultiChoiceAnwser.IsEnabled = true;
 
                 if (quizDialogDto.QuestionType == QuestionType.TrueFalse)
                 {

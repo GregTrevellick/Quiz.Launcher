@@ -6,21 +6,9 @@ Link to a github MD page to submit questions via issue or email
 
 Points - easy 1, medium 2, hard 3
 
-Rank/%/totals in a grid
-
-Delete margins, they may b defaults already
-
 Colour themes
 https://stackoverflow.com/questions/18913208/colors-in-visual-studio-extension
 https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.platformui.environmentcolors?redirectedfrom=MSDN&view=visualstudiosdk-2017
 
 
 
-////"https://icanhazdadjoke.com/api#fetch-a-random-dad-joke"
-////"https://restcountries.eu/"
-//////"https://quotesondesign.com/api-v4-0/"
-//////https://www.coindesk.com/api/ 
-//////https://api.pandascore.co/rest#make-basic-requests 
-//////https://data.police.uk/docs/ 
-//////https://www.meetup.com/meetup_api/ 
-//////http://api.football-data.org/index

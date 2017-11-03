@@ -10,10 +10,10 @@
         <StackPanel Orientation="Vertical">
             <TextBlock Margin="10,10,10,10" Name="TextBlockDifficulty" />
             <TextBlock Margin="10,10,10,10" Name="TextBlockQuestion" />
-            <RadioButton Margin="10,5,5,5" Name="RadioButton1" Visibility="Collapsed" />
-            <RadioButton Margin="10,5,5,5" Name="RadioButton2" Visibility="Collapsed" />
-            <RadioButton Margin="10,5,5,5" Name="RadioButton3" Visibility="Collapsed" />
-            <RadioButton Margin="10,5,5,5" Name="RadioButton4" Visibility="Collapsed" />
+            <RadioButton Margin="10,5,5,5" Name="RadioButton1" Visibility="Collapsed" Checked="RadioButton1_OnChecked"  />
+            <RadioButton Margin="10,5,5,5" Name="RadioButton2" Visibility="Collapsed" Checked="RadioButton2_OnChecked" />
+            <RadioButton Margin="10,5,5,5" Name="RadioButton3" Visibility="Collapsed" Checked="RadioButton3_OnChecked"/>
+            <RadioButton Margin="10,5,5,5" Name="RadioButton4" Visibility="Collapsed" Checked="RadioButton4_OnChecked"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Image Margin="10,10,10,10" Visibility="Collapsed" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
@@ -21,7 +21,7 @@
             <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockQuizReply" />
         </StackPanel>
         <StackPanel>
-            <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonSubmitMultiChoiceAnwser_OnClick" Name="ButtonSubmitMultiChoiceAnwser"/>
+            <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" IsEnabled="False"  HorizontalAlignment="Left" Click="ButtonSubmitMultiChoiceAnwser_OnClick" Name="ButtonSubmitMultiChoiceAnwser"/>
         </StackPanel>
         <StackPanel>
             <Grid ShowGridLines="true">

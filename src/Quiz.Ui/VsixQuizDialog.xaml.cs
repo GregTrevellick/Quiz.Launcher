@@ -150,13 +150,13 @@ namespace Quiz.Ui
             }
             else
             {
-                if (response == null)
-                {
-                    TextBlockQuizReply.Text = "No cheating please - you must supply an answer.";
-                    SetQuizReplyColour(Colors.Orange);
-                }
-                else
-                {
+                //if (response == null)
+                //{
+                //    TextBlockQuizReply.Text = "No cheating please - you must supply an answer.";
+                //    SetQuizReplyColour(Colors.Orange);
+                //}
+                //else
+                //{
                     TextBlockQuizReply.Text = "Oh dear - wrong answer.";
 
                     if (QuestionType == QuestionType.MultiChoice)
@@ -167,7 +167,7 @@ namespace Quiz.Ui
                     ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
                     SetQuizReplyColour(Colors.Red);
                     QuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
-                }
+                //}
             }
 
             TextBlockQuizReply.Visibility = Visibility.Visible;
@@ -236,6 +236,31 @@ namespace Quiz.Ui
         {
             var rightAnswer = response == CorrectAnswer;
             return rightAnswer;
+        }
+
+        private void RadioButton1_OnChecked(object sender, RoutedEventArgs e)
+        {
+            EnableSubmitButton();
+        }
+
+        private void RadioButton2_OnChecked(object sender, RoutedEventArgs e)
+        {
+            EnableSubmitButton();
+        }
+
+        private void RadioButton3_OnChecked(object sender, RoutedEventArgs e)
+        {
+            EnableSubmitButton();
+        }
+
+        private void RadioButton4_OnChecked(object sender, RoutedEventArgs e)
+        {
+            EnableSubmitButton();
+        }
+
+        private void EnableSubmitButton()
+        {
+            ButtonSubmitMultiChoiceAnwser.IsEnabled = true;
         }
     }
 }
