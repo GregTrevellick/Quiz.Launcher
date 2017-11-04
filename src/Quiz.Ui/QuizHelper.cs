@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
+using MoreLinq;
 
 namespace Quiz.Ui
 {
@@ -17,8 +18,20 @@ namespace Quiz.Ui
 
         public HiddenOptionsDto GetHiddenOptionsDto(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked)
         {
-            var clientGateway = new ClientGateway();
-            var gatewayResponse = clientGateway.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
+            var random = new Random();
+            var remote = random.Next(1, 8);
+            GatewayResponse gatewayResponse;
+
+            if (remote >= 5)
+            {
+                var clientGateway = new ClientGateway();
+                gatewayResponse = clientGateway.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
+            }
+            else
+            {
+                var gatewayResponses = LocalGateway.GatewayResponses;
+                gatewayResponse = gatewayResponses.RandomSubset(1).Single();
+            }
 
             var quizDialogDto = GetQuizDialogDto(gatewayResponse);
             DisplayPopUpMessage(quizDialogDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
