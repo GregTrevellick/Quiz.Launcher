@@ -1,9 +1,11 @@
 ﻿using Quiz.Ui.Core;
 using Quiz.Ui.Gateway;
 using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Navigation;
 
 namespace Quiz.Ui
 {
@@ -178,6 +180,8 @@ namespace Quiz.Ui
             TextBlockUserRank.Text = GetUserRank(percentageSuccess);          
 
             PersistHiddenOptionsEventHandler?.Invoke(TotalQuestionsAsked, TotalQuestionsAnsweredCorrectly);
+
+            TextBlockBingle.Visibility = Visibility.Visible;
         }
 
         internal string GetUserStatus(int percentageSuccess)
@@ -246,6 +250,12 @@ namespace Quiz.Ui
         private void EnableSubmitButton()
         {
             ButtonSubmitMultiChoiceAnwser.IsEnabled = true;
+        }
+
+        private void HyperLinkBingle_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
     }
 }

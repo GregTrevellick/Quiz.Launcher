@@ -35,19 +35,19 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,5,5,5" Text="Total Questions:" />
-                <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,5,5,5" Text="Correct Answers:" />
-                <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,5,5,5" Text="Success Rate:" />
-                <TextBlock Grid.Row="3" Grid.Column="0" Margin="10,5,5,5" Text="Your Status:" />
-                <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,5,5,5" Name="TextBlockTotalQuestionsAsked" />
-                <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,5,5,5" Name="TextBlockTotalQuestionsAnsweredCorrectly" />
-                <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,5,5,5" Name="TextBlockUserStatus" />
-                <TextBlock Grid.Row="3" Grid.Column="1" Margin="10,5,5,5" Name="TextBlockUserRank" />
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,1,1,1" Text="Total Questions:" />
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,1,1,1" Text="Correct Answers:" />
+                <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,1,1,1" Text="Success Rate:" />
+                <TextBlock Grid.Row="3" Grid.Column="0" Margin="10,1,1,1" Text="Your Status:" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,1,1,1" Name="TextBlockTotalQuestionsAsked" />
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,1,1,1" Name="TextBlockTotalQuestionsAnsweredCorrectly" />
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,1,1,1" Name="TextBlockUserStatus" />
+                <TextBlock Grid.Row="3" Grid.Column="1" Margin="10,1,1,1" Name="TextBlockUserRank" />
             </Grid>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonClose_OnClick" Name="ButtonClose"/>
-            <Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" HorizontalAlignment="Left" Click="ButtonHelp_OnClick" Name="ButtonHelp"/>
+            <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonClose_OnClick" Name="ButtonClose"/>
+            <Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonHelp_OnClick" Name="ButtonHelp"/>
         </StackPanel>
         <StackPanel>
             <TextBlock Margin="10,10,10,10" Name="TextBlockHelp" Visibility="Collapsed"/>
@@ -55,6 +55,13 @@
         <StackPanel>
             <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockErrorDetails" />
         </StackPanel>
+
+        <StackPanel>
+            <TextBlock Name="TextBlockBingle" Visibility="Collapsed">
+                <Hyperlink Name="HyperLinkBingle" RequestNavigate="HyperLinkBingle_RequestNavigate" />
+            </TextBlock>
+        </StackPanel>
+
     </StackPanel>
 
 </UserControl>

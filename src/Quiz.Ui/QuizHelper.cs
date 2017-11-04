@@ -126,6 +126,10 @@ namespace Quiz.Ui
                 vsixQuizDialog.TextBlockUserRank.Text = userRank;
             }
 
+            vsixQuizDialog.HyperLinkBingle.NavigateUri = new Uri("http://www.bbc.co.uk");
+            vsixQuizDialog.HyperLinkBingle.Inlines.Clear();
+            vsixQuizDialog.HyperLinkBingle.Inlines.Add("Bingle");
+
             //triviaDialog.Show();
             var window = new Window
             {
