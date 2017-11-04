@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using Newtonsoft.Json;
 
 namespace Quiz.Ui.Gateway
@@ -48,12 +49,31 @@ namespace Quiz.Ui.Gateway
 
         static string CharacterHandler(string str)//gregt unit test reqd
         {
-            str = str.Replace("<i>", string.Empty);
-            str = str.Replace("</i>", string.Empty);
-            str = str.Replace(@"\'", "'");
-            str = char.ToUpper(str[0]) + str.Substring(1);
+            //"Which internet company began life as an online bookstore called &#039;Cadabra&#039;?"
 
-            return str;
+            //var result = WebUtility.UrlEncode(str);
+
+            //str= char.ToUpper(str[0]) + str.Substring(1);
+
+
+
+            //var chrs = str.ToCharArray();
+            //foreach (var chr in chrs)
+            //{
+            //    // int unicode = 65;
+            //    // char character = (char) unicode;
+            //    char character = (char)chr;
+            //    string text = character.ToString();
+            //}
+
+
+            string myStringToDecode = str;//"Hello &#39;World&#39;";
+
+            //string decodedString = System.Web.HttpUtility.HtmlDecode(myStringToDecode);
+            // or
+            string decodedString = System.Net.WebUtility.HtmlDecode(myStringToDecode);
+            var result = decodedString;
+            return result;
         }
     }
 }
