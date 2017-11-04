@@ -15,17 +15,16 @@ namespace Quiz.Ui
         public delegate void QuizHelperEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event QuizHelperEventHandler PersistHiddenOptionsQuizHelperEventHandlerEventHandler;
 
+        //gregt rename to GetHiddenOptionsDto
         public HiddenOptionsDto ShowQuiz(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked)
         {
-            HiddenOptionsDto hiddenOptionsDto = null;
-
             var clientGateway = new ClientGateway();
             var gatewayResponse = clientGateway.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
 
             var quizDialogDto = GetQuizDialogDto(gatewayResponse);
             DisplayPopUpMessage(quizDialogDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
 
-            hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
+            var hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
 
             return hiddenOptionsDto;
         }

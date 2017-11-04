@@ -18,7 +18,7 @@
         <StackPanel Orientation="Horizontal">
             <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
             <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonIncorrect" Stretch="None" Source="Core/Resources/IncorrectAnswer.png" />
-            <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockQuizReply" />
+            <TextBlock Visibility="Collapsed" Margin="1,10,10,10" Name="TextBlockQuizReply" />
             <TextBlock Visibility="Collapsed" Margin="1,10,10,10" Name="TextBlockBingle">
                 <Hyperlink Name="HyperLinkBingle" RequestNavigate="HyperLinkBingle_RequestNavigate" />
             </TextBlock>
@@ -58,6 +58,10 @@
         <StackPanel>
             <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockErrorDetails" />
         </StackPanel>
+        <StackPanel>
+            <Button Content="Again" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonAgain_OnClick" Name="ButtonAgain"/>
+        </StackPanel>
     </StackPanel>
 
+    
 </UserControl>

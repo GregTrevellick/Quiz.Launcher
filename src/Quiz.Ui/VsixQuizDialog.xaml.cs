@@ -33,7 +33,21 @@ namespace Quiz.Ui
             InitializeComponent();
             DataContext = this;//gregt is this relevant ? should it be leveraged ?
             this.Loaded += UserControl1_Loaded;
+
+#if DEBUG
+            ButtonAgain.Visibility = Visibility.Visible;
+#endif
         }
+
+#if DEBUG
+        private void ButtonAgain_OnClick(object sender, RoutedEventArgs e)
+        {
+            var quizHelper = new QuizHelper();
+            var random = new Random();
+            var totalQuestionsAnsweredCorrectly = random.Next(1, 100);
+            quizHelper.ShowQuiz("Again1", DateTime.Now, 789, 5000, "Again2", true, totalQuestionsAnsweredCorrectly, 100);
+        }
+#endif
 
         private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
         {
