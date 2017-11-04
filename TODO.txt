@@ -6,10 +6,11 @@ Colour themes
 https://stackoverflow.com/questions/18913208/colors-in-visual-studio-extension
 https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.platformui.environmentcolors?redirectedfrom=MSDN&view=visualstudiosdk-2017
 
-countdown timer ?
+countdown timer ? 
+hard 43-67 secs randomly
+medium 28-48
+easy 18-33
 
 gregt 
-
-
 
 FUTURE Help to include a link to a github MD page to submit questions via issue or email
