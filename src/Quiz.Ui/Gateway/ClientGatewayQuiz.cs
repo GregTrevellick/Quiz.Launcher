@@ -51,28 +51,8 @@ namespace Quiz.Ui.Gateway
         {
             //"Which internet company began life as an online bookstore called &#039;Cadabra&#039;?"
 
-            //var result = WebUtility.UrlEncode(str);
-
-            //str= char.ToUpper(str[0]) + str.Substring(1);
-
-
-
-            //var chrs = str.ToCharArray();
-            //foreach (var chr in chrs)
-            //{
-            //    // int unicode = 65;
-            //    // char character = (char) unicode;
-            //    char character = (char)chr;
-            //    string text = character.ToString();
-            //}
-
-
-            string myStringToDecode = str;//"Hello &#39;World&#39;";
-
-            //string decodedString = System.Web.HttpUtility.HtmlDecode(myStringToDecode);
-            // or
-            string decodedString = System.Net.WebUtility.HtmlDecode(myStringToDecode);
-            var result = decodedString;
+            //var result = System.Web.HttpUtility.HtmlDecode(str);
+            var result = WebUtility.HtmlDecode(str);
             return result;
         }
     }
