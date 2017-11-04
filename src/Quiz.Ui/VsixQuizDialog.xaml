@@ -16,9 +16,12 @@
             <RadioButton Margin="10,5,5,5" Name="RadioButton4" Visibility="Collapsed" Checked="RadioButton4_OnChecked"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Image Margin="10,10,10,10" Visibility="Collapsed" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
-            <Image Margin="10,10,10,10" Visibility="Collapsed" Name="QuizReplyEmoticonIncorrect" Stretch="None" Source="Core/Resources/IncorrectAnswer.png" />
-            <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockQuizReply" />
+            <Image Visibility="Collapsed" Margin="10,5,5,5" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
+            <Image Visibility="Collapsed" Margin="10,5,5,5" Name="QuizReplyEmoticonIncorrect" Stretch="None" Source="Core/Resources/IncorrectAnswer.png" />
+            <TextBlock Visibility="Collapsed" Margin="10,5,5,5" Name="TextBlockQuizReply" />
+            <TextBlock Visibility="Collapsed" Margin="10,5,5,5" Name="TextBlockBingle">
+                <Hyperlink Name="HyperLinkBingle" RequestNavigate="HyperLinkBingle_RequestNavigate" />
+            </TextBlock>
         </StackPanel>
         <StackPanel>
             <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" IsEnabled="False"  HorizontalAlignment="Left" Click="ButtonSubmitMultiChoiceAnwser_OnClick" Name="ButtonSubmitMultiChoiceAnwser"/>
@@ -55,13 +58,6 @@
         <StackPanel>
             <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockErrorDetails" />
         </StackPanel>
-
-        <StackPanel>
-            <TextBlock Name="TextBlockBingle" Visibility="Collapsed">
-                <Hyperlink Name="HyperLinkBingle" RequestNavigate="HyperLinkBingle_RequestNavigate" />
-            </TextBlock>
-        </StackPanel>
-
     </StackPanel>
 
 </UserControl>

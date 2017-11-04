@@ -133,6 +133,7 @@ namespace Quiz.Ui
 
         private void ActOnAnswerGiven(string response)
         {
+            #region Extract to new method "ProcessAnswerToQuestion"
             QuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
             QuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
 
@@ -165,7 +166,11 @@ namespace Quiz.Ui
             }
 
             TextBlockQuizReply.Visibility = Visibility.Visible;
+            #endregion
 
+            SetBingleHyperLink();
+
+            #region extract to new method "RefreshAndPersistStatistics"
             if (!_userStatusTotalsIncremented && TotalQuestionsAsked.HasValue)
             {
                 TotalQuestionsAsked++;
@@ -177,9 +182,23 @@ namespace Quiz.Ui
             TextBlockTotalQuestionsAsked.Text = TotalQuestionsAsked.ToString();
             TextBlockTotalQuestionsAnsweredCorrectly.Text= TotalQuestionsAnsweredCorrectly.ToString();
             TextBlockUserStatus.Text = GetUserStatus(percentageSuccess);
-            TextBlockUserRank.Text = GetUserRank(percentageSuccess);          
+            TextBlockUserRank.Text = GetUserRank(percentageSuccess);
 
             PersistHiddenOptionsEventHandler?.Invoke(TotalQuestionsAsked, TotalQuestionsAnsweredCorrectly);
+            #endregion
+        }
+
+        private void SetBingleHyperLink()
+        {
+            var useBing = false; //gregt get from options
+            var engine = useBing ? "bing" : "google";
+            //var searchTerm = Uri.EscapeDataString(TextBlockQuestion.Text);
+            var searchTerm = "bbc";
+            var uri = $"https://www.{engine}.com/search?q={searchTerm}";
+
+            HyperLinkBingle.NavigateUri = new Uri(uri);
+            HyperLinkBingle.Inlines.Clear();
+            HyperLinkBingle.Inlines.Add("bingle");
 
             TextBlockBingle.Visibility = Visibility.Visible;
         }

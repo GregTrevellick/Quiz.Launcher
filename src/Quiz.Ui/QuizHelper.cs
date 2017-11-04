@@ -114,21 +114,13 @@ namespace Quiz.Ui
             if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
             {
                 vsixQuizDialog.TextBlockTotalQuestionsAnsweredCorrectly.Text = totalQuestionsAnsweredCorrectly.ToString();
-
                 vsixQuizDialog.TextBlockTotalQuestionsAsked.Text = totalQuestionsAsked.ToString();
-
                 var percentageSuccess = vsixQuizDialog.GetPercentageSuccess(totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
-
                 var userStatus = vsixQuizDialog.GetUserStatus(percentageSuccess);
                 vsixQuizDialog.TextBlockUserStatus.Text = userStatus;
-
                 var userRank = vsixQuizDialog.GetUserRank(percentageSuccess);
                 vsixQuizDialog.TextBlockUserRank.Text = userRank;
             }
-
-            vsixQuizDialog.HyperLinkBingle.NavigateUri = new Uri("http://www.bbc.co.uk");
-            vsixQuizDialog.HyperLinkBingle.Inlines.Clear();
-            vsixQuizDialog.HyperLinkBingle.Inlines.Add("Bingle");
 
             //triviaDialog.Show();
             var window = new Window
