@@ -49,9 +49,6 @@ namespace Quiz.Ui.Gateway
 
         static string CharacterHandler(string str)//gregt unit test reqd
         {
-            //"Which internet company began life as an online bookstore called &#039;Cadabra&#039;?"
-
-            //var result = System.Web.HttpUtility.HtmlDecode(str);
             var result = WebUtility.HtmlDecode(str);
             return result;
         }
