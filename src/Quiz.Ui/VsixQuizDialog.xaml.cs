@@ -45,7 +45,7 @@ namespace Quiz.Ui
             var quizHelper = new QuizHelper();
             var random = new Random();
             var totalQuestionsAnsweredCorrectly = random.Next(1, 100);
-            quizHelper.ShowQuiz("Again1", DateTime.Now, 789, 5000, "Again2", true, totalQuestionsAnsweredCorrectly, 100);
+            quizHelper.GetHiddenOptionsDto("Again1", DateTime.Now, 789, 5000, "Again2", true, totalQuestionsAnsweredCorrectly, 100);
         }
 #endif
 
