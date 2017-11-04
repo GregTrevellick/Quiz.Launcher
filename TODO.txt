@@ -1,4 +1,3 @@
-Bingle link for the question (only once answered)
 
 Link to a github MD page to submit questions via issue or email
 
@@ -9,3 +8,5 @@ https://stackoverflow.com/questions/18913208/colors-in-visual-studio-extension
 https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.platformui.environmentcolors?redirectedfrom=MSDN&view=visualstudiosdk-2017
 
 gregt ico / bmp
+
+i#if debug "another question" button to speed up testing
