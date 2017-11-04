@@ -48,12 +48,17 @@ namespace Quiz.Ui
                 {
                     MultipleChoiceAnswers = gatewayResponse.MultipleChoiceAnswers,
                     MultipleChoiceCorrectAnswer = gatewayResponse.MultipleChoiceCorrectAnswer,
-                    QuestionDifficulty = gatewayResponse.DifficultyLevel,
+                    QuestionDifficulty =gatewayResponse.DifficultyLevel,                  
                     QuestionType = gatewayResponse.QuestionType,
                     QuizQuestion = gatewayResponse.Question,
                     PopUpTitle = Vsix.Name,
                 };
             return quizDialogDto;
+        }
+
+        internal DifficultyLevel GetDifficultyLevel(string gregt)
+        {
+            return DifficultyLevel.Hard;
         }
 
         void PersistHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
@@ -79,10 +84,7 @@ namespace Quiz.Ui
 
             vsixQuizDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptions;
 
-            if (!string.IsNullOrWhiteSpace(quizDialogDto.QuestionDifficulty))
-            {
-                vsixQuizDialog.TextBlockDifficulty.Text = "Difficulty: " + quizDialogDto.QuestionDifficulty;
-            }
+            vsixQuizDialog.TextBlockDifficulty.Text = "Difficulty: " + quizDialogDto.QuestionDifficulty;
 
             if (!string.IsNullOrWhiteSpace(quizDialogDto.QuizQuestion))
             {

@@ -67,6 +67,7 @@
     <Compile Include="Gateway\ClientGatewayQuiz.cs" />
     <Compile Include="Gateway\GatewayResponse.cs" />
     <Compile Include="Gateway\LocalGateway.cs" />
+    <Compile Include="Gateway\DifficultyLevel.cs" />
     <Compile Include="Gateway\RootObject.cs" />
     <Compile Include="Gateway\QuestionType.cs" />
     <Compile Include="Gateway\ResponseDto.cs" />

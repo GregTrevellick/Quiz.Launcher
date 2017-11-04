@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using Newtonsoft.Json;
@@ -24,10 +25,11 @@ namespace Quiz.Ui.Gateway
 
             var question = CharacterHandler(firstOfOne.question);
             var difficultyLevel = UppercaseFirst(firstOfOne.difficulty);
+            Enum.TryParse(difficultyLevel, out DifficultyLevel d);
 
             var gatewayResponse = new GatewayResponse
             {
-                DifficultyLevel = difficultyLevel,
+                DifficultyLevel = d,
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,
                 Question = question,

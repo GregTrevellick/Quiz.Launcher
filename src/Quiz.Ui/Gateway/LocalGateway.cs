@@ -12,7 +12,7 @@ namespace Quiz.Ui.Gateway
                 {
                     new GatewayResponse
                     {
-                        DifficultyLevel = "jj",
+                        DifficultyLevel = DifficultyLevel.Easy,
                         MultipleChoiceAnswers = new List<string>
                         {
                             "single r",
@@ -26,7 +26,7 @@ namespace Quiz.Ui.Gateway
                     },
                     new GatewayResponse
                     {
-                        DifficultyLevel = "jgsgsgsgsgsgsgsgsgsgsgsgj",
+                        DifficultyLevel = DifficultyLevel.Medium,
                         MultipleChoiceAnswers = new List<string>
                         {
                             "single r",
@@ -40,7 +40,7 @@ namespace Quiz.Ui.Gateway
                     },
                     new GatewayResponse
                     {
-                        DifficultyLevel = "1",
+                        DifficultyLevel = DifficultyLevel.Hard,
                         MultipleChoiceAnswers = new List<string>
                         {
                             "single r",

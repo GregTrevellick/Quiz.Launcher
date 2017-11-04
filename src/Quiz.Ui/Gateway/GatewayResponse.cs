@@ -4,7 +4,7 @@ namespace Quiz.Ui.Gateway
 {
     public class GatewayResponse 
     {
-        public string DifficultyLevel { get; set; }
+        public DifficultyLevel DifficultyLevel { get; set; }
         public IEnumerable<string> MultipleChoiceAnswers { get; set; }
         public string MultipleChoiceCorrectAnswer { get; set; }
         public string Question { get; set; }
