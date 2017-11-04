@@ -2,27 +2,28 @@
 using Quiz.Ui.Gateway;
 using System;
 using System.Diagnostics;
-using System.Linq;
+using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Navigation;
-using Microsoft.VisualStudio.PlatformUI;
 
 namespace Quiz.Ui
 {
     public partial class VsixQuizDialog : UserControl
     {
         public string CorrectAnswer;
-        private readonly string _optionsName;
         public string QuestionText;
         public QuestionType QuestionType;
         public bool SuppressClosingWithoutSubmitingAnswerWarning;
         public int? TotalQuestionsAnsweredCorrectly;
         public int? TotalQuestionsAsked;
-        private bool _userStatusTotalsIncremented;
+
         public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
+
+        private readonly string _optionsName;
+        private bool _userStatusTotalsIncremented;
 
         public VsixQuizDialog()
         {
@@ -100,14 +101,6 @@ namespace Quiz.Ui
         private void ButtonSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)
         {
             string response;
-
-            //var btn = sender as Button;
-            //var p = btn.Parent;
-            //var ps = p as StackPanel;
-            //var pp = ps.Parent;
-            //var tbs = pp.FindDescendants<TextBlock>();
-            //var tb = tbs.Where(x => x.Name == "TextBlockQuestion").Single();
-            //var tbt = tb.Text;
 
             if (RadioButton1.IsChecked == true)
             {
@@ -203,11 +196,8 @@ namespace Quiz.Ui
         {
             var useBing = false; //gregt get from options
             var engine = useBing ? "bing" : "google";
-            //var searchTerm1 = "bbc";
-            //var searchTerm2 = Uri.EscapeDataString(TextBlockQuestion.Text);
-            //var searchTerm3 = System.Net.WebUtility.UrlEncode(TextBlockQuestion.Text);
-            var searchTerm4 = System.Net.WebUtility.UrlEncode(QuestionText);
-            var uri = $"https://www.{engine}.com/search?q={searchTerm4}";
+            var searchTerm = WebUtility.UrlEncode(QuestionText);
+            var uri = $"https://www.{engine}.com/search?q={searchTerm}";
 
             HyperLinkBingle.NavigateUri = new Uri(uri);
             HyperLinkBingle.Inlines.Clear();
