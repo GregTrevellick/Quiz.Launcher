@@ -80,6 +80,7 @@ namespace Quiz.Ui
                     FontWeight = FontWeights.Bold
                 };
                 vsixQuizDialog.TextBlockQuestion.Inlines.Add(run);
+                vsixQuizDialog.QuestionText = quizDialogDto.QuizQuestion;
             }
 
             if (!string.IsNullOrWhiteSpace(vsixQuizDialog.TextBlockErrorDetails.Text))

@@ -7,7 +7,7 @@
              mc:Ignorable="d">
 
     <StackPanel Orientation="Vertical" Name="StackPanelQuiz">
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" Name="StackPanelMain">
             <TextBlock Margin="10,10,10,10" Name="TextBlockDifficulty" />
             <TextBlock Margin="10,10,10,10" Name="TextBlockQuestion" />
             <RadioButton Margin="10,5,5,5" Name="RadioButton1" Visibility="Collapsed" Checked="RadioButton1_OnChecked"  />
