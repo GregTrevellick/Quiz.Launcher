@@ -9,4 +9,4 @@ https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.platformui.en
 
 gregt ico / bmp
 
-i#if debug "another question" button to speed up testing
+#if debug "another question" button to speed up testing
