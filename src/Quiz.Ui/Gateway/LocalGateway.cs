@@ -49,7 +49,22 @@ namespace Quiz.Ui.Gateway
         {
             get
             {
-                return new List<GatewayResponse>
+                var triviaQuestions = GetTriviaQuestions();
+                var localTriviaQuestions = new List<GatewayResponse>();
+                foreach (var triviaQuestion in triviaQuestions)
+                {
+                    var localTriviaQuestion = new GatewayResponse
+                    {
+                        //DifficultyLevel= triviaQuestion.,
+                        MultipleChoiceAnswers = triviaQuestion.Options.Select(x => x.Question),
+                        MultipleChoiceCorrectAnswer = triviaQuestion.Options.Where(x=>x.IsCorrect).Select(x=>x.Question).Single(),
+                        Question = triviaQuestion.Question,
+                        QuestionType = QuestionType.MultiChoice
+                    };
+                    localTriviaQuestions.Add(localTriviaQuestion);
+                }
+
+                var localResponse = new List<GatewayResponse>
                 {
                     Get(DifficultyLevel.Easy, "What is Brainfuck ?", "A Turing complete programming language", "An alcoholic beverage", "A computing-related protocol", "A very bad day at work"),
                     Get(DifficultyLevel.Hard, "What is Brainfuck ?", "A Turing complete programming language", "An alcoholic beverage"),
@@ -57,10 +72,14 @@ namespace Quiz.Ui.Gateway
                     Get(DifficultyLevel.Easy, "Sunday is a month ?", false, true),
                     //gregt opentdb submitable questions - cmmi ? solid ? grunt ? gulp ?
                 };
+
+                var result = localResponse.Union(localTriviaQuestions);
+
+                return result;
             }
         }
 
-        public IEnumerable<TriviaQuestion> GetTriviaQuestions()
+        public static IEnumerable<TriviaQuestion> GetTriviaQuestions()
         {
             var questions = new List<TriviaQuestion>();
 
