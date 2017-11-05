@@ -135,8 +135,16 @@ namespace Quiz.Ui
             // gregt avoid conversion by using .ico or .bmp ?
             var iconUri = GetIconUri();
             window.Icon = new BitmapImage(iconUri);
+
             window.ResizeMode = ResizeMode.CanResize;
             window.ShowDialog();
+        }
+
+        private Uri GetIconUri()
+        {
+            var assemblyName = Assembly.GetExecutingAssembly().GetName();
+            var packUri = $"pack://application:,,,/{assemblyName.Name};component/Resources/VsixExtensionIcon_90x90_Resource.png";
+            return new Uri(packUri, UriKind.RelativeOrAbsolute);
         }
 
         private void SetRadioButtonVisibility(RadioButton radioButton)
@@ -173,11 +181,5 @@ namespace Quiz.Ui
             return lastPopUpDateTime.Date < baseDateTime.Date;
         }
 
-        public Uri GetIconUri()
-        {
-            var assemblyName = Assembly.GetExecutingAssembly().GetName();
-            var packUri = $"pack://application:,,,/{assemblyName.Name};component/Resources/VsixExtensionIcon_90x90_Resource.png";
-            return new Uri(packUri, UriKind.RelativeOrAbsolute);
-        }
     }
 }
