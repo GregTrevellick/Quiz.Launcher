@@ -4,7 +4,7 @@ namespace Quiz.Ui.Gateway
 {
     public class QuestionsJeopardy
     {
-        public static IEnumerable<GatewayResponse> GetGatewayResponsesJeopardy()
+        public static IEnumerable<GatewayResponse> GetGatewayResponses()
         {
             var gatewayResponses = new List<GatewayResponse>
             {

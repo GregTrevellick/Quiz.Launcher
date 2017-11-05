@@ -9,12 +9,19 @@ namespace Quiz.Ui.Gateway
         {
             get
             {
+                var gatewayResponsesMine = QuestionsMine.GetGatewayResponses();
+
+                var gatewayResponsesJeopardy = QuestionsJeopardy.GetGatewayResponses();
+
                 var questionsWebCampTrainingKit = QuestionsWebCampTrainingKit.GetQuestions();
                 var gatewayResponsesWebCampTrainingKit = GetGatewayResponses(questionsWebCampTrainingKit);
 
-                var gatewayResponsesMine = QuestionsMine.GetGatewayResponsesMine();
+                var result = new List<GatewayResponse>();
+                
+                result = result.Union(gatewayResponsesMine).ToList();
+                result = result.Union(gatewayResponsesJeopardy).ToList();
+                result = result.Union(gatewayResponsesWebCampTrainingKit).ToList();
 
-                var result = gatewayResponsesMine.Union(gatewayResponsesWebCampTrainingKit);
                 return result;
             }
         }
