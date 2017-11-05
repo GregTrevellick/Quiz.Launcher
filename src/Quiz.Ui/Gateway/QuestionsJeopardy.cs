@@ -337,6 +337,7 @@ namespace Quiz.Ui.Gateway
 
         private static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2 = null, string wrongAnswer3 = null)
         {
+            //gregt dedupe
             var result = new GatewayResponse
             {
                 DifficultyLevel = difficultyLevel,

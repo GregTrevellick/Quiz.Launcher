@@ -4,7 +4,7 @@ using RestSharp;
 
 namespace Quiz.Ui.Gateway
 {
-    public class ClientGateway
+    public class QuestionsOpenTdb
     {
         public GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
@@ -24,7 +24,7 @@ namespace Quiz.Ui.Gateway
                 {
                     try
                     {
-                        gatewayResponse = ClientGatewayQuiz.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
+                        gatewayResponse = QuestionsOpenTdbGateway.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
                     }
                     catch (Exception ex)
                     {

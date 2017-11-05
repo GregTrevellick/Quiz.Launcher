@@ -1,6 +1,6 @@
 ﻿namespace Quiz.Ui.Gateway
 {
-    public class RootObject
+    public class QuestionsOpenTdbRootObject
     {
         public int response_code { get; set; }
         public Result[] results { get; set; }

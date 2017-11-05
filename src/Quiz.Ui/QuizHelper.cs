@@ -18,19 +18,35 @@ namespace Quiz.Ui
         public HiddenOptionsDto GetHiddenOptionsDto(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked, SearchEngine searchEngine)
         {
             var random = new Random();
-            var remote = random.Next(1, 8);
-            GatewayResponse gatewayResponse;
+            var remote = random.Next(1, 3);
+            var gatewayResponse = new GatewayResponse();
 
-            if (remote >= 5)
+            switch (remote)
             {
-                var clientGateway = new ClientGateway();
-                gatewayResponse = clientGateway.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
+                case 1:
+                    var questionsOpenTdb = new QuestionsOpenTdb();
+                    gatewayResponse = questionsOpenTdb.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
+                    break;
+                case 2:
+                    var gatewayResponses = AllGateways.GatewayResponses;
+                    gatewayResponse = gatewayResponses.RandomSubset(1).Single();
+                    break;
+                case 3:
+                    var questionsOpenCocktail = new QuestionsCocktailHeroku();
+                    gatewayResponse = questionsOpenCocktail.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
+                    break;
             }
-            else
-            {
-                var gatewayResponses = AllGateways.GatewayResponses;
-                gatewayResponse = gatewayResponses.RandomSubset(1).Single();
-            }
+
+            //////////////if (remote >= 5)
+            //////////////{
+            //////////////    var clientGateway = new QuestionsOpenTdb();
+            //////////////    gatewayResponse = clientGateway.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
+            //////////////}
+            //////////////else
+            //////////////{
+            //////////////    var gatewayResponses = AllGateways.GatewayResponses;
+            //////////////    gatewayResponse = gatewayResponses.RandomSubset(1).Single();
+            //////////////}
 
             var quizDialogDto = GetQuizDialogDto(gatewayResponse);
             DisplayPopUpMessage(quizDialogDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked, searchEngine);

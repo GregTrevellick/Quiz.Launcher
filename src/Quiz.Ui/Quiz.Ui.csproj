@@ -64,18 +64,21 @@
     <Compile Include="Core\SearchEngine.cs" />
     <Compile Include="Core\StringExtensions.cs" />
     <Compile Include="Core\QuizDialogDto.cs" />
-    <Compile Include="Gateway\ClientGateway.cs" />
-    <Compile Include="Gateway\ClientGatewayQuiz.cs" />
+    <Compile Include="Gateway\QuestionsCocktailHeroku.cs" />
+    <Compile Include="Gateway\QuestionsOpenTdb.cs" />
+    <Compile Include="Gateway\QuestionsCocktailHerokuGateway.cs" />
+    <Compile Include="Gateway\QuestionsOpenTdbGateway.cs" />
     <Compile Include="Gateway\GatewayResponse.cs" />
     <Compile Include="Gateway\AllGateways.cs" />
     <Compile Include="Gateway\DifficultyLevel.cs" />
     <Compile Include="Gateway\QuestionsMine.cs" />
     <Compile Include="Gateway\QuestionsJeopardy.cs" />
-    <Compile Include="Gateway\RootObject.cs" />
+    <Compile Include="Gateway\QuestionsCocktailHerokuRootObject.cs" />
+    <Compile Include="Gateway\QuestionsOpenTdbRootObject.cs" />
     <Compile Include="Gateway\QuestionType.cs" />
     <Compile Include="Gateway\ResponseDto.cs" />
-    <Compile Include="Gateway\Answer.cs" />
-    <Compile Include="Gateway\Question.cs" />
+    <Compile Include="Gateway\WebCampTrainingKitAnswer.cs" />
+    <Compile Include="Gateway\WebCampTrainingKitQuestion.cs" />
     <Compile Include="Gateway\QuestionsWebCampTrainingKit.cs" />
     <Compile Include="Options\GeneralOptions.cs">
       <SubType>Component</SubType>

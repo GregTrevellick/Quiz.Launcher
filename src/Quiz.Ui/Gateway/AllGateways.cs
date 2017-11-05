@@ -26,7 +26,7 @@ namespace Quiz.Ui.Gateway
             }
         }
 
-        private static IEnumerable<GatewayResponse> GetGatewayResponses(IEnumerable<Question> triviaQuestions)
+        private static IEnumerable<GatewayResponse> GetGatewayResponses(IEnumerable<WebCampTrainingKitQuestion> triviaQuestions)
         {
             var gatewayResponses = new List<GatewayResponse>();
 

@@ -6,16 +6,16 @@ using Newtonsoft.Json;
 
 namespace Quiz.Ui.Gateway
 {
-    public class ClientGatewayQuiz
+    public class QuestionsOpenTdbGateway
     {
         public static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
         {
-            var rootObject = JsonConvert.DeserializeObject<RootObject>(responseContent);
+            var rootObject = JsonConvert.DeserializeObject<QuestionsOpenTdbRootObject>(responseContent);
             var gatewayResponse = GetGatewayResponse(rootObject);
             return gatewayResponse;
         }
 
-        private static GatewayResponse GetGatewayResponse(RootObject rootObject)
+        private static GatewayResponse GetGatewayResponse(QuestionsOpenTdbRootObject rootObject)
         {
             var firstOfOne = rootObject.results.First();
 
