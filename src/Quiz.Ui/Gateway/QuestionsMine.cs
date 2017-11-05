@@ -13,6 +13,10 @@ namespace Quiz.Ui.Gateway
                 GetGatewayResponse(DifficultyLevel.Hard, "What is gulp?", "A Turing complete programming language", "An alcoholic beverage"),
                 GetGatewayResponse(DifficultyLevel.Medium, "What is grunt?", "A Turing complete programming language", "An alcoholic beverage"),
                 GetGatewayResponse(DifficultyLevel.Easy, "SOLID sucks?", false, true),
+                //xerox = javascript
+                //palo alto 
+                //whitehats = good ?
+          
             };
             return gatewayResponses;
         }

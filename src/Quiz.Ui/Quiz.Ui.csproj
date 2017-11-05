@@ -70,6 +70,8 @@
     <Compile Include="Gateway\LocalGateway.cs" />
     <Compile Include="Gateway\DifficultyLevel.cs" />
     <Compile Include="Gateway\QuestionsMine.cs" />
+    <Compile Include="Gateway\QuestionsJeopardy.cs" />
+    <Compile Include="Gateway\QuestionsUberspot.cs" />
     <Compile Include="Gateway\RootObject.cs" />
     <Compile Include="Gateway\QuestionType.cs" />
     <Compile Include="Gateway\ResponseDto.cs" />

@@ -4,6 +4,10 @@ namespace Quiz.Ui.Gateway
 {
     public class QuestionsWebCampTrainingKit
     {
+        /// <summary>
+        /// https://github.com/Microsoft-Web/DEMO-GeekQuiz-Web-API-backend
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<Question> GetQuestions()
         {
             var triviaQuestions = new List<Question>
