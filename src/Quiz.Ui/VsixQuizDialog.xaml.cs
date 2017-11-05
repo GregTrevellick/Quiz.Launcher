@@ -32,8 +32,8 @@ namespace Quiz.Ui
             _userStatusTotalsIncremented = false;
 
             InitializeComponent();
-            DataContext = this;//gregt is this relevant ? should it be leveraged ?
-            this.Loaded += UserControl1_Loaded;
+            //////DataContext = this;
+            Loaded += UserControl1_Loaded;
 
 #if DEBUG
             ButtonAgain.Visibility = Visibility.Visible;

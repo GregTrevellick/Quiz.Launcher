@@ -3,6 +3,6 @@
     public enum SearchEngine
     {
         Bing,
-        Google=0
+        Google = 0
     }
 }

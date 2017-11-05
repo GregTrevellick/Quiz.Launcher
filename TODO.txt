@@ -6,12 +6,8 @@ Colour themes
 https://stackoverflow.com/questions/18913208/colors-in-visual-studio-extension
 https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.platformui.environmentcolors?redirectedfrom=MSDN&view=visualstudiosdk-2017
 
-gregt 
-
 https://github.com/uberspot/OpenTriviaQA/blob/master/categories/science-technology
-
 https://cocktail-trivia-api.herokuapp.com/
-
 http://jservice.io/popular/14968
 http://jservice.io/popular/16168
 http://jservice.io/popular/17037
@@ -42,6 +38,24 @@ http://jservice.io/popular/11626
 http://jservice.io/popular/10929
 http://jservice.io/popular/13365
 http://jservice.io/popular/13737
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
