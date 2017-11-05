@@ -61,6 +61,7 @@
     <Compile Include="Core\HiddenOptionsDto.cs" />
     <Compile Include="Core\IntegerExtensions.cs" />
     <Compile Include="Core\MessageBoxes.cs" />
+    <Compile Include="Core\SearchEngine.cs" />
     <Compile Include="Core\StringExtensions.cs" />
     <Compile Include="Core\QuizDialogDto.cs" />
     <Compile Include="Gateway\ClientGateway.cs" />

@@ -18,6 +18,7 @@ namespace Quiz.Ui
         public bool SuppressClosingWithoutSubmitingAnswerWarning;
         public int? TotalQuestionsAnsweredCorrectly;
         public int? TotalQuestionsAsked;
+        public SearchEngine SearchEngine;
 
         public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
@@ -45,7 +46,7 @@ namespace Quiz.Ui
             var quizHelper = new QuizHelper();
             var random = new Random();
             var totalQuestionsAnsweredCorrectly = random.Next(1, 100);
-            quizHelper.GetHiddenOptionsDto("Again1", DateTime.Now, 789, 5000, "Again2", true, totalQuestionsAnsweredCorrectly, 100);
+            quizHelper.GetHiddenOptionsDto("Again1", DateTime.Now, 789, 5000, "Again2", true, totalQuestionsAnsweredCorrectly, 100, SearchEngine.Google);
         }
 #endif
 
@@ -186,7 +187,7 @@ namespace Quiz.Ui
             TextBlockQuizReply.Visibility = Visibility.Visible;
             #endregion
 
-            SetBingleHyperLink();
+            SetBingleHyperLink(SearchEngine);
 
             #region extract to new method "RefreshAndPersistStatistics"
             if (!_userStatusTotalsIncremented && TotalQuestionsAsked.HasValue)
@@ -206,18 +207,24 @@ namespace Quiz.Ui
             #endregion
         }
 
-        private void SetBingleHyperLink()
+        private void SetBingleHyperLink(SearchEngine searchEngine)
         {
-            var useBing = false; //gregt get from options
-            var engine = useBing ? "bing" : "google";
+            //var useBing = false; //gregt get from options or, better, programmatically
+            //var searchEngine = useBing ? "bing" : "google";
             var searchTerm = WebUtility.UrlEncode(QuestionText);
-            var uri = $"https://www.{engine}.com/search?q={searchTerm}";
+            var uri = $"https://www.{searchEngine}.com/search?q={searchTerm}";
 
             HyperLinkBingle.NavigateUri = new Uri(uri);
             HyperLinkBingle.Inlines.Clear();
             HyperLinkBingle.Inlines.Add("bingle");
 
             TextBlockBingle.Visibility = Visibility.Visible;
+        }
+
+        private void HyperLinkBingle_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
 
         internal string GetUserStatus(int percentageSuccess)
@@ -288,10 +295,5 @@ namespace Quiz.Ui
             ButtonSubmitMultiChoiceAnwser.IsEnabled = true;
         }
 
-        private void HyperLinkBingle_RequestNavigate(object sender, RequestNavigateEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
-            e.Handled = true;
-        }
     }
 }

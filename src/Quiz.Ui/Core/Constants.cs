@@ -26,6 +26,8 @@ namespace Quiz.Ui.Core
         public const string TimeOutInMilliSecondsOptionDetailedDescription = "The maximum time in milliseconds for this extension to spend retrieving the pop-up message data from the third party data source. This value is used as the timeout parameter when calling the external web service. A value of zero is ignored by the external web service call and will not cause an instant timeout.";
         public const string TimeOutInMilliSecondsOptionLabel = "Timeout limit (milliseconds)";
         public static string TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits = $"Are you sure ?{Environment.NewLine}{Environment.NewLine}The value for '{TimeOutInMilliSecondsOptionLabel}' is outside the recommended limits, which means the data retrieval may timeout before completion or may wait for a long time to complete.";
+        public const string UseBingInsteadOfGoogleOptionLabel = "Bing instead of Google";
+        public const string UseBingInsteadOfGoogleOptionDetailedDescription = "Once a question has been answered a hyperlink for the question appears. By default this link will search for the question use google search engine. If you prefer the bing search engine set this to 'true'.";
 
         public static string GetCaption(string vsixName, string vsixVersion)
         {

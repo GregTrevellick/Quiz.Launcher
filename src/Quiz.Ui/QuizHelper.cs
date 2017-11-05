@@ -16,7 +16,7 @@ namespace Quiz.Ui
         public delegate void QuizHelperEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event QuizHelperEventHandler PersistHiddenOptionsQuizHelperEventHandlerEventHandler;
 
-        public HiddenOptionsDto GetHiddenOptionsDto(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked)
+        public HiddenOptionsDto GetHiddenOptionsDto(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked, SearchEngine searchEngine)
         {
             var random = new Random();
             var remote = random.Next(1, 8);
@@ -34,7 +34,7 @@ namespace Quiz.Ui
             }
 
             var quizDialogDto = GetQuizDialogDto(gatewayResponse);
-            DisplayPopUpMessage(quizDialogDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
+            DisplayPopUpMessage(quizDialogDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked, searchEngine);
 
             var hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
 
@@ -43,22 +43,17 @@ namespace Quiz.Ui
 
         private static QuizDialogDto GetQuizDialogDto(GatewayResponse gatewayResponse)
         {
-            var quizDialogDto =
-                new QuizDialogDto
-                {
-                    MultipleChoiceAnswers = gatewayResponse.MultipleChoiceAnswers,
-                    MultipleChoiceCorrectAnswer = gatewayResponse.MultipleChoiceCorrectAnswer,
-                    QuestionDifficulty =gatewayResponse.DifficultyLevel,                  
-                    QuestionType = gatewayResponse.QuestionType,
-                    QuizQuestion = gatewayResponse.Question,
-                    PopUpTitle = Vsix.Name,
-                };
-            return quizDialogDto;
-        }
+            var quizDialogDto = new QuizDialogDto
+            {
+                MultipleChoiceAnswers = gatewayResponse.MultipleChoiceAnswers,
+                MultipleChoiceCorrectAnswer = gatewayResponse.MultipleChoiceCorrectAnswer,
+                QuestionDifficulty = gatewayResponse.DifficultyLevel,
+                QuestionType = gatewayResponse.QuestionType,
+                QuizQuestion = gatewayResponse.Question,
+                PopUpTitle = Vsix.Name,
+            };
 
-        internal DifficultyLevel GetDifficultyLevel(string gregt)
-        {
-            return DifficultyLevel.Hard;
+            return quizDialogDto;
         }
 
         void PersistHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
@@ -66,18 +61,16 @@ namespace Quiz.Ui
             PersistHiddenOptionsQuizHelperEventHandlerEventHandler?.Invoke(totalQuestionsAsked, totalQuestionsAnsweredCorrectly);
         }
 
-        private void DisplayPopUpMessage(QuizDialogDto quizDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        private void DisplayPopUpMessage(QuizDialogDto quizDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked, SearchEngine searchEngine)
         {
             var vsixQuizDialog = new VsixQuizDialog
             {
-                SuppressClosingWithoutSubmitingAnswerWarning =
-                        suppressClosingWithoutSubmitingAnswerWarning.HasValue
-                            ? suppressClosingWithoutSubmitingAnswerWarning.Value
-                            : false,
+                CorrectAnswer = quizDialogDto.MultipleChoiceCorrectAnswer,
                 QuestionType = quizDialogDto.QuestionType,
+                SearchEngine = searchEngine,
+                SuppressClosingWithoutSubmitingAnswerWarning = suppressClosingWithoutSubmitingAnswerWarning.HasValue ? suppressClosingWithoutSubmitingAnswerWarning.Value : false,
                 TotalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly,
                 TotalQuestionsAsked = totalQuestionsAsked,
-                CorrectAnswer = quizDialogDto.MultipleChoiceCorrectAnswer
             };
 
             vsixQuizDialog.TextBlockErrorDetails.Text = quizDialogDto.ErrorDetails;

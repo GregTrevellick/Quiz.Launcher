@@ -25,11 +25,11 @@ namespace Quiz.Ui.Gateway
 
             var question = CharacterHandler(firstOfOne.question);
             var difficultyLevel = UppercaseFirst(firstOfOne.difficulty);
-            Enum.TryParse(difficultyLevel, out DifficultyLevel d);
+            Enum.TryParse(difficultyLevel, out DifficultyLevel difficulty);
 
             var gatewayResponse = new GatewayResponse
             {
-                DifficultyLevel = d,
+                DifficultyLevel = difficulty,
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,
                 Question = question,

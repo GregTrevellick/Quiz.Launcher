@@ -58,7 +58,7 @@ namespace Quiz.Ui
                 var quizHelper = new QuizHelper();
                 quizHelper.PersistHiddenOptionsQuizHelperEventHandlerEventHandler += UpdateHiddenOptionsTotals;
 
-                var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(popUpTitle, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpCountToday, generalOptionsDto.TimeOutInMilliSeconds, Vsix.Name, generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, generalOptionsDto.TotalQuestionsAnsweredCorrectly, generalOptionsDto.TotalQuestionsAsked);
+                var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(popUpTitle, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpCountToday, generalOptionsDto.TimeOutInMilliSeconds, Vsix.Name, generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, generalOptionsDto.TotalQuestionsAnsweredCorrectly, generalOptionsDto.TotalQuestionsAsked, generalOptionsDto.SearchEngine);
 
                 if (hiddenOptionsDto != null)
                 {
@@ -111,10 +111,10 @@ namespace Quiz.Ui
                 MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
                 PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
                 PopUpCountToday = hiddenOptions.PopUpCountToday,
+                SearchEngine = generalOptions.UseBingInsteadOfGoogle ? SearchEngine.Bing : SearchEngine.Google,
                 ShowQuizUponClosingSolution = generalOptions.ShowQuizUponClosingSolution,
                 ShowQuizUponOpeningSolution = generalOptions.ShowQuizUponOpeningSolution,
-                SuppressClosingWithoutSubmitingAnswerWarning =
-                    generalOptions.SuppressClosingWithoutSubmitingAnswerWarning,
+                SuppressClosingWithoutSubmitingAnswerWarning = generalOptions.SuppressClosingWithoutSubmitingAnswerWarning,
                 TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
                 TotalQuestionsAnsweredCorrectly = hiddenOptions.TotalQuestionsAnsweredCorrectly,
                 TotalQuestionsAsked = hiddenOptions.TotalQuestionsAsked,

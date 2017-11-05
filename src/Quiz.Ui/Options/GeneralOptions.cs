@@ -117,6 +117,11 @@ namespace Quiz.Ui.Options
         }
 
         [Category(Constants.CategorySubLevel)]
+        [DisplayName(Constants.UseBingInsteadOfGoogleOptionLabel)]
+        [Description(Constants.UseBingInsteadOfGoogleOptionDetailedDescription)]
+        public bool UseBingInsteadOfGoogle { get; set; } = false;
+
+        [Category(Constants.CategorySubLevel)]
         [DisplayName(Constants.ShowQuizUponClosingSolutionOptionLabel)]
         [Description(Constants.ShowQuizUponClosingSolutionOptionDetailedDescription)]
         public bool ShowQuizUponClosingSolution { get; set; } = false;
