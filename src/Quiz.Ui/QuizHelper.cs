@@ -1,13 +1,12 @@
-﻿using Quiz.Ui.Core;
+﻿using MoreLinq;
+using Quiz.Ui.Core;
 using Quiz.Ui.Gateway;
 using System;
 using System.Linq;
-using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
-using MoreLinq;
 
 namespace Quiz.Ui
 {
@@ -132,18 +131,23 @@ namespace Quiz.Ui
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
 
-            // gregt avoid conversion by using .ico or .bmp ?
-            var iconUri = GetIconUri();
-            window.Icon = new BitmapImage(iconUri);
+            SetWindowIcon(window);
 
             window.ResizeMode = ResizeMode.CanResize;
             window.ShowDialog();
         }
 
+        private void SetWindowIcon(Window window)
+        {
+            var iconUri = GetIconUri();
+            window.Icon = new BitmapImage(iconUri);
+        }
+
         private Uri GetIconUri()
         {
-            var assemblyName = Assembly.GetExecutingAssembly().GetName();
-            var packUri = $"pack://application:,,,/{assemblyName.Name};component/Resources/VsixExtensionIcon_90x90_Resource.png";
+            //var assemblyName = Assembly.GetExecutingAssembly().GetName();
+            //var packUri = $"pack://application:,,,/{assemblyName.Name};component/Resources/VsixExtensionIcon_90x90_Resource.png";
+            var packUri = "pack://application:,,,/Quiz.Ui;component/Resources/vsixextensionicon_90x90_resource_bb6_icon.ico";
             return new Uri(packUri, UriKind.RelativeOrAbsolute);
         }
 
