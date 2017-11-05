@@ -15,13 +15,13 @@ namespace Quiz.Ui.Gateway
                         DifficultyLevel = DifficultyLevel.Easy,
                         MultipleChoiceAnswers = new List<string>
                         {
-                            "single r",
-                            "silly",
-                            "stupid",
-                            "sexy"
+                            "An alcoholic beverage",
+                            "A computing-related protocol",
+                            "A Turing complete programming language",
+                            "A very bad day at work"
                         },
-                        MultipleChoiceCorrectAnswer = "single r",
-                        Question = "what is s in solid",
+                        MultipleChoiceCorrectAnswer = "A Turing complete programming language",
+                        Question = "What is Brainfuck ?",
                         QuestionType = QuestionType.MultiChoice
                     },
                     new GatewayResponse

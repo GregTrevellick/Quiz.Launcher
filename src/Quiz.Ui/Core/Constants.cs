@@ -5,10 +5,10 @@ namespace Quiz.Ui.Core
     public static class Constants
     {
         public const string CategorySubLevel = "General";
-        public const string DefaultMaximumPopUpsWeekDay = "7";
+        public const string DefaultMaximumPopUpsWeekDay = "1";
         public const string DefaultMaximumPopUpsWeekEnd = "99";
         public const string DefaultPopUpIntervalInMins = "0";
-        public const string DefaultTimeOutInMilliSeconds = "1000";
+        public const string DefaultTimeOutInMilliSeconds = "1500";
         public const string MaximumPopUpsWeekDayDetailedDescription = "The maximum number of pop-up messages you will see on any one week day. Use this setting to reduce the volume of pop-up messages during the working week.";
         public const string MaximumPopUpsWeekDayOptionLabel = "Daily pop-up limit (midweek)";
         public const string MaximumPopUpsWeekEndDetailedDescription = "The maximum number of pop-up messages you will see on either a Saturday or a Sunday. Use this setting to increase the volume of pop-up messages in your free time.";
