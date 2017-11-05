@@ -5,16 +5,13 @@ namespace Quiz.Ui.Gateway
 {
     public class TriviaQuestion
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
+        public string Question { get; set; }
         public virtual List<TriviaOption> Options { get; set; }
     }
 
     public class TriviaOption
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public int QuestionId { get; set; }
+        public string Question { get; set; }
         public virtual TriviaQuestion TriviaQuestion { get; set; }
         public bool IsCorrect { get; set; }
     }
@@ -69,530 +66,530 @@ namespace Quiz.Ui.Gateway
 
             questions.Add(new TriviaQuestion
             {
-                Title = "When was .NET first released?",
+                Question = "When was .NET first released?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "2000", IsCorrect= false },
-                        new TriviaOption { Title= "2001", IsCorrect= false },
-                        new TriviaOption { Title= "2002", IsCorrect= true },
-                        new TriviaOption { Title= "2003", IsCorrect= false }
+                        new TriviaOption { Question = "2000", IsCorrect = false },
+                        new TriviaOption { Question = "2001", IsCorrect = false },
+                        new TriviaOption { Question = "2002", IsCorrect = true },
+                        new TriviaOption { Question = "2003", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What fictional company did Nancy Davolio work for?",
+                Question = "What fictional company did Nancy Davolio work for?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "Contoso Ltd.", IsCorrect= false },
-                        new TriviaOption { Title= "Initech", IsCorrect= false },
-                        new TriviaOption { Title= "Fabrikam, Inc.", IsCorrect= false },
-                        new TriviaOption { Title= "Northwind Traders", IsCorrect= true }
+                        new TriviaOption { Question = "Contoso Ltd.", IsCorrect = false },
+                        new TriviaOption { Question = "Initech", IsCorrect = false },
+                        new TriviaOption { Question = "Fabrikam, Inc.", IsCorrect = false },
+                        new TriviaOption { Question = "Northwind Traders", IsCorrect = true }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "The first and still the oldest domain name on the internet is:",
+                Question = "The first and still the oldest domain name on the internet is:",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "Network.com", IsCorrect= false },
-                        new TriviaOption { Title= "Alpha4.com", IsCorrect= false },
-                        new TriviaOption { Title= "Symbolics.com", IsCorrect= true },
-                        new TriviaOption { Title= "InterConnect.com", IsCorrect= false }
+                        new TriviaOption { Question = "Network.com", IsCorrect = false },
+                        new TriviaOption { Question = "Alpha4.com", IsCorrect = false },
+                        new TriviaOption { Question = "Symbolics.com", IsCorrect = true },
+                        new TriviaOption { Question = "InterConnect.com", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Which is not actually a Thing.js?",
+                Question = "Which is not actually a Thing.js?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "Mustache.js", IsCorrect= false },
-                        new TriviaOption { Title= "Hammer.js", IsCorrect= false },
-                        new TriviaOption { Title= "Horseradish.js", IsCorrect= true },
-                        new TriviaOption { Title= "Uglify.js", IsCorrect= false }
+                        new TriviaOption { Question = "Mustache.js", IsCorrect = false },
+                        new TriviaOption { Question = "Hammer.js", IsCorrect = false },
+                        new TriviaOption { Question = "Horseradish.js", IsCorrect = true },
+                        new TriviaOption { Question = "Uglify.js", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "In what year was the first Voice Over IP (VOIP) call made?",
+                Question = "In what year was the first Voice Over IP (VOIP) call made?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "1973", IsCorrect= true },
-                        new TriviaOption { Title= "1982", IsCorrect= false },
-                        new TriviaOption { Title= "1991", IsCorrect= false },
-                        new TriviaOption { Title= "1994", IsCorrect= false }
+                        new TriviaOption { Question = "1973", IsCorrect = true },
+                        new TriviaOption { Question = "1982", IsCorrect = false },
+                        new TriviaOption { Question = "1991", IsCorrect = false },
+                        new TriviaOption { Question = "1994", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "\"Chicago\" was codename for what Microsoft product?",
+                Question = "\"Chicago\" was codename for what Microsoft product?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "Visual Basic", IsCorrect= false },
-                        new TriviaOption { Title= "Microsoft Surface", IsCorrect= false },
-                        new TriviaOption { Title= "Windows 95", IsCorrect= true },
-                        new TriviaOption { Title= "Xbox", IsCorrect= false }
+                        new TriviaOption { Question = "Visual Basic", IsCorrect = false },
+                        new TriviaOption { Question = "Microsoft Surface", IsCorrect = false },
+                        new TriviaOption { Question = "Windows 95", IsCorrect = true },
+                        new TriviaOption { Question = "Xbox", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "How many loop constructs are there in C#?",
+                Question = "How many loop constructs are there in C#?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "2", IsCorrect= false },
-                        new TriviaOption { Title= "3", IsCorrect= false },
-                        new TriviaOption { Title= "4", IsCorrect= true },
-                        new TriviaOption { Title= "5", IsCorrect= false }
+                        new TriviaOption { Question = "2", IsCorrect = false },
+                        new TriviaOption { Question = "3", IsCorrect = false },
+                        new TriviaOption { Question = "4", IsCorrect = true },
+                        new TriviaOption { Question = "5", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What was the first CodePlex.com project?",
+                Question = "What was the first CodePlex.com project?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "EntLib", IsCorrect= false },
-                        new TriviaOption { Title= "IronPython", IsCorrect= true },
-                        new TriviaOption { Title= "Ajax Toolkit", IsCorrect= false },
-                        new TriviaOption { Title= "JSON.Net", IsCorrect= false }
+                        new TriviaOption { Question = "EntLib", IsCorrect = false },
+                        new TriviaOption { Question = "IronPython", IsCorrect = true },
+                        new TriviaOption { Question = "Ajax Toolkit", IsCorrect = false },
+                        new TriviaOption { Question = "JSON.Net", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Last name of the employee who wears Microsoft badge 00001",
+                Question = "Last name of the employee who wears Microsoft badge 00001",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "McDonald", IsCorrect= true },
-                        new TriviaOption { Title= "Gates", IsCorrect= false },
-                        new TriviaOption { Title= "Ballmer", IsCorrect= false },
-                        new TriviaOption { Title= "Allen", IsCorrect= false }
+                        new TriviaOption { Question = "McDonald", IsCorrect = true },
+                        new TriviaOption { Question = "Gates", IsCorrect = false },
+                        new TriviaOption { Question = "Ballmer", IsCorrect = false },
+                        new TriviaOption { Question = "Allen", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "When did Scott Hanselman join Microsoft?",
+                Question = "When did Scott Hanselman join Microsoft?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "2007", IsCorrect= true },
-                        new TriviaOption { Title= "2000", IsCorrect= false },
-                        new TriviaOption { Title= "2005", IsCorrect= false },
-                        new TriviaOption { Title= "2009", IsCorrect= false }
+                        new TriviaOption { Question = "2007", IsCorrect = true },
+                        new TriviaOption { Question = "2000", IsCorrect = false },
+                        new TriviaOption { Question = "2005", IsCorrect = false },
+                        new TriviaOption { Question = "2009", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "How big is a nibble?",
+                Question = "How big is a nibble?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "4 bits", IsCorrect= true },
-                        new TriviaOption { Title= "8 bits", IsCorrect= false },
-                        new TriviaOption { Title= "16 bits", IsCorrect= false },
-                        new TriviaOption { Title= "2 bits", IsCorrect= false }
+                        new TriviaOption { Question = "4 bits", IsCorrect = true },
+                        new TriviaOption { Question = "8 bits", IsCorrect = false },
+                        new TriviaOption { Question = "16 bits", IsCorrect = false },
+                        new TriviaOption { Question = "2 bits", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "How many function calls did Windows 1.0 approximately have?",
+                Question = "How many function calls did Windows 1.0 approximately have?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "100", IsCorrect= false },
-                        new TriviaOption { Title= "200", IsCorrect= false },
-                        new TriviaOption { Title= "600", IsCorrect= false },
-                        new TriviaOption { Title= "400", IsCorrect= true }
+                        new TriviaOption { Question = "100", IsCorrect = false },
+                        new TriviaOption { Question = "200", IsCorrect = false },
+                        new TriviaOption { Question = "600", IsCorrect = false },
+                        new TriviaOption { Question = "400", IsCorrect = true }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Which Star Wars movie was filmed entirely in the studio?",
+                Question = "Which Star Wars movie was filmed entirely in the studio?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "1", IsCorrect= false },
-                        new TriviaOption { Title= "2", IsCorrect= false },
-                        new TriviaOption { Title= "3", IsCorrect= true },
-                        new TriviaOption { Title= "4", IsCorrect= false }
+                        new TriviaOption { Question = "1", IsCorrect = false },
+                        new TriviaOption { Question = "2", IsCorrect = false },
+                        new TriviaOption { Question = "3", IsCorrect = true },
+                        new TriviaOption { Question = "4", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What is Superman's Kryptonian name?",
+                Question = "What is Superman's Kryptonian name?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "Jor-El", IsCorrect= false },
-                        new TriviaOption { Title= "Zod", IsCorrect= false },
-                        new TriviaOption { Title= "Kal-El", IsCorrect= true },
-                        new TriviaOption { Title= "Jax-Ur", IsCorrect= false }
+                        new TriviaOption { Question = "Jor-El", IsCorrect = false },
+                        new TriviaOption { Question = "Zod", IsCorrect = false },
+                        new TriviaOption { Question = "Kal-El", IsCorrect = true },
+                        new TriviaOption { Question = "Jax-Ur", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What is the image name for the Windows Task Manager application?",
+                Question = "What is the image name for the Windows Task Manager application?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "taskmgr", IsCorrect= true },
-                        new TriviaOption { Title= "tmanager", IsCorrect= false },
-                        new TriviaOption { Title= "wtaskmgr", IsCorrect= false },
-                        new TriviaOption { Title= "wintaskm", IsCorrect= false }
+                        new TriviaOption { Question = "taskmgr", IsCorrect = true },
+                        new TriviaOption { Question = "tmanager", IsCorrect = false },
+                        new TriviaOption { Question = "wtaskmgr", IsCorrect = false },
+                        new TriviaOption { Question = "wintaskm", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "When was the internet opened to commercial use?",
+                Question = "When was the internet opened to commercial use?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "1989", IsCorrect= false },
-                        new TriviaOption { Title= "1992", IsCorrect= false },
-                        new TriviaOption { Title= "1990", IsCorrect= false },
-                        new TriviaOption { Title= "1991", IsCorrect= true }
+                        new TriviaOption { Question = "1989", IsCorrect = false },
+                        new TriviaOption { Question = "1992", IsCorrect = false },
+                        new TriviaOption { Question = "1990", IsCorrect = false },
+                        new TriviaOption { Question = "1991", IsCorrect = true }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "When was the Xbox unveiled?",
+                Question = "When was the Xbox unveiled?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "2000", IsCorrect= false },
-                        new TriviaOption { Title= "2001", IsCorrect= true },
-                        new TriviaOption { Title= "2002", IsCorrect= false },
-                        new TriviaOption { Title= "2003", IsCorrect= false }
+                        new TriviaOption { Question = "2000", IsCorrect = false },
+                        new TriviaOption { Question = "2001", IsCorrect = true },
+                        new TriviaOption { Question = "2002", IsCorrect = false },
+                        new TriviaOption { Question = "2003", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What is the value of an Object + Array in JavaScript?",
+                Question = "What is the value of an Object + Array in JavaScript?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "0", IsCorrect= true},
-                        new TriviaOption { Title= "Array", IsCorrect= false },
-                        new TriviaOption { Title= "Object", IsCorrect= false },
-                        new TriviaOption { Title= "Type Error", IsCorrect= false }
+                        new TriviaOption { Question = "0", IsCorrect = true},
+                        new TriviaOption { Question = "Array", IsCorrect = false },
+                        new TriviaOption { Question = "Object", IsCorrect = false },
+                        new TriviaOption { Question = "Type Error", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Why was the IBM PCjr despised by users?",
+                Question = "Why was the IBM PCjr despised by users?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "Chicklet keyboard", IsCorrect= false },
-                        new TriviaOption { Title= "No Hard Disk", IsCorrect= false },
-                        new TriviaOption { Title= "Not PC compatible", IsCorrect= false },
-                        new TriviaOption { Title= "All the above", IsCorrect= true }
+                        new TriviaOption { Question = "Chicklet keyboard", IsCorrect = false },
+                        new TriviaOption { Question = "No Hard Disk", IsCorrect = false },
+                        new TriviaOption { Question = "Not PC compatible", IsCorrect = false },
+                        new TriviaOption { Question = "All the above", IsCorrect = true }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What was the max memory supported by MS-DOS?",
+                Question = "What was the max memory supported by MS-DOS?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "256K", IsCorrect= false },
-                        new TriviaOption { Title= "512K", IsCorrect= false },
-                        new TriviaOption { Title= "640K", IsCorrect= false },
-                        new TriviaOption { Title= "1M", IsCorrect= true }
+                        new TriviaOption { Question = "256K", IsCorrect = false },
+                        new TriviaOption { Question = "512K", IsCorrect = false },
+                        new TriviaOption { Question = "640K", IsCorrect = false },
+                        new TriviaOption { Question = "1M", IsCorrect = true }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "When was the first laser mouse released?",
+                Question = "When was the first laser mouse released?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "2001", IsCorrect= false },
-                        new TriviaOption { Title= "2002", IsCorrect= false },
-                        new TriviaOption { Title= "2003", IsCorrect= false },
-                        new TriviaOption { Title= "2004", IsCorrect= true }
+                        new TriviaOption { Question = "2001", IsCorrect = false },
+                        new TriviaOption { Question = "2002", IsCorrect = false },
+                        new TriviaOption { Question = "2003", IsCorrect = false },
+                        new TriviaOption { Question = "2004", IsCorrect = true }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What was Microsoft's first product?",
+                Question = "What was Microsoft's first product?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "DOS", IsCorrect= false },
-                        new TriviaOption { Title= "Altair Basic", IsCorrect= true },
-                        new TriviaOption { Title= "PC Basic", IsCorrect= false },
-                        new TriviaOption { Title= "Windows", IsCorrect= false }
+                        new TriviaOption { Question = "DOS", IsCorrect = false },
+                        new TriviaOption { Question = "Altair Basic", IsCorrect = true },
+                        new TriviaOption { Question = "PC Basic", IsCorrect = false },
+                        new TriviaOption { Question = "Windows", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What building does not exist on the Microsoft campus?",
+                Question = "What building does not exist on the Microsoft campus?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "1", IsCorrect= false },
-                        new TriviaOption { Title= "7", IsCorrect= true },
-                        new TriviaOption { Title= "99", IsCorrect= false },
-                        new TriviaOption { Title= "115", IsCorrect= false }
+                        new TriviaOption { Question = "1", IsCorrect = false },
+                        new TriviaOption { Question = "7", IsCorrect = true },
+                        new TriviaOption { Question = "99", IsCorrect = false },
+                        new TriviaOption { Question = "115", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Who wrote the first computer program?",
+                Question = "Who wrote the first computer program?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "Charles Babbage", IsCorrect= false },
-                        new TriviaOption { Title= "Herman Hollerith", IsCorrect= false },
-                        new TriviaOption { Title= "Ada Lovelace", IsCorrect= true },
-                        new TriviaOption { Title= "Jakob Bernoulli", IsCorrect= false }
+                        new TriviaOption { Question = "Charles Babbage", IsCorrect = false },
+                        new TriviaOption { Question = "Herman Hollerith", IsCorrect = false },
+                        new TriviaOption { Question = "Ada Lovelace", IsCorrect = true },
+                        new TriviaOption { Question = "Jakob Bernoulli", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Visual Basic was first released in what year?",
+                Question = "Visual Basic was first released in what year?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "1990", IsCorrect= false },
-                        new TriviaOption { Title= "1991", IsCorrect= true },
-                        new TriviaOption { Title= "1992", IsCorrect= false },
-                        new TriviaOption { Title= "1993", IsCorrect= false }
+                        new TriviaOption { Question = "1990", IsCorrect = false },
+                        new TriviaOption { Question = "1991", IsCorrect = true },
+                        new TriviaOption { Question = "1992", IsCorrect = false },
+                        new TriviaOption { Question = "1993", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Which of the following is NOT a prime number?",
+                Question = "Which of the following is NOT a prime number?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "257", IsCorrect= false },
-                        new TriviaOption { Title= "379", IsCorrect= false },
-                        new TriviaOption { Title= "571", IsCorrect= false },
-                        new TriviaOption { Title= "697", IsCorrect= true }
+                        new TriviaOption { Question = "257", IsCorrect = false },
+                        new TriviaOption { Question = "379", IsCorrect = false },
+                        new TriviaOption { Question = "571", IsCorrect = false },
+                        new TriviaOption { Question = "697", IsCorrect = true }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Yukihiro Matsumoto conceived what programming language on February 24, 1993?",
+                Question = "Yukihiro Matsumoto conceived what programming language on February 24, 1993?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "Python", IsCorrect= false },
-                        new TriviaOption { Title= "Ruby", IsCorrect= true },
-                        new TriviaOption { Title= "Perl", IsCorrect= false },
-                        new TriviaOption { Title= "Boo", IsCorrect= false }
+                        new TriviaOption { Question = "Python", IsCorrect = false },
+                        new TriviaOption { Question = "Ruby", IsCorrect = true },
+                        new TriviaOption { Question = "Perl", IsCorrect = false },
+                        new TriviaOption { Question = "Boo", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Which release of the .NET Framework introduced support for dynamic languages?",
+                Question = "Which release of the .NET Framework introduced support for dynamic languages?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "1.1", IsCorrect= false },
-                        new TriviaOption { Title= "2.0", IsCorrect= false },
-                        new TriviaOption { Title= "3.5", IsCorrect= false },
-                        new TriviaOption { Title= "4.0", IsCorrect= true }
+                        new TriviaOption { Question = "1.1", IsCorrect = false },
+                        new TriviaOption { Question = "2.0", IsCorrect = false },
+                        new TriviaOption { Question = "3.5", IsCorrect = false },
+                        new TriviaOption { Question = "4.0", IsCorrect = true }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What is the package manager for Node.js?",
+                Question = "What is the package manager for Node.js?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "npm", IsCorrect= true },
-                        new TriviaOption { Title= "yum", IsCorrect= false },
-                        new TriviaOption { Title= "rpm", IsCorrect= false },
-                        new TriviaOption { Title= "PEAR", IsCorrect= false }
+                        new TriviaOption { Question = "npm", IsCorrect = true },
+                        new TriviaOption { Question = "yum", IsCorrect = false },
+                        new TriviaOption { Question = "rpm", IsCorrect = false },
+                        new TriviaOption { Question = "PEAR", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "In the acronym PaaS, what do the P stand for",
+                Question = "In the acronym PaaS, what do the P stand for",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "Programming", IsCorrect= false },
-                        new TriviaOption { Title= "Power", IsCorrect= false },
-                        new TriviaOption { Title= "Platform", IsCorrect= true },
-                        new TriviaOption { Title= "Pedestrian", IsCorrect= false }
+                        new TriviaOption { Question = "Programming", IsCorrect = false },
+                        new TriviaOption { Question = "Power", IsCorrect = false },
+                        new TriviaOption { Question = "Platform", IsCorrect = true },
+                        new TriviaOption { Question = "Pedestrian", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What is the speed of light in metres per second?",
+                Question = "What is the speed of light in metres per second?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "299,792,458", IsCorrect= true },
-                        new TriviaOption { Title= "312,123,156", IsCorrect= false },
-                        new TriviaOption { Title= "100,000,000", IsCorrect= false },
-                        new TriviaOption { Title= "541,123,102", IsCorrect= false }
+                        new TriviaOption { Question = "299,792,458", IsCorrect = true },
+                        new TriviaOption { Question = "312,123,156", IsCorrect = false },
+                        new TriviaOption { Question = "100,000,000", IsCorrect = false },
+                        new TriviaOption { Question = "541,123,102", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What was the original name of the C# programming language?",
+                Question = "What was the original name of the C# programming language?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "Boo", IsCorrect= false },
-                        new TriviaOption { Title= "C+++", IsCorrect= false },
-                        new TriviaOption { Title= "Cool", IsCorrect= true },
-                        new TriviaOption { Title= "Anders", IsCorrect= false }
+                        new TriviaOption { Question = "Boo", IsCorrect = false },
+                        new TriviaOption { Question = "C+++", IsCorrect = false },
+                        new TriviaOption { Question = "Cool", IsCorrect = true },
+                        new TriviaOption { Question = "Anders", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Which of the following is an example of Boxing in C#?",
+                Question = "Which of the following is an example of Boxing in C#?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "int foo = 12;", IsCorrect= false },
-                        new TriviaOption { Title= "System.Box(56);", IsCorrect= false },
-                        new TriviaOption { Title= "int foo = (int)bar;", IsCorrect= false },
-                        new TriviaOption { Title= "object bar = 42;", IsCorrect= true }
+                        new TriviaOption { Question = "int foo = 12;", IsCorrect = false },
+                        new TriviaOption { Question = "System.Box(56);", IsCorrect = false },
+                        new TriviaOption { Question = "int foo = (int)bar;", IsCorrect = false },
+                        new TriviaOption { Question = "object bar = 42;", IsCorrect = true }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Which of the following was not an alternative name considered for XML?",
+                Question = "Which of the following was not an alternative name considered for XML?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "MAGMA", IsCorrect= false },
-                        new TriviaOption { Title= "SGML", IsCorrect= true },
-                        new TriviaOption { Title= "SLIM", IsCorrect= false },
-                        new TriviaOption { Title= "MGML", IsCorrect= false }
+                        new TriviaOption { Question = "MAGMA", IsCorrect = false },
+                        new TriviaOption { Question = "SGML", IsCorrect = true },
+                        new TriviaOption { Question = "SLIM", IsCorrect = false },
+                        new TriviaOption { Question = "MGML", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "How many HTML tags are defined in the original description of the markup language?",
+                Question = "How many HTML tags are defined in the original description of the markup language?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "1", IsCorrect= false },
-                        new TriviaOption { Title= "11", IsCorrect= false },
-                        new TriviaOption { Title= "18", IsCorrect= true },
-                        new TriviaOption { Title= "25", IsCorrect= false }
+                        new TriviaOption { Question = "1", IsCorrect = false },
+                        new TriviaOption { Question = "11", IsCorrect = false },
+                        new TriviaOption { Question = "18", IsCorrect = true },
+                        new TriviaOption { Question = "25", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Which of the following ECMA standards represents the standardization of JavaScript?",
+                Question = "Which of the following ECMA standards represents the standardization of JavaScript?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "ECMA-123", IsCorrect= false },
-                        new TriviaOption { Title= "ECMA-262", IsCorrect= true },
-                        new TriviaOption { Title= "ECMA-301", IsCorrect= false },
-                        new TriviaOption { Title= "ECMA-431", IsCorrect= false }
+                        new TriviaOption { Question = "ECMA-123", IsCorrect = false },
+                        new TriviaOption { Question = "ECMA-262", IsCorrect = true },
+                        new TriviaOption { Question = "ECMA-301", IsCorrect = false },
+                        new TriviaOption { Question = "ECMA-431", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What was the first Web Browser called?",
+                Question = "What was the first Web Browser called?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "WorldWideWeb", IsCorrect= true },
-                        new TriviaOption { Title= "Mosaic", IsCorrect= false },
-                        new TriviaOption { Title= "Lynx", IsCorrect= false },
-                        new TriviaOption { Title= "Gopher", IsCorrect= false }
+                        new TriviaOption { Question = "WorldWideWeb", IsCorrect = true },
+                        new TriviaOption { Question = "Mosaic", IsCorrect = false },
+                        new TriviaOption { Question = "Lynx", IsCorrect = false },
+                        new TriviaOption { Question = "Gopher", IsCorrect = false }
                 }).ToList()
             });
 
 
             questions.Add(new TriviaQuestion
             {
-                Title = "In version control systems, the process of bringing together two sets of changes is called what?",
+                Question = "In version control systems, the process of bringing together two sets of changes is called what?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "Branch", IsCorrect= false },
-                        new TriviaOption { Title= "Commit", IsCorrect= false },
-                        new TriviaOption { Title= "Merge", IsCorrect= true },
-                        new TriviaOption { Title= "Share", IsCorrect= false }
+                        new TriviaOption { Question = "Branch", IsCorrect = false },
+                        new TriviaOption { Question = "Commit", IsCorrect = false },
+                        new TriviaOption { Question = "Merge", IsCorrect = true },
+                        new TriviaOption { Question = "Share", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "In 1980, Microsoft released there first operating system. What was it called?",
+                Question = "In 1980, Microsoft released there first operating system. What was it called?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "MS-DOS", IsCorrect= false },
-                        new TriviaOption { Title= "Windows", IsCorrect= false },
-                        new TriviaOption { Title= "Xenix", IsCorrect= true },
-                        new TriviaOption { Title= "Altair OS", IsCorrect= false }
+                        new TriviaOption { Question = "MS-DOS", IsCorrect = false },
+                        new TriviaOption { Question = "Windows", IsCorrect = false },
+                        new TriviaOption { Question = "Xenix", IsCorrect = true },
+                        new TriviaOption { Question = "Altair OS", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Which ASCII code (in decimal) represents the character B?",
+                Question = "Which ASCII code (in decimal) represents the character B?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "22", IsCorrect= false },
-                        new TriviaOption { Title= "66", IsCorrect= true },
-                        new TriviaOption { Title= "97", IsCorrect= false },
-                        new TriviaOption { Title= "112", IsCorrect= false }
+                        new TriviaOption { Question = "22", IsCorrect = false },
+                        new TriviaOption { Question = "66", IsCorrect = true },
+                        new TriviaOption { Question = "97", IsCorrect = false },
+                        new TriviaOption { Question = "112", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Which are the first 6 decimal digits of Pi?",
+                Question = "Which are the first 6 decimal digits of Pi?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "3.14159", IsCorrect= true },
-                        new TriviaOption { Title= "3.14195", IsCorrect= false },
-                        new TriviaOption { Title= "3.14132", IsCorrect= false },
-                        new TriviaOption { Title= "3.14123", IsCorrect= false }
+                        new TriviaOption { Question = "3.14159", IsCorrect = true },
+                        new TriviaOption { Question = "3.14195", IsCorrect = false },
+                        new TriviaOption { Question = "3.14132", IsCorrect = false },
+                        new TriviaOption { Question = "3.14123", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Internet Protocol v4 provides approximately how many addresses?",
+                Question = "Internet Protocol v4 provides approximately how many addresses?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "1.5 billion", IsCorrect= false },
-                        new TriviaOption { Title= "4.3 billion", IsCorrect= true },
-                        new TriviaOption { Title= "55 billion", IsCorrect= false },
-                        new TriviaOption { Title= "3.4 trillion", IsCorrect= false }
+                        new TriviaOption { Question = "1.5 billion", IsCorrect = false },
+                        new TriviaOption { Question = "4.3 billion", IsCorrect = true },
+                        new TriviaOption { Question = "55 billion", IsCorrect = false },
+                        new TriviaOption { Question = "3.4 trillion", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "What is Layer 4 of the OSI Model?",
+                Question = "What is Layer 4 of the OSI Model?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "Network Layer", IsCorrect= false },
-                        new TriviaOption { Title= "Transport Layer", IsCorrect= true },
-                        new TriviaOption { Title= "Session Layer", IsCorrect= false },
-                        new TriviaOption { Title= "Presentation Layer", IsCorrect= false }
+                        new TriviaOption { Question = "Network Layer", IsCorrect = false },
+                        new TriviaOption { Question = "Transport Layer", IsCorrect = true },
+                        new TriviaOption { Question = "Session Layer", IsCorrect = false },
+                        new TriviaOption { Question = "Presentation Layer", IsCorrect = false }
                 }).ToList()
             });
 
             questions.Add(new TriviaQuestion
             {
-                Title = "Which of the following is NOT a value type in the .NET Framework Common Type System?",
+                Question = "Which of the following is NOT a value type in the .NET Framework Common Type System?",
                 Options = (new TriviaOption[]
                 {
-                        new TriviaOption { Title= "System.Integer", IsCorrect= false },
-                        new TriviaOption { Title= "System.String", IsCorrect= true },
-                        new TriviaOption { Title= "System.DateTime", IsCorrect= false },
-                        new TriviaOption { Title= "System.Float", IsCorrect= false }
+                        new TriviaOption { Question = "System.Integer", IsCorrect = false },
+                        new TriviaOption { Question = "System.String", IsCorrect = true },
+                        new TriviaOption { Question = "System.DateTime", IsCorrect = false },
+                        new TriviaOption { Question = "System.Float", IsCorrect = false }
                 }).ToList()
             });
 
