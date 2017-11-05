@@ -28,7 +28,7 @@ namespace Quiz.Ui
             }
             else
             {
-                var gatewayResponses = LocalGateway.GatewayResponses;
+                var gatewayResponses = AllGateways.GatewayResponses;
                 gatewayResponse = gatewayResponses.RandomSubset(1).Single();
             }
 

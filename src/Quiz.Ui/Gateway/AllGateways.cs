@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Quiz.Ui.Gateway
 {
-    public class LocalGateway
+    public class AllGateways
     {
         public static IEnumerable<GatewayResponse> GatewayResponses
         {
