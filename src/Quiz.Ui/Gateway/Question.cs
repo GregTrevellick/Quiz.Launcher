@@ -2,10 +2,10 @@
 
 namespace Quiz.Ui.Gateway
 {
-    public class TriviaQuestion
+    public class Question
     {
-        public string Question { get; set; }
-        public List<TriviaAnswer> TriviaAnswers { get; set; }
+        public string QuestionText { get; set; }
+        public List<Answer> Answers { get; set; }
         public DifficultyLevel DifficultyLevel { get; set; }
     }
 }

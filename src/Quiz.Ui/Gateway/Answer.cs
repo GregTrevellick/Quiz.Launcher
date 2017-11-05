@@ -1,8 +1,8 @@
 ﻿namespace Quiz.Ui.Gateway
 {
-    public class TriviaAnswer
+    public class Answer
     {
-        public string Answer { get; set; }
+        public string AnswerText { get; set; }
         public bool IsCorrect { get; set; }
     }
 }

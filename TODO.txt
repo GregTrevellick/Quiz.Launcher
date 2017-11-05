@@ -6,10 +6,6 @@ https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.platformui.en
 
 unit tests
 
-credits:
-https://docs.microsoft.com/en-us/aspnet/web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
-https://github.com/Microsoft-Web/WebCampTrainingKit/tree/master/Presentation/02-ASPNET-and-VS-Web-Tooling/Visual-Studio-and-Web-Essentials
-
 more local questions as per below
 https://github.com/Microsoft-Web/DEMO-GeekQuiz-Web-API-backend
 https://github.com/uberspot/OpenTriviaQA/blob/master/categories/science-technology
