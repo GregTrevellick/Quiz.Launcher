@@ -72,6 +72,8 @@
     <Compile Include="Gateway\RootObject.cs" />
     <Compile Include="Gateway\QuestionType.cs" />
     <Compile Include="Gateway\ResponseDto.cs" />
+    <Compile Include="Gateway\TriviaAnswer.cs" />
+    <Compile Include="Gateway\TriviaQuestion.cs" />
     <Compile Include="Options\GeneralOptions.cs">
       <SubType>Component</SubType>
     </Compile>

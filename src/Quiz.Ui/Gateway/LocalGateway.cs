@@ -3,19 +3,6 @@ using System.Linq;
 
 namespace Quiz.Ui.Gateway
 {
-    public class TriviaQuestion
-    {
-        public string Question { get; set; }
-        public List<TriviaAnswer> Answers { get; set; }
-        public DifficultyLevel DifficultyLevel { get; set; }
-    }
-
-    public class TriviaAnswer
-    {
-        public string Answer { get; set; }
-        public bool IsCorrect { get; set; }
-    }
-
     public class LocalGateway
     {
         private static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, bool correctAnswer, bool wrongAnswer)
