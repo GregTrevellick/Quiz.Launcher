@@ -81,18 +81,15 @@ namespace Quiz.Ui
         {
             var shouldCloseWindow = true;
 
-            if (QuestionType != QuestionType.None)
+            if (ButtonSubmitMultiChoiceAnwser.IsEnabled)
             {
-                if (ButtonSubmitMultiChoiceAnwser.IsEnabled)
+                if (!SuppressClosingWithoutSubmitingAnswerWarning)
                 {
-                    if (!SuppressClosingWithoutSubmitingAnswerWarning)
-                    {
-                        var closeWithoutSubmitingAnswer = MessageBoxes.ConfirmCloseWithoutSubmitingAnswer(_optionsName);
+                    var closeWithoutSubmitingAnswer = MessageBoxes.ConfirmCloseWithoutSubmitingAnswer(_optionsName);
 
-                        if (!closeWithoutSubmitingAnswer)
-                        {
-                            shouldCloseWindow = false;
-                        }
+                    if (!closeWithoutSubmitingAnswer)
+                    {
+                        shouldCloseWindow = false;
                     }
                 }
             }
@@ -152,7 +149,15 @@ namespace Quiz.Ui
 
         private void ActOnAnswerGiven(string response)
         {
-            #region Extract to new method "ProcessAnswerToQuestion"
+            ProcessAnswerToQuestion(response);
+
+            SetBingleHyperLink(SearchEngine);
+
+            RefreshAndPersistStatistics();
+        }
+
+        private void ProcessAnswerToQuestion(string response)
+        {
             QuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
             QuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
 
@@ -185,11 +190,10 @@ namespace Quiz.Ui
             }
 
             TextBlockQuizReply.Visibility = Visibility.Visible;
-            #endregion
+        }
 
-            SetBingleHyperLink(SearchEngine);
-
-            #region extract to new method "RefreshAndPersistStatistics"
+        private void RefreshAndPersistStatistics()
+        {
             if (!_userStatusTotalsIncremented && TotalQuestionsAsked.HasValue)
             {
                 TotalQuestionsAsked++;
@@ -199,19 +203,17 @@ namespace Quiz.Ui
             var percentageSuccess = GetPercentageSuccess(TotalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
 
             TextBlockTotalQuestionsAsked.Text = TotalQuestionsAsked.ToString();
-            TextBlockTotalQuestionsAnsweredCorrectly.Text= TotalQuestionsAnsweredCorrectly.ToString();
+            TextBlockTotalQuestionsAnsweredCorrectly.Text = TotalQuestionsAnsweredCorrectly.ToString();
             TextBlockUserStatus.Text = GetUserStatus(percentageSuccess);
             TextBlockUserRank.Text = GetUserRank(percentageSuccess);
 
             PersistHiddenOptionsEventHandler?.Invoke(TotalQuestionsAsked, TotalQuestionsAnsweredCorrectly);
-            #endregion
         }
 
         private void SetBingleHyperLink(SearchEngine searchEngine)
         {
-            //var useBing = false; //gregt get from options or, better, programmatically
-            //var searchEngine = useBing ? "bing" : "google";
             var searchTerm = WebUtility.UrlEncode(QuestionText);
+
             var uri = $"https://www.{searchEngine}.com/search?q={searchTerm}";
 
             HyperLinkBingle.NavigateUri = new Uri(uri);

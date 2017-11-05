@@ -2,8 +2,7 @@
 {
     public enum QuestionType
     {
-        None = 0,
-        MultiChoice,
+        MultiChoice = 0,
         TrueFalse,
     }
 }

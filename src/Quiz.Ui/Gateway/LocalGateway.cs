@@ -5,6 +5,13 @@ namespace Quiz.Ui.Gateway
 {
     public class LocalGateway
     {
+        private static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, bool correctAnswer, bool wrongAnswer)
+        {
+            var result = Get(difficultyLevel, question, correctAnswer.ToString(), wrongAnswer.ToString());
+            result.QuestionType = QuestionType.TrueFalse;
+            return result;
+        }
+
         private static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2 = null, string wrongAnswer3 = null)
         {
             var result = new GatewayResponse
@@ -19,17 +26,9 @@ namespace Quiz.Ui.Gateway
                 },
                 MultipleChoiceCorrectAnswer = correctAnswer,
                 Question = question,
+                QuestionType = QuestionType.MultiChoice
             };
-
-            if (result.MultipleChoiceAnswers.Any(x => x.ToLower().Contains("true")))
-            {
-                result.QuestionType = QuestionType.TrueFalse;
-            }
-            else
-            {
-                result.QuestionType = QuestionType.MultiChoice;
-            }
-
+            
             return result;
         }
 
@@ -42,7 +41,7 @@ namespace Quiz.Ui.Gateway
                     Get(DifficultyLevel.Easy, "What is Brainfuck ?", "A Turing complete programming language", "An alcoholic beverage", "A computing-related protocol", "A very bad day at work"),
                     Get(DifficultyLevel.Hard, "What is Brainfuck ?", "A Turing complete programming language", "An alcoholic beverage"),
                     Get(DifficultyLevel.Medium, "What is Brainfuck ?", "A Turing complete programming language", "An alcoholic beverage"),
-                    Get(DifficultyLevel.Easy, "What is Brainfuck ?", "A Turing complete programming language", "An alcoholic beverage"),
+                    Get(DifficultyLevel.Easy, "Sunday is a month ?", false, true),
                     //gregt opentdb submitable questions - cmmi ? solid ? grunt ? gulp ?
                 };
             }
