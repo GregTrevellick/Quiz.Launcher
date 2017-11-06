@@ -25,6 +25,8 @@ See the [change log](CHANGELOG.md) for release history.
 
 ## Credits
 
+[jService](http://www.jservice.io)
+
 [Open Trivia Database](https://opentdb.com/)
 
 [Phil Haack](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage)
