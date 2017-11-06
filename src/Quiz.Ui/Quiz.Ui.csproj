@@ -64,6 +64,7 @@
     <Compile Include="Core\SearchEngine.cs" />
     <Compile Include="Core\StringExtensions.cs" />
     <Compile Include="Core\QuizDialogDto.cs" />
+    <Compile Include="Gateway\Common.cs" />
     <Compile Include="Gateway\QuestionsCocktailHeroku.cs" />
     <Compile Include="Gateway\QuestionsOpenTdb.cs" />
     <Compile Include="Gateway\QuestionsCocktailHerokuGateway.cs" />

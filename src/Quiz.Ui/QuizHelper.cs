@@ -150,9 +150,8 @@ namespace Quiz.Ui
 
         private Uri GetIconUri()
         {
-            //var assemblyName = Assembly.GetExecutingAssembly().GetName();
-            //var packUri = $"pack://application:,,,/{assemblyName.Name};component/Resources/VsixExtensionIcon_90x90_Resource.png";
-            var packUri = "pack://application:,,,/Quiz.Ui;component/Resources/vsixextensionicon_90x90_resource_bb6_icon.ico";
+            var assemblyName = "Quiz.Ui";
+            var packUri = $"pack://application:,,,/{assemblyName};component/Resources/VsixExtensionIcon_90x90_Resource.png";
             return new Uri(packUri, UriKind.RelativeOrAbsolute);
         }
 
@@ -189,6 +188,5 @@ namespace Quiz.Ui
             //If last pop up was yesterday, then we have gone past midnight, so this is first pop up for today
             return lastPopUpDateTime.Date < baseDateTime.Date;
         }
-
     }
 }

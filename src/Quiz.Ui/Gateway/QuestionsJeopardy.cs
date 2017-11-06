@@ -317,44 +317,9 @@ namespace Quiz.Ui.Gateway
             return gatewayResponses;
         }
 
-        //private static GatewayResponse Get(string question, bool correctAnswer, bool wrongAnswer)
-        //{
-        //    var result = Get(DifficultyLevel.Medium, question, correctAnswer.ToString(), wrongAnswer.ToString());
-        //    result.QuestionType = QuestionType.TrueFalse;
-        //    return result;
-        //}
-
         private static GatewayResponse Get(string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2  , string wrongAnswer3 )
         {
-            var result = Get(DifficultyLevel.Medium, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3);
-            return result;
-        }
-
-        //private static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, bool correctAnswer, bool wrongAnswer)
-        //{
-        //    var result = Get(difficultyLevel, question, correctAnswer.ToString(), wrongAnswer.ToString());
-        //    result.QuestionType = QuestionType.TrueFalse;
-        //    return result;
-        //}
-
-        private static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2 = null, string wrongAnswer3 = null)
-        {
-            //gregt dedupe
-            var result = new GatewayResponse
-            {
-                DifficultyLevel = difficultyLevel,
-                MultipleChoiceAnswers = new List<string>
-                {
-                    correctAnswer,
-                    wrongAnswer1,
-                    wrongAnswer2,
-                    wrongAnswer3,
-                },
-                MultipleChoiceCorrectAnswer = correctAnswer,
-                Question = question,
-                QuestionType = QuestionType.MultiChoice
-            };
-
+            var result = Common.Get(DifficultyLevel.Medium, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3);
             return result;
         }
     }
