@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 using System.Linq;
 
 namespace Quiz.Ui.Gateway
@@ -7,17 +8,15 @@ namespace Quiz.Ui.Gateway
     {
         public static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
         {
-            var rootObject = JsonConvert.DeserializeObject<QuestionsCocktailHerokuRootObject>(responseContent);
-            var gatewayResponse = GetGatewayResponse(rootObject);
+            var rootObject = JsonConvert.DeserializeObject<List<QuestionsCocktailHerokuRootObject>>(responseContent);
+            var gatewayResponse = GetGatewayResponse(rootObject.First());
             return gatewayResponse;
         }
 
         private static GatewayResponse GetGatewayResponse(QuestionsCocktailHerokuRootObject rootObject)
         {
-            var firstOfOne = rootObject.Property1.First();
-
-            var multipleChoiceCorrectAnswer = firstOfOne.answers.Single(x => x.correct).text;
-            var multipleChoiceAnswers = firstOfOne.answers.Select(x => x.text);
+            var multipleChoiceCorrectAnswer = rootObject.answers.Single(x => x.correct).text;
+            var multipleChoiceAnswers = rootObject.answers.Select(x => x.text);
 
             //////var question = CharacterHandler(firstOfOne.question);
             //////var difficultyLevel = UppercaseFirst(firstOfOne.difficulty);
@@ -28,7 +27,7 @@ namespace Quiz.Ui.Gateway
                 //gregt TODO DifficultyLevel = difficulty,
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,
-                Question = firstOfOne.text,
+                Question = rootObject.text,
                 //gregt TODO QuestionType = firstOfOne.type == "boolean" ? QuestionType.TrueFalse : QuestionType.MultiChoice//gregt unit test reqd
             };
 

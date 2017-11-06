@@ -37,7 +37,7 @@ namespace Quiz.Ui.Gateway
             return gatewayResponse;
         }
 
-        private ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
+        private ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)//gregt dedupe below here
         {
             var responseDto = new ResponseDto();
 
@@ -65,21 +65,21 @@ namespace Quiz.Ui.Gateway
             return responseDto;
         }
 
-        private void HandleUnexpectedError(Exception ex, ResponseDto responseDto)
+        private void HandleUnexpectedError(Exception ex, ResponseDto responseDto)//gregt dedupe below here
         {
             Debug.WriteLine(ex.Message);
             var exceptionTypeName = ex.GetType().Name;
             responseDto.ErrorDetails = $"An unexpected error of type {exceptionTypeName} has occured (possible JSON deserialization error).";
         }
 
-        private void HandleUnexpectedError(string url, Exception ex, ResponseDto responseDto)
+        private void HandleUnexpectedError(string url, Exception ex, ResponseDto responseDto)//gregt dedupe below here
         {
             Debug.WriteLine(ex.Message);
             var exceptionTypeName = ex.GetType().Name;
             responseDto.ErrorDetails = $"An unexpected error of type {exceptionTypeName} has occured (possible communication error with {url}).";
         }
 
-        internal bool HasErrorOccured(IRestResponse response)
+        internal bool HasErrorOccured(IRestResponse response)//gregt dedupe below here
         {
             var errorHasOccured =
                 response == null ||
@@ -89,7 +89,7 @@ namespace Quiz.Ui.Gateway
             return errorHasOccured;
         }
 
-        private string GetErrorDetails(IRestResponse response, string timeOutInMilliSecondsOptionLabel, string optionName)
+        private string GetErrorDetails(IRestResponse response, string timeOutInMilliSecondsOptionLabel, string optionName)//gregt dedupe below here
         {
             string errorDetails;
 
@@ -120,7 +120,7 @@ namespace Quiz.Ui.Gateway
             return errorDetails;
         }
 
-        private void SetGatewayResponseFromErrorDetails(GatewayResponse gatewayResponse, string errorDetails)
+        private void SetGatewayResponseFromErrorDetails(GatewayResponse gatewayResponse, string errorDetails)//gregt dedupe below here
         {
             gatewayResponse.ErrorDetails = errorDetails;
         }

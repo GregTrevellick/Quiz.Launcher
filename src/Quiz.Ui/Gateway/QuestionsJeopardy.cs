@@ -8,59 +8,61 @@ namespace Quiz.Ui.Gateway
         {
             var gatewayResponses = new List<GatewayResponse>
             {
+                //gregt convert below to proper questions
+
                 //http://jservice.io/popular/14968
-                Get("Wi-Fi technology uses these waves that brought us \"The Chase & Sanborn Hour\" in the 1930s ?","radio waves", "", "", ""),
-                Get("Reddit is known for hosting online interviews where you can AMA, short for this ?","ask me anything", "", "", ""),
-                Get("This type of \"net\" developed by Xerox has helped local area networks communicate since the 1970s ?","ethernet", "", "", ""),
-                Get("We're gonna go old school and use keyboard characters to translate my image into this computing code?","ASCII", "", "", ""),
-                Get("It's a big smartphone, it's a small iPad, it's this 7-letter hybrid word?", "phablet", "", "", ""),
-                Get("You can get a special wristband for the iPod Nano; put the nano in the middle & it looks like you're wearing this	?","a watch", "", "", ""),
-                Get("Sony's S is this type of computer--bigger than a smartphone but smaller than a laptop?","a tablet", "", "", ""),
-                Get("My PlayStation 3 lets me enjoy important historical movies in this \"colorful\" format  ?","Blu - ray ", "", "", ""),
-                Get("To quickly copy text into your computer, use a \"pen\" type of this optical device ?","a scanner ", "", "", ""),
-                Get("Connect to the Internet with ease with a wireless one of these--sounds like a seat for your little brother ?","a booster  ", "", "", ""),
+                Get("Wi-Fi technology uses these waves that brought us \"The Chase & Sanborn Hour\" in the 1930s ?","radio waves", "Todo1", "Todo2", "Todo3"),
+                Get("Reddit is known for hosting online interviews where you can AMA, short for this ?","ask me anything", "Todo1", "Todo2", "Todo3"),
+                Get("This type of \"net\" developed by Xerox has helped local area networks communicate since the 1970s ?","ethernet", "Todo1", "Todo2", "Todo3"),
+                Get("We're gonna go old school and use keyboard characters to translate my image into this computing code?","ASCII", "Todo1", "Todo2", "Todo3"),
+                Get("It's a big smartphone, it's a small iPad, it's this 7-letter hybrid word?", "phablet", "Todo1", "Todo2", "Todo3"),
+                Get("You can get a special wristband for the iPod Nano; put the nano in the middle & it looks like you're wearing this	?","a watch", "Todo1", "Todo2", "Todo3"),
+                Get("Sony's S is this type of computer--bigger than a smartphone but smaller than a laptop?","a tablet", "Todo1", "Todo2", "Todo3"),
+                Get("My PlayStation 3 lets me enjoy important historical movies in this \"colorful\" format  ?","Blu - ray ", "Todo1", "Todo2", "Todo3"),
+                Get("To quickly copy text into your computer, use a \"pen\" type of this optical device ?","a scanner ", "Todo1", "Todo2", "Todo3"),
+                Get("Connect to the Internet with ease with a wireless one of these--sounds like a seat for your little brother ?","a booster  ", "Todo1", "Todo2", "Todo3"),
 
                 #region
 
                 //http://jservice.io/popular/17037
-                Get("Android's 4.1 O.S. is called this, just like one of Reagan's favorite treats ?","   Jelly Bean  ", "", "", ""),//  200 May 6, 2014
-                Get("32 bits long, an ESN is an \"electronic\" this, used to identify devices  ?"," serial number ", "", "", ""),//  400 May 6, 2014
-                Get("A type of hacker who ethically reports security problems is called this, a proverbial accessory of cowboy heroes ?","    white hat ", "", "", ""),//  600 May 6, 2014
-                Get("In 1991 Apple introduced this media player--would you like to download the latest version ?"," QuickTime ", "", "", ""),//  800 May 6, 2014
-                Get("In 2014 Facebook agreed to pay $2 billion for Oculus, a maker of this immersive technology  ?"," virtual reality	", "", "", ""),//1000	May 6, 2014
+                Get("Android's 4.1 O.S. is called this, just like one of Reagan's favorite treats ?","Jelly Bean", "Todo1", "Todo2", "Todo3"),
+                Get("32 bits long, an ESN is an \"electronic\" this, used to identify devices  ?","serial number", "Todo1", "Todo2", "Todo3"),
+                Get("A type of hacker who ethically reports security problems is called this, a proverbial accessory of cowboy heroes ?","    white hat ", "Todo1", "Todo2", "Todo3"),
+                Get("In 1991 Apple introduced this media player--would you like to download the latest version ?"," QuickTime ", "Todo1", "Todo2", "Todo3"),
+                Get("In 2014 Facebook agreed to pay $2 billion for Oculus, a maker of this immersive technology  ?"," virtual reality	", "Todo1", "Todo2", "Todo3"),
 
                 //http://jservice.io/popular/17078
-                Get("Time to process the Pentium 4 processor from this company  ?","  Intel  ", "", "", ""),// 200 April 23, 2014
-                Get("CTR, the Computing-Tabulating-Recording Company, took on this current 3-letter name in 1924 ?"," IBM ", "", "", ""),//400 April 23, 2014
-                Get("Here it is in blue & white: the LaserJet Pro 400 printer from this brand  ?","Hewlett-Packard ", "", "", ""),//600 April 23, 2014
-                Get("The stars align with its Galaxy Note II phone  ?","Samsung ", "", "", ""),//800 April 23, 2014
-                Get("The Multi-Sport GPS watch is made by this company ?","TomTom  ", "", "", ""),//1000    April 23, 2014
+                Get("Time to process the Pentium 4 processor from this company  ?","  Intel  ", "Todo1", "Todo2", "Todo3"),// 200 April 23, 2014
+                Get("CTR, the Computing-Tabulating-Recording Company, took on this current 3-letter name in 1924 ?"," IBM ", "Todo1", "Todo2", "Todo3"),//400 April 23, 2014
+                Get("Here it is in blue & white: the LaserJet Pro 400 printer from this brand  ?","Hewlett-Packard ", "Todo1", "Todo2", "Todo3"),//600 April 23, 2014
+                Get("The stars align with its Galaxy Note II phone  ?","Samsung ", "Todo1", "Todo2", "Todo3"),//800 April 23, 2014
+                Get("The Multi-Sport GPS watch is made by this company ?","TomTom  ", "Todo1", "Todo2", "Todo3"),//1000    April 23, 2014
 
                 //http://jservice.io/popular/10511
-                Get("This Apple product that was rolled out in 2010 has a 9.7-inch screen & is 1/2 inch thick?","     the iPad", "", "", ""),//    200 March 4, 2011
-                Get("Here you can clearly see the logo of this hi-def format for home theaters in 1080p?","   Blu - ray", "", "", ""),// 400 March 4, 2011
+                Get("This Apple product that was rolled out in 2010 has a 9.7-inch screen & is 1/2 inch thick?","     the iPad", "Todo1", "Todo2", "Todo3"),//    200 March 4, 2011
+                Get("Here you can clearly see the logo of this hi-def format for home theaters in 1080p?","   Blu - ray", "Todo1", "Todo2", "Todo3"),// 400 March 4, 2011
                 //Get("smugmug.com lets you share these & back them up pictures(or photographs)   600 March 4, 2011
                 //Get("Copying info from a computer to a CD is called burning; doing the reverse is this other destructive term ripping 800 March 4, 2011
-                Get("Seen here is an icon for this 3 - letter service that feeds you updates on your favorite web sites?","     RSS", "", "", ""),// 1000    March 4, 2011
-                Get("For a great deal, check out this smallest version of the Apple iPod, even tinier than the Nano?","   the Shuffle", "", "", ""),// 200 February 7, 2007
-                Get("Motorstorm, Lair & Warhawk are some of the products for this newest Sony entertainment system  ?","  the PlayStation 3", "", "", ""),//   400 February 7, 2007
-                Get("This search engine's Picasa program lets you store, edit & share pictures?"," 	Google", "", "", ""),//	600	February 7, 2007
+                Get("Seen here is an icon for this 3 - letter service that feeds you updates on your favorite web sites?","     RSS", "Todo1", "Todo2", "Todo3"),// 1000    March 4, 2011
+                Get("For a great deal, check out this smallest version of the Apple iPod, even tinier than the Nano?","   the Shuffle", "Todo1", "Todo2", "Todo3"),// 200 February 7, 2007
+                Get("Motorstorm, Lair & Warhawk are some of the products for this newest Sony entertainment system  ?","  the PlayStation 3", "Todo1", "Todo2", "Todo3"),//   400 February 7, 2007
+                Get("This search engine's Picasa program lets you store, edit & share pictures?"," 	Google", "Todo1", "Todo2", "Todo3"),//	600	February 7, 2007
                 //Get("Phishing is not allowed when you use the newest version of this web browser from Mozilla Firefox 800 February 7, 2007
-                Get("You don't need to go to this cell phone company's \"hotspot\" if you want to talk with your \"Sidekick\"  ?","   T - Mobile", "", "", ""),//    1000    February 7, 2007
+                Get("You don't need to go to this cell phone company's \"hotspot\" if you want to talk with your \"Sidekick\"  ?","   T - Mobile", "Todo1", "Todo2", "Todo3"),//    1000    February 7, 2007
 
                 //http://jservice.io/popular/12223
-                Get("On Feb. 17, 2009 this type of TV broadcast technology will end in the U.S.; we're going digital?"," 	analog", "", "", ""),//	200	December 24, 2008
-                Get("This photo co.created the EasyShare printer with prints that are less expensive &last 100 years ?"," Kodak", "", "", ""),//   400 December 24, 2008
-                Get("In 2008 lampposts in London were padded to prevent injuries due to this activity by pedestrians ?"," texting", "", "", ""),// 600 December 24, 2008
-                Get("To stop attackers from accessing your computer, in network settings, shut off the print sharing &this other \"sharing\" ?","  file sharing", "", "", ""),//    800 December 24, 2008
-                Get("We can geek - up your computer by installing a printer, digital camera or any other external device, which is called this in computer speak, from the Greek for \"to carry around\" ?","     a peripheral", "", "", ""),//    1000    December 24, 2008
+                Get("On Feb. 17, 2009 this type of TV broadcast technology will end in the U.S.; we're going digital?"," 	analog", "Todo1", "Todo2", "Todo3"),//	200	December 24, 2008
+                Get("This photo co.created the EasyShare printer with prints that are less expensive &last 100 years ?"," Kodak", "Todo1", "Todo2", "Todo3"),//   400 December 24, 2008
+                Get("In 2008 lampposts in London were padded to prevent injuries due to this activity by pedestrians ?"," texting", "Todo1", "Todo2", "Todo3"),// 600 December 24, 2008
+                Get("To stop attackers from accessing your computer, in network settings, shut off the print sharing &this other \"sharing\" ?","  file sharing", "Todo1", "Todo2", "Todo3"),//    800 December 24, 2008
+                Get("We can geek - up your computer by installing a printer, digital camera or any other external device, which is called this in computer speak, from the Greek for \"to carry around\" ?","     a peripheral", "Todo1", "Todo2", "Todo3"),//    1000    December 24, 2008
 
                 //http://jservice.io/popular/17308
-                Get("Established in Mountain View in 1956, Shockley Semiconductor helped put this element in the name of a \"valley\" ?"," silicon", "", "", ""),// 200 February 10, 2014
-                Get("Despite the name, the San Jose headquarters of this maker of the creative cloud isn't built of clay bricks?","	Adobe", "", "", ""),//	400	February 10, 2014
-                Get("Tony Hawk owns a Huntington Beach company that makes these pieces of sporting equipment?"," skateboards", "", "", ""),// 600 February 10, 2014
-                Get("Los Gatos is home to this 40-million member movie & TV streaming business?","   Netflix", "", "", ""),// 800 February 10, 2014
-                Get("Carlsbad's Callaway makes hi-tech these, like the FT Optiforce	?","golf clubs", "", "", ""),//	1000	February 10, 2014
+                Get("Established in Mountain View in 1956, Shockley Semiconductor helped put this element in the name of a \"valley\" ?"," silicon", "Todo1", "Todo2", "Todo3"),// 200 February 10, 2014
+                Get("Despite the name, the San Jose headquarters of this maker of the creative cloud isn't built of clay bricks?","	Adobe", "Todo1", "Todo2", "Todo3"),//	400	February 10, 2014
+                Get("Tony Hawk owns a Huntington Beach company that makes these pieces of sporting equipment?"," skateboards", "Todo1", "Todo2", "Todo3"),// 600 February 10, 2014
+                Get("Los Gatos is home to this 40-million member movie & TV streaming business?","   Netflix", "Todo1", "Todo2", "Todo3"),// 800 February 10, 2014
+                Get("Carlsbad's Callaway makes hi-tech these, like the FT Optiforce	?","golf clubs", "Todo1", "Todo2", "Todo3"),//	1000	February 10, 2014
 
                 //http://jservice.io/popular/17737
                 //Get("hashtags.org tracks keywords on this social site that popularized the hashtag   Twitter 200 October 2, 2013

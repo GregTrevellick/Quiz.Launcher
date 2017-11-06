@@ -37,17 +37,6 @@ namespace Quiz.Ui
                     break;
             }
 
-            //////////////if (remote >= 5)
-            //////////////{
-            //////////////    var clientGateway = new QuestionsOpenTdb();
-            //////////////    gatewayResponse = clientGateway.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
-            //////////////}
-            //////////////else
-            //////////////{
-            //////////////    var gatewayResponses = AllGateways.GatewayResponses;
-            //////////////    gatewayResponse = gatewayResponses.RandomSubset(1).Single();
-            //////////////}
-
             var quizDialogDto = GetQuizDialogDto(gatewayResponse);
             DisplayPopUpMessage(quizDialogDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked, searchEngine);
 
@@ -99,7 +88,7 @@ namespace Quiz.Ui
                 FontWeight = FontWeights.Bold
             };
             vsixQuizDialog.TextBlockQuestion.Inlines.Add(run);
-            vsixQuizDialog.QuestionText = quizDialogDto.QuizQuestion;
+            vsixQuizDialog.QuestionText = quizDialogDto.QuizQuestion.Trim();
 
             if (!string.IsNullOrWhiteSpace(vsixQuizDialog.TextBlockErrorDetails.Text))
             {
@@ -116,10 +105,10 @@ namespace Quiz.Ui
             {
                 var random = new Random();
                 var randomlySortedAnswers = quizDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray();
-                vsixQuizDialog.RadioButton1.Content = randomlySortedAnswers[0];
-                vsixQuizDialog.RadioButton2.Content = randomlySortedAnswers[1];
-                vsixQuizDialog.RadioButton3.Content = randomlySortedAnswers[2];
-                vsixQuizDialog.RadioButton4.Content = randomlySortedAnswers[3];
+                vsixQuizDialog.RadioButton1.Content = randomlySortedAnswers[0].Trim();
+                vsixQuizDialog.RadioButton2.Content = randomlySortedAnswers[1].Trim();
+                vsixQuizDialog.RadioButton3.Content = randomlySortedAnswers[2].Trim();
+                vsixQuizDialog.RadioButton4.Content = randomlySortedAnswers[3].Trim();
             }
 
             SetRadioButtonVisibility(vsixQuizDialog.RadioButton1);
