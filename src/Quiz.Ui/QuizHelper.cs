@@ -18,20 +18,22 @@ namespace Quiz.Ui
         public HiddenOptionsDto GetHiddenOptionsDto(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked, SearchEngine searchEngine)
         {
             var random = new Random();
-            var remote = random.Next(1, 3);
+            var remote = random.Next(1, 5);
             var gatewayResponse = new GatewayResponse();
 
             switch (remote)
             {
                 case 1:
+                case 2:
                     var questionsOpenTdb = new QuestionsOpenTdb();
                     gatewayResponse = questionsOpenTdb.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
                     break;
-                case 2:
+                case 3:
                     var gatewayResponses = AllGateways.GatewayResponses;
                     gatewayResponse = gatewayResponses.RandomSubset(1).Single();
                     break;
-                case 3:
+                case 4:
+                case 5:
                     var questionsOpenCocktail = new QuestionsCocktailHeroku();
                     gatewayResponse = questionsOpenCocktail.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
                     break;

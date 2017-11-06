@@ -9,10 +9,13 @@ namespace Quiz.Ui.Gateway
         {
             get
             {
+                //approx 5-10
                 var gatewayResponsesMine = QuestionsMine.GetGatewayResponses();
 
+                //approx 241
                 var gatewayResponsesJeopardy = QuestionsJeopardy.GetGatewayResponses();
 
+                //44
                 var questionsWebCampTrainingKit = QuestionsWebCampTrainingKit.GetQuestions();
                 var gatewayResponsesWebCampTrainingKit = GetGatewayResponses(questionsWebCampTrainingKit);
 
