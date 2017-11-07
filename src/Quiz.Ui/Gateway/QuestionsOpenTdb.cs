@@ -8,6 +8,7 @@ namespace Quiz.Ui.Gateway
         {
             var url = "https://opentdb.com/api.php?amount=1&category=18";
 
+            //gregt dedupe below here
             var gatewayResponse = new GatewayResponse();
 
             if (!string.IsNullOrEmpty(url))

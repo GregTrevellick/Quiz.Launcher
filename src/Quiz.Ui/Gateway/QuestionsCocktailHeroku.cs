@@ -27,9 +27,9 @@ namespace Quiz.Ui.Gateway
                     break;
             }
 
+            //gregt dedupe below here
             var gatewayResponse = new GatewayResponse();
 
-            //gregt dedupe below here
             if (!string.IsNullOrEmpty(url))
             {
                 var responseDto = Common.GetRestResponse(url, timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);

@@ -38,7 +38,7 @@ namespace Quiz.Ui.Gateway
                 Get("After hearing this invention of his work, Edison said, \"I was never so taken aback in my life\"?", "the phonograph", "Todo1", "Todo2", "Todo3"),
                 Get("Among Internet users, the World Wide Web has surpassed the system named for this burrowing rodent?", "gopher", "Todo1", "Todo2", "Todo3"),
                 Get("An ancient Greek wanting to know Zeus' will might consult this in a grove of oak trees in Dodona?", "oracle", "Todo1", "Todo2", "Todo3"),
-                Get("An empty Goodyear blimp weighs over 12, 000 lbs.; when they fill it with this gas, it weighs only 100 to gregt pounds?", "helium", "Todo1", "Todo2", "Todo3"),
+                Get("An empty Goodyear blimp weighs over 12, 000 lbs.; when they fill it with this gas, it weighs only 100 to 200 pounds?", "helium", "Todo1", "Todo2", "Todo3"),
                 Get("Android's 4.1 O.S. is called this, just like one of Reagan's favorite treats?", "Jelly Bean", "Todo1", "Todo2", "Todo3"),
                 Get("Apple's Leopard is a type of OS, one of these?", "an operating system", "Todo1", "Todo2", "Todo3"),
                 Get("As part of its salute to this decade, the Post Office created a stamp with a MixMaster on it?", "the 1930s", "Todo1", "Todo2", "Todo3"),
