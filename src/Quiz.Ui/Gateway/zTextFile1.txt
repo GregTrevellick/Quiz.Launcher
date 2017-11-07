@@ -1,24 +1,21 @@
-﻿"   =>  \"
-
-//http  ==>   --http
-
-//  ==>  Get("
-
-     200   (5 spaces)  ==>    //delete    
-	200   (4 spaces)  ==>    //delete
-   200   (3 spaces)  ==>    //delete
-  200   (2 spaces)  ==>    //delete
-
-
-(5 spaces) ==> ?", "answer=
-(4 spaces) ==> ?", "answer=
-(3 spaces) ==> ?", "answer=
-(2 spaces) ==> ?", "answer=
-
-
-
-//delete ==>  ", "Todo1", "Todo2", "Todo3"),//delete
-
-
-
-//delete ==> \r\n//delete
+﻿"   =>   \"
+ 
+//http://   ==>   --http:--
+ 
+//   ==>   Get("
+ 
+--http:--   ==>   //http://
+ 
+(2 spaces) 100/200/300-1000   ==>   //delete
+ 
+(6/5/4/3/2 spaces)   ==>   ?", "answer=
+ 
+//delete   ==>   ", "Todo1", "Todo2", "Todo3"),//delete
+ 
+//delete   ==>   \r\n//delete
+ 
+"answer=   ==>   "
+ 
+"", "Todo1",   è   "Todo1",
+ 
+?", "Todo1",   è   ", "Todo1",
