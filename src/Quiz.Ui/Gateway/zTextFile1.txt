@@ -6,7 +6,8 @@
  
 --http:--   ==>   //http://
  
-(2 spaces) 100/200/300-1000   ==>   //delete
+(2 spaces) 100/200/
+//delete-1000   ==>   //delete
  
 (6/5/4/3/2 spaces)   ==>   ?", "answer=
  
