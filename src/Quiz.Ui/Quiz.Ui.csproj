@@ -66,6 +66,7 @@
     <Compile Include="Core\QuizDialogDto.cs" />
     <Compile Include="Gateway\Common.cs" />
     <Compile Include="Gateway\QuestionsCocktailHeroku.cs" />
+    <Compile Include="Gateway\QuestionsJeopardy_V1.cs" />
     <Compile Include="Gateway\QuestionsOpenTdb.cs" />
     <Compile Include="Gateway\QuestionsCocktailHerokuGateway.cs" />
     <Compile Include="Gateway\QuestionsOpenTdbGateway.cs" />
