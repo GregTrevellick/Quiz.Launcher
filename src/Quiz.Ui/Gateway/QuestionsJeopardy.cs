@@ -9,7 +9,6 @@ namespace Quiz.Ui.Gateway
         {
             var gatewayResponses = new List<GatewayResponse>
             {
-                //delete printer from this brand Hewlett-Packard 
                 Get("\"DOS\" stands for these 3 words?", "  disk operating system   ", "Todo1",  "Todo2",  "Todo3"),
                 Get("\"DSL\" is \"digital\" this \"line\"  ?", "subscriber  ", "Todo1",  "Todo2",  "Todo3"),
                 Get("\"N-Gage\" with this company's cell phone, wihch is also a portable game	?", "Nokia	", "Todo1",  "Todo2",  "Todo3"),
@@ -84,7 +83,7 @@ namespace Quiz.Ui.Gateway
                 Get("hashtags.org tracks keywords on this social site that popularized the hashtag  ?", " Twitter ", "Todo1",  "Todo2",  "Todo3"),
                 Get("HDTV, which uses more lines to give clearer pictures, stands for this?", "   High Definition Television  ", "Todo1",  "Todo2",  "Todo3"),
                 Get("Hello: IM ?", "instant message ", "Todo1",  "Todo2",  "Todo3"),
-                Get("Here it is in blue & white: ?", "the LaserJet Pro ", "Todo1",  "Todo2",  "Todo3"),
+                Get("Here it is in blue & white: printer from this brand Hewlett-Packard ?", "the LaserJet Pro ", "Todo1",  "Todo2",  "Todo3"),
                 Get("Here you can clearly see the logo of this hi-def format for home theaters in 1080p ?", " Blu - ray ", "Todo1",  "Todo2",  "Todo3"),
                 Get("Hubert Booth, not Herbert Hoover, developed the first practical electric one of these in 1901  ?", " Vacuum cleaner  ", "Todo1",  "Todo2",  "Todo3"),
                 Get("If an atom loses one of these, it becomes a cation, a positively charged ion ?", "electron    ", "Todo1",  "Todo2",  "Todo3"),

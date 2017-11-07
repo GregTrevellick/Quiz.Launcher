@@ -2,7 +2,7 @@
 
 namespace Quiz.Ui.Gateway
 {
-    public class QuestionsJeopardy_V1
+    public class zQuestionsJeopardy_V1
     {
         public static IEnumerable<GatewayResponse> GetGatewayResponses()
         {
