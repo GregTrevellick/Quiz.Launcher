@@ -59,10 +59,7 @@ namespace Quiz.Ui
                 quizHelper.PersistHiddenOptionsQuizHelperEventHandlerEventHandler += UpdateHiddenOptionsTotals;
 
                 var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(popUpTitle, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpCountToday, generalOptionsDto.TimeOutInMilliSeconds, Vsix.Name, generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, 
-                    generalOptionsDto.TotalQuestionsAnsweredCorrectlyEasy,
-                    generalOptionsDto.TotalQuestionsAnsweredCorrectlyMedium,
-                    generalOptionsDto.TotalQuestionsAnsweredCorrectlyHard,
-                    generalOptionsDto.TotalQuestionsAsked, generalOptionsDto.SearchEngine);
+                    generalOptionsDto.TotalQuestionsAnsweredCorrectlyEasy, generalOptionsDto.TotalQuestionsAnsweredCorrectlyMedium, generalOptionsDto.TotalQuestionsAnsweredCorrectlyHard, generalOptionsDto.TotalQuestionsAsked, generalOptionsDto.SearchEngine);
 
                 if (hiddenOptionsDto != null)
                 {
@@ -87,10 +84,7 @@ namespace Quiz.Ui
         //    RatingChaser.ChaseRatings(hiddenChaserOptions, ratingInstructionsDto);
         //}     
 
-        private void UpdateHiddenOptionsTotals(int? totalQuestionsAsked, 
-            int? totalQuestionsAnsweredCorrectlyEasy,
-            int? totalQuestionsAnsweredCorrectlyMedium,
-            int? totalQuestionsAnsweredCorrectlyHard)
+        private void UpdateHiddenOptionsTotals(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard)
         {
             var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
             hiddenOptions.TotalQuestionsAnsweredCorrectlyEasy = totalQuestionsAnsweredCorrectlyEasy.HasValue ? totalQuestionsAnsweredCorrectlyEasy.Value : 0;

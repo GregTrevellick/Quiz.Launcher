@@ -22,10 +22,7 @@ namespace Quiz.Ui
         public int? TotalQuestionsAsked;
         public SearchEngine SearchEngine;
 
-        public delegate void MyEventHandler(int? totalQuestionsAsked,
-            int? totalQuestionsAnsweredCorrectlyEasy,
-            int? totalQuestionsAnsweredCorrectlyMedium,
-            int? totalQuestionsAnsweredCorrectlyHard);
+        public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
 
         private readonly string _optionsName;
@@ -54,10 +51,7 @@ namespace Quiz.Ui
             var totalQuestionsAnsweredCorrectlyMedium = random.Next(1, 100);
             var totalQuestionsAnsweredCorrectlyHard = random.Next(1, 100);
             quizHelper.GetHiddenOptionsDto("Again1", DateTime.Now, 789, 5000, "Again2", true,
-                totalQuestionsAnsweredCorrectlyEasy,
-                totalQuestionsAnsweredCorrectlyMedium,
-                totalQuestionsAnsweredCorrectlyHard,
-                100, SearchEngine.Google);
+                totalQuestionsAnsweredCorrectlyEasy, totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAnsweredCorrectlyHard, 100, SearchEngine.Google);
         }
 #endif
 
@@ -162,19 +156,21 @@ namespace Quiz.Ui
                 }
             }
 
-            ActOnAnswerGiven(response);
+            var difficultyLevel = (DifficultyLevel)Enum.Parse(typeof(DifficultyLevel), TextBlockDifficulty.Text.Replace("Difficulty: ", string.Empty));//gregt unit test reqd
+
+            ActOnAnswerGiven(response, difficultyLevel);
         }
 
-        private void ActOnAnswerGiven(string response)
+        private void ActOnAnswerGiven(string response, DifficultyLevel difficultyLevel)
         {
-            ProcessAnswerToQuestion(response);
+            ProcessAnswerToQuestion(response, difficultyLevel);
 
             SetBingleHyperLink(SearchEngine);
 
             RefreshAndPersistStatistics();
         }
 
-        private void ProcessAnswerToQuestion(string response)
+        private void ProcessAnswerToQuestion(string response, DifficultyLevel difficultyLevel)
         {
             QuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
             QuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
@@ -190,8 +186,7 @@ namespace Quiz.Ui
 
                 if (!_userStatusTotalsIncremented)
                 {
-                    var dl = DifficultyLevel.Medium;
-                    switch (dl)
+                    switch (difficultyLevel)
                     {
                         case DifficultyLevel.Easy:
                             if (TotalQuestionsAnsweredCorrectlyEasy.HasValue)
@@ -241,25 +236,16 @@ namespace Quiz.Ui
                 _userStatusTotalsIncremented = true;
             }
 
-            var percentageSuccess = GetPercentageSuccess(
-                TotalQuestionsAnsweredCorrectlyEasy +
-                TotalQuestionsAnsweredCorrectlyMedium +
-                TotalQuestionsAnsweredCorrectlyHard,
-                TotalQuestionsAsked);
+            var totalQuestionsAnsweredCorrectly = TotalQuestionsAnsweredCorrectlyEasy + TotalQuestionsAnsweredCorrectlyMedium + TotalQuestionsAnsweredCorrectlyHard;
+
+            var percentageSuccess = GetPercentageSuccess(totalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
 
             TextBlockTotalQuestionsAsked.Text = TotalQuestionsAsked.ToString();
-            var totalQuestionsAnsweredCorrectly =
-                TotalQuestionsAnsweredCorrectlyEasy +
-                TotalQuestionsAnsweredCorrectlyMedium +
-                TotalQuestionsAnsweredCorrectlyHard;
             TextBlockTotalQuestionsAnsweredCorrectly.Text = totalQuestionsAnsweredCorrectly.ToString();
             TextBlockUserStatus.Text = GetUserStatus(percentageSuccess);
             TextBlockUserRank.Text = GetUserRank(percentageSuccess);
 
-            PersistHiddenOptionsEventHandler?.Invoke(TotalQuestionsAsked, 
-                TotalQuestionsAnsweredCorrectlyEasy,
-                TotalQuestionsAnsweredCorrectlyMedium,
-                TotalQuestionsAnsweredCorrectlyHard);
+            PersistHiddenOptionsEventHandler?.Invoke(TotalQuestionsAsked, TotalQuestionsAnsweredCorrectlyEasy, TotalQuestionsAnsweredCorrectlyMedium, TotalQuestionsAnsweredCorrectlyHard);
         }
 
         private void SetBingleHyperLink(SearchEngine searchEngine)

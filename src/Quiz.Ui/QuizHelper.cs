@@ -12,18 +12,12 @@ namespace Quiz.Ui
 {
     public class QuizHelper
     {
-        public delegate void QuizHelperEventHandler(int? totalQuestionsAsked, 
-            int? totalQuestionsAnsweredCorrectlyEasy,
-            int? totalQuestionsAnsweredCorrectlyMedium,
-            int? totalQuestionsAnsweredCorrectlyHard);
+        public delegate void QuizHelperEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard);
         public event QuizHelperEventHandler PersistHiddenOptionsQuizHelperEventHandlerEventHandler;
 
         //gregt long param list !!
         public HiddenOptionsDto GetHiddenOptionsDto(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, 
-            int totalQuestionsAnsweredCorrectlyEasy,
-            int totalQuestionsAnsweredCorrectlyMedium,
-            int totalQuestionsAnsweredCorrectlyHard,
-            int totalQuestionsAsked, SearchEngine searchEngine)
+            int totalQuestionsAnsweredCorrectlyEasy, int totalQuestionsAnsweredCorrectlyMedium, int totalQuestionsAnsweredCorrectlyHard, int totalQuestionsAsked, SearchEngine searchEngine)
         {
             var random = new Random();
             var remote = random.Next(1, 5);
@@ -51,10 +45,7 @@ namespace Quiz.Ui
 
             var quizDialogDto = GetQuizDialogDto(gatewayResponse);
             DisplayPopUpMessage(quizDialogDto, suppressClosingWithoutSubmitingAnswerWarning, 
-                totalQuestionsAnsweredCorrectlyEasy,
-                totalQuestionsAnsweredCorrectlyMedium,
-                totalQuestionsAnsweredCorrectlyHard,
-                totalQuestionsAsked, searchEngine);
+                totalQuestionsAnsweredCorrectlyEasy, totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAnsweredCorrectlyHard, totalQuestionsAsked, searchEngine);
 
             var hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
 
@@ -76,22 +67,13 @@ namespace Quiz.Ui
             return quizDialogDto;
         }
 
-        void PersistHiddenOptions(int? totalQuestionsAsked,
-            int? totalQuestionsAnsweredCorrectlyEasy,
-            int? totalQuestionsAnsweredCorrectlyMedium,
-            int? totalQuestionsAnsweredCorrectlyHard)
+        void PersistHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard)
         {
-            PersistHiddenOptionsQuizHelperEventHandlerEventHandler?.Invoke(totalQuestionsAsked, 
-                totalQuestionsAnsweredCorrectlyEasy,
-                totalQuestionsAnsweredCorrectlyMedium,
-                totalQuestionsAnsweredCorrectlyHard);
+            PersistHiddenOptionsQuizHelperEventHandlerEventHandler?.Invoke(totalQuestionsAsked, totalQuestionsAnsweredCorrectlyEasy, totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAnsweredCorrectlyHard);
         }
 
         private void DisplayPopUpMessage(QuizDialogDto quizDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning,
-            int? totalQuestionsAnsweredCorrectlyEasy,
-            int? totalQuestionsAnsweredCorrectlyMedium,
-            int? totalQuestionsAnsweredCorrectlyHard,
-            int? totalQuestionsAsked, SearchEngine searchEngine)
+            int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard, int? totalQuestionsAsked, SearchEngine searchEngine)
         {
             var vsixQuizDialog = new VsixQuizDialog
             {
