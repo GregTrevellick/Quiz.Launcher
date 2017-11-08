@@ -37,7 +37,7 @@ FUTURE add in rating review chaser
 FUTURE rating for free extns only https://marketplace.visualstudio.com/services/VStudio/Extension.svc (use fiddler when running the Extension and Updates dialog)
 FUTURE close all popups when sln is closed
 FUTURE allow user to reset the % success back to zero
-FUTURE if uptake is siginificant allow user to request a second question, but not anymore than that (show "go back to work" message)
-FUTURE if uptake is siginificant add option for user to select easy / medium / hard
-FUTURE if uptake is siginificant play correct / incorrect sound ?
+FUTURE if uptake is significant allow user to request a second question, but not anymore than that (show "go back to work" message)
+FUTURE if uptake is significant add option for user to select easy / medium / hard
+FUTURE if uptake is significant play correct / incorrect sound ?
 FUTURE countdown timer ? hard 43-67 secs randomly, medium 28-48, easy 18-33
