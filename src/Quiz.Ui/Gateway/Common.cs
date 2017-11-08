@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net;
 
 namespace Quiz.Ui.Gateway
 {
@@ -114,5 +115,22 @@ namespace Quiz.Ui.Gateway
         {
             gatewayResponse.ErrorDetails = errorDetails;
         }
+
+        public static string UppercaseFirst(string str)//gregt unit test reqd
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                return string.Empty;
+            }
+
+            return char.ToUpper(str[0]) + str.Substring(1);
+        }
+
+        public static string CharacterHandler(string str)//gregt unit test reqd
+        {
+            var result = WebUtility.HtmlDecode(str);
+            return result;
+        }
+
     }
 }

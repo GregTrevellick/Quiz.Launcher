@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Linq;
 
@@ -18,36 +19,21 @@ namespace Quiz.Ui.Gateway
             var multipleChoiceCorrectAnswer = rootObject.answers.Single(x => x.correct).text;
             var multipleChoiceAnswers = rootObject.answers.Select(x => x.text);
 
-            //////var question = CharacterHandler(firstOfOne.question);
-            //////var difficultyLevel = UppercaseFirst(firstOfOne.difficulty);
-            //gregt TODO Enum.TryParse(difficultyLevel, out DifficultyLevel difficulty);
+            var question = Common.CharacterHandler(rootObject.text);
 
             var gatewayResponse = new GatewayResponse
             {
-                //gregt TODO DifficultyLevel = difficulty,
+                DifficultyLevel = DifficultyLevel.Medium,
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,
-                Question = rootObject.text,
-                //gregt TODO QuestionType = firstOfOne.type == "boolean" ? QuestionType.TrueFalse : QuestionType.MultiChoice//gregt unit test reqd
+                Question = question,
+                QuestionType = multipleChoiceCorrectAnswer.ToLower() == "true" ||
+                               multipleChoiceCorrectAnswer.ToLower() == "false" 
+                               ? QuestionType.TrueFalse 
+                               : QuestionType.MultiChoice//gregt unit test reqd
             };
 
             return gatewayResponse;
         }
-
-        //////static string UppercaseFirst(string str)//gregt unit test reqd //gregt dedupe
-        //////{
-        //////    if (string.IsNullOrEmpty(str))
-        //////    {
-        //////        return string.Empty;
-        //////    }
-
-        //////    return char.ToUpper(str[0]) + str.Substring(1);
-        //////}
-
-        //////static string CharacterHandler(string str)//gregt unit test reqd //gregt dedupe
-        //////{
-        //////    var result = WebUtility.HtmlDecode(str);
-        //////    return result;
-        //////}
     }
 }

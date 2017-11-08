@@ -23,8 +23,8 @@ namespace Quiz.Ui.Gateway
             var multipleChoiceCorrectAnswerAsCollection = new List<string> {multipleChoiceCorrectAnswer};
             var multipleChoiceAnswers = multipleChoiceCorrectAnswerAsCollection.Union(firstOfOne.incorrect_answers);
 
-            var question = CharacterHandler(firstOfOne.question);
-            var difficultyLevel = UppercaseFirst(firstOfOne.difficulty);
+            var question = Common.CharacterHandler(firstOfOne.question);
+            var difficultyLevel = Common.UppercaseFirst(firstOfOne.difficulty);
             Enum.TryParse(difficultyLevel, out DifficultyLevel difficulty);
 
             var gatewayResponse = new GatewayResponse
@@ -37,22 +37,6 @@ namespace Quiz.Ui.Gateway
             };
 
             return gatewayResponse;
-        }
-
-        static string UppercaseFirst(string str)//gregt unit test reqd
-        {
-            if (string.IsNullOrEmpty(str))
-            {
-                return string.Empty;
-            }
-
-            return char.ToUpper(str[0]) + str.Substring(1);
-        }
-
-        static string CharacterHandler(string str)//gregt unit test reqd
-        {
-            var result = WebUtility.HtmlDecode(str);
-            return result;
         }
     }
 }
