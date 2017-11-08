@@ -16,11 +16,16 @@ namespace Quiz.Ui
         public string QuestionText;
         public QuestionType QuestionType;
         public bool SuppressClosingWithoutSubmitingAnswerWarning;
-        public int? TotalQuestionsAnsweredCorrectly;
+        public int? TotalQuestionsAnsweredCorrectlyEasy;
+        public int? TotalQuestionsAnsweredCorrectlyMedium;
+        public int? TotalQuestionsAnsweredCorrectlyHard;
         public int? TotalQuestionsAsked;
         public SearchEngine SearchEngine;
 
-        public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
+        public delegate void MyEventHandler(int? totalQuestionsAsked,
+            int? totalQuestionsAnsweredCorrectlyEasy,
+            int? totalQuestionsAnsweredCorrectlyMedium,
+            int? totalQuestionsAnsweredCorrectlyHard);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
 
         private readonly string _optionsName;
@@ -45,8 +50,14 @@ namespace Quiz.Ui
         {
             var quizHelper = new QuizHelper();
             var random = new Random();
-            var totalQuestionsAnsweredCorrectly = random.Next(1, 100);
-            quizHelper.GetHiddenOptionsDto("Again1", DateTime.Now, 789, 5000, "Again2", true, totalQuestionsAnsweredCorrectly, 100, SearchEngine.Google);
+            var totalQuestionsAnsweredCorrectlyEasy = random.Next(1, 100);
+            var totalQuestionsAnsweredCorrectlyMedium = random.Next(1, 100);
+            var totalQuestionsAnsweredCorrectlyHard = random.Next(1, 100);
+            quizHelper.GetHiddenOptionsDto("Again1", DateTime.Now, 789, 5000, "Again2", true,
+                totalQuestionsAnsweredCorrectlyEasy,
+                totalQuestionsAnsweredCorrectlyMedium,
+                totalQuestionsAnsweredCorrectlyHard,
+                100, SearchEngine.Google);
         }
 #endif
 
@@ -177,9 +188,32 @@ namespace Quiz.Ui
                 ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
                 QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
 
-                if (!_userStatusTotalsIncremented && TotalQuestionsAnsweredCorrectly.HasValue)
+                if (!_userStatusTotalsIncremented)
                 {
-                    TotalQuestionsAnsweredCorrectly++;
+                    var dl = DifficultyLevel.Medium;
+                    switch (dl)
+                    {
+                        case DifficultyLevel.Easy:
+                            if (TotalQuestionsAnsweredCorrectlyEasy.HasValue)
+                            {
+                                TotalQuestionsAnsweredCorrectlyEasy++;
+                            }
+                            break;
+                        case DifficultyLevel.Medium:
+                            if (TotalQuestionsAnsweredCorrectlyMedium.HasValue)
+                            {
+                                TotalQuestionsAnsweredCorrectlyMedium++;
+                            }
+                            break;
+                        case DifficultyLevel.Hard:
+                            if (TotalQuestionsAnsweredCorrectlyHard.HasValue)
+                            {
+                                TotalQuestionsAnsweredCorrectlyHard++;
+                            }
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }                                                                
                 }
             }
             else
@@ -207,14 +241,25 @@ namespace Quiz.Ui
                 _userStatusTotalsIncremented = true;
             }
 
-            var percentageSuccess = GetPercentageSuccess(TotalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
+            var percentageSuccess = GetPercentageSuccess(
+                TotalQuestionsAnsweredCorrectlyEasy +
+                TotalQuestionsAnsweredCorrectlyMedium +
+                TotalQuestionsAnsweredCorrectlyHard,
+                TotalQuestionsAsked);
 
             TextBlockTotalQuestionsAsked.Text = TotalQuestionsAsked.ToString();
-            TextBlockTotalQuestionsAnsweredCorrectly.Text = TotalQuestionsAnsweredCorrectly.ToString();
+            var totalQuestionsAnsweredCorrectly =
+                TotalQuestionsAnsweredCorrectlyEasy +
+                TotalQuestionsAnsweredCorrectlyMedium +
+                TotalQuestionsAnsweredCorrectlyHard;
+            TextBlockTotalQuestionsAnsweredCorrectly.Text = totalQuestionsAnsweredCorrectly.ToString();
             TextBlockUserStatus.Text = GetUserStatus(percentageSuccess);
             TextBlockUserRank.Text = GetUserRank(percentageSuccess);
 
-            PersistHiddenOptionsEventHandler?.Invoke(TotalQuestionsAsked, TotalQuestionsAnsweredCorrectly);
+            PersistHiddenOptionsEventHandler?.Invoke(TotalQuestionsAsked, 
+                TotalQuestionsAnsweredCorrectlyEasy,
+                TotalQuestionsAnsweredCorrectlyMedium,
+                TotalQuestionsAnsweredCorrectlyHard);
         }
 
         private void SetBingleHyperLink(SearchEngine searchEngine)

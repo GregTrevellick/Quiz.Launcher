@@ -58,7 +58,11 @@ namespace Quiz.Ui
                 var quizHelper = new QuizHelper();
                 quizHelper.PersistHiddenOptionsQuizHelperEventHandlerEventHandler += UpdateHiddenOptionsTotals;
 
-                var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(popUpTitle, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpCountToday, generalOptionsDto.TimeOutInMilliSeconds, Vsix.Name, generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, generalOptionsDto.TotalQuestionsAnsweredCorrectly, generalOptionsDto.TotalQuestionsAsked, generalOptionsDto.SearchEngine);
+                var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(popUpTitle, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpCountToday, generalOptionsDto.TimeOutInMilliSeconds, Vsix.Name, generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, 
+                    generalOptionsDto.TotalQuestionsAnsweredCorrectlyEasy,
+                    generalOptionsDto.TotalQuestionsAnsweredCorrectlyMedium,
+                    generalOptionsDto.TotalQuestionsAnsweredCorrectlyHard,
+                    generalOptionsDto.TotalQuestionsAsked, generalOptionsDto.SearchEngine);
 
                 if (hiddenOptionsDto != null)
                 {
@@ -83,10 +87,15 @@ namespace Quiz.Ui
         //    RatingChaser.ChaseRatings(hiddenChaserOptions, ratingInstructionsDto);
         //}     
 
-        private void UpdateHiddenOptionsTotals(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
+        private void UpdateHiddenOptionsTotals(int? totalQuestionsAsked, 
+            int? totalQuestionsAnsweredCorrectlyEasy,
+            int? totalQuestionsAnsweredCorrectlyMedium,
+            int? totalQuestionsAnsweredCorrectlyHard)
         {
             var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
-            hiddenOptions.TotalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly.HasValue ? totalQuestionsAnsweredCorrectly.Value : 0;
+            hiddenOptions.TotalQuestionsAnsweredCorrectlyEasy = totalQuestionsAnsweredCorrectlyEasy.HasValue ? totalQuestionsAnsweredCorrectlyEasy.Value : 0;
+            hiddenOptions.TotalQuestionsAnsweredCorrectlyMedium = totalQuestionsAnsweredCorrectlyMedium.HasValue ? totalQuestionsAnsweredCorrectlyMedium.Value : 0;
+            hiddenOptions.TotalQuestionsAnsweredCorrectlyHard = totalQuestionsAnsweredCorrectlyHard.HasValue ? totalQuestionsAnsweredCorrectlyHard.Value : 0;
             hiddenOptions.TotalQuestionsAsked = totalQuestionsAsked.HasValue ? totalQuestionsAsked.Value : 0;
             hiddenOptions.SaveSettingsToStorage();
         }
@@ -116,7 +125,9 @@ namespace Quiz.Ui
                 ShowQuizUponOpeningSolution = generalOptions.ShowQuizUponOpeningSolution,
                 SuppressClosingWithoutSubmitingAnswerWarning = generalOptions.SuppressClosingWithoutSubmitingAnswerWarning,
                 TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
-                TotalQuestionsAnsweredCorrectly = hiddenOptions.TotalQuestionsAnsweredCorrectly,
+                TotalQuestionsAnsweredCorrectlyEasy = hiddenOptions.TotalQuestionsAnsweredCorrectlyEasy,
+                TotalQuestionsAnsweredCorrectlyMedium = hiddenOptions.TotalQuestionsAnsweredCorrectlyMedium,
+                TotalQuestionsAnsweredCorrectlyHard = hiddenOptions.TotalQuestionsAnsweredCorrectlyHard,
                 TotalQuestionsAsked = hiddenOptions.TotalQuestionsAsked,
             };
         }
