@@ -21,6 +21,8 @@ namespace Quiz.Ui
             var remote = random.Next(1, 5);
             var gatewayResponse = new GatewayResponse();
 
+            remote = 3;//gregt
+
             switch (remote)
             {
                 case 1:
@@ -97,6 +99,9 @@ namespace Quiz.Ui
                 vsixQuizDialog.TextBlockErrorDetails.Visibility = Visibility.Visible;
             }
 
+            quizDialogDto.MultipleChoiceAnswers =
+                quizDialogDto.MultipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));
+
             if (quizDialogDto.QuestionType == QuestionType.TrueFalse)
             {
                 var trueFollowedByFalseAnswers = quizDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();
@@ -107,16 +112,34 @@ namespace Quiz.Ui
             {
                 var random = new Random();
                 var randomlySortedAnswers = quizDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray();
-                vsixQuizDialog.RadioButton1.Content = randomlySortedAnswers[0].Trim();
-                vsixQuizDialog.RadioButton2.Content = randomlySortedAnswers[1].Trim();
-                vsixQuizDialog.RadioButton3.Content = randomlySortedAnswers[2].Trim();
-                vsixQuizDialog.RadioButton4.Content = randomlySortedAnswers[3].Trim();
+
+                if (randomlySortedAnswers.Length >= 1)
+                {
+                    vsixQuizDialog.RadioButton1.Content = randomlySortedAnswers[0].Trim();
+                }
+                if (randomlySortedAnswers.Length >= 2)
+                {
+                    vsixQuizDialog.RadioButton2.Content = randomlySortedAnswers[1].Trim();
+                }
+                if (randomlySortedAnswers.Length >= 3)
+                {
+                    vsixQuizDialog.RadioButton3.Content = randomlySortedAnswers[2].Trim();
+                }
+                if (randomlySortedAnswers.Length >= 4)
+                {
+                    vsixQuizDialog.RadioButton4.Content = randomlySortedAnswers[3].Trim();
+                }
+                if (randomlySortedAnswers.Length >= 5)
+                {
+                    vsixQuizDialog.RadioButton5.Content = randomlySortedAnswers[4].Trim();
+                }
             }
 
             SetRadioButtonVisibility(vsixQuizDialog.RadioButton1);
             SetRadioButtonVisibility(vsixQuizDialog.RadioButton2);
             SetRadioButtonVisibility(vsixQuizDialog.RadioButton3);
             SetRadioButtonVisibility(vsixQuizDialog.RadioButton4);
+            SetRadioButtonVisibility(vsixQuizDialog.RadioButton5);
 
             if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
             {
@@ -138,7 +161,7 @@ namespace Quiz.Ui
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
 
-            SetWindowIcon(window);
+            //gregt to be reinstated SetWindowIcon(window);
 
             window.ResizeMode = ResizeMode.CanResize;
             window.ShowDialog();
@@ -153,7 +176,7 @@ namespace Quiz.Ui
         private Uri GetIconUri()
         {
             var assemblyName = "Quiz.Ui";
-            var packUri = $"pack://application:,,,/{assemblyName};component/Resources/VsixExtensionIcon_90x90_Resource.png";
+            var packUri = $"pack://application:,,,/{assemblyName};component/Resources/vsixextensionicon_90x90_resource_bb6_icon.png";
             return new Uri(packUri, UriKind.RelativeOrAbsolute);
         }
 

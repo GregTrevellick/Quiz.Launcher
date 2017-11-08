@@ -138,7 +138,14 @@ namespace Quiz.Ui
                         }
                         else
                         {
-                            response = null;
+                            if (RadioButton5.IsChecked == true)
+                            {
+                                response = RadioButton5.Content.ToString();
+                            }
+                            else
+                            {
+                                response = null;
+                            }
                         }
                     }
                 }
@@ -288,6 +295,11 @@ namespace Quiz.Ui
         }
 
         private void RadioButton4_OnChecked(object sender, RoutedEventArgs e)
+        {
+            EnableSubmitButton();
+        }
+
+        private void RadioButton5_OnChecked(object sender, RoutedEventArgs e)
         {
             EnableSubmitButton();
         }

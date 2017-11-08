@@ -14,6 +14,7 @@
             <RadioButton Margin="10,5,5,5" Name="RadioButton2" Visibility="Collapsed" Checked="RadioButton2_OnChecked" />
             <RadioButton Margin="10,5,5,5" Name="RadioButton3" Visibility="Collapsed" Checked="RadioButton3_OnChecked"/>
             <RadioButton Margin="10,5,5,5" Name="RadioButton4" Visibility="Collapsed" Checked="RadioButton4_OnChecked"/>
+            <RadioButton Margin="10,5,5,5" Name="RadioButton5" Visibility="Collapsed" Checked="RadioButton5_OnChecked"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
