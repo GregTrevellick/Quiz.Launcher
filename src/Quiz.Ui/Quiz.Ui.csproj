@@ -260,7 +260,12 @@
     <Content Include="VsmpAssets\ReadMeScreenShot.png" />
     <Content Include="VsmpAssets\ReadMeScreenShot_Answer.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Quiz.Questions\Quiz.Questions.csproj">
+      <Project>{5212a04e-1e3a-4953-84da-8ffc0bc5107e}</Project>
+      <Name>Quiz.Questions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

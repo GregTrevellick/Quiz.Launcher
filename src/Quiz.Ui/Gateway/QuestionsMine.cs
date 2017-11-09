@@ -10,7 +10,8 @@ namespace Quiz.Ui.Gateway
             {
                 //Common.Get(DifficultyLevel.Easy, "What ?", "", "", "", ""),
                 //Common.Get(DifficultyLevel.Easy, "What ?", "", "", "", ""),
-
+                //what is fax short for
+                //to xerox is to what 
                 //AAA
                 //IDE
                 //SKU
