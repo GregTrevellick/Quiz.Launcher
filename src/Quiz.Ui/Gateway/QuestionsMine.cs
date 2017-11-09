@@ -9,7 +9,7 @@ namespace Quiz.Ui.Gateway
             var gatewayResponses = new List<GatewayResponse>
             {
                 //Common.Get(DifficultyLevel.Easy, "What ?", "", "", "", ""),
-                //Common.Get(DifficultyLevel.Easy, "What ?", "", "", "", ""),
+
                 //what is fax short for
                 //to xerox is to what 
                 //AAA
@@ -17,11 +17,7 @@ namespace Quiz.Ui.Gateway
                 //SKU
                 //Are u a geek
                 //Ecma
-
-                //Questions.xls
-                
-                
-                
+                //Questions.xls  
             };
 
             return gatewayResponses;
