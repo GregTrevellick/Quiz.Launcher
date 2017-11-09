@@ -11,6 +11,16 @@ namespace Quiz.Ui.Gateway
                 //Common.Get(DifficultyLevel.Easy, "What ?", "", "", "", ""),
                 //Common.Get(DifficultyLevel.Easy, "What ?", "", "", "", ""),
 
+                //AAA
+                //IDE
+                //SKU
+                //Are u a geek
+                //Ecma
+
+                //Questions.xls
+                
+                
+                
             };
 
             return gatewayResponses;

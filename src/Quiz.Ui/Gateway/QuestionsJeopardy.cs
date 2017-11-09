@@ -23,7 +23,7 @@ namespace Quiz.Ui.Gateway
                 //Get("A famous one in ancient Greece bathed in the Castalian Spring before speaking?", "Oracle", "Todo1", "Todo2", "Todo3"),
                 ////Get("A former U.S. Navy rank between captains & admirals?", "Commodore", "Todo1", "Todo2", "Todo3"),
                 ////Get("A hydroelectric power plant at this U.S.landmark opened in 1881?", "Niagara Falls", "Todo1", "Todo2", "Todo3"),
-                Get("What does LAN stand for?", "local area network", "linked area network", "large area network", "lost area network", "lost all nerds"),
+                Get("What does LAN stand for?", "local area network", "linked area network", "large area network", "lost area network"),//, "lost all nerds"),
                 //Get("A semiconductor diode is the most common of these devices that convert A.C.to D.C.?", "rectifiers", "Todo1", "Todo2", "Todo3"),
                 //Get("A single processor sharing multiple jobs is doing this, like when Mom tries to drive & put on makeup?", "multitasking", "Todo1", "Todo2", "Todo3"),
                 //Get("A small wooded valley, perhaps with a farmer?", "Dell", "Todo1", "Todo2", "Todo3"),

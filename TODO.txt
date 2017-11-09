@@ -10,6 +10,11 @@ put questions into separate DLL
 
 gregt dedupe
 
+Options - group in sections
+Question categories (general, c#, JavaScript)
+				
+Trivia github branches
+
 unit tests
 
 
