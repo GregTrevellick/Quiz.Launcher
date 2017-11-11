@@ -1,3 +1,27 @@
+"   =>   \"
+ 
+//http://   ==>   --http:--
+ 
+//   ==>   Get("
+ 
+--http:--   ==>   //http://
+ 
+(2 spaces) 100/200/
+//delete-1000   ==>   //delete
+ 
+(6/5/4/3/2 spaces)   ==>   ?", "answer=
+ 
+//delete   ==>   ", "Todo1", "Todo2", "Todo3"),//delete
+ 
+//delete   ==>   \r\n//delete
+ 
+"answer=   ==>   "
+ 
+"", "Todo1",   è   "Todo1",
+ 
+?", "Todo1",   è   ", "Todo1",
+
+
 
 //http://jservice.io/popular/14968
 //Wi-Fi technology uses these waves that brought us "The Chase & Sanborn Hour" in the 1930s   radio waves 200 May 16, 2013
