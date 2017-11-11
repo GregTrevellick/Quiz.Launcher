@@ -13,7 +13,7 @@ namespace Quiz.Ui.Gateway
                 Get("\"DOS\" stands for these 3 words?", "disk operating system", "Todo1", "Todo2", "Todo3"),
                 Get("2-word term for restarting a computer without turning off the power?", "warm boot", "boot up", "boot down", "hard boot"),
                 Get("A common way of linking computers in the office is this type of local area networking technology, which uses a Cat5 cable with a special connector?", "ethernet", "extranet", "twin core and earth", "ducting"),
-                Get("A printing program that puts jobs in a queue to be done one at a time?" "spooler", "Todo1", "Todo2", "Todo3"),
+                Get("A printing program that puts jobs in a queue to be done one at a time?" , "spooler", "Todo1", "Todo2", "Todo3"),
                 Get("A single processor sharing multiple jobs is doing this?", "multitasking", "Todo1", "Todo2", "Todo3"),
                 Get("According to Moore's Law, named for a founder of Intel, these double in power roughly every 18 months?", "computer chips", "Todo1", "Todo2", "Todo3"),
                 Get("Android's 4.1 O.S. is called this?", "Jelly Bean", "Todo1", "Todo2", "Todo3"),

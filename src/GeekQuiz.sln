@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\TODO.txt = ..\TODO.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Questions", "Quiz.Questions\Quiz.Questions.csproj", "{5212A04E-1E3A-4953-84DA-8FFC0BC5107E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Questions3", "Quiz.Questions3\Quiz.Questions3.csproj", "{63F0D147-1ABA-4680-9BC6-9498DB4C330D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,10 @@ Global
 		{CE2ABD86-DA2B-432D-B218-F7C222882061}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE2ABD86-DA2B-432D-B218-F7C222882061}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE2ABD86-DA2B-432D-B218-F7C222882061}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5212A04E-1E3A-4953-84DA-8FFC0BC5107E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5212A04E-1E3A-4953-84DA-8FFC0BC5107E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5212A04E-1E3A-4953-84DA-8FFC0BC5107E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5212A04E-1E3A-4953-84DA-8FFC0BC5107E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63F0D147-1ABA-4680-9BC6-9498DB4C330D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63F0D147-1ABA-4680-9BC6-9498DB4C330D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63F0D147-1ABA-4680-9BC6-9498DB4C330D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63F0D147-1ABA-4680-9BC6-9498DB4C330D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,6 +7,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <UseCodebase>true</UseCodebase>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -26,7 +27,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Quiz.Ui</RootNamespace>
     <AssemblyName>Quiz.Ui</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
     <IncludeDebugSymbolsInVSIXContainer>true</IncludeDebugSymbolsInVSIXContainer>
@@ -64,23 +65,6 @@
     <Compile Include="Core\SearchEngine.cs" />
     <Compile Include="Core\StringExtensions.cs" />
     <Compile Include="Core\QuizDialogDto.cs" />
-    <Compile Include="Gateway\Common.cs" />
-    <Compile Include="Gateway\QuestionsCocktailHeroku.cs" />
-    <Compile Include="Gateway\QuestionsOpenTdb.cs" />
-    <Compile Include="Gateway\QuestionsCocktailHerokuGateway.cs" />
-    <Compile Include="Gateway\QuestionsOpenTdbGateway.cs" />
-    <Compile Include="Gateway\GatewayResponse.cs" />
-    <Compile Include="Gateway\AllGateways.cs" />
-    <Compile Include="Gateway\DifficultyLevel.cs" />
-    <Compile Include="Gateway\QuestionsMine.cs" />
-    <Compile Include="Gateway\QuestionsJeopardy.cs" />
-    <Compile Include="Gateway\QuestionsCocktailHerokuRootObject.cs" />
-    <Compile Include="Gateway\QuestionsOpenTdbRootObject.cs" />
-    <Compile Include="Gateway\QuestionType.cs" />
-    <Compile Include="Gateway\ResponseDto.cs" />
-    <Compile Include="Gateway\WebCampTrainingKitAnswer.cs" />
-    <Compile Include="Gateway\WebCampTrainingKitQuestion.cs" />
-    <Compile Include="Gateway\QuestionsWebCampTrainingKit.cs" />
     <Compile Include="Options\GeneralOptions.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -261,12 +245,6 @@
     <Content Include="VsmpAssets\ReadMeScreenShot_Answer.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Quiz.Questions\Quiz.Questions.csproj">
-      <Project>{5212a04e-1e3a-4953-84da-8ffc0bc5107e}</Project>
-      <Name>Quiz.Questions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -284,6 +262,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Quiz.Questions3\Quiz.Questions3.csproj">
+      <Project>{63f0d147-1aba-4680-9bc6-9498db4c330d}</Project>
+      <Name>Quiz.Questions3</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />

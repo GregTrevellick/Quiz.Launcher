@@ -15,7 +15,7 @@ Common.Get(DifficultyLevel.Hard,"What is the abbreviation GAC short for?","globa
 Common.Get(DifficultyLevel.Easy,"What is css short for?","cascading style sheets","cross site scripting","cascading script sheets","cascading style scripts"),
 Common.Get(DifficultyLevel.Medium,"What is the abbreviation WSDL short for?","Web Services Description Language","Web Services Design Language","Web Services Description Log","Web Standards for Design Langauages"),
 Common.Get(DifficultyLevel.Medium,"What is the abbreviation SVG short for?","Scalable Vector Graphics","Standard Variable Graphics","Scalar Vector Graphic","Scalable Vector Graphs"),
-Common.Get(DifficultyLevel.Hard,"Where does the word "Redis" derived from?","REmote DIctionary Server","REadable DIctionary Server","REduced DIctionary Server","REplicated DIctionary Server"),
+Common.Get(DifficultyLevel.Hard,"Where does the word \"Redis\" derived from?","REmote DIctionary Server","REadable DIctionary Server","REduced DIctionary Server","REplicated DIctionary Server"),
 Common.Get(DifficultyLevel.Medium,"What does the acronym XSS mean?","cross site scripting","cross site sequel","excess server store","extinct server store"),
 Common.Get(DifficultyLevel.Easy,"What is the abbreviation SEO short for?","search engine optimization","senior executive officer","search engine organisation","senior executive order"),
 Common.Get(DifficultyLevel.Easy,"What is meant by the acronym DRY?","don't repeat yourself","do repeat yourself","dynamic real-time yourdon principle","Dry run your code"),
