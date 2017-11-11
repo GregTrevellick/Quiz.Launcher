@@ -46,24 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gateway\AllGateways.cs" />
-    <Compile Include="Gateway\Common.cs" />
-    <Compile Include="Gateway\DifficultyLevel.cs" />
-    <Compile Include="Gateway\GatewayResponse.cs" />
-    <Compile Include="Gateway\QuestionsCocktailHeroku.cs" />
-    <Compile Include="Gateway\QuestionsCocktailHerokuGateway.cs" />
-    <Compile Include="Gateway\QuestionsCocktailHerokuRootObject.cs" />
-    <Compile Include="Gateway\QuestionsJeopardy.cs" />
-    <Compile Include="Gateway\QuestionsMine.cs" />
-    <Compile Include="Gateway\QuestionsOpenTdb.cs" />
-    <Compile Include="Gateway\QuestionsOpenTdbGateway.cs" />
-    <Compile Include="Gateway\QuestionsOpenTdbRootObject.cs" />
-    <Compile Include="Gateway\QuestionsWebCampTrainingKit.cs" />
-    <Compile Include="Gateway\QuestionType.cs" />
-    <Compile Include="Gateway\ResponseDto.cs" />
-    <Compile Include="Gateway\WebCampTrainingKitAnswer.cs" />
-    <Compile Include="Gateway\WebCampTrainingKitQuestion.cs" />
+    <Compile Include="AllGateways.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="DifficultyLevel.cs" />
+    <Compile Include="GatewayResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionsCocktailHeroku.cs" />
+    <Compile Include="QuestionsCocktailHerokuGateway.cs" />
+    <Compile Include="QuestionsCocktailHerokuRootObject.cs" />
+    <Compile Include="QuestionsJeopardy.cs" />
+    <Compile Include="QuestionsMine.cs" />
+    <Compile Include="QuestionsOpenTdb.cs" />
+    <Compile Include="QuestionsOpenTdbGateway.cs" />
+    <Compile Include="QuestionsOpenTdbRootObject.cs" />
+    <Compile Include="QuestionsWebCampTrainingKit.cs" />
+    <Compile Include="QuestionType.cs" />
+    <Compile Include="ResponseDto.cs" />
+    <Compile Include="WebCampTrainingKitAnswer.cs" />
+    <Compile Include="WebCampTrainingKitQuestion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
