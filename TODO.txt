@@ -8,10 +8,12 @@ show in start page (only ?)
 
 put questions into separate DLL
 
-gregt dedupe
-
 group options into in sections
 			
+set window icon
+
+test hitting close without answering
+
 unit tests
 
 

@@ -4,16 +4,16 @@ using Newtonsoft.Json;
 
 namespace Quiz.Questions
 {
-    public class QuestionsCocktailHerokuGateway
+    public class QuestionsCocktailHerokuGateway : IQuestionsGateway
     {
-        public static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
+        public GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
         {
             var rootObject = JsonConvert.DeserializeObject<List<QuestionsCocktailHerokuRootObject>>(responseContent);
             var gatewayResponse = GetGatewayResponse(rootObject.First());
             return gatewayResponse;
         }
 
-        private static GatewayResponse GetGatewayResponse(QuestionsCocktailHerokuRootObject rootObject)
+        private GatewayResponse GetGatewayResponse(QuestionsCocktailHerokuRootObject rootObject)
         {
             var multipleChoiceCorrectAnswer = rootObject.answers.Single(x => x.correct).text;
             var multipleChoiceAnswers = rootObject.answers.Select(x => x.text);

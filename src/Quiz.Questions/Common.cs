@@ -8,7 +8,35 @@ namespace Quiz.Questions
 {
     public class Common
     {
-        public static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2 = null, string wrongAnswer3 = null)
+        public static GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName, string url, IQuestionsGateway questionsGateway)
+        {
+            var gatewayResponse = new GatewayResponse();
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                var responseDto = GetRestResponse(url, timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
+
+                if (!string.IsNullOrEmpty(responseDto.ErrorDetails))
+                {
+                    SetGatewayResponseFromErrorDetails(gatewayResponse, responseDto.ErrorDetails);
+                }
+                else
+                {
+                    try
+                    {
+                        gatewayResponse = questionsGateway.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
+                    }
+                    catch (Exception ex)
+                    {
+                        HandleUnexpectedError(ex, responseDto);
+                        SetGatewayResponseFromErrorDetails(gatewayResponse, responseDto.ErrorDetails);
+                    }
+                }
+            }
+            return gatewayResponse;
+        }
+
+        public static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2 = null, string wrongAnswer3 = null, string wrongAnswer4 = null)
         {
             var result = new GatewayResponse
             {
@@ -19,6 +47,7 @@ namespace Quiz.Questions
                     wrongAnswer1,
                     wrongAnswer2,
                     wrongAnswer3,
+                    wrongAnswer4,
                 },
                 MultipleChoiceCorrectAnswer = correctAnswer,
                 Question = question,
@@ -28,7 +57,7 @@ namespace Quiz.Questions
             return result;
         }
 
-        public static ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
+        private static ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             var responseDto = new ResponseDto();
 
@@ -56,21 +85,21 @@ namespace Quiz.Questions
             return responseDto;
         }
 
-        public static void HandleUnexpectedError(Exception ex, ResponseDto responseDto)
+        private static void HandleUnexpectedError(Exception ex, ResponseDto responseDto)
         {
             Debug.WriteLine(ex.Message);
             var exceptionTypeName = ex.GetType().Name;
             responseDto.ErrorDetails = $"An unexpected error of type {exceptionTypeName} has occurred (possible JSON de-serialization error).";
         }
 
-        public static void HandleUnexpectedError(string url, Exception ex, ResponseDto responseDto)
+        private static void HandleUnexpectedError(string url, Exception ex, ResponseDto responseDto)
         {
             Debug.WriteLine(ex.Message);
             var exceptionTypeName = ex.GetType().Name;
             responseDto.ErrorDetails = $"An unexpected error of type {exceptionTypeName} has occurred (possible communication error with {url}).";
         }
 
-        public static bool HasErrorOccured(IRestResponse response)
+        private static bool HasErrorOccured(IRestResponse response)
         {
             var errorHasOccured =
                 response == null ||
@@ -80,7 +109,7 @@ namespace Quiz.Questions
             return errorHasOccured;
         }
 
-        public static string GetErrorDetails(IRestResponse response, string timeOutInMilliSecondsOptionLabel, string optionName)
+        private static string GetErrorDetails(IRestResponse response, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             string errorDetails;
 
@@ -111,7 +140,7 @@ namespace Quiz.Questions
             return errorDetails;
         }
 
-        public static void SetGatewayResponseFromErrorDetails(GatewayResponse gatewayResponse, string errorDetails)
+        private static void SetGatewayResponseFromErrorDetails(GatewayResponse gatewayResponse, string errorDetails)
         {
             gatewayResponse.ErrorDetails = errorDetails;
         }

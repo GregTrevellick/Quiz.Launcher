@@ -27,30 +27,8 @@ namespace Quiz.Questions
                     break;
             }
 
-            //gregt dedupe below here
-            var gatewayResponse = new GatewayResponse();
-
-            if (!string.IsNullOrEmpty(url))
-            {
-                var responseDto = Common.GetRestResponse(url, timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
-
-                if (!string.IsNullOrEmpty(responseDto.ErrorDetails))
-                {
-                    Common.SetGatewayResponseFromErrorDetails(gatewayResponse, responseDto.ErrorDetails);
-                }
-                else
-                {
-                    try
-                    {
-                        gatewayResponse = QuestionsCocktailHerokuGateway.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
-                    }
-                    catch (Exception ex)
-                    {
-                        Common.HandleUnexpectedError(ex, responseDto);
-                        Common.SetGatewayResponseFromErrorDetails(gatewayResponse, responseDto.ErrorDetails);
-                    }
-                }
-            }
+            
+            var gatewayResponse = Common.GetGatewayResponse(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName, url, new QuestionsCocktailHerokuGateway());
 
             return gatewayResponse;
         }
