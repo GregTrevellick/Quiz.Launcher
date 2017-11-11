@@ -9,6 +9,7 @@ namespace Quiz.Questions
         {
             var gatewayResponses = new List<GatewayResponse>
             {
+                //gregt
                 Get("Among Internet users, the World Wide Web has surpassed the system named for this burrowing rodent?", "gopher", "Todo1", "Todo2", "Todo3"),
                 Get("\"DOS\" stands for these 3 words?", "disk operating system", "Todo1", "Todo2", "Todo3"),
                 Get("2-word term for restarting a computer without turning off the power?", "warm boot", "boot up", "boot down", "hard boot"),
@@ -20,7 +21,6 @@ namespace Quiz.Questions
                 Get("At the 1939 New York World's Fair, what animal was the robot Elektro was accompanied by Sparko?", "a dog", "Todo1", "Todo2", "Todo3"),
                 Get("Before a game's release, Joe Gamer may be asked to play a pre-version usually referred to by this Greek letter?", "beta", "Todo1", "Todo2", "Todo3"),
                 Get("Buckminster Fuller used \"energetic synergetic geometry\" to build these structures?", "geodesic domes", "Todo1", "Todo2", "Todo3"),
-                Get("Christiaan Huygens got into the swing of things in 1656 by adding this to the clock?", "Pendulum", "Todo1", "Todo2", "Todo3"),
                 Get("Coherant & Xenix are 2 of these, part of the abbreviation in the better-known MS-DOS?", "operating systems", "Todo1", "Todo2", "Todo3"),
                 Get("Copying info from a computer to a CD is called burning; doing the reverse is this other destructive term?", "ripping", "Todo1", "Todo2", "Todo3"),
                 Get("CTR, the Computing-Tabulating-Recording Company, took on this current 3-letter name in 1924?", "IBM", "Todo1", "Todo2", "Todo3"),

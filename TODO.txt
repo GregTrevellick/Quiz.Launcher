@@ -4,34 +4,21 @@ Colour themes
 https://stackoverflow.com/questions/18913208/colors-in-visual-studio-extension
 https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.platformui.environmentcolors?redirectedfrom=MSDN&view=visualstudiosdk-2017
 
-show in start page (only)
+show in start page (only ?)
 
 put questions into separate DLL
 
 gregt dedupe
 
-Options - group in sections
-
-Question categories (general, c#, JavaScript)
-				
+group options into in sections
+			
 unit tests
 
-help - about - ask another question
-
-hawkings app ???
 
 
-
-
-
-
-
-
-
-
-
-
-
+FUTURE add categories for questions categories (general, c#, JavaScript)
+FUTURE help - about - ask another question
+FUTURE daz's hawkings app ???
 FUTURE add icons questions
 FUTURE add podcast theme questions
 FUTURE Help to include a link to a github MD page to submit questions via issue or email

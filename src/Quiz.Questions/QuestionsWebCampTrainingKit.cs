@@ -39,7 +39,7 @@ namespace Quiz.Questions
                 new WebCampTrainingKitQuestion
                 {
                     DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "The first and still the oldest domain name on the internet is:",
+                    QuestionText = "The first / oldest domain name on the internet is:",
                     Answers = new List<WebCampTrainingKitAnswer>
                     {
                         new WebCampTrainingKitAnswer {AnswerText = "Network.com", IsCorrect = false},
