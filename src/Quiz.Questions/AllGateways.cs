@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Quiz.Ui.Gateway
+namespace Quiz.Questions
 {
     public class AllGateways
     {

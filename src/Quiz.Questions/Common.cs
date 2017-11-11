@@ -1,10 +1,10 @@
-﻿using RestSharp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
+using RestSharp;
 
-namespace Quiz.Ui.Gateway
+namespace Quiz.Questions
 {
     public class Common
     {

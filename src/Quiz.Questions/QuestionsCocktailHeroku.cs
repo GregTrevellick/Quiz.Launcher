@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quiz.Ui.Gateway
+namespace Quiz.Questions
 {
     public class QuestionsCocktailHeroku
     {

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Quiz.Ui.Gateway;
+using Quiz.Questions;
 
 namespace Quiz.Ui.Core
 {
