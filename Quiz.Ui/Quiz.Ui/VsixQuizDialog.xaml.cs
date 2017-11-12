@@ -291,9 +291,7 @@ namespace Quiz.Ui
             }
             else
             {
-                //gregt unit test required
-                double percentage = ((double) totalQuestionsAnsweredCorrectly.Value / totalQuestionsAsked.Value) * 100;
-                percentageSuccess = (int) Math.Round(percentage, MidpointRounding.AwayFromZero);
+                percentageSuccess = QuizHelper.GetPercentageSuccess2(totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
             }
 
             return percentageSuccess;
