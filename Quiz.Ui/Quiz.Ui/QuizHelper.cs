@@ -23,8 +23,6 @@ namespace Quiz.Ui
             var remote = random.Next(1, 5);
             var gatewayResponse = new GatewayResponse();
 
-            //remote = 5;//gregt
-
             switch (remote)
             {
                 case 1:
