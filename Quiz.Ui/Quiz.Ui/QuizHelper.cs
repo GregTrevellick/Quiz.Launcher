@@ -149,7 +149,7 @@ namespace Quiz.Ui
             {
                 vsixQuizDialog.TextBlockTotalQuestionsAnsweredCorrectly.Text = totalQuestionsAnsweredCorrectlyMedium.ToString();
                 vsixQuizDialog.TextBlockTotalQuestionsAsked.Text = totalQuestionsAsked.ToString();
-                var percentageSuccess = vsixQuizDialog.GetPercentageSuccess(totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAsked);
+                var percentageSuccess = GetPercentageSuccess(totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAsked);
                 var userStatus = vsixQuizDialog.GetUserStatus(percentageSuccess);
                 vsixQuizDialog.TextBlockUserStatus.Text = userStatus;
                 var userRank = vsixQuizDialog.GetUserRank(percentageSuccess);
@@ -237,6 +237,12 @@ namespace Quiz.Ui
             }
 
             return percentageSuccess;
+        }
+
+        public static DifficultyLevel GetDifficultyLevel(string textBlockDifficultyText)//gregt unit test reqd
+        {
+            var difficultyLevel = (DifficultyLevel)Enum.Parse(typeof(DifficultyLevel), textBlockDifficultyText.Replace("Difficulty: ", string.Empty));
+            return difficultyLevel;
         }
 
     }

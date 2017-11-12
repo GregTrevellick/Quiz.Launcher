@@ -156,11 +156,12 @@ namespace Quiz.Ui
                 }
             }
 
-            var difficultyLevel = (DifficultyLevel)Enum.Parse(typeof(DifficultyLevel), TextBlockDifficulty.Text.Replace("Difficulty: ", string.Empty));//gregt unit test reqd
+            var difficultyLevel = QuizHelper.GetDifficultyLevel(TextBlockDifficulty.Text);
 
             ActOnAnswerGiven(response, difficultyLevel);
         }
 
+  
         private void ActOnAnswerGiven(string response, DifficultyLevel difficultyLevel)
         {
             ProcessAnswerToQuestion(response, difficultyLevel);
@@ -238,7 +239,7 @@ namespace Quiz.Ui
 
             var totalQuestionsAnsweredCorrectly = TotalQuestionsAnsweredCorrectlyEasy + TotalQuestionsAnsweredCorrectlyMedium + TotalQuestionsAnsweredCorrectlyHard;
 
-            var percentageSuccess = GetPercentageSuccess(totalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
+            var percentageSuccess = QuizHelper.GetPercentageSuccess(totalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
 
             TextBlockTotalQuestionsAsked.Text = TotalQuestionsAsked.ToString();
             TextBlockTotalQuestionsAnsweredCorrectly.Text = totalQuestionsAnsweredCorrectly.ToString();
@@ -277,24 +278,6 @@ namespace Quiz.Ui
         {
             var userStatusDescription = percentageSuccess.UserStatusDescription();
             return userStatusDescription;
-        }
-
-        internal int GetPercentageSuccess(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
-        {
-            int percentageSuccess;
-
-            if (totalQuestionsAsked == 0 ||
-                !totalQuestionsAnsweredCorrectly.HasValue ||
-                !totalQuestionsAsked.HasValue)//gregt unit test reqd
-            {
-                percentageSuccess = 0;
-            }
-            else
-            {
-                percentageSuccess = QuizHelper.GetPercentageSuccess(totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
-            }
-
-            return percentageSuccess;
         }
 
         private void SetQuizReplyColour(Color color)
