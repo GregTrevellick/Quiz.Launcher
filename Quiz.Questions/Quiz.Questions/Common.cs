@@ -99,9 +99,10 @@ namespace Quiz.Questions
             responseDto.ErrorDetails = $"An unexpected error of type {exceptionTypeName} has occurred (possible communication error with {url}).";
         }
 
-        private static bool HasErrorOccured(IRestResponse response)
+        public static bool HasErrorOccured(IRestResponse response)
         {
-            var errorHasOccured =
+            //gregt .?
+            var errorHasOccured = 
                 response == null ||
                 response.ErrorException != null ||
                 !string.IsNullOrEmpty(response.ErrorMessage);
@@ -155,7 +156,7 @@ namespace Quiz.Questions
             return char.ToUpper(str[0]) + str.Substring(1);
         }
 
-        public static string CharacterHandler(string str)//gregt unit test reqd
+        public static string CharacterHandler(string str)
         {
             var result = WebUtility.HtmlDecode(str);
             return result;

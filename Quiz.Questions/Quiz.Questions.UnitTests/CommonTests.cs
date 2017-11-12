@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RestSharp;
 
 namespace Quiz.Questions.UnitTests
 {
@@ -18,6 +19,22 @@ namespace Quiz.Questions.UnitTests
         public void UppercaseFirstTest(string str, string expected)
         {
             Assert.AreEqual(expected, Common.UppercaseFirst(str));
+        }
+
+        [TestMethod]
+        public bool HasErrorOccuredTest()
+        {
+            //gregt .?
+            Assert.IsTrue(Common.HasErrorOccured(null));
+
+            IRestResponse response = new RestResponse();
+            Assert.IsTrue(Common.HasErrorOccured(response));
+
+            response.ErrorMessage = "abc";
+            Assert.IsTrue(Common.HasErrorOccured(response));
+
+            response.ErrorException="abc";
+            Assert.IsTrue(Common.HasErrorOccured(response));
         }
     }
 }
