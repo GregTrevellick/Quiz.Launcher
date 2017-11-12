@@ -26,13 +26,18 @@ namespace Quiz.Questions
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,
                 Question = question,
-                QuestionType = multipleChoiceCorrectAnswer.ToLower() == "true" ||
-                               multipleChoiceCorrectAnswer.ToLower() == "false" 
-                               ? QuestionType.TrueFalse 
-                               : QuestionType.MultiChoice//gregt unit test reqd
+                QuestionType = GetQuestionType(multipleChoiceCorrectAnswer)
             };
 
             return gatewayResponse;
+        }
+
+        private static QuestionType GetQuestionType(string multipleChoiceCorrectAnswer)//gregt unit test reqd
+        {
+            return multipleChoiceCorrectAnswer.ToLower() == "true" ||
+                   multipleChoiceCorrectAnswer.ToLower() == "false" 
+                ? QuestionType.TrueFalse 
+                : QuestionType.MultiChoice;
         }
     }
 }

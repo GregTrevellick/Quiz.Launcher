@@ -32,10 +32,15 @@ namespace Quiz.Questions
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,
                 Question = question,
-                QuestionType = firstOfOne.type == "boolean" ? QuestionType.TrueFalse : QuestionType.MultiChoice//gregt unit test reqd
+                QuestionType = GetQuestionType(firstOfOne)
             };
 
             return gatewayResponse;
+        }
+
+        private static QuestionType GetQuestionType(Result firstOfOne)//gregt unit test reqd
+        {
+            return firstOfOne.type == "boolean" ? QuestionType.TrueFalse : QuestionType.MultiChoice;
         }
     }
 }
