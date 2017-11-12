@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\TODO.txt = ..\TODO.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Ui.UnitTests", "Quiz.UnitTests\Quiz.Ui.UnitTests.csproj", "{C3B117E7-92CA-435C-A279-4CD302AB26EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Ui.UnitTests", "Quiz.Ui.UnitTests\Quiz.Ui.UnitTests.csproj", "{C3B117E7-92CA-435C-A279-4CD302AB26EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
