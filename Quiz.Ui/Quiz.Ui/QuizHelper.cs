@@ -218,11 +218,24 @@ namespace Quiz.Ui
             return lastPopUpDateTime.Date < baseDateTime.Date;
         }
 
-        public static int GetPercentageSuccess2(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)//gregt unit test required
+        public static int GetPercentageSuccess(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)//gregt unit test required
         {
             int percentageSuccess;
-            double percentage = ((double)totalQuestionsAnsweredCorrectly.Value / totalQuestionsAsked.Value) * 100;
-            percentageSuccess = (int)Math.Round(percentage, MidpointRounding.AwayFromZero);
+
+            if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
+            {
+                double percentage = ((double)totalQuestionsAnsweredCorrectly.Value / totalQuestionsAsked.Value) * 100;
+                percentageSuccess = (int)Math.Round(percentage, MidpointRounding.AwayFromZero);
+                if (percentageSuccess < 0)
+                {
+                    percentageSuccess = 0;
+                }
+            }
+            else
+            {
+                percentageSuccess = 0;
+            }
+
             return percentageSuccess;
         }
 

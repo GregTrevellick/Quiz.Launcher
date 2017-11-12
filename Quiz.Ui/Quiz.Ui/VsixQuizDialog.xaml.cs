@@ -291,7 +291,7 @@ namespace Quiz.Ui
             }
             else
             {
-                percentageSuccess = QuizHelper.GetPercentageSuccess2(totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
+                percentageSuccess = QuizHelper.GetPercentageSuccess(totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
             }
 
             return percentageSuccess;
