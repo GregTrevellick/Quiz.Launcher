@@ -218,7 +218,7 @@ namespace Quiz.Ui
             return lastPopUpDateTime.Date < baseDateTime.Date;
         }
 
-        public static int GetPercentageSuccess(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)//gregt unit test required
+        public static int GetPercentageSuccess(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             int percentageSuccess;
 

@@ -145,7 +145,7 @@ namespace Quiz.Questions
             gatewayResponse.ErrorDetails = errorDetails;
         }
 
-        public static string UppercaseFirst(string str)//gregt unit test reqd
+        public static string UppercaseFirst(string str)
         {
             if (string.IsNullOrEmpty(str))
             {

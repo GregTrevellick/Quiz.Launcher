@@ -6,10 +6,18 @@ namespace Quiz.Questions.UnitTests
     [TestClass]
     public class CommonTests
     {
-        [TestMethod]
-        public void UppercaseFirstTest()
+        [DataRow("", "")]
+        [DataRow(null, "")]
+        [DataRow("Abc", "Abc")]
+        [DataRow("Ab cd", "Ab cd")]
+        [DataRow("abc", "Abc")]
+        [DataRow("ab cd", "Ab cd")]
+        [DataRow("aBc", "ABc")]
+        [DataRow("aB Cd", "AB Cd")]
+        [DataTestMethod]
+        public void UppercaseFirstTest(string str, string expected)
         {
-            Assert.AreEqual("Abc", Common.UppercaseFirst("abc"));
+            Assert.AreEqual(expected, Common.UppercaseFirst(str));
         }
     }
 }
