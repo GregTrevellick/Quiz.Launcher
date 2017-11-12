@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Quiz.Questions;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Quiz.Ui.UnitTests
+namespace Quiz.Questions.UnitTests
 {
     [TestClass]
     public class CommonTests
