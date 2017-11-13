@@ -32,10 +32,10 @@ namespace Quiz.Questions
             return gatewayResponse;
         }
 
-        private static QuestionType GetQuestionType(string multipleChoiceCorrectAnswer)//gregt unit test reqd
+        public static QuestionType GetQuestionType(string multipleChoiceCorrectAnswer)
         {
-            return multipleChoiceCorrectAnswer.ToLower() == "true" ||
-                   multipleChoiceCorrectAnswer.ToLower() == "false" 
+            return multipleChoiceCorrectAnswer?.ToLower() == "true" ||
+                   multipleChoiceCorrectAnswer?.ToLower() == "false" 
                 ? QuestionType.TrueFalse 
                 : QuestionType.MultiChoice;
         }
