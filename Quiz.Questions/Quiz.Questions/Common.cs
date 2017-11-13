@@ -161,5 +161,19 @@ namespace Quiz.Questions
             return result;
         }
 
+        public static DifficultyLevel GetDifficultyLevel(string textBlockDifficultyText)
+        {
+            if (string.IsNullOrWhiteSpace(textBlockDifficultyText))
+            {
+                return DifficultyLevel.Medium;
+            }
+            else
+            {
+                var str = textBlockDifficultyText.Replace("Difficulty: ", string.Empty);
+                str = UppercaseFirst(str.ToLower());
+                Enum.TryParse(str, out DifficultyLevel difficultyLevel);
+                return difficultyLevel;
+            }
+        }
     }
 }

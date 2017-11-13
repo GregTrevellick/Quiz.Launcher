@@ -224,7 +224,7 @@ namespace Quiz.Ui
 
             if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
             {
-                double percentage = ((double)totalQuestionsAnsweredCorrectly.Value / totalQuestionsAsked.Value) * 100;
+                var percentage = ((double)totalQuestionsAnsweredCorrectly.Value / totalQuestionsAsked.Value) * 100;
                 percentageSuccess = (int)Math.Round(percentage, MidpointRounding.AwayFromZero);
                 if (percentageSuccess < 0)
                 {
@@ -239,11 +239,11 @@ namespace Quiz.Ui
             return percentageSuccess;
         }
 
-        public static DifficultyLevel GetDifficultyLevel(string textBlockDifficultyText)//gregt unit test reqd
-        {
-            var difficultyLevel = (DifficultyLevel)Enum.Parse(typeof(DifficultyLevel), textBlockDifficultyText.Replace("Difficulty: ", string.Empty));
-            return difficultyLevel;
-        }
+        //public static DifficultyLevel GetDifficultyLevel(string textBlockDifficultyText)//gregt unit test reqd
+        //{
+        //    var difficultyLevel = (DifficultyLevel)Enum.Parse(typeof(DifficultyLevel), textBlockDifficultyText.Replace("Difficulty: ", string.Empty));
+        //    return difficultyLevel;
+        //}
 
     }
 }

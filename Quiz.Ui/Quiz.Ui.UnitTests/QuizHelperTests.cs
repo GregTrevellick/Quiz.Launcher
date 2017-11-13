@@ -19,5 +19,7 @@ namespace Quiz.Ui.UnitTests
         {
             Assert.AreEqual(expected, QuizHelper.GetPercentageSuccess(totalQuestionsAnsweredCorrectly, totalQuestionsAsked));
         }
+
+
     }
 }
