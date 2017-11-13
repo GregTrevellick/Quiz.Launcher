@@ -6,15 +6,16 @@ https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.platformui.en
 
 show in start page (only ?)
 
-put questions into separate DLL
-
-group options into in sections
+group options in sections
 			
 set window icon
 
 test hitting close without answering
 
-unit tests
+put questions source into different repo
+
+
+
 
 
 
