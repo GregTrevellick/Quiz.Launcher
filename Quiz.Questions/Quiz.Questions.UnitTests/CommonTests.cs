@@ -22,18 +22,35 @@ namespace Quiz.Questions.UnitTests
         }
 
         [TestMethod]
-        public bool HasErrorOccuredTest()
+        public void HasErrorOccuredTest1()
         {
-            //gregt .?
             Assert.IsTrue(Common.HasErrorOccured(null));
+        }
 
+        [TestMethod]
+        public void HasErrorOccuredTest2()
+        {
             IRestResponse response = new RestResponse();
-            Assert.IsTrue(Common.HasErrorOccured(response));
+            Assert.IsFalse(Common.HasErrorOccured(response));
+        }
 
-            response.ErrorMessage = "abc";
+        [TestMethod]
+        public void HasErrorOccuredTest3()
+        {
+            IRestResponse response = new RestResponse
+            {
+                ErrorMessage = "abc"
+            };
             Assert.IsTrue(Common.HasErrorOccured(response));
+        }
 
-            response.ErrorException="abc";
+        [TestMethod]
+        public void HasErrorOccuredTest4()
+        {
+            IRestResponse response = new RestResponse
+            {
+                ErrorException = new Exception()
+            };
             Assert.IsTrue(Common.HasErrorOccured(response));
         }
     }
