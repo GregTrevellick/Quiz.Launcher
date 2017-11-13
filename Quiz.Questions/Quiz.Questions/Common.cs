@@ -101,7 +101,6 @@ namespace Quiz.Questions
 
         public static bool HasErrorOccured(IRestResponse response)
         {
-            //gregt .?
             var errorHasOccured = 
                 response == null ||
                 response.ErrorException != null ||
