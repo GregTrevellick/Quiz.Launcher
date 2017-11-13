@@ -38,9 +38,9 @@ namespace Quiz.Questions
             return gatewayResponse;
         }
 
-        private static QuestionType GetQuestionType(Result firstOfOne)//gregt unit test reqd
+        public static QuestionType GetQuestionType(Result firstOfOne)
         {
-            return firstOfOne.type == "boolean" ? QuestionType.TrueFalse : QuestionType.MultiChoice;
+            return firstOfOne?.type?.ToLower() == "boolean" ? QuestionType.TrueFalse : QuestionType.MultiChoice;
         }
     }
 }
