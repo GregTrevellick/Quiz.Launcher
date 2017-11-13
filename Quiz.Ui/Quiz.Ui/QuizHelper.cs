@@ -238,12 +238,5 @@ namespace Quiz.Ui
 
             return percentageSuccess;
         }
-
-        //public static DifficultyLevel GetDifficultyLevel(string textBlockDifficultyText)//gregt unit test reqd
-        //{
-        //    var difficultyLevel = (DifficultyLevel)Enum.Parse(typeof(DifficultyLevel), textBlockDifficultyText.Replace("Difficulty: ", string.Empty));
-        //    return difficultyLevel;
-        //}
-
     }
 }
