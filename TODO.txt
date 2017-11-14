@@ -12,9 +12,9 @@ set window icon
 
 test hitting close without answering
 
-put questions source into different repo
+put questions source into different repo ?
 
-
+appveyor for other projects
 
 
 
