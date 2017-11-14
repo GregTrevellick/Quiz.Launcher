@@ -1,3 +1,10 @@
+build multiple solutions in a single appveyor project
+
+appveyor for other projects
+
+
+
+
 Add Points to ui (determine on the fly - 1 x easy + 2 x medium + 3 x hard)
 
 Colour themes
@@ -14,7 +21,8 @@ test hitting close without answering
 
 put questions source into different repo ?
 
-appveyor for other projects
+
+
 
 
 
