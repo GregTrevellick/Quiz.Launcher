@@ -180,7 +180,7 @@ namespace Quiz.Ui
 
             if (isResponseCorrect)
             {
-                TextBlockQuizReply.Text = "Well done - correct answer.";
+                TextBlockQuizReply.Text = "Congratulations, correct answer.";
                 SetQuizReplyColour(Colors.Green);
                 ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
                 QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
@@ -214,11 +214,11 @@ namespace Quiz.Ui
             }
             else
             {
-                TextBlockQuizReply.Text = "Oh dear - wrong answer.";
+                TextBlockQuizReply.Text = "Sorry, wrong answer";
 
                 if (QuestionType == QuestionType.MultiChoice)
                 {
-                    TextBlockQuizReply.Text += $" The correct answer is {CorrectAnswer}";
+                    TextBlockQuizReply.Text += $". The correct answer is {CorrectAnswer}.";
                 }
 
                 ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
