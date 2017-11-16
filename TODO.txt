@@ -1,10 +1,3 @@
-build multiple solutions in a single appveyor project
-
-appveyor for other projects
-
-
-
-
 Add Points to ui (determine on the fly - 1 x easy + 2 x medium + 3 x hard)
 
 Colour themes
@@ -19,7 +12,6 @@ set window icon
 
 test hitting close without answering
 
-put questions source into different repo ?
 
 
 
@@ -27,6 +19,8 @@ put questions source into different repo ?
 
 
 
+
+FUTURE put questions source into different repo ?
 FUTURE add categories for questions categories (general, c#, JavaScript)
 FUTURE help - about - ask another question
 FUTURE daz's hawkings app ???
