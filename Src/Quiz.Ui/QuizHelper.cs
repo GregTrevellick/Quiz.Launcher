@@ -165,7 +165,7 @@ namespace Quiz.Ui
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
 
-            //gregt to be reinstated SetWindowIcon(window);
+            SetWindowIcon(window);
 
             window.ResizeMode = ResizeMode.CanResize;
             window.ShowDialog();
@@ -180,7 +180,7 @@ namespace Quiz.Ui
         private Uri GetIconUri()
         {
             var assemblyName = "Quiz.Ui";
-            var packUri = $"pack://application:,,,/{assemblyName};component/Resources/vsixextensionicon_90x90_resource_bb6_icon.png";
+            var packUri = $"pack://application:,,,/{assemblyName};component/Resources/vsixextensionicon_90x90_resource_bb6_icon.ico";
             return new Uri(packUri, UriKind.RelativeOrAbsolute);
         }
 

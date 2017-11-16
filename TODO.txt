@@ -8,9 +8,7 @@ show in start page (only ?)
 
 group options in sections
 			
-set window icon
 
-test hitting close without answering
 
 
 
