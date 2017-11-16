@@ -37,23 +37,23 @@ namespace Quiz.Ui
             //////DataContext = this;
             Loaded += UserControl1_Loaded;
 
-#if DEBUG
-            //ButtonAgain.Visibility = Visibility.Visible;
-#endif
+//#if DEBUG
+//            ButtonAgain.Visibility = Visibility.Visible;
+//#endif
         }
 
-#if DEBUG
-        private void ButtonAgain_OnClick(object sender, RoutedEventArgs e)
-        {
-            //var quizHelper = new QuizHelper();
-            //var random = new Random();
-            //var totalQuestionsAnsweredCorrectlyEasy = random.Next(1, 100);
-            //var totalQuestionsAnsweredCorrectlyMedium = random.Next(1, 100);
-            //var totalQuestionsAnsweredCorrectlyHard = random.Next(1, 100);
-            //quizHelper.GetHiddenOptionsDto("Again1", DateTime.Now, 789, 5000, "Again2", true,
-            //    totalQuestionsAnsweredCorrectlyEasy, totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAnsweredCorrectlyHard, 100, SearchEngine.Google);
-        }
-#endif
+//#if DEBUG
+//        private void ButtonAgain_OnClick(object sender, RoutedEventArgs e)
+//        {
+//            var quizHelper = new QuizHelper();
+//            var random = new Random();
+//            var totalQuestionsAnsweredCorrectlyEasy = random.Next(1, 100);
+//            var totalQuestionsAnsweredCorrectlyMedium = random.Next(1, 100);
+//            var totalQuestionsAnsweredCorrectlyHard = random.Next(1, 100);
+//            quizHelper.GetHiddenOptionsDto("Again1", DateTime.Now, 789, 5000, "Again2", true,
+//                totalQuestionsAnsweredCorrectlyEasy, totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAnsweredCorrectlyHard, 100, SearchEngine.Google);
+//        }
+//#endif
 
         private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
         {

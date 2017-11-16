@@ -59,9 +59,9 @@
         <StackPanel>
             <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockErrorDetails" />
         </StackPanel>
-        <StackPanel>
+        <!--<StackPanel>
             <Button Content="Again" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonAgain_OnClick" Name="ButtonAgain"/>
-        </StackPanel>
+        </StackPanel>-->
     </StackPanel>
 
     
