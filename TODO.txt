@@ -1,9 +1,5 @@
 Add Points to ui (determine on the fly - 1 x easy + 2 x medium + 3 x hard)
 
-Colour themes
-https://stackoverflow.com/questions/18913208/colors-in-visual-studio-extension
-https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.platformui.environmentcolors?redirectedfrom=MSDN&view=visualstudiosdk-2017
-
 show in start page (only ?)
 
 group options in sections
