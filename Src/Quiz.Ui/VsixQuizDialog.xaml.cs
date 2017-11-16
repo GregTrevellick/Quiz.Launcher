@@ -77,8 +77,8 @@ namespace Quiz.Ui
             var shouldCloseWindow = ShouldCloseWindow();
 
             if (!shouldCloseWindow)
-            { 
-                e.Cancel = false;
+            {
+                e.Cancel = true;
             }
         }
         
