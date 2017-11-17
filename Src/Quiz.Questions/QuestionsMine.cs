@@ -29,6 +29,8 @@ namespace Quiz.Questions
                 Common.Get(DifficultyLevel.Hard,"What is the big-data related CAP theorem short for?","Consistency Availability Partition Tolerance","Consistency Availability Partition","Consistent Atomic Platform","Clone Available Pieces", "climates and primates"),
                 Common.Get(DifficultyLevel.Hard,"The data-related acronym ACID is short for?","Atomicity Consistency Isolation Durability","Artifically Cloned Integrated Data","Active Cloud Integrated Data","Atomic Consistent Independent Data", "anti-climactic ignorance day"),
                 Common.Get(DifficultyLevel.Hard,"What is the acronym REST short for?","REpresentational State Transfer","Really Easy Server Transport","Registry Extraction for System Testing","REgular Silent Transfers", "a mars a day helps you work REST and play"),
+                Common.Get(DifficultyLevel.Hard,"What was an original name for Babel","6 to 5","9 to 5","Tower.JS","JS.Tower", "Babe-L"),
+
             };
 
             return gatewayResponses;

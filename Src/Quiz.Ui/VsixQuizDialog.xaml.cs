@@ -175,6 +175,12 @@ namespace Quiz.Ui
         {
             QuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
             QuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
+            ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
+            RadioButton1.IsEnabled = false;
+            RadioButton2.IsEnabled = false;
+            RadioButton3.IsEnabled = false;
+            RadioButton4.IsEnabled = false;
+            RadioButton5.IsEnabled = false;
 
             var isResponseCorrect = IsResponseCorrect(response);
 
@@ -182,7 +188,6 @@ namespace Quiz.Ui
             {
                 TextBlockQuizReply.Text = "Congratulations, correct answer.";
                 SetQuizReplyColour(Colors.Green);
-                ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
                 QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
 
                 if (!_userStatusTotalsIncremented)
@@ -221,7 +226,6 @@ namespace Quiz.Ui
                     TextBlockQuizReply.Text += $". The correct answer is {CorrectAnswer}.";
                 }
 
-                ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
                 SetQuizReplyColour(Colors.Red);
                 QuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
             }
