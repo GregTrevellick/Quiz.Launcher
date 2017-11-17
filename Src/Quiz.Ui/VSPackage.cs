@@ -30,7 +30,7 @@ namespace Quiz.Ui
             IServiceContainer serviceContainer = this as IServiceContainer;
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
             solutionEvents = dte.Events.SolutionEvents;
-
+            
             generalOptionsDto = GetGeneralOptionsDto();
 
             if (generalOptionsDto.ShowQuizUponOpeningSolution)
