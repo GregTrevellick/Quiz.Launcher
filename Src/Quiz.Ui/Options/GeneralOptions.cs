@@ -14,7 +14,7 @@ namespace Quiz.Ui.Options
         private bool proceedToSaveOptions;
         private string timeOutInMilliSeconds;
 
-        [Category(Constants.CategorySubLevel)]
+        [Category(Constants.CategorySubLevelFrequency)]
         [DisplayName(Constants.MaximumPopUpsWeekDayOptionLabel)]
         [Description(Constants.MaximumPopUpsWeekDayDetailedDescription)]
         public string MaximumPopUpsWeekDay 
@@ -33,7 +33,7 @@ namespace Quiz.Ui.Options
             }
         }
 
-        [Category(Constants.CategorySubLevel)]
+        [Category(Constants.CategorySubLevelFrequency)]
         [DisplayName(Constants.MaximumPopUpsWeekEndOptionLabel)]
         [Description(Constants.MaximumPopUpsWeekEndDetailedDescription)]
         public string MaximumPopUpsWeekEnd 
@@ -52,7 +52,7 @@ namespace Quiz.Ui.Options
             }
         }
 
-        [Category(Constants.CategorySubLevel)]
+        [Category(Constants.CategorySubLevelFrequency)]
         [DisplayName(Constants.PopUpIntervalInMinsOptionLabel)]
         [Description(Constants.PopUpIntervalInMinsOptionDetailedDescription)]
         public string PopUpIntervalInMins
@@ -71,7 +71,7 @@ namespace Quiz.Ui.Options
             }
         }
 
-        [Category(Constants.CategorySubLevel)]
+        [Category(Constants.CategorySubLevelMiscellaneous)]
         [DisplayName(Constants.TimeOutInMilliSecondsOptionLabel)]
         [Description(Constants.TimeOutInMilliSecondsOptionDetailedDescription)]
         public string TimeOutInMilliSeconds
@@ -116,22 +116,22 @@ namespace Quiz.Ui.Options
             }
         }
 
-        [Category(Constants.CategorySubLevel)]
+        [Category(Constants.CategorySubLevelPreferences)]
         [DisplayName(Constants.UseBingInsteadOfGoogleOptionLabel)]
         [Description(Constants.UseBingInsteadOfGoogleOptionDetailedDescription)]
         public bool UseBingInsteadOfGoogle { get; set; } = false;
 
-        [Category(Constants.CategorySubLevel)]
+        [Category(Constants.CategorySubLevelTriggers)]
         [DisplayName(Constants.ShowQuizUponClosingSolutionOptionLabel)]
         [Description(Constants.ShowQuizUponClosingSolutionOptionDetailedDescription)]
         public bool ShowQuizUponClosingSolution { get; set; } = false;
 
-        [Category(Constants.CategorySubLevel)]
+        [Category(Constants.CategorySubLevelTriggers)]
         [DisplayName(Constants.ShowQuizUponOpeningSolutionOptionLabel)]
         [Description(Constants.ShowQuizUponOpeningSolutionOptionDetailedDescription)]
         public bool ShowQuizUponOpeningSolution { get; set; } = true;
 
-        [Category(Constants.CategorySubLevel)]
+        [Category(Constants.CategorySubLevelPreferences)]
         [DisplayName(Constants.SuppressClosingWithoutSubmitingAnswerWarningOptionLabel)]
         [Description(Constants.SuppressClosingWithoutSubmitingAnswerWarningOptionDetailedDescription)]
         public bool SuppressClosingWithoutSubmitingAnswerWarning { get; set; } = false;

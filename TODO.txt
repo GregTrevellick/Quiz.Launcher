@@ -1,9 +1,7 @@
 Add Points to ui (determine on the fly - 1 x easy + 2 x medium + 3 x hard)
 
 show in start page (only ?)
-
-group options in sections
-			
+		
 occasional quizdto.questions.trim failure
 
 gregt

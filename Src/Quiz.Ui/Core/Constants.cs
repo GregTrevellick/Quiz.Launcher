@@ -4,7 +4,11 @@ namespace Quiz.Ui.Core
 {
     public static class Constants
     {
-        public const string CategorySubLevel = "General";
+        public const string CategorySubLevelGeneral = "General";
+        public const string CategorySubLevelFrequency = "Frequency";
+        public const string CategorySubLevelMiscellaneous = "Miscellaneous";
+        public const string CategorySubLevelPreferences = "Preferences";
+        public const string CategorySubLevelTriggers = "Triggers";
         public const string DefaultMaximumPopUpsWeekDay = "1";
         public const string DefaultMaximumPopUpsWeekEnd = "99";
         public const string DefaultPopUpIntervalInMins = "0";
