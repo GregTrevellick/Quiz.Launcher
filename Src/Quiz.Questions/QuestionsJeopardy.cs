@@ -10,8 +10,7 @@ namespace Quiz.Questions
             var gatewayResponses = new List<GatewayResponse>
             {
                 //gregt
-                Get(
-                    "Among Internet users, the World Wide Web has surpassed the system named for this burrowing rodent?",
+                Get("Among Internet users, the World Wide Web has surpassed the system named for this burrowing rodent?",
                     "gopher",
                     "Todo1",
                     "Todo2",
@@ -26,8 +25,7 @@ namespace Quiz.Questions
                     "boot up",
                     "boot down",
                     "hard boot"),
-                Get(
-                    "A common way of linking computers in the office is this type of local area networking technology, which uses a Cat5 cable with a special connector?",
+                Get("A common way of linking computers in the office is this type of local area networking technology, which uses a Cat5 cable with a special connector?",
                     "ethernet",
                     "extranet",
                     "twin core and earth",
@@ -41,8 +39,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "According to Moore's Law, named for a founder of Intel, these double in power roughly every 18 months?",
+                Get("According to Moore's Law, named for a founder of Intel, these double in power roughly every 18 months?",
                     "computer chips",
                     "Todo1",
                     "Todo2",
@@ -57,8 +54,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "Before a game's release, Joe Gamer may be asked to play a pre-version usually referred to by this Greek letter?",
+                Get("Before a game's release, Joe Gamer may be asked to play a pre-version usually referred to by this Greek letter?",
                     "beta",
                     "Todo1",
                     "Todo2",
@@ -73,8 +69,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "Copying info from a computer to a CD is called burning; doing the reverse is this other destructive term?",
+                Get("Copying info from a computer to a CD is called burning; doing the reverse is this other destructive term?",
                     "ripping",
                     "Todo1",
                     "Todo2",
@@ -89,8 +84,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "Despite the name, the San Jose headquarters of this maker of the creative cloud isn't built of clay bricks	?",
+                Get("Despite the name, the San Jose headquarters of this maker of the creative cloud isn't built of clay bricks	?",
                     "Adobe	",
                     "Todo1",
                     "Todo2",
@@ -105,14 +99,12 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "Established in Mountain View in 1956, Shockley Semiconductor helped put this element in the name of a \"valley\"?",
+                Get("Established in Mountain View in 1956, Shockley Semiconductor helped put this element in the name of a \"valley\"?",
                     "silicon",
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "Even before all the polls closed, CBS used this huge computer to predict the result of the 1952 presidential election?",
+                Get("Even before all the polls closed, CBS used this huge computer to predict the result of the 1952 presidential election?",
                     "UNIVAC",
                     "Todo1",
                     "Todo2",
@@ -162,8 +154,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "In 1995 Wells Fargo became the first bank whose customers could securely view their accounts here?",
+                Get("In 1995 Wells Fargo became the first bank whose customers could securely view their accounts here?",
                     "online",
                     "Todo1",
                     "Todo2",
@@ -173,8 +164,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "In chat rooms, \"YMMV\" is this disclaimer often used in car ads; it basically lets you off the hook for anything you say?",
+                Get("In chat rooms, \"YMMV\" is this disclaimer often used in car ads; it basically lets you off the hook for anything you say?",
                     "your mileage may vary",
                     "Todo1",
                     "Todo2",
@@ -214,8 +204,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "On August 12, 1981 the world saw the first IBM personal computer using this Microsoft operating system?",
+                Get("On August 12, 1981 the world saw the first IBM personal computer using this Microsoft operating system?",
                     "MS-DOS",
                     "Todo1",
                     "Todo2",
@@ -225,8 +214,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "On Feb. 29, 2008 Blu - Ray emerged as the new video disc choice as this Japanese co. abandoned its HD - DVD format?",
+                Get("On Feb. 29, 2008 Blu - Ray emerged as the new video disc choice as this Japanese co. abandoned its HD - DVD format?",
                     "Toshiba",
                     "Todo1",
                     "Todo2",
@@ -236,8 +224,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "Seen here is an icon for this 3 - letter service that feeds you updates on your favorite web sites?",
+                Get("Seen here is an icon for this 3 - letter service that feeds you updates on your favorite web sites?",
                     "RSS",
                     "Todo1",
                     "Todo2",
@@ -297,8 +284,7 @@ namespace Quiz.Questions
                     "Xbox",
                     "Atari",
                     "Wii"),
-                Get(
-                    "A type of hacker who ethically reports security problems is called this, a proverbial accessory of cowboy heroes?",
+                Get("A type of hacker who ethically reports security problems is called this, a proverbial accessory of cowboy heroes?",
                     "white hat",
                     "Todo1",
                     "Todo2",
@@ -333,20 +319,17 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "Cesium was the first element found by this process using the band of colored light produced by a prism?",
+                Get("Cesium was the first element found by this process using the band of colored light produced by a prism?",
                     "Spectroscopy",
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "The February 2008 decision to abandon HD DVD technology gave a market victory to this rival video format?",
+                Get("The February 2008 decision to abandon HD DVD technology gave a market victory to this rival video format?",
                     "Blu-ray",
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "The forerunner to the Internet known as the ARPANET was a 1960s network by this U.S. government dept.?",
+                Get("The forerunner to the Internet known as the ARPANET was a 1960s network by this U.S. government dept.?",
                     "Defense",
                     "Todo1",
                     "Todo2",
@@ -376,8 +359,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "Thinking Machines Corp.pioneered this processing// as the geometric name indicates, many processors work side by side?",
+                Get("Thinking Machines Corp.pioneered this processing// as the geometric name indicates, many processors work side by side?",
                     "parallel processing",
                     "Todo1",
                     "Todo2",
@@ -402,8 +384,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "This company whose name is synonymous with copying introduced the first hand - held mouse in 1973?",
+                Get("This company whose name is synonymous with copying introduced the first hand - held mouse in 1973?",
                     "Xerox",
                     "Todo1",
                     "Todo2",
@@ -413,8 +394,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "This computer was introduced in 1984 & came with a MacWrite text program & a MacPaint program for graphics?",
+                Get("This computer was introduced in 1984 & came with a MacWrite text program & a MacPaint program for graphics?",
                     "Apple Macintosh",
                     "Todo1",
                     "Todo2",
@@ -429,8 +409,7 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "This process that maximizes disk space is so named because it joins up pieces of files that were stored separately?",
+                Get("This process that maximizes disk space is so named because it joins up pieces of files that were stored separately?",
                     "defrag (or defragmenting)	",
                     "Todo1",
                     "Todo2",
@@ -440,14 +419,12 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "This removable item used for data storage was introduced in 1971; the first one was 8 inches square?",
+                Get("This removable item used for data storage was introduced in 1971; the first one was 8 inches square?",
                     "floppy disk",
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "This type of \"net\" developed by Xerox has helped local area networks communicate since the 1970s?",
+                Get("This type of \"net\" developed by Xerox has helped local area networks communicate since the 1970s?",
                     "ethernet",
                     "Todo1",
                     "Todo2",
@@ -457,14 +434,12 @@ namespace Quiz.Questions
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "We can geek - up your computer by installing a printer, digital camera or any other external device, which is called this in computer speak, from the Greek for \"to carry around\"?",
+                Get("We can geek - up your computer by installing a printer, digital camera or any other external device, which is called this in computer speak, from the Greek for \"to carry around\"?",
                     "a peripheral",
                     "Todo1",
                     "Todo2",
                     "Todo3"),
-                Get(
-                    "We're gonna go old school and use keyboard characters to translate my image into this computing code?",
+                Get("We're gonna go old school and use keyboard characters to translate my image into this computing code?",
                     "ASCII",
                     "Todo1",
                     "Todo2",
