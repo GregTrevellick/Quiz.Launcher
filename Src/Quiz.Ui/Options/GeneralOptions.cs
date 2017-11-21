@@ -8,31 +8,11 @@ namespace Quiz.Ui.Options
     {
         private string caption = Constants.GetCaption(Vsix.Name, Vsix.Version);
         private bool firstTimeOpeningOptions = true;
-        //private string maximumPopUpsPerDay;
         private string maximumPopUpsWeekDay;
         private string maximumPopUpsWeekEnd;
         private string popUpIntervalInMins;
         private bool proceedToSaveOptions;
         private string timeOutInMilliSeconds;
-
-        //[Category(Constants.CategorySubLevelFrequency)]
-        //[DisplayName(Constants.MaximumPopUpsPerDayOptionLabel)]
-        //[Description(Constants.MaximumPopUpsPerDayDetailedDescription)]
-        //public string MaximumPopUpsPerDay
-        //{
-        //    get => string.IsNullOrEmpty(maximumPopUpsPerDay) ? Constants.DefaultMaximumPopUpsPerDay : maximumPopUpsPerDay;
-        //    set
-        //    {
-        //        if (value.IsNonNegativeInteger())
-        //        {
-        //            maximumPopUpsPerDay = value;
-        //        }
-        //        else
-        //        {
-        //            MessageBoxes.DisplayInvalidIntegerError(Constants.MaximumPopUpsPerDayOptionLabel, caption);
-        //        }
-        //    }
-        //}
 
         [Category(Constants.CategorySubLevelFrequency)]
         [DisplayName(Constants.MaximumPopUpsWeekDayOptionLabel)]
@@ -140,11 +120,6 @@ namespace Quiz.Ui.Options
         [DisplayName(Constants.UseBingInsteadOfGoogleOptionLabel)]
         [Description(Constants.UseBingInsteadOfGoogleOptionDetailedDescription)]
         public bool UseBingInsteadOfGoogle { get; set; } = false;
-
-        //[Category(Constants.CategorySubLevelTriggers)]
-        //[DisplayName(Constants.ShowQuizUponOpeningIdeOptionLabel)]
-        //[Description(Constants.ShowQuizUponOpeningIdeOptionDetailedDescription)]
-        //public bool ShowQuizUponOpeningIde { get; set; } = true;
 
         [Category(Constants.CategorySubLevelTriggers)]
         [DisplayName(Constants.ShowQuizUponClosingSolutionOptionLabel)]

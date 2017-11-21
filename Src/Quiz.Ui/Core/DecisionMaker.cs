@@ -24,8 +24,6 @@ namespace Quiz.Ui.Core
             var isWeekend = IsWeekend(dateTimeNow);
             bool haveExceededPopUpCountToday;
 
-            ///////////////////////////////////////////////var haveExceededPopUpCountTodayUponOpeningIde = HaveExceededTodaysPopUpCount(generalOptionsDto.PopUpCountTodayUponOpeningIde, generalOptionsDto.MaximumPopUpsPerDayUponOpeningIde);
-
             if (isWeekend)
             {
                 haveExceededPopUpCountToday = HaveExceededTodaysPopUpCount(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd);

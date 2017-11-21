@@ -5,11 +5,9 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Quiz.Ui.Core;
 using Quiz.Ui.Options;
-using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 using EnvDTE80;
 
 namespace Quiz.Ui
@@ -37,18 +35,9 @@ namespace Quiz.Ui
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
             generalOptionsDto = GetGeneralOptionsDto();
 
-            //OnIdeOpened();
             OnStartPageOpened();
-            OnSolutionOpened();
+            OnSolutionOpenedOrClosed();
         }
-
-        //private void OnIdeOpened()
-        //{
-        //    if (generalOptionsDto.ShowQuizUponOpeningIde)
-        //    {
-        //        StartQuiz();
-        //    }
-        //}
 
         private void OnStartPageOpened()
         {
@@ -57,41 +46,35 @@ namespace Quiz.Ui
                 var events2 = (Events2)dte.Events;
                 windowVisibilityEvents = events2.get_WindowVisibilityEvents();//gregt restrict to the start page window only ?
                 windowVisibilityEvents.WindowShowing += windowVisibilityEvents_WindowShowing;
-                //windowVisibilityEvents.WindowHiding += windowVisibilityEvents_WindowHiding;
             }
         }
 
         private void windowVisibilityEvents_WindowShowing(Window window)
         {
-            //if (window.Type != vsWindowType.vsWindowTypeDocument)
-            //{
-            //    MessageBox.Show("Showing toolwindow of kind " + window.ObjectKind + " and caption '" + window.Caption + "'");
-            //}
-            if (window.Caption == "Start Page")
+            if (window.Type == vsWindowType.vsWindowTypeToolWindow && window.Caption == "Start Page")
             {
+                //System.Windows.Forms.MessageBox.Show("window.ObjectKind =" + window.ObjectKind +  " window.Type=" + window.Type);
                 StartQuiz();
             }
         }
-
-        //private void windowVisibilityEvents_WindowHiding(Window window)
-        //{
-        //    if (window.Type != vsWindowType.vsWindowTypeDocument)
-        //    {
-        //        MessageBox.Show("Hiding toolwindow of kind " + window.ObjectKind + " and caption '" + window.Caption + "'");
-        //    }
-        //}
        
-        private void OnSolutionOpened()
+        private void OnSolutionOpenedOrClosed()
         {
             if (generalOptionsDto.ShowQuizUponOpeningSolution)
             {
-                solutionEvents = dte.Events.SolutionEvents;
+                if (solutionEvents == null)
+                {
+                    solutionEvents = dte.Events.SolutionEvents;
+                }
                 solutionEvents.Opened += StartQuiz;
             }
 
             if (generalOptionsDto.ShowQuizUponClosingSolution)
             {
-                solutionEvents = dte.Events.SolutionEvents;
+                if (solutionEvents == null)
+                {
+                    solutionEvents = dte.Events.SolutionEvents;
+                }
                 solutionEvents.AfterClosing += StartQuiz;
             }
         }
@@ -99,8 +82,6 @@ namespace Quiz.Ui
         private void StartQuiz()
         {
             //ChaseRatings();
-
-            ////////////////////////////////////generalOptionsDto = GetGeneralOptionsDto();
 
             var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(generalOptionsDto);
 
@@ -162,15 +143,13 @@ namespace Quiz.Ui
             return new GeneralOptionsDto
             {
                 LastPopUpDateTime = hiddenOptions.LastPopUpDateTime,
-                //MaximumPopUpsPerDay = generalOptions.MaximumPopUpsPerDay.GetAsInteger(),
                 MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay.GetAsInteger(),
                 MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
                 PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
                 PopUpCountToday = hiddenOptions.PopUpCountToday,
                 SearchEngine = generalOptions.UseBingInsteadOfGoogle ? SearchEngine.Bing : SearchEngine.Google,
-                //ShowQuizUponOpeningIde = generalOptions.ShowQuizUponOpeningIde,
                 ShowQuizUponOpeningStartPage = generalOptions.ShowQuizUponOpeningStartPage,
-                //ShowQuizUponClosingSolution = generalOptions.ShowQuizUponClosingSolution,
+                ShowQuizUponClosingSolution = generalOptions.ShowQuizUponClosingSolution,
                 ShowQuizUponOpeningSolution = generalOptions.ShowQuizUponOpeningSolution,
                 SuppressClosingWithoutSubmitingAnswerWarning = generalOptions.SuppressClosingWithoutSubmitingAnswerWarning,
                 TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),

@@ -14,8 +14,6 @@ namespace Quiz.Ui.Core
         public const string DefaultMaximumPopUpsWeekEnd = "99";
         public const string DefaultPopUpIntervalInMins = "0";
         public const string DefaultTimeOutInMilliSeconds = "1500";     
-        ////////public const string MaximumPopUpsPerDayDetailedDescription = "The maximum number of pop-up quiz questions you will see per day upon opening Visual Studio and/or opening a solution.";
-        /////////public const string MaximumPopUpsPerDayOptionLabel = "Daily quiz question limit";
         public const string MaximumPopUpsWeekDayDetailedDescription = "The maximum number of quiz questions you will see on any one week day. Use this setting to reduce the volume of quiz questions during the working week.";
         public const string MaximumPopUpsWeekDayOptionLabel = "Daily pop-up limit (midweek)";
         public const string MaximumPopUpsWeekEndDetailedDescription = "The maximum number of quiz questions you will see on either a Saturday or a Sunday. Use this setting to increase the volume of quiz questions in your free time.";
@@ -24,8 +22,6 @@ namespace Quiz.Ui.Core
         public const string PopUpIntervalInMinsOptionLabel = "Number of minutes between pop-ups";
         public const int RecommendedMaximumTimeoutMilliSeconds = 3000;
         public const int RecommendedMinimumTimeoutMilliSeconds = 400;
-        //public const string ShowQuizUponOpeningIdeOptionLabel = "Show pop-up when opening Visual Studio";
-        //public const string ShowQuizUponOpeningIdeOptionDetailedDescription = ShowQuizUponOpeningIdeOptionLabel + " (requires restart of Visual Studio).";
         public const string ShowQuizUponOpeningStartPageOptionLabel = "Show pop-up when opening start page";
         public const string ShowQuizUponOpeningStartPageOptionDetailedDescription = ShowQuizUponOpeningStartPageOptionLabel + " (requires restart of Visual Studio).";
         public const string ShowQuizUponClosingSolutionOptionLabel = "Show pop-up when closing a solution";
