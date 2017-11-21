@@ -133,10 +133,10 @@ namespace Quiz.Questions
                     "Babe-L"),
                 Common.Get(DifficultyLevel.Hard, "In C#, what are verbatim strings?",
                     "Strings that start with the @ symbol in which the escape sequences are not processed",
-                    "todo1",
-                    "todo2",
-                    "todo3",
-                    "todo4"),
+                    "Strings that use the backslash character as an escape character",
+                    "Strings that are formatted from strings and separately listed parametrized values",
+                    "Strings that are formatted from strings and embedded parametrized values",
+                    "Strings that contain the word 'verbatim'"),
             };
 
             return gatewayResponses;
