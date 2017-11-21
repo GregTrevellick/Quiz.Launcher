@@ -1,4 +1,6 @@
-﻿using EnvDTE;
+﻿//GREGT MASSIVE CREDIT TO https://www.mztools.com/articles/2011/MZ2011010.aspx
+
+using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Quiz.Ui.Core;
@@ -26,7 +28,7 @@ namespace Quiz.Ui
         private DTE dte;
         private SolutionEvents solutionEvents;
         private GeneralOptionsDto generalOptionsDto;
-        private EnvDTE80.WindowVisibilityEvents windowVisibilityEvents;
+        private WindowVisibilityEvents windowVisibilityEvents;
 
         protected override void Initialize()
         {
@@ -52,30 +54,32 @@ namespace Quiz.Ui
         {
             if (generalOptionsDto.ShowQuizUponOpeningStartPage)
             {
-                var events = (Events2)dte.Events;
-                windowVisibilityEvents = events.get_WindowVisibilityEvents();
+                var events2 = (Events2)dte.Events;
+                windowVisibilityEvents = events2.get_WindowVisibilityEvents();//gregt restrict to the start page window only ?
                 windowVisibilityEvents.WindowShowing += windowVisibilityEvents_WindowShowing;
-                windowVisibilityEvents.WindowHiding += windowVisibilityEvents_WindowHiding;
+                //windowVisibilityEvents.WindowHiding += windowVisibilityEvents_WindowHiding;
             }
         }
-
-        //MASSIVE CREDIT TO https://www.mztools.com/articles/2011/MZ2011010.aspx
 
         private void windowVisibilityEvents_WindowShowing(Window window)
         {
-            if (window.Type != vsWindowType.vsWindowTypeDocument)
+            //if (window.Type != vsWindowType.vsWindowTypeDocument)
+            //{
+            //    MessageBox.Show("Showing toolwindow of kind " + window.ObjectKind + " and caption '" + window.Caption + "'");
+            //}
+            if (window.Caption == "Start Page")
             {
-                MessageBox.Show("Showing toolwindow of kind " + window.ObjectKind + " and caption '" + window.Caption + "'");
+                StartQuiz();
             }
         }
 
-        private void windowVisibilityEvents_WindowHiding(Window window)
-        {
-            if (window.Type != vsWindowType.vsWindowTypeDocument)
-            {
-                MessageBox.Show("Hiding toolwindow of kind " + window.ObjectKind + " and caption '" + window.Caption + "'");
-            }
-        }
+        //private void windowVisibilityEvents_WindowHiding(Window window)
+        //{
+        //    if (window.Type != vsWindowType.vsWindowTypeDocument)
+        //    {
+        //        MessageBox.Show("Hiding toolwindow of kind " + window.ObjectKind + " and caption '" + window.Caption + "'");
+        //    }
+        //}
        
         private void OnSolutionOpened()
         {
