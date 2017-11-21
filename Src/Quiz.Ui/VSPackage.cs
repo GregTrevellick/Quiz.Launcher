@@ -52,8 +52,8 @@ namespace Quiz.Ui
         {
             if (generalOptionsDto.ShowQuizUponOpeningStartPage)
             {
-                EnvDTE80.Events2 events2 = (EnvDTE80.Events2)dte.Events;
-                windowVisibilityEvents = events2.get_WindowVisibilityEvents();
+                var events = (Events2)dte.Events;
+                windowVisibilityEvents = events.get_WindowVisibilityEvents();
                 windowVisibilityEvents.WindowShowing += windowVisibilityEvents_WindowShowing;
                 windowVisibilityEvents.WindowHiding += windowVisibilityEvents_WindowHiding;
             }
@@ -61,7 +61,7 @@ namespace Quiz.Ui
 
         //MASSIVE CREDIT TO https://www.mztools.com/articles/2011/MZ2011010.aspx
 
-        private void windowVisibilityEvents_WindowShowing(EnvDTE.Window window)
+        private void windowVisibilityEvents_WindowShowing(Window window)
         {
             if (window.Type != vsWindowType.vsWindowTypeDocument)
             {
@@ -69,7 +69,7 @@ namespace Quiz.Ui
             }
         }
 
-        private void windowVisibilityEvents_WindowHiding(EnvDTE.Window window)
+        private void windowVisibilityEvents_WindowHiding(Window window)
         {
             if (window.Type != vsWindowType.vsWindowTypeDocument)
             {
