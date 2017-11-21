@@ -6,6 +6,7 @@ namespace Quiz.Ui.Core
     {
         public DateTime LastPopUpDateTime { get; set; }
         public int PopUpCountToday { get; set; }
+        ////////////////////////////////////////////////////////////////////public int PopUpCountTodayUponOpeningIde { get; set; }//gregt implement whereever the above popr is implemented
         public int TotalQuestionsAnsweredCorrectlyEasy { get; set; }
         public int TotalQuestionsAnsweredCorrectlyMedium { get; set; }
         public int TotalQuestionsAnsweredCorrectlyHard { get; set; }

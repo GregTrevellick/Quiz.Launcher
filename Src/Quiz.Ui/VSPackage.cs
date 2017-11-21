@@ -1,19 +1,18 @@
-﻿using System;
-using EnvDTE;
+﻿using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Quiz.Ui.Core;
 using Quiz.Ui.Options;
+using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
 using System.Runtime.InteropServices;
-using Microsoft.VisualStudio.Shell.Flavor;
+using EnvDTE80;
 
 namespace Quiz.Ui
 {
     [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
-    ////////////////////////////////////////////////[ProvideAutoLoad(UIContextGuids80.NoSolution)]
+    [ProvideAutoLoad(UIContextGuids80.NoSolution)]
     [PackageRegistration(UseManagedResourcesOnly = true)]
     [InstalledProductRegistration(productName: "#110", productDetails: "#112", productId: Vsix.Version, IconResourceID = 400)]
     [Guid(Vsix.Id)]
@@ -26,100 +25,108 @@ namespace Quiz.Ui
         private DTE dte;
         private SolutionEvents solutionEvents;
         private GeneralOptionsDto generalOptionsDto;
-
-        //////////////////////////////////////////////////[System.Runtime.InteropServices.DispId(304)]
-        //////////////////////////////////////////////////[get: System.Runtime.InteropServices.DispId(304)]
-        //////////////////////////////////////////////////public EnvDTE.WindowEvents WindowEvents[EnvDTE.Window WindowFilter = null] { get; }
-
-        //////////////////////////////////////////////////[public System.ContextStaticAttribute WithEvents WindowEvents As EnvDTE.WindowEvents;
-        //////////////////////////////////////////////////[public WindowEvents_WindowActivated(ByVal GotFocus As EnvDTE.Window, ByVal LostFocus As EnvDTE.Window) Handles WindowEvents.WindowActivated;
+        //private WindowEvents windowEvents;
+        //private DocumentEvents documentEvents;
+        private EnvDTE80.WindowVisibilityEvents windowVisibilityEvents;
 
         protected override void Initialize()
         {
             base.Initialize();
-
             IServiceContainer serviceContainer = this as IServiceContainer;
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
-
-            ////////////////////////////////////////////////[//this is the window we want to attach an event handler
-            ////////////////////////////////////////////////[var w1 = dte.Windows.Item(EnvDTE.Constants.vsWindowKindSolutionExplorer) as Window;
-
-            ////////////////////////////////////////////////////////////////dte.Events.CommandBarEvents
-            ////////////////////////////////////////////////////////////////dte.Events.CommandEvents
-            ////////////////////////////////////////////////////////////////dte.Events.DTEEvents.
-            ////////////////////////////////////////////////////////////////dte.Events.SelectionEvents
-
-            ////////////////////////////////////////////////////////////////https://docs.microsoft.com/en-gb/visualstudio/extensibility/adding-user-control-to-the-start-page
-            ////////////////////////////////////////////////////////////////private void WebFrame_Navigated(object sender, EventArgs e)
-            ////////////////////////////////////////////////////////////////{ }
-
-            ////////////////////////////////////////////////////////////////https://docs.microsoft.com/en-gb/visualstudio/extensibility/adding-visual-studio-commands-to-a-start-page
-            ////////////////////////////////////////////////////////////////< Button Content = "Web Search"
-            ////////////////////////////////////////////////////////////////Command = "{x:Static vscom:VSCommands.ExecuteCommand}"
-            ////////////////////////////////////////////////////////////////CommandParameter = "View.WebBrowser www.bing.com" />
-
-            ////////////////////////////////////////////////////////////////  //dte.Windows.Item(EnvDTE.Constants.vsWindowKindOutput);
-            ////////////////////////////////////////////////////////////////var a =  dte.Windows.Item(typeof(EnvDTE.vsStartUp)).;
-
-            ////////////////////////////////////////////////////////////////  IVsActivityLog log = GetService(typeof(SVsActivityLog)) as IVsActivityLog;
-            ////////////////////////////////////////////////////////////////  if (log == null) return;
-            ////////////////////////////////////////////////////////////////  int hr = log.LogEntry((UInt32)__ACTIVITYLOG_ENTRYTYPE.ALE_INFORMATION,
-            ////////////////////////////////////////////////////////////////      this.ToString(),
-            ////////////////////////////////////////////////////////////////      string.Format(CultureInfo.CurrentCulture, "Called for: {0}", this.ToString()));
-
-            ////////////////////////////////////////////////////////////////OleMenuCommandService commandService = this.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
-            ////////////////////////////////////////////////////////////////if (commandService != null)
-            ////////////////////////////////////////////////////////////////{
-
-            ////////////////////////////////////////////////////////////////    //CommandID menuCommandID = new CommandID(MenuGroup, CommandId);
-            ////////////////////////////////////////////////////////////////    //EventHandler eventHandler = this.ShowMessageBox;
-            ////////////////////////////////////////////////////////////////    //OleMenuCommand menuItem = new OleMenuCommand(ShowMessageBox, menuCommandID);
-            ////////////////////////////////////////////////////////////////    //menuItem.BeforeQueryStatus += new EventHandler(OnBeforeQueryStatus);
-            ////////////////////////////////////////////////////////////////    //commandService.AddCommand(menuItem);
-            ////////////////////////////////////////////////////////////////}
-            
-            solutionEvents = dte.Events.SolutionEvents;
-            
             generalOptionsDto = GetGeneralOptionsDto();
 
+            //OnIdeOpened();
+            OnStartPageOpened();
+            OnSolutionOpened();
+        }
+
+        //private void OnIdeOpened()
+        //{
+        //    if (generalOptionsDto.ShowQuizUponOpeningIde)
+        //    {
+        //        StartQuiz();
+        //    }
+        //}
+
+        private void OnStartPageOpened()
+        {
+            if (generalOptionsDto.ShowQuizUponOpeningStartPage)
+            {
+                //windowEvents = dte.Events.WindowEvents;
+                //windowEvents = dte.Events.get_WindowEvents();
+                //windowEvents.WindowCreated += OnWindowCreated;
+
+
+
+                EnvDTE80.Events2 events2;
+
+                events2 = (EnvDTE80.Events2)dte.Events;
+
+                windowVisibilityEvents = events2.get_WindowVisibilityEvents();
+
+                windowVisibilityEvents.WindowShowing += new _dispWindowVisibilityEvents_WindowShowingEventHandler(windowVisibilityEvents_WindowShowing);
+                windowVisibilityEvents.WindowHiding += new _dispWindowVisibilityEvents_WindowHidingEventHandler(windowVisibilityEvents_WindowHiding);
+            }
+        }
+
+        //MASSIVE CREDIT TO https://www.mztools.com/articles/2011/MZ2011010.aspx
+
+
+        private void windowVisibilityEvents_WindowShowing(EnvDTE.Window window)
+        {
+            if (window.Type != vsWindowType.vsWindowTypeDocument)
+            {
+                System.Windows.Forms.MessageBox.Show("Showing toolwindow of kind " + window.ObjectKind + " and caption '" + window.Caption + "'");
+            }
+        }
+
+        private void windowVisibilityEvents_WindowHiding(EnvDTE.Window window)
+        {
+            if (window.Type != vsWindowType.vsWindowTypeDocument)
+            {
+                System.Windows.Forms.MessageBox.Show("Hiding toolwindow of kind " + window.ObjectKind + " and caption '" + window.Caption + "'");
+            }
+        }
+
+        //private void OnDocumentOpening(Document document)
+        //{
+        //    //if (null != window.Document && window.Document.FullName == "Start Page")
+        //    if (document.Name == "Start Page")
+        //    {
+        //        StartQuiz();
+        //    }
+        //}
+
+        //public void OnWindowCreated(Window window)
+        //{
+        //    //if (null != window.Document && window.Document.FullName == "Start Page")
+        //    if (window.Caption == "Start Page")
+        //    {
+        //        StartQuiz();
+        //    }
+        //}
+
+        private void OnSolutionOpened()
+        {
             if (generalOptionsDto.ShowQuizUponOpeningSolution)
             {
-                solutionEvents.Opened += OnSolutionOpenedAndOrClosed;
+                solutionEvents = dte.Events.SolutionEvents;
+                solutionEvents.Opened += StartQuiz;
             }
 
             if (generalOptionsDto.ShowQuizUponClosingSolution)
             {
-                solutionEvents.AfterClosing += OnSolutionOpenedAndOrClosed;
+                solutionEvents = dte.Events.SolutionEvents;
+                solutionEvents.AfterClosing += StartQuiz;
             }
         }
 
-        //////////////////////////////////////////////////////////https://docs.microsoft.com/en-gb/visualstudio/extensibility/changing-the-text-of-a-menu-command
-        //////////////////////////////////////////////////////////private ChangeMenuText(Package package)
-        //////////////////////////////////////////////////////////{
-        //////////////////////////////////////////////////////////    if (package == null)
-        //////////////////////////////////////////////////////////    {
-        //////////////////////////////////////////////////////////        throw new ArgumentNullException(nameof(package));
-        //////////////////////////////////////////////////////////    }
-
-        //////////////////////////////////////////////////////////    this.package = package;
-
-        //////////////////////////////////////////////////////////    OleMenuCommandService commandService = this.ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
-        //////////////////////////////////////////////////////////    if (commandService != null)
-        //////////////////////////////////////////////////////////    {
-        //////////////////////////////////////////////////////////        CommandID menuCommandID = new CommandID(MenuGroup, CommandId);
-        //////////////////////////////////////////////////////////        FlavoredProject.EventHandler<> eventHandler = this.ShowMessageBox;
-        //////////////////////////////////////////////////////////        OleMenuCommand menuItem = new OleMenuCommand(ShowMessageBox, menuCommandID);
-        //////////////////////////////////////////////////////////        menuItem.BeforeQueryStatus +=
-        //////////////////////////////////////////////////////////            new FlavoredProject.EventHandler<>(OnBeforeQueryStatus);
-        //////////////////////////////////////////////////////////        commandService.AddCommand(menuItem);
-        //////////////////////////////////////////////////////////    }
-        //////////////////////////////////////////////////////////}
-
-        private void OnSolutionOpenedAndOrClosed()
+        private void StartQuiz()
         {
             //ChaseRatings();
 
-            generalOptionsDto = GetGeneralOptionsDto();
+            ////////////////////////////////////generalOptionsDto = GetGeneralOptionsDto();
 
             var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(generalOptionsDto);
 
@@ -129,7 +136,7 @@ namespace Quiz.Ui
                 var quizHelper = new QuizHelper();
                 quizHelper.PersistHiddenOptionsQuizHelperEventHandlerEventHandler += UpdateHiddenOptionsTotals;
 
-                var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(popUpTitle, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpCountToday, generalOptionsDto.TimeOutInMilliSeconds, Vsix.Name, generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, 
+                var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(popUpTitle, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpCountToday, generalOptionsDto.TimeOutInMilliSeconds, Vsix.Name, generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning,
                     generalOptionsDto.TotalQuestionsAnsweredCorrectlyEasy, generalOptionsDto.TotalQuestionsAnsweredCorrectlyMedium, generalOptionsDto.TotalQuestionsAnsweredCorrectlyHard, generalOptionsDto.TotalQuestionsAsked, generalOptionsDto.SearchEngine);
 
                 if (hiddenOptionsDto != null)
@@ -181,12 +188,15 @@ namespace Quiz.Ui
             return new GeneralOptionsDto
             {
                 LastPopUpDateTime = hiddenOptions.LastPopUpDateTime,
+                //MaximumPopUpsPerDay = generalOptions.MaximumPopUpsPerDay.GetAsInteger(),
                 MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay.GetAsInteger(),
                 MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
                 PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
                 PopUpCountToday = hiddenOptions.PopUpCountToday,
                 SearchEngine = generalOptions.UseBingInsteadOfGoogle ? SearchEngine.Bing : SearchEngine.Google,
-                ShowQuizUponClosingSolution = generalOptions.ShowQuizUponClosingSolution,
+                //ShowQuizUponOpeningIde = generalOptions.ShowQuizUponOpeningIde,
+                ShowQuizUponOpeningStartPage = generalOptions.ShowQuizUponOpeningStartPage,
+                //ShowQuizUponClosingSolution = generalOptions.ShowQuizUponClosingSolution,
                 ShowQuizUponOpeningSolution = generalOptions.ShowQuizUponOpeningSolution,
                 SuppressClosingWithoutSubmitingAnswerWarning = generalOptions.SuppressClosingWithoutSubmitingAnswerWarning,
                 TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),

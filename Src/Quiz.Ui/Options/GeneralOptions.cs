@@ -8,16 +8,36 @@ namespace Quiz.Ui.Options
     {
         private string caption = Constants.GetCaption(Vsix.Name, Vsix.Version);
         private bool firstTimeOpeningOptions = true;
+        //private string maximumPopUpsPerDay;
         private string maximumPopUpsWeekDay;
         private string maximumPopUpsWeekEnd;
         private string popUpIntervalInMins;
         private bool proceedToSaveOptions;
         private string timeOutInMilliSeconds;
 
+        //[Category(Constants.CategorySubLevelFrequency)]
+        //[DisplayName(Constants.MaximumPopUpsPerDayOptionLabel)]
+        //[Description(Constants.MaximumPopUpsPerDayDetailedDescription)]
+        //public string MaximumPopUpsPerDay
+        //{
+        //    get => string.IsNullOrEmpty(maximumPopUpsPerDay) ? Constants.DefaultMaximumPopUpsPerDay : maximumPopUpsPerDay;
+        //    set
+        //    {
+        //        if (value.IsNonNegativeInteger())
+        //        {
+        //            maximumPopUpsPerDay = value;
+        //        }
+        //        else
+        //        {
+        //            MessageBoxes.DisplayInvalidIntegerError(Constants.MaximumPopUpsPerDayOptionLabel, caption);
+        //        }
+        //    }
+        //}
+
         [Category(Constants.CategorySubLevelFrequency)]
         [DisplayName(Constants.MaximumPopUpsWeekDayOptionLabel)]
         [Description(Constants.MaximumPopUpsWeekDayDetailedDescription)]
-        public string MaximumPopUpsWeekDay 
+        public string MaximumPopUpsWeekDay
         {
             get => string.IsNullOrEmpty(maximumPopUpsWeekDay) ? Constants.DefaultMaximumPopUpsWeekDay : maximumPopUpsWeekDay;
             set
@@ -36,7 +56,7 @@ namespace Quiz.Ui.Options
         [Category(Constants.CategorySubLevelFrequency)]
         [DisplayName(Constants.MaximumPopUpsWeekEndOptionLabel)]
         [Description(Constants.MaximumPopUpsWeekEndDetailedDescription)]
-        public string MaximumPopUpsWeekEnd 
+        public string MaximumPopUpsWeekEnd
         {
             get => string.IsNullOrEmpty(maximumPopUpsWeekEnd) ? Constants.DefaultMaximumPopUpsWeekEnd : maximumPopUpsWeekEnd;
             set
@@ -121,6 +141,11 @@ namespace Quiz.Ui.Options
         [Description(Constants.UseBingInsteadOfGoogleOptionDetailedDescription)]
         public bool UseBingInsteadOfGoogle { get; set; } = false;
 
+        //[Category(Constants.CategorySubLevelTriggers)]
+        //[DisplayName(Constants.ShowQuizUponOpeningIdeOptionLabel)]
+        //[Description(Constants.ShowQuizUponOpeningIdeOptionDetailedDescription)]
+        //public bool ShowQuizUponOpeningIde { get; set; } = true;
+
         [Category(Constants.CategorySubLevelTriggers)]
         [DisplayName(Constants.ShowQuizUponClosingSolutionOptionLabel)]
         [Description(Constants.ShowQuizUponClosingSolutionOptionDetailedDescription)]
@@ -129,7 +154,12 @@ namespace Quiz.Ui.Options
         [Category(Constants.CategorySubLevelTriggers)]
         [DisplayName(Constants.ShowQuizUponOpeningSolutionOptionLabel)]
         [Description(Constants.ShowQuizUponOpeningSolutionOptionDetailedDescription)]
-        public bool ShowQuizUponOpeningSolution { get; set; } = true;
+        public bool ShowQuizUponOpeningSolution { get; set; } = false;
+
+        [Category(Constants.CategorySubLevelTriggers)]
+        [DisplayName(Constants.ShowQuizUponOpeningStartPageOptionLabel)]
+        [Description(Constants.ShowQuizUponOpeningStartPageOptionDetailedDescription)]
+        public bool ShowQuizUponOpeningStartPage { get; set; } = false;
 
         [Category(Constants.CategorySubLevelPreferences)]
         [DisplayName(Constants.SuppressClosingWithoutSubmitingAnswerWarningOptionLabel)]

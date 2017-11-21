@@ -22,18 +22,20 @@ namespace Quiz.Ui.Core
         private bool HaveExceededTodaysPopUpCount(GeneralOptionsDto generalOptionsDto, DateTime dateTimeNow)
         {
             var isWeekend = IsWeekend(dateTimeNow);
-            bool haveExceededTodaysPopUpCount;
+            bool haveExceededPopUpCountToday;
+
+            ///////////////////////////////////////////////var haveExceededPopUpCountTodayUponOpeningIde = HaveExceededTodaysPopUpCount(generalOptionsDto.PopUpCountTodayUponOpeningIde, generalOptionsDto.MaximumPopUpsPerDayUponOpeningIde);
 
             if (isWeekend)
             {
-                haveExceededTodaysPopUpCount = HaveExceededTodaysPopUpCount(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd);
+                haveExceededPopUpCountToday = HaveExceededTodaysPopUpCount(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd);
             }
             else
             {
-                haveExceededTodaysPopUpCount = HaveExceededTodaysPopUpCount(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekDay);
+                haveExceededPopUpCountToday = HaveExceededTodaysPopUpCount(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekDay);
             }
 
-            return haveExceededTodaysPopUpCount;
+            return haveExceededPopUpCountToday;
         }
 
         private bool IsWeekend(DateTime dateTimeNow)

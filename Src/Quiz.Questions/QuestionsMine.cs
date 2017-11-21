@@ -8,6 +8,55 @@ namespace Quiz.Questions
         {
             var gatewayResponses = new List<GatewayResponse>
             {
+
+
+                //What was the initial name for Visual Studio ?
+
+                //Boston
+                //Phoenix
+                //Portland
+                //Seattle
+                //Timbuktu
+
+
+
+
+
+
+                //https://www.codeproject.com/Articles/556995/ASP-NET-MVC-interview-questions-with-answers
+
+
+                //DAG
+                //Directed acyclic graph
+
+
+
+                //CSP
+                //content security policy
+
+
+
+
+                //AMPQ ?
+
+
+                //Rabbit
+                //Cat
+                //Dog
+                //Horse
+                //Chicken
+
+
+
+                //Rabbit...?
+                //M.Q.
+                //P.I.
+                //D.C.
+                //M.A.
+                //P.C.
+
+
+
                 Common.Get(DifficultyLevel.Medium, "What is Brainfuck?",
                     "A programming language",
                     "A term used by programmers to describe hard-to-fix bugs",
