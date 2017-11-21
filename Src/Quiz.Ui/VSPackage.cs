@@ -7,6 +7,7 @@ using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 using EnvDTE80;
 
 namespace Quiz.Ui
@@ -25,8 +26,6 @@ namespace Quiz.Ui
         private DTE dte;
         private SolutionEvents solutionEvents;
         private GeneralOptionsDto generalOptionsDto;
-        //private WindowEvents windowEvents;
-        //private DocumentEvents documentEvents;
         private EnvDTE80.WindowVisibilityEvents windowVisibilityEvents;
 
         protected override void Initialize()
@@ -53,31 +52,20 @@ namespace Quiz.Ui
         {
             if (generalOptionsDto.ShowQuizUponOpeningStartPage)
             {
-                //windowEvents = dte.Events.WindowEvents;
-                //windowEvents = dte.Events.get_WindowEvents();
-                //windowEvents.WindowCreated += OnWindowCreated;
-
-
-
-                EnvDTE80.Events2 events2;
-
-                events2 = (EnvDTE80.Events2)dte.Events;
-
+                EnvDTE80.Events2 events2 = (EnvDTE80.Events2)dte.Events;
                 windowVisibilityEvents = events2.get_WindowVisibilityEvents();
-
-                windowVisibilityEvents.WindowShowing += new _dispWindowVisibilityEvents_WindowShowingEventHandler(windowVisibilityEvents_WindowShowing);
-                windowVisibilityEvents.WindowHiding += new _dispWindowVisibilityEvents_WindowHidingEventHandler(windowVisibilityEvents_WindowHiding);
+                windowVisibilityEvents.WindowShowing += windowVisibilityEvents_WindowShowing;
+                windowVisibilityEvents.WindowHiding += windowVisibilityEvents_WindowHiding;
             }
         }
 
         //MASSIVE CREDIT TO https://www.mztools.com/articles/2011/MZ2011010.aspx
 
-
         private void windowVisibilityEvents_WindowShowing(EnvDTE.Window window)
         {
             if (window.Type != vsWindowType.vsWindowTypeDocument)
             {
-                System.Windows.Forms.MessageBox.Show("Showing toolwindow of kind " + window.ObjectKind + " and caption '" + window.Caption + "'");
+                MessageBox.Show("Showing toolwindow of kind " + window.ObjectKind + " and caption '" + window.Caption + "'");
             }
         }
 
@@ -85,28 +73,10 @@ namespace Quiz.Ui
         {
             if (window.Type != vsWindowType.vsWindowTypeDocument)
             {
-                System.Windows.Forms.MessageBox.Show("Hiding toolwindow of kind " + window.ObjectKind + " and caption '" + window.Caption + "'");
+                MessageBox.Show("Hiding toolwindow of kind " + window.ObjectKind + " and caption '" + window.Caption + "'");
             }
         }
-
-        //private void OnDocumentOpening(Document document)
-        //{
-        //    //if (null != window.Document && window.Document.FullName == "Start Page")
-        //    if (document.Name == "Start Page")
-        //    {
-        //        StartQuiz();
-        //    }
-        //}
-
-        //public void OnWindowCreated(Window window)
-        //{
-        //    //if (null != window.Document && window.Document.FullName == "Start Page")
-        //    if (window.Caption == "Start Page")
-        //    {
-        //        StartQuiz();
-        //    }
-        //}
-
+       
         private void OnSolutionOpened()
         {
             if (generalOptionsDto.ShowQuizUponOpeningSolution)
