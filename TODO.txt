@@ -1,8 +1,6 @@
 test that hidden options are being accurately recorded
 
 add points to ui (determine on the fly - 1 x easy + 2 x medium + 3 x hard)
-		
-red/green ticks not faces
 
 testcases.airtable.xlsx
 

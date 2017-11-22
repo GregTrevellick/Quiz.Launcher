@@ -225,7 +225,7 @@ namespace Quiz.Ui
                         break;
                 }
 
-                TextBlockQuizReply.Text = "Congratulations, correct answer.";
+                TextBlockQuizReply.Text = "Correct!";
                 SetQuizReplyColour(Colors.Green);
                 //QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
 
@@ -284,7 +284,7 @@ namespace Quiz.Ui
                 if (QuestionType == QuestionType.MultiChoice)
                 {
                     //TextBlockQuizReply.Text += $". The correct answer is {CorrectAnswer}.";
-                    TextBlockQuizReply.Text = $"The correct answer is {CorrectAnswer}.";
+                    TextBlockQuizReply.Text = $"The correct answer is {CorrectAnswer}";
                 }
 
                 SetQuizReplyColour(Colors.Red);
