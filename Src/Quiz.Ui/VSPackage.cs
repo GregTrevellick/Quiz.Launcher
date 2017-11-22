@@ -9,11 +9,13 @@ using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using EnvDTE80;
+/////////////////////using Constants = EnvDTE.Constants;
 
 namespace Quiz.Ui
 {
     [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
     [ProvideAutoLoad(UIContextGuids80.NoSolution)]
+    //////////////////////////[ProvideAutoLoad(UIContextGuids80.t)]
     [PackageRegistration(UseManagedResourcesOnly = true)]
     [InstalledProductRegistration(productName: "#110", productDetails: "#112", productId: Vsix.Version, IconResourceID = 400)]
     [Guid(Vsix.Id)]
@@ -26,7 +28,7 @@ namespace Quiz.Ui
         private DTE dte;
         private SolutionEvents solutionEvents;
         private GeneralOptionsDto generalOptionsDto;
-        private WindowVisibilityEvents windowVisibilityEvents;
+        private WindowVisibilityEvents toolBoxWindowVisibilityEvents;
 
         protected override void Initialize()
         {
@@ -35,32 +37,31 @@ namespace Quiz.Ui
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
             generalOptionsDto = GetGeneralOptionsDto();
 
-            OnStartPageOpened();
-            OnSolutionOpenedOrClosed();
+            AttachToWindowShowingEvent();
+            AttachToSolutionOpenedOrClosedEvents();
         }
 
-        private void OnStartPageOpened()
+        private void AttachToWindowShowingEvent()
         { 
             if (generalOptionsDto.ShowQuizUponOpeningStartPage)
             {
                 var events2 = (Events2)dte.Events;
-                
-                //var spWindow = new EnvDTE.Window();
-                
-                windowVisibilityEvents = events2.get_WindowVisibilityEvents[]();//gregt restrict to the start page window only ?   https://github.com/jjensen/workspacewhiz/blob/master/Src/Shared/dte80.tlh
-                windowVisibilityEvents.WindowShowing += windowVisibilityEvents_WindowShowing;
+                //var toolBoxWindowFilter = dte.Windows.Item(Constants.vsWindowKindToolbox);
+                toolBoxWindowVisibilityEvents = events2.get_WindowVisibilityEvents();//(toolBoxWindowFilter);
+                toolBoxWindowVisibilityEvents.WindowShowing += windowVisibilityEvents_WindowShowing;
             }
         }
 
         private void windowVisibilityEvents_WindowShowing(Window window)
         {
+            //System.Windows.Forms.MessageBox.Show("window.ObjectKind =" + window.ObjectKind + " window.Type=" + window.Type);
             if (window.Type == vsWindowType.vsWindowTypeToolWindow && window.Caption == "Start Page")
             {
                 StartQuiz();
             }
         }
        
-        private void OnSolutionOpenedOrClosed()
+        private void AttachToSolutionOpenedOrClosedEvents()
         { 
             if (generalOptionsDto.ShowQuizUponOpeningSolution)
             {
