@@ -6,6 +6,17 @@ namespace Quiz.Questions
     {
         public static IEnumerable<GatewayResponse> GetGatewayResponses()
         {
+
+            //ddos
+            //pentest
+
+            //which is not podcast
+            //checkin
+            //merge conflict
+            //syntax
+            //request for commit
+            //herding code
+
             var gatewayResponses = new List<GatewayResponse>
             {
                 Common.Get(DifficultyLevel.Hard, "What was the initial name for Visual Studio?",
