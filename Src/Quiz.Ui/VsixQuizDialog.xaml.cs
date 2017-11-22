@@ -166,8 +166,7 @@ namespace Quiz.Ui
 
             ActOnAnswerGiven(response, chosenAnswerNumber, difficultyLevel);
         }
-
-  
+ 
         private void ActOnAnswerGiven(string response, int chosenAnswerNumber, DifficultyLevel difficultyLevel)
         {
             ProcessAnswerToQuestion(response, chosenAnswerNumber, difficultyLevel);
@@ -233,8 +232,8 @@ namespace Quiz.Ui
                     }
                     break;
                 default:
-                    //Do nothing - simply don't increment the totals
-                    //gregt debug.writeline
+                    Common.HandleUnexpectedError(new ArgumentOutOfRangeException($"Method={nameof(IncrementTotal)} {nameof(difficultyLevel)}={difficultyLevel}"));
+                    break;
             }
         }
 
@@ -258,8 +257,7 @@ namespace Quiz.Ui
                     QuizReplyEmoticonIncorrect5.Visibility = Visibility.Visible;
                     break;
                 default:
-                    //Do nothing - simply don't show a cross
-                    //gregt debug.writeline            
+                    Common.HandleUnexpectedError(new ArgumentOutOfRangeException($"Method={nameof(ShowRedCross)} {nameof(chosenAnswerNumber)}={chosenAnswerNumber}"));
                     break;
             }
         }
@@ -284,8 +282,7 @@ namespace Quiz.Ui
                     QuizReplyEmoticonCorrect5.Visibility = Visibility.Visible;
                     break;
                 default:
-                    //Do nothing - simply don't show a tick
-                    //gregt debug.writeline            
+                    Common.HandleUnexpectedError(new ArgumentOutOfRangeException($"Method={nameof(ShowGreenTick)} {nameof(chosenAnswerNumber)}={chosenAnswerNumber}"));
                     break;
             }
         }

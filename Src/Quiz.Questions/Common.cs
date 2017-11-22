@@ -85,6 +85,13 @@ namespace Quiz.Questions
             return responseDto;
         }
 
+        public static void HandleUnexpectedError(Exception ex)//, ResponseDto responseDto)
+        {
+            Debug.WriteLine(ex.Message);
+            //var exceptionTypeName = ex.GetType().Name;
+            //responseDto.ErrorDetails = $"An unexpected error of type {exceptionTypeName} has occurred (possible JSON de-serialization error).";
+        }
+
         private static void HandleUnexpectedError(Exception ex, ResponseDto responseDto)
         {
             Debug.WriteLine(ex.Message);
