@@ -233,8 +233,7 @@ namespace Quiz.Ui
                     }
                     break;
                 default:
-                    //gregt todo
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException();//gregt todo
             }
         }
 
@@ -258,8 +257,7 @@ namespace Quiz.Ui
                     QuizReplyEmoticonIncorrect5.Visibility = Visibility.Visible;
                     break;
                 default:
-                    //gregt todo
-                    break;
+                    throw new ArgumentOutOfRangeException();//gregt todo
             }
         }
 
@@ -283,8 +281,7 @@ namespace Quiz.Ui
                     QuizReplyEmoticonCorrect5.Visibility = Visibility.Visible;
                     break;
                 default:
-                    //gregt todo
-                    break;
+                    throw new ArgumentOutOfRangeException();//gregt todo
             }
         }
 
