@@ -40,7 +40,7 @@ namespace Quiz.Ui
         }
 
         private void OnStartPageOpened()
-        {
+        { 
             if (generalOptionsDto.ShowQuizUponOpeningStartPage)
             {
                 var events2 = (Events2)dte.Events;
@@ -59,7 +59,7 @@ namespace Quiz.Ui
         }
        
         private void OnSolutionOpenedOrClosed()
-        {
+        { 
             if (generalOptionsDto.ShowQuizUponOpeningSolution)
             {
                 if (solutionEvents == null)
