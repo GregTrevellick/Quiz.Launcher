@@ -213,8 +213,14 @@
     <Resource Include="Core\Resources\CorrectAnswer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Core\Resources\CorrectAnswer - Copy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Core\Resources\Generic_ReadMeScreenShot_OptionsGeneral.png" />
     <Resource Include="Core\Resources\IncorrectAnswer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Core\Resources\IncorrectAnswer - Copy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Content Include="Resources\VsixExtensionIcon_16x16.png">

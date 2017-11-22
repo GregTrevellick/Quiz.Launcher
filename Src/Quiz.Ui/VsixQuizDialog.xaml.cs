@@ -118,34 +118,40 @@ namespace Quiz.Ui
         private void ButtonSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)
         {
             string response;
+            int chosenAnswerNumber = 0;
 
             if (RadioButton1.IsChecked == true)
             {
                 response = RadioButton1.Content.ToString();
+                chosenAnswerNumber = 1;
             }
             else
             {
                 if (RadioButton2.IsChecked == true)
                 {
                     response = RadioButton2.Content.ToString();
+                    chosenAnswerNumber = 2;
                 }
                 else
                 {
                     if (RadioButton3.IsChecked == true)
                     {
                         response = RadioButton3.Content.ToString();
+                        chosenAnswerNumber = 3;
                     }
                     else
                     {
                         if (RadioButton4.IsChecked == true)
                         {
                             response = RadioButton4.Content.ToString();
+                            chosenAnswerNumber = 4;
                         }
                         else
                         {
                             if (RadioButton5.IsChecked == true)
                             {
                                 response = RadioButton5.Content.ToString();
+                                chosenAnswerNumber = 5;
                             }
                             else
                             {
@@ -158,23 +164,36 @@ namespace Quiz.Ui
 
             var difficultyLevel = Common.GetDifficultyLevel(TextBlockDifficulty.Text);
 
-            ActOnAnswerGiven(response, difficultyLevel);
+            ActOnAnswerGiven(response, chosenAnswerNumber, difficultyLevel);
         }
 
   
-        private void ActOnAnswerGiven(string response, DifficultyLevel difficultyLevel)
+        private void ActOnAnswerGiven(string response, int chosenAnswerNumber, DifficultyLevel difficultyLevel)
         {
-            ProcessAnswerToQuestion(response, difficultyLevel);
+            ProcessAnswerToQuestion(response, chosenAnswerNumber, difficultyLevel);
 
             SetBingleHyperLink(SearchEngine);
 
             RefreshAndPersistStatistics();
         }
 
-        private void ProcessAnswerToQuestion(string response, DifficultyLevel difficultyLevel)
+        private void ProcessAnswerToQuestion(string response, int chosenAnswerNumber, DifficultyLevel difficultyLevel)
         {
-            QuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
-            QuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
+          //  QuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
+           // QuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
+
+            //gregt refactor out
+            QuizReplyEmoticonCorrect1.Visibility = Visibility.Collapsed;
+            QuizReplyEmoticonCorrect2.Visibility = Visibility.Collapsed;
+            QuizReplyEmoticonCorrect3.Visibility = Visibility.Collapsed;
+            QuizReplyEmoticonCorrect4.Visibility = Visibility.Collapsed;
+            QuizReplyEmoticonCorrect5.Visibility = Visibility.Collapsed;
+            QuizReplyEmoticonIncorrect1.Visibility = Visibility.Collapsed;
+            QuizReplyEmoticonIncorrect2.Visibility = Visibility.Collapsed;
+            QuizReplyEmoticonIncorrect3.Visibility = Visibility.Collapsed;
+            QuizReplyEmoticonIncorrect4.Visibility = Visibility.Collapsed;
+            QuizReplyEmoticonIncorrect5.Visibility = Visibility.Collapsed;
+
             ButtonSubmitMultiChoiceAnwser.IsEnabled = false;
             RadioButton1.IsEnabled = false;
             RadioButton2.IsEnabled = false;
@@ -186,12 +205,33 @@ namespace Quiz.Ui
 
             if (isResponseCorrect)
             {
+                switch (chosenAnswerNumber)
+                {
+                    //gregt refactor out
+                    case 1:
+                        QuizReplyEmoticonCorrect1.Visibility = Visibility.Visible;
+                        break;
+                    case 2:
+                        QuizReplyEmoticonCorrect2.Visibility = Visibility.Visible;
+                        break;
+                    case 3:
+                        QuizReplyEmoticonCorrect3.Visibility = Visibility.Visible;
+                        break;
+                    case 4:
+                        QuizReplyEmoticonCorrect4.Visibility = Visibility.Visible;
+                        break;
+                    case 5:
+                        QuizReplyEmoticonCorrect5.Visibility = Visibility.Visible;
+                        break;
+                }
+
                 TextBlockQuizReply.Text = "Congratulations, correct answer.";
                 SetQuizReplyColour(Colors.Green);
-                QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
+                //QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
 
                 if (!_userStatusTotalsIncremented)
                 {
+                    //gregt refactor out
                     switch (difficultyLevel)
                     {
                         case DifficultyLevel.Easy:
@@ -219,15 +259,36 @@ namespace Quiz.Ui
             }
             else
             {
-                TextBlockQuizReply.Text = "Sorry, wrong answer";
+                //gregt refactor out
+                switch (chosenAnswerNumber)
+                {
+                    case 1:
+                        QuizReplyEmoticonIncorrect1.Visibility = Visibility.Visible;
+                        break;
+                    case 2:
+                        QuizReplyEmoticonIncorrect2.Visibility = Visibility.Visible;
+                        break;
+                    case 3:
+                        QuizReplyEmoticonIncorrect3.Visibility = Visibility.Visible;
+                        break;
+                    case 4:
+                        QuizReplyEmoticonIncorrect4.Visibility = Visibility.Visible;
+                        break;
+                    case 5:
+                        QuizReplyEmoticonIncorrect5.Visibility = Visibility.Visible;
+                        break;
+                }
+
+                //TextBlockQuizReply.Text = "Sorry, wrong answer";
 
                 if (QuestionType == QuestionType.MultiChoice)
                 {
-                    TextBlockQuizReply.Text += $". The correct answer is {CorrectAnswer}.";
+                    //TextBlockQuizReply.Text += $". The correct answer is {CorrectAnswer}.";
+                    TextBlockQuizReply.Text = $"The correct answer is {CorrectAnswer}.";
                 }
 
                 SetQuizReplyColour(Colors.Red);
-                QuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
+               // QuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
             }
 
             TextBlockQuizReply.Visibility = Visibility.Visible;
@@ -261,7 +322,7 @@ namespace Quiz.Ui
 
             HyperLinkBingle.NavigateUri = new Uri(uri);
             HyperLinkBingle.Inlines.Clear();
-            HyperLinkBingle.Inlines.Add("bingle");
+            HyperLinkBingle.Inlines.Add("Bingle it!");
 
             TextBlockBingle.Visibility = Visibility.Visible;
         }
