@@ -9,7 +9,7 @@ namespace Quiz.Questions
         {
             var gatewayResponses = new List<GatewayResponse>
             {
-                //gregt
+                //gregt decide which questions to use
                 //Get("Among Internet users, the World Wide Web has surpassed the system named for this burrowing rodent?",
                 //    "gopher",
                 //    "Todo1",

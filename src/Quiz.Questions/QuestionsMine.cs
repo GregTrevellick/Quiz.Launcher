@@ -8,73 +8,42 @@ namespace Quiz.Questions
         {
             var gatewayResponses = new List<GatewayResponse>
             {
-
-
-                //What was the initial name for Visual Studio ?
-                //Boston
-                //Phoenix
-                //Portland
-                //Seattle
-                //Timbuktu
-
-
-
-
-
-                //cdn
-                //content delivery network
-                //content distribution network
-                //cascading delivery network
-                //cross domain network
-                //caught doing nothing
-
-
-
-
-
-
-                //////////https://www.codeproject.com/Articles/556995/ASP-NET-MVC-interview-questions-with-answers
-
-
-
-
-                //DAG
-                //Directed acyclic graph
-                //distribution above ground
-                //distribution across ground
-                //distributed architecture groups
-                //dogs are great
-
-
-
-                //CSP
-                //content security policy
-                //cross site privacy
-                //cascading style presentation
-                //code security policy
-                //caught stealing panties
-
-
-
-
-                //AMPQ ?
-                //Rabbit
-                //Cat
-                //Dog
-                //Horse
-                //Chicken
-
-
-
-                //Rabbit...?
-                //M.Q.
-                //P.I.
-                //D.C.
-                //M.A.
-                //P.C.
-
-
-
+                Common.Get(DifficultyLevel.Hard, "What was the initial name for Visual Studio?",
+                    "Boston",
+                    "Phoenix",
+                    "Portland",
+                    "Seattle",
+                    "Timbuktu"),
+                Common.Get(DifficultyLevel.Easy, "What does cdn stand for?",
+                    "content delivery network",
+                    "content distribution network",
+                    "cascading delivery network",
+                    "cross domain network",
+                    "caught doing nothing"),
+                Common.Get(DifficultyLevel.Hard, "What is a DAG?",
+                    "Directed acyclic graph",
+                    "distribution above ground",
+                    "distribution across ground",
+                    "distributed architecture groups",
+                    "dogs are great"),
+                Common.Get(DifficultyLevel.Hard, "CSP is short for?",
+                    "content security policy",
+                    "cross site privacy",
+                    "cascading style presentation",
+                    "code security policy",
+                    "caught stealing panties"),
+                Common.Get(DifficultyLevel.Hard, "AMPQ?",
+                    "Rabbit",
+                    "Cat",
+                    "Dog",
+                    "Horse",
+                    "Chicken"),
+                Common.Get(DifficultyLevel.Hard, "Rabbit ..?",
+                    "M.Q.",
+                    "P.I.",
+                    "D.C.",
+                    "M.A.",
+                    "P.C."),
                 Common.Get(DifficultyLevel.Medium, "What is Brainfuck?",
                     "A programming language",
                     "A term used by programmers to describe hard-to-fix bugs",

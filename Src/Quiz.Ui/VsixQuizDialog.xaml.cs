@@ -233,7 +233,8 @@ namespace Quiz.Ui
                     }
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException();//gregt todo
+                    //Do nothing - simply don't increment the totals
+                    //gregt debug.writeline
             }
         }
 
@@ -257,7 +258,9 @@ namespace Quiz.Ui
                     QuizReplyEmoticonIncorrect5.Visibility = Visibility.Visible;
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException();//gregt todo
+                    //Do nothing - simply don't show a cross
+                    //gregt debug.writeline            
+                    break;
             }
         }
 
@@ -281,7 +284,9 @@ namespace Quiz.Ui
                     QuizReplyEmoticonCorrect5.Visibility = Visibility.Visible;
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException();//gregt todo
+                    //Do nothing - simply don't show a tick
+                    //gregt debug.writeline            
+                    break;
             }
         }
 
