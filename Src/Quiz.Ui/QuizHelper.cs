@@ -15,9 +15,7 @@ namespace Quiz.Ui
         public delegate void QuizHelperEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard);
         public event QuizHelperEventHandler PersistHiddenOptionsQuizHelperEventHandlerEventHandler;
 
-        //gregt long param list !!
-        public HiddenOptionsDto GetHiddenOptionsDto(string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, 
-            int totalQuestionsAnsweredCorrectlyEasy, int totalQuestionsAnsweredCorrectlyMedium, int totalQuestionsAnsweredCorrectlyHard, int totalQuestionsAsked, SearchEngine searchEngine)
+        public HiddenOptionsDto GetHiddenOptionsDto(QuizHelperDto quizHelperDto)
         {
             var random = new Random();
             var remote = random.Next(1, 5);
@@ -28,7 +26,7 @@ namespace Quiz.Ui
                 case 1:
                 case 2:
                     var questionsOpenTdb = new QuestionsOpenTdb();
-                    gatewayResponse = questionsOpenTdb.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
+                    gatewayResponse = questionsOpenTdb.GetGatewayResponse(quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
                     break;
                 case 3:
                     var gatewayResponses = AllGateways.GatewayResponses;
@@ -37,15 +35,15 @@ namespace Quiz.Ui
                 case 4:
                 case 5:
                     var questionsOpenCocktail = new QuestionsCocktailHeroku();
-                    gatewayResponse = questionsOpenCocktail.GetGatewayResponse(timeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, optionsName);
+                    gatewayResponse = questionsOpenCocktail.GetGatewayResponse(quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
                     break;
             }
 
             var quizDialogDto = GetQuizDialogDto(gatewayResponse);
-            DisplayPopUpMessage(quizDialogDto, suppressClosingWithoutSubmitingAnswerWarning, 
-                totalQuestionsAnsweredCorrectlyEasy, totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAnsweredCorrectlyHard, totalQuestionsAsked, searchEngine);
+            DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
+                quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy, quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAnsweredCorrectlyHard, quizHelperDto.TotalQuestionsAsked, quizHelperDto.SearchEngine);
 
-            var hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
+            var hiddenOptionsDto = GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
 
             return hiddenOptionsDto;
         }

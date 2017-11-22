@@ -25,6 +25,8 @@ See the [change log](CHANGELOG.md) for release history.
 
 ## Credits
 
+[Carlos J. Quintero](https://www.mztools.com/articles/2011/MZ2011010.aspx)
+
 [jService](http://www.jservice.io)
 
 [Open Trivia Database](https://opentdb.com/)

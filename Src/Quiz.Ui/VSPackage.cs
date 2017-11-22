@@ -1,6 +1,4 @@
-﻿//GREGT MASSIVE CREDIT TO https://www.mztools.com/articles/2011/MZ2011010.aspx
-
-using EnvDTE;
+﻿using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Quiz.Ui.Core;
@@ -9,13 +7,11 @@ using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using EnvDTE80;
-/////////////////////using Constants = EnvDTE.Constants;
 
 namespace Quiz.Ui
 {
     [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
     [ProvideAutoLoad(UIContextGuids80.NoSolution)]
-    //////////////////////////[ProvideAutoLoad(UIContextGuids80.t)]
     [PackageRegistration(UseManagedResourcesOnly = true)]
     [InstalledProductRegistration(productName: "#110", productDetails: "#112", productId: Vsix.Version, IconResourceID = 400)]
     [Guid(Vsix.Id)]
@@ -94,8 +90,22 @@ namespace Quiz.Ui
                 var quizHelper = new QuizHelper();
                 quizHelper.PersistHiddenOptionsQuizHelperEventHandlerEventHandler += UpdateHiddenOptionsTotals;
 
-                var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(popUpTitle, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpCountToday, generalOptionsDto.TimeOutInMilliSeconds, Vsix.Name, generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning,
-                    generalOptionsDto.TotalQuestionsAnsweredCorrectlyEasy, generalOptionsDto.TotalQuestionsAnsweredCorrectlyMedium, generalOptionsDto.TotalQuestionsAnsweredCorrectlyHard, generalOptionsDto.TotalQuestionsAsked, generalOptionsDto.SearchEngine);
+                var quizHelperDto = new QuizHelperDto
+                {
+                    LastPopUpDateTime=generalOptionsDto.LastPopUpDateTime,
+                    OptionsName = Vsix.Name,
+                    PopUpCountToday=generalOptionsDto.PopUpCountToday,
+                    PopUpTitle= popUpTitle,
+                    SearchEngine=generalOptionsDto.SearchEngine,
+                    SuppressClosingWithoutSubmitingAnswerWarning=generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning,
+                    TimeOutInMilliSeconds=generalOptionsDto.TimeOutInMilliSeconds,
+                    TotalQuestionsAnsweredCorrectlyEasy=generalOptionsDto.TotalQuestionsAnsweredCorrectlyEasy,
+                    TotalQuestionsAnsweredCorrectlyHard=generalOptionsDto.TotalQuestionsAnsweredCorrectlyHard,
+                    TotalQuestionsAnsweredCorrectlyMedium=generalOptionsDto.TotalQuestionsAnsweredCorrectlyMedium,
+                    TotalQuestionsAsked=generalOptionsDto.TotalQuestionsAsked,
+                };
+
+                var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(quizHelperDto);
 
                 if (hiddenOptionsDto != null)
                 {

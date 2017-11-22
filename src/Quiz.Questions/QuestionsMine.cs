@@ -11,7 +11,6 @@ namespace Quiz.Questions
 
 
                 //What was the initial name for Visual Studio ?
-
                 //Boston
                 //Phoenix
                 //Portland
@@ -22,24 +21,43 @@ namespace Quiz.Questions
 
 
 
+                //cdn
+                //content delivery network
+                //content distribution network
+                //cascading delivery network
+                //cross domain network
+                //caught doing nothing
 
-                //https://www.codeproject.com/Articles/556995/ASP-NET-MVC-interview-questions-with-answers
+
+
+
+
+
+                //////////https://www.codeproject.com/Articles/556995/ASP-NET-MVC-interview-questions-with-answers
+
+
 
 
                 //DAG
                 //Directed acyclic graph
+                //distribution above ground
+                //distribution across ground
+                //distributed architecture groups
+                //dogs are great
 
 
 
                 //CSP
                 //content security policy
+                //cross site privacy
+                //cascading style presentation
+                //code security policy
+                //caught stealing panties
 
 
 
 
                 //AMPQ ?
-
-
                 //Rabbit
                 //Cat
                 //Dog
