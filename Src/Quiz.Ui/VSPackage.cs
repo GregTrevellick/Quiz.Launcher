@@ -44,7 +44,10 @@ namespace Quiz.Ui
             if (generalOptionsDto.ShowQuizUponOpeningStartPage)
             {
                 var events2 = (Events2)dte.Events;
-                windowVisibilityEvents = events2.get_WindowVisibilityEvents();//gregt restrict to the start page window only ?
+                
+                //var spWindow = new EnvDTE.Window();
+                
+                windowVisibilityEvents = events2.get_WindowVisibilityEvents[]();//gregt restrict to the start page window only ?   https://github.com/jjensen/workspacewhiz/blob/master/Src/Shared/dte80.tlh
                 windowVisibilityEvents.WindowShowing += windowVisibilityEvents_WindowShowing;
             }
         }
@@ -53,7 +56,6 @@ namespace Quiz.Ui
         {
             if (window.Type == vsWindowType.vsWindowTypeToolWindow && window.Caption == "Start Page")
             {
-                //System.Windows.Forms.MessageBox.Show("window.ObjectKind =" + window.ObjectKind +  " window.Type=" + window.Type);
                 StartQuiz();
             }
         }
@@ -81,7 +83,7 @@ namespace Quiz.Ui
 
         private void StartQuiz()
         {
-            //ChaseRatings();
+            //TODO ChaseRatings();
 
             var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(generalOptionsDto);
 
@@ -100,22 +102,6 @@ namespace Quiz.Ui
                 }
             }
         }
-
-        //private void ChaseRatings()
-        //{
-        //    var hiddenChaserOptions = (IHiddenChaserOptions)GetDialogPage(typeof(HiddenChaserOptions));
-        //    var imageByteArray = GetImageByteArray();
-        //    var ratingInstructionsDto = new RatingInstructionsDto
-        //    {
-        //        AggressionLevel = AggressionLevel.High,
-        //        CostCategory = CostCategory.Free,
-        //        DialogType = DialogType.NonModal,
-        //        ImageByteArray = imageByteArray,
-        //        VsixAuthor = Vsix.Author,
-        //        VsixName = Vsix.Name,
-        //    };
-        //    RatingChaser.ChaseRatings(hiddenChaserOptions, ratingInstructionsDto);
-        //}     
 
         private void UpdateHiddenOptionsTotals(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard)
         {
@@ -161,25 +147,3 @@ namespace Quiz.Ui
         }
     }
 }
-
-//private static byte[] GetImageByteArray()
-//{
-//    byte[] imageByteArray;
-//    ////////////////////var imageResourceNameArray = Assembly.GetExecutingAssembly().GetManifestResourceNames();
-//    var imageResourceName = "Trivial.Ui.GeekQuiz.Resources.VsixExtensionIcon_90x90_Embedded.png";//imageResourceNameArray[2];
-//    var assembly = Assembly.GetExecutingAssembly();
-//    var stream = assembly.GetManifestResourceStream(imageResourceName);
-//    if (stream == null)
-//    {
-//        imageByteArray = null;
-//    }
-//    else
-//    {
-//        using (stream)
-//        {
-//            imageByteArray = new byte[stream.Length];
-//            stream.Read(imageByteArray, 0, imageByteArray.Length);
-//        }
-//    }
-//    return imageByteArray;
-//}
