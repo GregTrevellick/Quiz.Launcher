@@ -36,10 +36,11 @@ namespace Quiz.Questions
             return gatewayResponse;
         }
 
-        public static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2 = null, string wrongAnswer3 = null, string wrongAnswer4 = null)
+        public static GatewayResponse Get(Category category, DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2 = null, string wrongAnswer3 = null, string wrongAnswer4 = null)
         {
             var result = new GatewayResponse
             {
+                Category = category,
                 DifficultyLevel = difficultyLevel,
                 MultipleChoiceAnswers = new List<string>
                 {
