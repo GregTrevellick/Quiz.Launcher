@@ -69,17 +69,24 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonClose_OnClick" Name="ButtonClose"/>
-            <Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonHelp_OnClick" Name="ButtonHelp"/>
+            <!--<Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonHelp_OnClick" Name="ButtonHelp"/>-->
+            <TextBlock Margin="10,10,10,10" Name="TextBlockHelp2">
+                <Hyperlink Name="HyperLinkHelp" RequestNavigate="HyperLinkHelp_RequestNavigate" />
+            </TextBlock>
+            <TextBlock Margin="10,10,10,10" Name="TextBlockSupplyAQuestion">
+                <Hyperlink Name="HyperLinkSupplyAQuestion" RequestNavigate="HyperLinkSupplyAQuestion_RequestNavigate" />
+            </TextBlock>
         </StackPanel>
-        <StackPanel>
+        <!--<StackPanel>
             <TextBlock Margin="10,10,10,10" Name="TextBlockHelp" Visibility="Collapsed"/>
-        </StackPanel>
+        </StackPanel>-->
         <StackPanel>
             <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockErrorDetails" />
         </StackPanel>
         <!--<StackPanel>
             <Button Content="Again" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonAgain_OnClick" Name="ButtonAgain"/>
         </StackPanel>-->
+
     </StackPanel>
 
     

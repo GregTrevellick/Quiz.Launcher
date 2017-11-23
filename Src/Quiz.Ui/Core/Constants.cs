@@ -46,10 +46,10 @@ namespace Quiz.Ui.Core
             return $"Invalid integer value specified for '{labelName}'";
         }
 
-        public static string HelpText(string optionsName)
-        {
-            return $"To alter the frequency and volume of quiz questions go to Tools | Options | {optionsName}";
-        }
+        //public static string HelpText(string optionsName)
+        //{
+        //    return $"To alter the frequency and volume of quiz questions go to Tools | Options | {optionsName}";
+        //}
 
     }
 }   

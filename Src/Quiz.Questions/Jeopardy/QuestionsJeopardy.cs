@@ -29,8 +29,9 @@ namespace Quiz.Questions
                     "computer chips",
                     "disc drives",
                     "mice",
-                    "monitors",
-                   "humans"),
+                    "monitors"
+                   //gregt TODO "humans"
+                   ),
                 //Get("Android's 4.1 O.S.  called this?",
                 //    "Jelly Bean",
                 //    "Todo1",
@@ -85,8 +86,9 @@ namespace Quiz.Questions
                     "UNIVAC",
                     "watson",
                     "analytical engine",
-                   "big blue",
-                  "abacus"),
+                   "big blue"
+                  //gregt TODO "abacus"
+                  ),
                 //Get("First built in 1960, it's also been called an optical maser?",
                 //    "laser",
                 //    "Todo1",
@@ -116,8 +118,9 @@ namespace Quiz.Questions
                     "IBM",
                     "microsoft",
                     "apple",
-                    "tesla",
-                    "google"),
+                    "tesla"
+                    //gregt TODO "google"
+                    ),
                 //Get("In 1983 Apple's Lisa computer gave PCs this device that moves the cursor around the screen	?",
                 //    "mouse",
                 //    "Todo1",
@@ -177,8 +180,9 @@ namespace Quiz.Questions
                    "8",
                     "1",
                    "7",
-                    "1024",
-                    "zero"),
+                    "1024"
+                    //gregt TODO "zero"
+                    ),
                 //Get("On August 12, 1981 the world saw the first IBM personal computer using this Microsoft operating system?",
                 //    "MS-DOS",
                 //    "Todo1",

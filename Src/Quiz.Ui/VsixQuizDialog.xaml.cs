@@ -37,23 +37,26 @@ namespace Quiz.Ui
             //////DataContext = this;
             Loaded += UserControl1_Loaded;
 
-//#if DEBUG
-//            ButtonAgain.Visibility = Visibility.Visible;
-//#endif
+            SetHelpHyperLink();
+            SetSupplyAQuestionHyperLink();
+
+            //#if DEBUG
+            //            ButtonAgain.Visibility = Visibility.Visible;
+            //#endif
         }
 
-//#if DEBUG
-//        private void ButtonAgain_OnClick(object sender, RoutedEventArgs e)
-//        {
-//            var quizHelper = new QuizHelper();
-//            var random = new Random();
-//            var totalQuestionsAnsweredCorrectlyEasy = random.Next(1, 100);
-//            var totalQuestionsAnsweredCorrectlyMedium = random.Next(1, 100);
-//            var totalQuestionsAnsweredCorrectlyHard = random.Next(1, 100);
-//            quizHelper.GetHiddenOptionsDto("Again1", DateTime.Now, 789, 5000, "Again2", true,
-//                totalQuestionsAnsweredCorrectlyEasy, totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAnsweredCorrectlyHard, 100, SearchEngine.Google);
-//        }
-//#endif
+        //#if DEBUG
+        //        private void ButtonAgain_OnClick(object sender, RoutedEventArgs e)
+        //        {
+        //            var quizHelper = new QuizHelper();
+        //            var random = new Random();
+        //            var totalQuestionsAnsweredCorrectlyEasy = random.Next(1, 100);
+        //            var totalQuestionsAnsweredCorrectlyMedium = random.Next(1, 100);
+        //            var totalQuestionsAnsweredCorrectlyHard = random.Next(1, 100);
+        //            quizHelper.GetHiddenOptionsDto("Again1", DateTime.Now, 789, 5000, "Again2", true,
+        //                totalQuestionsAnsweredCorrectlyEasy, totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAnsweredCorrectlyHard, 100, SearchEngine.Google);
+        //        }
+        //#endif
 
         private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
         {
@@ -102,18 +105,18 @@ namespace Quiz.Ui
             return shouldCloseWindow;
         }
 
-        private void ButtonHelp_OnClick(object sender, RoutedEventArgs e)
-        {
-            if (TextBlockHelp.Visibility == Visibility.Visible)
-            {
-                TextBlockHelp.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                TextBlockHelp.Text = Constants.HelpText(_optionsName);
-                TextBlockHelp.Visibility = Visibility.Visible;
-            }
-        }
+        //private void ButtonHelp_OnClick(object sender, RoutedEventArgs e)
+        //{
+        //    if (TextBlockHelp.Visibility == Visibility.Visible)
+        //    {
+        //        TextBlockHelp.Visibility = Visibility.Collapsed;
+        //    }
+        //    else
+        //    {
+        //        TextBlockHelp.Text = Constants.HelpText(_optionsName);
+        //        TextBlockHelp.Visibility = Visibility.Visible;
+        //    }
+        //}
 
         private void ButtonSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)
         {
@@ -340,7 +343,38 @@ namespace Quiz.Ui
             TextBlockBingle.Visibility = Visibility.Visible;
         }
 
+        private void SetHelpHyperLink()
+        {
+            var uri = "https://github.com/GregTrevellick/OpenInApp.Launcher/blob/master/CHANGELOG.md";
+            HyperLinkHelp.NavigateUri = new Uri(uri);
+            HyperLinkHelp.Inlines.Clear();
+            HyperLinkHelp.Inlines.Add("Help");
+        }
+
+        private void SetSupplyAQuestionHyperLink()
+        {
+            var uri = "https://github.com/GregTrevellick/SolutionOpenPopUp/blob/master/CHANGELOG.md";
+            HyperLinkSupplyAQuestion.NavigateUri = new Uri(uri);
+            HyperLinkSupplyAQuestion.Inlines.Clear();
+            HyperLinkSupplyAQuestion.Inlines.Add("Submit a question");
+        }
+
         private void HyperLinkBingle_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            LaunchUri(e);
+        }
+
+        private void HyperLinkHelp_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            LaunchUri(e);
+        }
+
+        private void HyperLinkSupplyAQuestion_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            LaunchUri(e);
+        }
+
+        private void LaunchUri(RequestNavigateEventArgs e)
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
@@ -398,6 +432,5 @@ namespace Quiz.Ui
         {
             ButtonSubmitMultiChoiceAnwser.IsEnabled = true;
         }
-
     }
 }

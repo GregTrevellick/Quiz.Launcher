@@ -4,7 +4,7 @@ namespace Quiz.Questions
 {
     public class GatewayResponse 
     {
-        public Category Category { get; set; }
+        //gregt TODO public Category Category { get; set; }
         public DifficultyLevel DifficultyLevel { get; set; }
         public IEnumerable<string> MultipleChoiceAnswers { get; set; }
         public string MultipleChoiceCorrectAnswer { get; set; }

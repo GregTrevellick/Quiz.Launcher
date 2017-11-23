@@ -2,6 +2,7 @@
 {
     public enum Category
     {
+        Unknown = 0,
         CSharp,
         DotNet,
         Geek,
