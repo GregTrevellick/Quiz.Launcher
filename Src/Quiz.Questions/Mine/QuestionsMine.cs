@@ -7,8 +7,17 @@ namespace Quiz.Questions.Mine
         public static IEnumerable<GatewayResponse> GetGatewayResponses()
         {
 
-            //ddos
-            //pentest
+            //ddos?
+            //
+            //
+            //
+            //
+
+            //iife?
+            //
+            //
+            //
+            //
 
             //which is not podcast
             //checkin
