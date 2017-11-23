@@ -1,4 +1,5 @@
 ﻿using MoreLinq;
+using Quiz.Questions;
 using Quiz.Ui.Core;
 using System;
 using System.Linq;
@@ -6,9 +7,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
-using Quiz.Questions;
-using Quiz.Questions.CocktailHeroku;
-using Quiz.Questions.OpenTdb;
 
 namespace Quiz.Ui
 {
@@ -22,7 +20,6 @@ namespace Quiz.Ui
             //var random = new Random();
             //var remote = random.Next(1, 5);
             //var gatewayResponse = new GatewayResponse();
-
             //switch (remote)
             //{
             //    case 1:
@@ -41,7 +38,8 @@ namespace Quiz.Ui
             //        break;
             //}
 
-            var gatewayResponse = Common.GetGatewayResponse(quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
+            //gregt todo get category from options
+            var gatewayResponse = Common.GetGatewayResponse(Category.Geek, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
             var quizDialogDto = GetQuizDialogDto(gatewayResponse);
             DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,

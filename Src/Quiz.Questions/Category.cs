@@ -1,12 +1,15 @@
-﻿namespace Quiz.Questions
+﻿using System;
+
+namespace Quiz.Questions
 {
+    [Flags]
     public enum Category
     {
         Unknown = 0,
-        CSharp,
-        DotNet,
-        Geek,
-        Javascript,
-        WebDev
+        CSharp = 1,
+        DotNet = 2,
+        Geek = 4,
+        Javascript = 8,
+        WebDev = 16,
     }
 }

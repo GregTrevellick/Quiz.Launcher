@@ -12,9 +12,7 @@ namespace Quiz.Questions
 {
     public class Common
     {
-        //           (int TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
-
-        public static GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
+        public static GatewayResponse GetGatewayResponse(Category category, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             var random = new Random();
             var remote = random.Next(1, 5);
@@ -41,7 +39,7 @@ namespace Quiz.Questions
             return gatewayResponse;
         }
 
-        public static GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName, string url, IQuestionsGateway questionsGateway)
+        internal static GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName, string url, IQuestionsGateway questionsGateway)
         {
             var gatewayResponse = new GatewayResponse();
 
