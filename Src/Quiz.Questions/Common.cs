@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
-using MoreLinq;
-using Quiz.Questions.CocktailHeroku;
+﻿using Quiz.Questions.CocktailHeroku;
 using Quiz.Questions.OpenTdb;
 using RestSharp;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net;
 
 namespace Quiz.Questions
 {
@@ -14,6 +12,8 @@ namespace Quiz.Questions
     {
         public static GatewayResponse GetGatewayResponse(Category category, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
+            //gregt todo leverage category to get relevant questions
+
             var random = new Random();
             var remote = random.Next(1, 5);
             var gatewayResponse = new GatewayResponse();
