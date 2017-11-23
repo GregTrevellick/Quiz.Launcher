@@ -184,7 +184,7 @@ namespace Quiz.Questions
             gatewayResponse.ErrorDetails = errorDetails;
         }
 
-        public static string UppercaseFirst(string str)
+        internal static string UppercaseFirst(string str)
         {
             if (string.IsNullOrEmpty(str))
             {
@@ -194,7 +194,7 @@ namespace Quiz.Questions
             return char.ToUpper(str[0]) + str.Substring(1);
         }
 
-        public static string CharacterHandler(string str)
+        internal static string CharacterHandler(string str)
         {
             var result = WebUtility.HtmlDecode(str);
             return result;
