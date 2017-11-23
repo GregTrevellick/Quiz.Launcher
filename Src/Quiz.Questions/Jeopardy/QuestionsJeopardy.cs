@@ -29,9 +29,8 @@ namespace Quiz.Questions
                     "computer chips",
                     "disc drives",
                     "mice",
-                    "monitors"
-                   //gregt TODO "humans"
-                   ),
+                    "monitors",
+                    "humans"),
                 //Get("Android's 4.1 O.S.  called this?",
                 //    "Jelly Bean",
                 //    "Todo1",
@@ -86,9 +85,8 @@ namespace Quiz.Questions
                     "UNIVAC",
                     "watson",
                     "analytical engine",
-                   "big blue"
-                  //gregt TODO "abacus"
-                  ),
+                   "big blue",
+                   "abacus"),
                 //Get("First built in 1960, it's also been called an optical maser?",
                 //    "laser",
                 //    "Todo1",
@@ -118,9 +116,8 @@ namespace Quiz.Questions
                     "IBM",
                     "microsoft",
                     "apple",
-                    "tesla"
-                    //gregt TODO "google"
-                    ),
+                    "tesla",
+                     "google"),
                 //Get("In 1983 Apple's Lisa computer gave PCs this device that moves the cursor around the screen	?",
                 //    "mouse",
                 //    "Todo1",
@@ -180,9 +177,8 @@ namespace Quiz.Questions
                    "8",
                     "1",
                    "7",
-                    "1024"
-                    //gregt TODO "zero"
-                    ),
+                    "1024",
+                     "zero"),
                 //Get("On August 12, 1981 the world saw the first IBM personal computer using this Microsoft operating system?",
                 //    "MS-DOS",
                 //    "Todo1",
@@ -433,14 +429,14 @@ namespace Quiz.Questions
             return gatewayResponses;
         }
 
-        private static GatewayResponse Get(string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2, string wrongAnswer3)
+        private static GatewayResponse Get(string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2, string wrongAnswer3, string wrongAnswer4 = null)
         {
-            return Get(DifficultyLevel.Medium, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3);
+            return Get(DifficultyLevel.Medium, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4);
         }
 
-        private static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2, string wrongAnswer3)
+        private static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2, string wrongAnswer3, string wrongAnswer4 = null)
         {
-            var result = Common.Get(difficultyLevel, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3);
+            var result = Common.Get(difficultyLevel, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4);
             return result;
         }
     }
