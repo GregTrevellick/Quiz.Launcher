@@ -26,8 +26,8 @@ namespace Quiz.Questions
                     gatewayResponse = questionsOpenTdb.GetGatewayResponse(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
                     break;
                 case 3:
-                    var gatewayResponses = AllGateways.GatewayResponses;
-                    gatewayResponse = gatewayResponses.RandomSubset(1).Single();
+                    var allGateways = new AllGateways();
+                    gatewayResponse = allGateways.GetGatewayResponse();
                     break;
                 case 4:
                 case 5:

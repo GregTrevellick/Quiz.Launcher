@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using MoreLinq;
 using Quiz.Questions.Jeopardy;
 using Quiz.Questions.Mine;
 using Quiz.Questions.WebCampTrainingKit;
@@ -8,29 +9,25 @@ namespace Quiz.Questions
 {
     internal class AllGateways
     {
-        public static IEnumerable<GatewayResponse> GatewayResponses
+        public GatewayResponse GetGatewayResponse()
         {
-            get
-            {
-                //approx 5-10
-                var gatewayResponsesMine = QuestionsMine.GetGatewayResponses();
+            //approx 5-10
+            var gatewayResponsesMine = QuestionsMine.GetGatewayResponses();
 
-                //approx 241
-                var gatewayResponsesJeopardy = QuestionsJeopardy.GetGatewayResponses();
+            //approx 241
+            var gatewayResponsesJeopardy = QuestionsJeopardy.GetGatewayResponses();
 
-                //44
-                var questionsWebCampTrainingKit = QuestionsWebCampTrainingKit.GetQuestions();
-                var gatewayResponsesWebCampTrainingKit = QuestionsWebCampTrainingKit.GetGatewayResponses(questionsWebCampTrainingKit);
+            //44
+            var questionsWebCampTrainingKit = QuestionsWebCampTrainingKit.GetQuestions();
+            var gatewayResponsesWebCampTrainingKit = QuestionsWebCampTrainingKit.GetGatewayResponses(questionsWebCampTrainingKit);
 
-                var result = new List<GatewayResponse>();
+            var result = new List<GatewayResponse>();
                 
-                result = result.Union(gatewayResponsesMine).ToList();
-                result = result.Union(gatewayResponsesJeopardy).ToList();
-                result = result.Union(gatewayResponsesWebCampTrainingKit).ToList();
+            result = result.Union(gatewayResponsesMine).ToList();
+            result = result.Union(gatewayResponsesJeopardy).ToList();
+            result = result.Union(gatewayResponsesWebCampTrainingKit).ToList();
 
-                return result;
-            }
+            return result.RandomSubset(1).Single();
         }
-
     }
 }
