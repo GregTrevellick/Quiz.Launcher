@@ -2,7 +2,7 @@
 
 namespace Quiz.Questions.CocktailHeroku
 {
-    public class QuestionsCocktailHeroku
+    internal class QuestionsCocktailHeroku
     {
         public GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {

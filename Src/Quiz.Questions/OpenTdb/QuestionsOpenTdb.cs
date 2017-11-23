@@ -1,6 +1,6 @@
 ﻿namespace Quiz.Questions.OpenTdb
 {
-    public class QuestionsOpenTdb
+    internal class QuestionsOpenTdb
     {
         public GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {

@@ -6,7 +6,7 @@ using Quiz.Questions.WebCampTrainingKit;
 
 namespace Quiz.Questions
 {
-    public class AllGateways
+    internal class AllGateways
     {
         public static IEnumerable<GatewayResponse> GatewayResponses
         {
