@@ -19,27 +19,29 @@ namespace Quiz.Ui
 
         public HiddenOptionsDto GetHiddenOptionsDto(QuizHelperDto quizHelperDto)
         {
-            var random = new Random();
-            var remote = random.Next(1, 5);
-            var gatewayResponse = new GatewayResponse();
+            //var random = new Random();
+            //var remote = random.Next(1, 5);
+            //var gatewayResponse = new GatewayResponse();
 
-            switch (remote)
-            {
-                case 1:
-                case 2:
-                    var questionsOpenTdb = new QuestionsOpenTdb();
-                    gatewayResponse = questionsOpenTdb.GetGatewayResponse(quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
-                    break;
-                case 3:
-                    var gatewayResponses = AllGateways.GatewayResponses;
-                    gatewayResponse = gatewayResponses.RandomSubset(1).Single();
-                    break;
-                case 4:
-                case 5:
-                    var questionsOpenCocktail = new QuestionsCocktailHeroku();
-                    gatewayResponse = questionsOpenCocktail.GetGatewayResponse(quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
-                    break;
-            }
+            //switch (remote)
+            //{
+            //    case 1:
+            //    case 2:
+            //        var questionsOpenTdb = new QuestionsOpenTdb();
+            //        gatewayResponse = questionsOpenTdb.GetGatewayResponse(quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
+            //        break;
+            //    case 3:
+            //        var gatewayResponses = AllGateways.GatewayResponses;
+            //        gatewayResponse = gatewayResponses.RandomSubset(1).Single();
+            //        break;
+            //    case 4:
+            //    case 5:
+            //        var questionsOpenCocktail = new QuestionsCocktailHeroku();
+            //        gatewayResponse = questionsOpenCocktail.GetGatewayResponse(quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
+            //        break;
+            //}
+
+            var gatewayResponse = Common.GetGatewayResponse(quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
             var quizDialogDto = GetQuizDialogDto(gatewayResponse);
             DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,

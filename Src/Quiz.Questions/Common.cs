@@ -1,13 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
+using MoreLinq;
+using Quiz.Questions.CocktailHeroku;
+using Quiz.Questions.OpenTdb;
 using RestSharp;
 
 namespace Quiz.Questions
 {
     public class Common
     {
+        //           (int TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
+
+        public static GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
+        {
+            var random = new Random();
+            var remote = random.Next(1, 5);
+            var gatewayResponse = new GatewayResponse();
+
+            switch (remote)
+            {
+                case 1:
+                case 2:
+                    var questionsOpenTdb = new QuestionsOpenTdb();
+                    gatewayResponse = questionsOpenTdb.GetGatewayResponse(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
+                    break;
+                case 3:
+                    var gatewayResponses = AllGateways.GatewayResponses;
+                    gatewayResponse = gatewayResponses.RandomSubset(1).Single();
+                    break;
+                case 4:
+                case 5:
+                    var questionsOpenCocktail = new QuestionsCocktailHeroku();
+                    gatewayResponse = questionsOpenCocktail.GetGatewayResponse(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
+                    break;
+            }
+
+            return gatewayResponse;
+        }
+
         public static GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName, string url, IQuestionsGateway questionsGateway)
         {
             var gatewayResponse = new GatewayResponse();
