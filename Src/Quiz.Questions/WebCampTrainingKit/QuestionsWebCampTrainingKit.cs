@@ -1,9 +1,32 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
-namespace Quiz.Questions
+namespace Quiz.Questions.WebCampTrainingKit
 {
     public class QuestionsWebCampTrainingKit
     {
+        public static IEnumerable<GatewayResponse> GetGatewayResponses(IEnumerable<WebCampTrainingKitQuestion> triviaQuestions)
+        {
+            var gatewayResponses = new List<GatewayResponse>();
+
+            foreach (var triviaQuestion in triviaQuestions)
+            {
+                var localTriviaQuestion = new GatewayResponse
+                {
+                    Category = triviaQuestion.Category,
+                    DifficultyLevel = triviaQuestion.DifficultyLevel,
+                    MultipleChoiceAnswers = triviaQuestion.Answers.Select(x => x.AnswerText),
+                    MultipleChoiceCorrectAnswer = triviaQuestion.Answers.Where(x => x.IsCorrect).Select(x => x.AnswerText).Single(),
+                    Question = triviaQuestion.QuestionText,
+                    QuestionType = QuestionType.MultiChoice
+                };
+
+                gatewayResponses.Add(localTriviaQuestion);
+            }
+
+            return gatewayResponses;
+        }
+
         /// <summary>
         /// https://github.com/Microsoft-Web/DEMO-GeekQuiz-Web-API-backend
         /// </summary>

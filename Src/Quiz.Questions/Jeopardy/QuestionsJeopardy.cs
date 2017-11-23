@@ -1,9 +1,14 @@
 ﻿using System.Collections.Generic;
 
-namespace Quiz.Questions
+namespace Quiz.Questions.Jeopardy
 {
     public class QuestionsJeopardy
     {
+        private static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2, string wrongAnswer3, string wrongAnswer4 = null)
+        {
+            var result = Common.Get(Category.Geek, difficultyLevel, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4);
+            return result;
+        }
 
         public static IEnumerable<GatewayResponse> GetGatewayResponses()
         {
@@ -429,10 +434,5 @@ namespace Quiz.Questions
             return gatewayResponses;
         }
 
-        private static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2, string wrongAnswer3, string wrongAnswer4 = null)
-        {
-            var result = Common.Get(Category.Geek, difficultyLevel, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4);
-            return result;
-        }
     }
 }

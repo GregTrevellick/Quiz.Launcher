@@ -2,7 +2,7 @@
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace Quiz.Questions
+namespace Quiz.Questions.CocktailHeroku
 {
     public class QuestionsCocktailHerokuGateway : IQuestionsGateway
     {
@@ -22,6 +22,7 @@ namespace Quiz.Questions
 
             var gatewayResponse = new GatewayResponse
             {
+                Category = Category.Geek,
                 DifficultyLevel = DifficultyLevel.Medium,
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,

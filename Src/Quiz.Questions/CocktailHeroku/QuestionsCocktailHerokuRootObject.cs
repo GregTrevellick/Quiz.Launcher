@@ -1,4 +1,4 @@
-﻿namespace Quiz.Questions
+﻿namespace Quiz.Questions.CocktailHeroku
 {
     public class QuestionsCocktailHerokuRootObject
     {

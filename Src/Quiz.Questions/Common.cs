@@ -86,7 +86,7 @@ namespace Quiz.Questions
             return responseDto;
         }
 
-        public static void HandleUnexpectedError(Exception ex)//, ResponseDto responseDto)
+        public static void HandleUnexpectedError(Exception ex)//, ResponseDto responseDto) //gregt todo get error into responseDto.ErrorDetails so that it is visible in the ui
         {
             Debug.WriteLine(ex.Message);
             //var exceptionTypeName = ex.GetType().Name;

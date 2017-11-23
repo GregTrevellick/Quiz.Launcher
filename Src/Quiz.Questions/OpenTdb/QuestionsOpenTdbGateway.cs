@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace Quiz.Questions
+namespace Quiz.Questions.OpenTdb
 {
     public class QuestionsOpenTdbGateway : IQuestionsGateway
     {
@@ -28,6 +28,7 @@ namespace Quiz.Questions
 
             var gatewayResponse = new GatewayResponse
             {
+                Category = Category.Geek,
                 DifficultyLevel = difficulty,
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,

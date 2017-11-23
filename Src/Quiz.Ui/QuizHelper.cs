@@ -7,6 +7,8 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using Quiz.Questions;
+using Quiz.Questions.CocktailHeroku;
+using Quiz.Questions.OpenTdb;
 
 namespace Quiz.Ui
 {

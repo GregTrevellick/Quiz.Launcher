@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quiz.Questions
+namespace Quiz.Questions.CocktailHeroku
 {
     public class QuestionsCocktailHeroku
     {

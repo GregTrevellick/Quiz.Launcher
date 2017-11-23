@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 
-namespace Quiz.Questions
+namespace Quiz.Questions.WebCampTrainingKit
 {
     public class WebCampTrainingKitQuestion
     {
-        public string QuestionText { get; set; }
         public List<WebCampTrainingKitAnswer> Answers { get; set; }
+        public Category Category { get; set; }
         public DifficultyLevel DifficultyLevel { get; set; }
+        public string QuestionText { get; set; }
     }
 }

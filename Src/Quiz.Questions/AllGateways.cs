@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Quiz.Questions.Jeopardy;
+using Quiz.Questions.Mine;
+using Quiz.Questions.WebCampTrainingKit;
 
 namespace Quiz.Questions
 {
@@ -17,7 +20,7 @@ namespace Quiz.Questions
 
                 //44
                 var questionsWebCampTrainingKit = QuestionsWebCampTrainingKit.GetQuestions();
-                var gatewayResponsesWebCampTrainingKit = GetGatewayResponses(questionsWebCampTrainingKit);
+                var gatewayResponsesWebCampTrainingKit = QuestionsWebCampTrainingKit.GetGatewayResponses(questionsWebCampTrainingKit);
 
                 var result = new List<GatewayResponse>();
                 
@@ -29,25 +32,5 @@ namespace Quiz.Questions
             }
         }
 
-        private static IEnumerable<GatewayResponse> GetGatewayResponses(IEnumerable<WebCampTrainingKitQuestion> triviaQuestions)
-        {
-            var gatewayResponses = new List<GatewayResponse>();
-
-            foreach (var triviaQuestion in triviaQuestions)
-            {
-                var localTriviaQuestion = new GatewayResponse
-                {
-                    DifficultyLevel = triviaQuestion.DifficultyLevel,
-                    MultipleChoiceAnswers = triviaQuestion.Answers.Select(x => x.AnswerText),
-                    MultipleChoiceCorrectAnswer = triviaQuestion.Answers.Where(x => x.IsCorrect).Select(x => x.AnswerText).Single(),
-                    Question = triviaQuestion.QuestionText,
-                    QuestionType = QuestionType.MultiChoice
-                };
-
-                gatewayResponses.Add(localTriviaQuestion);
-            }
-
-            return gatewayResponses;
-        }
     }
 }
