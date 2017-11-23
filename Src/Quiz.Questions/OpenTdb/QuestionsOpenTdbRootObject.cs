@@ -1,12 +1,12 @@
 ﻿namespace Quiz.Questions.OpenTdb
 {
-    public class QuestionsOpenTdbRootObject
+    internal class QuestionsOpenTdbRootObject
     {
         public int response_code { get; set; }
         public Result[] results { get; set; }
     }
 
-    public class Result
+    internal class Result
     {
         public string category { get; set; }
         public string type { get; set; }

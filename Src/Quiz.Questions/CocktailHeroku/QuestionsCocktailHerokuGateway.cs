@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Quiz.Questions.CocktailHeroku
 {
-    public class QuestionsCocktailHerokuGateway : IQuestionsGateway
+    internal class QuestionsCocktailHerokuGateway : IQuestionsGateway
     {
         public GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
         {

@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Quiz.Questions.OpenTdb
 {
-    public class QuestionsOpenTdbGateway : IQuestionsGateway
+    internal class QuestionsOpenTdbGateway : IQuestionsGateway
     {
         public GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
         {

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Quiz.Questions.WebCampTrainingKit
 {
-    public class QuestionsWebCampTrainingKit
+    internal class QuestionsWebCampTrainingKit
     {
         public static IEnumerable<GatewayResponse> GetGatewayResponses(IEnumerable<WebCampTrainingKitQuestion> triviaQuestions)
         {

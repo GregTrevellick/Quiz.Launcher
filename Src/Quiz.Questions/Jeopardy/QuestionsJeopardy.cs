@@ -2,7 +2,7 @@
 
 namespace Quiz.Questions.Jeopardy
 {
-    public class QuestionsJeopardy
+    internal class QuestionsJeopardy
     {
         private static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2, string wrongAnswer3, string wrongAnswer4 = null)
         {

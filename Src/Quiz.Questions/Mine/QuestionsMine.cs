@@ -2,7 +2,7 @@
 
 namespace Quiz.Questions.Mine
 {
-    public class QuestionsMine
+    internal class QuestionsMine
     {
         public static IEnumerable<GatewayResponse> GetGatewayResponses()
         {

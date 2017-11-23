@@ -2,7 +2,7 @@
 
 namespace Quiz.Questions.WebCampTrainingKit
 {
-    public class WebCampTrainingKitQuestion
+    internal class WebCampTrainingKitQuestion
     {
         public List<WebCampTrainingKitAnswer> Answers { get; set; }
         public Category Category { get; set; }
