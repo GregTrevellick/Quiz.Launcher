@@ -49,23 +49,24 @@
   <ItemGroup>
     <Compile Include="AllGateways.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="DifficultyLevel.cs" />
     <Compile Include="GatewayResponse.cs" />
     <Compile Include="IQuestionsGateway.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuestionsCocktailHeroku.cs" />
-    <Compile Include="QuestionsCocktailHerokuGateway.cs" />
-    <Compile Include="QuestionsCocktailHerokuRootObject.cs" />
-    <Compile Include="QuestionsJeopardy.cs" />
-    <Compile Include="QuestionsMine.cs" />
-    <Compile Include="QuestionsOpenTdb.cs" />
-    <Compile Include="QuestionsOpenTdbGateway.cs" />
-    <Compile Include="QuestionsOpenTdbRootObject.cs" />
-    <Compile Include="QuestionsWebCampTrainingKit.cs" />
+    <Compile Include="CocktailHeroku\QuestionsCocktailHeroku.cs" />
+    <Compile Include="CocktailHeroku\QuestionsCocktailHerokuGateway.cs" />
+    <Compile Include="CocktailHeroku\QuestionsCocktailHerokuRootObject.cs" />
+    <Compile Include="Jeopardy\QuestionsJeopardy.cs" />
+    <Compile Include="Mine\QuestionsMine.cs" />
+    <Compile Include="OpenTdb\QuestionsOpenTdb.cs" />
+    <Compile Include="OpenTdb\QuestionsOpenTdbGateway.cs" />
+    <Compile Include="OpenTdb\QuestionsOpenTdbRootObject.cs" />
+    <Compile Include="WebCampTrainingKit\QuestionsWebCampTrainingKit.cs" />
     <Compile Include="QuestionType.cs" />
     <Compile Include="ResponseDto.cs" />
-    <Compile Include="WebCampTrainingKitAnswer.cs" />
-    <Compile Include="WebCampTrainingKitQuestion.cs" />
+    <Compile Include="WebCampTrainingKit\WebCampTrainingKitAnswer.cs" />
+    <Compile Include="WebCampTrainingKit\WebCampTrainingKitQuestion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
