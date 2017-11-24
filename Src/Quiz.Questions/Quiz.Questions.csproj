@@ -60,6 +60,7 @@
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\DifficultyLevel.cs" />
     <Compile Include="Entities\GatewayResponse.cs" />
+    <Compile Include="Interfaces\IApi.cs" />
     <Compile Include="Interfaces\IGetGatewayResponses.cs" />
     <Compile Include="Interfaces\IQuestionsGateway.cs" />
     <Compile Include="Categories\DotNet\QuestionsMineDotNet.cs" />

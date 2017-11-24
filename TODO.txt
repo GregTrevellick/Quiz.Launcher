@@ -6,6 +6,35 @@ testcases.txt
 
 gregt
 
+BUG can select multiple radio buttons and submit !
+
+
+
+
+
+TEST CASES
+close top right, having selected a radio button, w/o submitting answer & w/submitting an answer
+close bottom left, having selected a radio button, w/o submitting answer & w/submitting an answer
+after submitting an answer, click a radio button - s/be disallowed
+check questions are only for the users chosen categories
+check help hyperlink
+check supply a questions hyperlink
+check all category options are false
+check timeouts
+check remote sites down
+check hidden options are being accurately recorded
+check unit tests are all green
+test pop up trigger for open & close sln
+test pop up for start page
+test pop up frequency midweek & weekends
+test default pop up frequency is once a day
+
+
+
+
+
+
+
 
 
 
@@ -27,3 +56,4 @@ FUTURE if uptake is significant allow user to request a second question, but not
 FUTURE if uptake is significant add option for user to select easy / medium / hard
 FUTURE if uptake is significant play correct / incorrect sound ?
 FUTURE countdown timer ? hard 43-67 secs randomly, medium 28-48, easy 18-33
+

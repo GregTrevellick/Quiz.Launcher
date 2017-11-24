@@ -19,8 +19,9 @@ namespace Quiz.Ui
         public HiddenOptionsDto GetHiddenOptionsDto(QuizHelperDto quizHelperDto)
         {
             //gregt todo get category from options
-            var categoriesFromOptions = Category.DotNet | Category.Geek; 
-            var gatewayResponse = Api.GetGatewayResponse(categoriesFromOptions, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
+            var preferredCategoriesFromOptions = Category.DotNet | Category.Geek; 
+
+            var gatewayResponse = new Api().GetGatewayResponse(preferredCategoriesFromOptions, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
             var quizDialogDto = GetQuizDialogDto(gatewayResponse);
             DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
