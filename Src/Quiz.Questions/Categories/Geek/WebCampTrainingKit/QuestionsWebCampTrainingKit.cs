@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.WebCampTrainingKit
+namespace Quiz.Questions.Categories.Geek.WebCampTrainingKit
 {
     internal class QuestionsWebCampTrainingKit
     {

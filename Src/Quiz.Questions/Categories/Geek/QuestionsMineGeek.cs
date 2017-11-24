@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.Mine
+namespace Quiz.Questions.Categories.Geek
 {
-    internal class QuestionsMine
+    internal class QuestionsMineGeek
     {
         public static IEnumerable<GatewayResponse> GetGatewayResponses()
         {
@@ -31,12 +32,6 @@ namespace Quiz.Questions.Mine
                 Common.Get(Category.Geek, DifficultyLevel.Hard, "You are a genius?",
                     "true",
                     "false"),
-                Common.Get(Category.Geek, DifficultyLevel.Hard, "What was the initial name for Visual Studio?",
-                    "Boston",
-                    "Phoenix",
-                    "Portland",
-                    "Seattle",
-                    "Timbuktu"),
                 Common.Get(Category.Geek, DifficultyLevel.Easy, "What does cdn stand for?",
                     "content delivery network",
                     "content distribution network",

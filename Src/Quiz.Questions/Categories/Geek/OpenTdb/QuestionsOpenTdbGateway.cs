@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
+using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.OpenTdb
+namespace Quiz.Questions.Categories.Geek.OpenTdb
 {
     internal class QuestionsOpenTdbGateway : IQuestionsGateway
     {

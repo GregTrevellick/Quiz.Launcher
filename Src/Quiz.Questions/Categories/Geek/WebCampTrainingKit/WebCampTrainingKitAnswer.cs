@@ -1,4 +1,4 @@
-﻿namespace Quiz.Questions.WebCampTrainingKit
+﻿namespace Quiz.Questions.Categories.Geek.WebCampTrainingKit
 {
     internal class WebCampTrainingKitAnswer
     {

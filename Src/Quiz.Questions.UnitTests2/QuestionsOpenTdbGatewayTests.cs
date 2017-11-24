@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Quiz.Questions.OpenTdb;
+using Quiz.Questions.Categories.Geek.OpenTdb;
+using Quiz.Questions.Entities;
 
 namespace Quiz.Questions.UnitTests
 {

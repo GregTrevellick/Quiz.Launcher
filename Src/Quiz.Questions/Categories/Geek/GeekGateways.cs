@@ -1,18 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using MoreLinq;
-using Quiz.Questions.Jeopardy;
-using Quiz.Questions.Mine;
-using Quiz.Questions.WebCampTrainingKit;
+using Quiz.Questions.Categories.Geek.WebCampTrainingKit;
 
-namespace Quiz.Questions
+namespace Quiz.Questions.Categories.Geek
 {
-    internal class AllGateways
+    internal class GeekGateways
     {
         public GatewayResponse GetGatewayResponse()
         {
             //approx 5-10
-            var gatewayResponsesMine = QuestionsMine.GetGatewayResponses();
+            var gatewayResponsesMine = QuestionsMineGeek.GetGatewayResponses();
 
             //approx 241
             var gatewayResponsesJeopardy = QuestionsJeopardy.GetGatewayResponses();

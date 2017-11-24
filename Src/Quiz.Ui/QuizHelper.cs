@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
+using Quiz.Questions.Entities;
 
 namespace Quiz.Ui
 {

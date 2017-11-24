@@ -1,10 +1,12 @@
-﻿using Quiz.Questions.CocktailHeroku;
-using Quiz.Questions.OpenTdb;
-using RestSharp;
+﻿using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
+using Quiz.Questions.Categories.Geek;
+using Quiz.Questions.Categories.Geek.CocktailHeroku;
+using Quiz.Questions.Categories.Geek.OpenTdb;
+using Quiz.Questions.Entities;
 
 namespace Quiz.Questions
 {
@@ -26,7 +28,7 @@ namespace Quiz.Questions
                     gatewayResponse = questionsOpenTdb.GetGatewayResponse(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
                     break;
                 case 3:
-                    var allGateways = new AllGateways();
+                    var allGateways = new GeekGateways();
                     gatewayResponse = allGateways.GetGatewayResponse();
                     break;
                 case 4:

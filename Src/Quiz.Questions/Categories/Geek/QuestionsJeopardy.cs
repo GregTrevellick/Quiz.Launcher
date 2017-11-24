@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.Jeopardy
+namespace Quiz.Questions.Categories.Geek
 {
     internal class QuestionsJeopardy
     {

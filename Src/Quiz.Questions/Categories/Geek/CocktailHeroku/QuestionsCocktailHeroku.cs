@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quiz.Questions.CocktailHeroku
+namespace Quiz.Questions.Categories.Geek.CocktailHeroku
 {
     internal class QuestionsCocktailHeroku
     {

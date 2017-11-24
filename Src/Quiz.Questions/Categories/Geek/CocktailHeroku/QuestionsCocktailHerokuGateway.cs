@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
+using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.CocktailHeroku
+namespace Quiz.Questions.Categories.Geek.CocktailHeroku
 {
     internal class QuestionsCocktailHerokuGateway : IQuestionsGateway
     {

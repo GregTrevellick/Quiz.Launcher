@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quiz.Questions
+namespace Quiz.Questions.Entities
 {
     [Flags]
     public enum Category

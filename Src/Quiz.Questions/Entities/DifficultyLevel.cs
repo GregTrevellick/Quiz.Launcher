@@ -1,4 +1,4 @@
-﻿namespace Quiz.Questions
+﻿namespace Quiz.Questions.Entities
 {
     public enum DifficultyLevel
     {
