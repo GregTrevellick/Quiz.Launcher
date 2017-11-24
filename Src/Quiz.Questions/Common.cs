@@ -15,6 +15,8 @@ namespace Quiz.Questions
         public static GatewayResponse GetGatewayResponse(Category category, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             //gregt todo leverage category to get relevant questions
+            //var customeProName = ((CustomAttribute)typeof(Category).GetProperty(prop.Name).GetCustomAttributes(false)[0]).Weighting;
+
 
             var random = new Random();
             var remote = random.Next(1, 5);
