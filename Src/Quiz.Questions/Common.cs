@@ -1,48 +1,15 @@
-﻿using RestSharp;
+﻿using Quiz.Questions.Entities;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
-using Quiz.Questions.Categories.Geek;
-using Quiz.Questions.Categories.Geek.CocktailHeroku;
-using Quiz.Questions.Categories.Geek.OpenTdb;
-using Quiz.Questions.Entities;
+using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions
 {
     public class Common
     {
-        public static GatewayResponse GetGatewayResponse(Category category, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
-        {
-            //gregt todo leverage category to get relevant questions
-            //var customeProName = ((CustomAttribute)typeof(Category).GetProperty(prop.Name).GetCustomAttributes(false)[0]).Weighting;
-
-
-            var random = new Random();
-            var remote = random.Next(1, 5);
-            var gatewayResponse = new GatewayResponse();
-
-            switch (remote)
-            {
-                case 1:
-                case 2:
-                    var questionsOpenTdb = new QuestionsOpenTdb();
-                    gatewayResponse = questionsOpenTdb.GetGatewayResponse(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
-                    break;
-                case 3:
-                    var allGateways = new GeekGateways();
-                    gatewayResponse = allGateways.GetGatewayResponse();
-                    break;
-                case 4:
-                case 5:
-                    var questionsOpenCocktail = new QuestionsCocktailHeroku();
-                    gatewayResponse = questionsOpenCocktail.GetGatewayResponse(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
-                    break;
-            }
-
-            return gatewayResponse;
-        }
-
         internal static GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName, string url, IQuestionsGateway questionsGateway)
         {
             var gatewayResponse = new GatewayResponse();

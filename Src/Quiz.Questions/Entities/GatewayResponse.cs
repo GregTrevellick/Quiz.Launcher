@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using Quiz.Questions.Entities;
 
-namespace Quiz.Questions
+namespace Quiz.Questions.Entities
 {
     public class GatewayResponse 
     {

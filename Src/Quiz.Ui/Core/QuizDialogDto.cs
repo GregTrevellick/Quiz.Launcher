@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using Quiz.Questions;
-using Quiz.Questions.Entities;
+﻿using Quiz.Questions.Entities;
+using System.Collections.Generic;
 
 namespace Quiz.Ui.Core
 {

@@ -1,4 +1,4 @@
-﻿namespace Quiz.Questions
+﻿namespace Quiz.Questions.Entities
 {
     internal class ResponseDto
     {

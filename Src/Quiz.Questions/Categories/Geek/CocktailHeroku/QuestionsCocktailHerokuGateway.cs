@@ -2,6 +2,7 @@
 using System.Linq;
 using Newtonsoft.Json;
 using Quiz.Questions.Entities;
+using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions.Categories.Geek.CocktailHeroku
 {

@@ -3,9 +3,9 @@ using Quiz.Questions.Entities;
 
 namespace Quiz.Questions.Categories.Geek
 {
-    internal class QuestionsMineGeek
+    internal class QuestionsMineGeek : IGetGeeks
     {
-        public static IEnumerable<GatewayResponse> GetGatewayResponses()
+        public IEnumerable<GatewayResponse> GetGatewayResponses()
         {
 
             //ddos?
@@ -195,5 +195,6 @@ namespace Quiz.Questions.Categories.Geek
 
             return gatewayResponses;
         }
+
     }
 }

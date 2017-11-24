@@ -3,7 +3,7 @@ using Quiz.Questions.Entities;
 
 namespace Quiz.Questions.Categories.Geek
 {
-    internal class QuestionsJeopardy
+    internal class QuestionsJeopardy: IGetGeeks
     {
         private static GatewayResponse Get(DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2, string wrongAnswer3, string wrongAnswer4 = null)
         {
@@ -11,7 +11,7 @@ namespace Quiz.Questions.Categories.Geek
             return result;
         }
 
-        public static IEnumerable<GatewayResponse> GetGatewayResponses()
+        public IEnumerable<GatewayResponse> GetGatewayResponses()
         {
             var gatewayResponses = new List<GatewayResponse>
             {

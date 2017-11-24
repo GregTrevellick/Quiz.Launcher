@@ -4,10 +4,26 @@ using Quiz.Questions.Entities;
 
 namespace Quiz.Questions.Categories.Geek.WebCampTrainingKit
 {
-    internal class QuestionsWebCampTrainingKit
+    internal class WebCampTrainingKitAnswer
     {
-        public static IEnumerable<GatewayResponse> GetGatewayResponses(IEnumerable<WebCampTrainingKitQuestion> triviaQuestions)
+        public string AnswerText { get; set; }
+        public bool IsCorrect { get; set; }
+    }
+
+    internal class WebCampTrainingKitQuestion
+    {
+        public List<WebCampTrainingKitAnswer> Answers { get; set; }
+        public Category Category = Category.Geek; ////////////{ get; set; }
+        public DifficultyLevel DifficultyLevel { get; set; }
+        public string QuestionText { get; set; }
+    }
+
+    internal class QuestionsWebCampTrainingKit: IGetGeeks
+    {
+        public IEnumerable<GatewayResponse> GetGatewayResponses()
         {
+            IEnumerable<WebCampTrainingKitQuestion> triviaQuestions = GetQuestions();
+
             var gatewayResponses = new List<GatewayResponse>();
 
             foreach (var triviaQuestion in triviaQuestions)
@@ -32,7 +48,7 @@ namespace Quiz.Questions.Categories.Geek.WebCampTrainingKit
         /// https://github.com/Microsoft-Web/DEMO-GeekQuiz-Web-API-backend
         /// </summary>
         /// <returns></returns>
-        public static IEnumerable<WebCampTrainingKitQuestion> GetQuestions()
+        private static IEnumerable<WebCampTrainingKitQuestion> GetQuestions()
         {
             var triviaQuestions = new List<WebCampTrainingKitQuestion>
             {

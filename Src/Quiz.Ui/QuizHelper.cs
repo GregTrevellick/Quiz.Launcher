@@ -1,5 +1,6 @@
 ﻿using MoreLinq;
 using Quiz.Questions;
+using Quiz.Questions.Entities;
 using Quiz.Ui.Core;
 using System;
 using System.Linq;
@@ -7,7 +8,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
-using Quiz.Questions.Entities;
 
 namespace Quiz.Ui
 {
@@ -18,29 +18,9 @@ namespace Quiz.Ui
 
         public HiddenOptionsDto GetHiddenOptionsDto(QuizHelperDto quizHelperDto)
         {
-            //var random = new Random();
-            //var remote = random.Next(1, 5);
-            //var gatewayResponse = new GatewayResponse();
-            //switch (remote)
-            //{
-            //    case 1:
-            //    case 2:
-            //        var questionsOpenTdb = new QuestionsOpenTdb();
-            //        gatewayResponse = questionsOpenTdb.GetGatewayResponse(quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
-            //        break;
-            //    case 3:
-            //        var gatewayResponses = AllGateways.GatewayResponses;
-            //        gatewayResponse = gatewayResponses.RandomSubset(1).Single();
-            //        break;
-            //    case 4:
-            //    case 5:
-            //        var questionsOpenCocktail = new QuestionsCocktailHeroku();
-            //        gatewayResponse = questionsOpenCocktail.GetGatewayResponse(quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
-            //        break;
-            //}
-
             //gregt todo get category from options
-            var gatewayResponse = Common.GetGatewayResponse(Category.Geek, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
+            var categoriesFromOptions = Category.DotNet | Category.Geek; 
+            var gatewayResponse = Api.GetGatewayResponse(categoriesFromOptions, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
             var quizDialogDto = GetQuizDialogDto(gatewayResponse);
             DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,

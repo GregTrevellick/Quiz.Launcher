@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using Quiz.Questions.Entities;
+using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions.Categories.Geek.CocktailHeroku
 {
-    internal class QuestionsCocktailHeroku
+    internal class QuestionsCocktailHeroku : IGetGatewayResponses
     {
-        public GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
+        public IEnumerable<GatewayResponse> GetGatewayResponses(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             var urlEasy = "http://cocktail-trivia-api.herokuapp.com/api/category/science-computers/difficulty/easy/count/1";
             var urlMedium = "http://cocktail-trivia-api.herokuapp.com/api/category/science-computers/difficulty/medium/count/1";
@@ -26,11 +29,10 @@ namespace Quiz.Questions.Categories.Geek.CocktailHeroku
                     url = urlHard;
                     break;
             }
-
             
             var gatewayResponse = Common.GetGatewayResponse(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName, url, new QuestionsCocktailHerokuGateway());
 
-            return gatewayResponse;
+            return new List<GatewayResponse>{gatewayResponse};
         }
     }
 }
