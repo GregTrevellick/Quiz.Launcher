@@ -1,10 +1,8 @@
 ﻿using Quiz.Questions.Entities;
+using Quiz.Questions.Interfaces;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net;
-using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions
 {

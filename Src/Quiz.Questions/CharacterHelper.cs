@@ -2,7 +2,7 @@
 
 namespace Quiz.Questions
 {
-    public class CharacterHelper
+    internal class CharacterHelper
     {
         internal static string UppercaseFirst(string str)
         {

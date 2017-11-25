@@ -35,7 +35,7 @@ namespace Quiz.Questions.Categories.Geek.CocktailHeroku
             return quizQuestion;
         }
 
-        public static QuestionType GetQuestionType(string multipleChoiceCorrectAnswer)
+        internal static QuestionType GetQuestionType(string multipleChoiceCorrectAnswer)
         {
             return multipleChoiceCorrectAnswer?.ToLower() == "true" ||
                    multipleChoiceCorrectAnswer?.ToLower() == "false" 

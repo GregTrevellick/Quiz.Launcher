@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Quiz.Questions
 {
-    public class CategoryHelper
+    internal class CategoryHelper
     {
         private static IDictionary<Category, int> preferredCategoriesFromOptionsDictionary = new Dictionary<Category, int>();
         private static IDictionary<int, Category> weightingDictionary = new Dictionary<int, Category>();
