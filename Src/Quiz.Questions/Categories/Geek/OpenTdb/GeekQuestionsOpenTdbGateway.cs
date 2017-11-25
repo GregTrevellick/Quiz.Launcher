@@ -41,7 +41,7 @@ namespace Quiz.Questions.Categories.Geek.OpenTdb
             return quizQuestion;
         }
 
-        public static QuestionType GetQuestionType(Result firstOfOne)
+        internal static QuestionType GetQuestionType(Result firstOfOne)
         {
             return firstOfOne?.type?.ToLower() == "boolean" ? QuestionType.TrueFalse : QuestionType.MultiChoice;
         }

@@ -4,7 +4,7 @@ using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions.Categories.Geek.OpenTdb
 {
-    internal class GeekQuestionsOpenTdb : IGetQuizQuestions
+    internal class GeekQuestionsOpenTdb : IGetQuizQuestionsExternally
     {
         public IEnumerable<QuizQuestion> GetQuizQuestions(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {

@@ -60,6 +60,7 @@
     <Compile Include="Categories\Geek\GeekGateways.cs" />
     <Compile Include="CharacterHelper.cs" />
     <Compile Include="ErrorHelper.cs" />
+    <Compile Include="Interfaces\IGetQuizQuestions.cs" />
     <Compile Include="QuizQuestionApi.cs" />
     <Compile Include="Categories\Geek\IGeekQuestions.cs" />
     <Compile Include="Common.cs" />
@@ -67,7 +68,7 @@
     <Compile Include="Entities\DifficultyLevel.cs" />
     <Compile Include="Entities\QuizQuestion.cs" />
     <Compile Include="Interfaces\IQuizQuestionApi.cs" />
-    <Compile Include="Interfaces\IGetQuizQuestions.cs" />
+    <Compile Include="Interfaces\IGetQuizQuestionsExternally.cs" />
     <Compile Include="Interfaces\IQuestionsGateway.cs" />
     <Compile Include="Categories\DotNet\DotNetQuestions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

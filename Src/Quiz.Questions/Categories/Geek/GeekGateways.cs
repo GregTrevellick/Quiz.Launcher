@@ -7,7 +7,7 @@ using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions.Categories.Geek
 {
-    internal class GeekGateways : IGetQuizQuestions
+    internal class GeekGateways : IGetQuizQuestionsExternally
     {
         public IEnumerable<QuizQuestion> GetQuizQuestions(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {

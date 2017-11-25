@@ -2,7 +2,7 @@
 using Quiz.Questions.Categories.Geek.OpenTdb;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.UnitTests
+namespace Quiz.Questions.UnitTests2
 {
     [TestClass]
     public class QuestionsOpenTdbGatewayTests

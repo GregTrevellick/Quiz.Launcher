@@ -2,7 +2,7 @@
 using Quiz.Questions.Categories.Geek.CocktailHeroku;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.UnitTests
+namespace Quiz.Questions.UnitTests2
 {
     [TestClass]
     public class QuestionsCocktailHerokuGatewayTests

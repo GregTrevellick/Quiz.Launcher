@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Quiz.Ui.UnitTests
+namespace Quiz.Ui.UnitTests2
 {
     [TestClass]
     public class QuizHelperTests
@@ -19,7 +19,5 @@ namespace Quiz.Ui.UnitTests
         {
             Assert.AreEqual(expected, QuizHelper.GetPercentageSuccess(totalQuestionsAnsweredCorrectly, totalQuestionsAsked));
         }
-
-
     }
 }

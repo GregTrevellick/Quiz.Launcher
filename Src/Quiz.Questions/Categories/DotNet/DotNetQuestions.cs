@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using Quiz.Questions.Entities;
+using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions.Categories.DotNet
 {
-    internal class DotNetQuestions
+    internal class DotNetQuestions : IGetQuizQuestions
     {
-        public static IEnumerable<QuizQuestion> GetQuizQuestions()
+        public IEnumerable<QuizQuestion> GetQuizQuestions()
         {
             var quizQuestions = new List<QuizQuestion>
             {

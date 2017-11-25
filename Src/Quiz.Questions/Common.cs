@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Quiz.Questions
 {
-    public class Common
+    internal class Common
     {
         internal static QuizQuestion GetQuizQuestion(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName, string url, IQuestionsGateway questionsGateway)
         {

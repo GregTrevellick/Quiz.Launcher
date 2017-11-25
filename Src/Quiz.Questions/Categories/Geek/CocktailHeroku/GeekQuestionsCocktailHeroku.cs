@@ -5,7 +5,7 @@ using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions.Categories.Geek.CocktailHeroku
 {
-    internal class GeekQuestionsCocktailHeroku : IGetQuizQuestions
+    internal class GeekQuestionsCocktailHeroku : IGetQuizQuestionsExternally
     {
         public IEnumerable<QuizQuestion> GetQuizQuestions(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
