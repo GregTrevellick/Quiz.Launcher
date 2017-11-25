@@ -88,6 +88,7 @@ namespace Quiz.Questions
             return responseDto;
         }
 
+        #region gregt extract to error helper
         public static void HandleUnexpectedError(Exception ex)//, ResponseDto responseDto) //gregt todo get error into responseDto.ErrorDetails so that it is visible in the ui
         {
             Debug.WriteLine(ex.Message);
@@ -154,7 +155,9 @@ namespace Quiz.Questions
         {
             quizQuestion.ErrorDetails = errorDetails;
         }
+        #endregion
 
+        #region gregt extract to character helper
         internal static string UppercaseFirst(string str)
         {
             if (string.IsNullOrEmpty(str))
@@ -170,7 +173,9 @@ namespace Quiz.Questions
             var result = WebUtility.HtmlDecode(str);
             return result;
         }
+        #endregion
 
+        //gregt move to API class
         public static DifficultyLevel GetDifficultyLevel(string textBlockDifficultyText)
         {
             if (string.IsNullOrWhiteSpace(textBlockDifficultyText))

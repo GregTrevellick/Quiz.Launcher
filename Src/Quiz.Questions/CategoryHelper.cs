@@ -7,6 +7,9 @@ namespace Quiz.Questions
 {
     public class CategoryHelper
     {
+        private static IDictionary<Category, int> preferredCategoriesFromOptionsDictionary = new Dictionary<Category, int>();
+        private static IDictionary<int, Category> weightingDictionary = new Dictionary<int, Category>();
+
         internal static Category GetCategoryToSupply(Category preferredCategoriesFromOptions)
         {
             SetPreferredCategoriesFromOptionsDictionary(preferredCategoriesFromOptions);
@@ -59,9 +62,5 @@ namespace Quiz.Questions
                 weightingDictionary.Add(i, category);
             }
         }
-
-        private static IDictionary<int, Category> weightingDictionary = new Dictionary<int, Category>();
-
-        private static IDictionary<Category, int> preferredCategoriesFromOptionsDictionary = new Dictionary<Category, int>();
     }
 }

@@ -65,7 +65,7 @@
     <Compile Include="Entities\DifficultyLevel.cs" />
     <Compile Include="Entities\QuizQuestion.cs" />
     <Compile Include="Interfaces\IQuizQuestionApi.cs" />
-    <Compile Include="Interfaces\IGetGatewayResponses.cs" />
+    <Compile Include="Interfaces\IGetQuizQuestions.cs" />
     <Compile Include="Interfaces\IQuestionsGateway.cs" />
     <Compile Include="Categories\DotNet\DotNetQuestions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
