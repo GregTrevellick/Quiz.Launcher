@@ -23,7 +23,7 @@ namespace Quiz.Questions.UnitTests
         [DataTestMethod]
         public void GetDifficultyLevelTest(string str, DifficultyLevel expected)
         {
-            Assert.AreEqual(expected, Common.GetDifficultyLevel(str));
+            Assert.AreEqual(expected, new QuizQuestionApi().GetDifficultyLevel(str));
         }
 
         [DataRow("", "")]

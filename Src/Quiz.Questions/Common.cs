@@ -87,21 +87,5 @@ namespace Quiz.Questions
 
             return responseDto;
         }
-
-        //gregt move to API class
-        public static DifficultyLevel GetDifficultyLevel(string textBlockDifficultyText)
-        {
-            if (string.IsNullOrWhiteSpace(textBlockDifficultyText))
-            {
-                return DifficultyLevel.Medium;
-            }
-            else
-            {
-                var str = textBlockDifficultyText.Replace("Difficulty: ", string.Empty);
-                str = CharacterHelper.UppercaseFirst(str.ToLower());
-                Enum.TryParse(str, out DifficultyLevel difficultyLevel);
-                return difficultyLevel;
-            }
-        }
     }
 }

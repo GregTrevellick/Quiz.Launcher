@@ -166,7 +166,7 @@ namespace Quiz.Ui
                 }
             }
 
-            var difficultyLevel = Common.GetDifficultyLevel(TextBlockDifficulty.Text);
+            var difficultyLevel = new QuizQuestionApi().GetDifficultyLevel(TextBlockDifficulty.Text);
 
             ActOnAnswerGiven(response, chosenAnswerNumber, difficultyLevel);
         }

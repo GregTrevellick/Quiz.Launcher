@@ -1,4 +1,5 @@
-﻿using MoreLinq;
+﻿using System;
+using MoreLinq;
 using Quiz.Questions.Categories.Geek;
 using Quiz.Questions.Entities;
 using Quiz.Questions.Interfaces;
@@ -41,5 +42,21 @@ namespace Quiz.Questions
 
             return quizQuestion;
         }
+
+        public DifficultyLevel GetDifficultyLevel(string textBlockDifficultyText)
+        {
+            if (string.IsNullOrWhiteSpace(textBlockDifficultyText))
+            {
+                return DifficultyLevel.Medium;
+            }
+            else
+            {
+                var str = textBlockDifficultyText.Replace("Difficulty: ", string.Empty);
+                str = CharacterHelper.UppercaseFirst(str.ToLower());
+                Enum.TryParse(str, out DifficultyLevel difficultyLevel);
+                return difficultyLevel;
+            }
+        }
+
     }
 }
