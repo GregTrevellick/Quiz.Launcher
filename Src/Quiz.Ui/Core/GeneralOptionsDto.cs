@@ -2,6 +2,11 @@
 {
     public class GeneralOptionsDto : HiddenOptionsDto
     {
+        public bool IncludeQuizCategoryCSharp { get; set; } 
+        public bool IncludeQuizCategoryDotNet { get; set; } 
+        public bool IncludeQuizCategoryGeek { get; set; } 
+        public bool IncludeQuizCategoryJavascript { get; set; } 
+        public bool IncludeQuizCategoryWebDev { get; set; } 
         public int MaximumPopUpsWeekDay { get; set; }
         public int MaximumPopUpsWeekEnd { get; set; }
         public int PopUpIntervalInMins { get; set; }

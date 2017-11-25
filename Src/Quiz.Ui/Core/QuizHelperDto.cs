@@ -1,9 +1,11 @@
 ﻿using System;
+using Quiz.Questions.Entities;
 
 namespace Quiz.Ui.Core
 {
     public class QuizHelperDto
     {
+        public Category Category;
         public DateTime LastPopUpDateTime;
         public string OptionsName;
         public int PopUpCountToday;

@@ -7,6 +7,7 @@ using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using EnvDTE80;
+using Quiz.Questions.Entities;
 
 namespace Quiz.Ui
 {
@@ -90,19 +91,34 @@ namespace Quiz.Ui
                 var quizHelper = new QuizHelper();
                 quizHelper.PersistHiddenOptionsQuizHelperEventHandlerEventHandler += UpdateHiddenOptionsTotals;
 
+                //////////////// Category category;
+                ////////////////if (generalOptionsDto.IncludeQuizCategoryGeek)
+                ////////////////{
+                ////////////////    category |= Category.Geek;                   
+                ////////////////}
+                
+                //gregt unit test this
+                Category category = generalOptionsDto.IncludeQuizCategoryCSharp ? Category.CSharp : Category.Unknown;
+                category |= generalOptionsDto.IncludeQuizCategoryDotNet ? Category.DotNet : Category.Unknown;
+                category |= generalOptionsDto.IncludeQuizCategoryGeek ? Category.Geek : Category.Unknown;
+                category |= generalOptionsDto.IncludeQuizCategoryJavascript ? Category.Javascript : Category.Unknown;
+                category |= generalOptionsDto.IncludeQuizCategoryWebDev ? Category.WebDev : Category.Unknown;
+                category &= ~Category.Unknown;
+
                 var quizHelperDto = new QuizHelperDto
                 {
-                    LastPopUpDateTime=generalOptionsDto.LastPopUpDateTime,
+                    Category = category,
+                    LastPopUpDateTime = generalOptionsDto.LastPopUpDateTime,
                     OptionsName = Vsix.Name,
-                    PopUpCountToday=generalOptionsDto.PopUpCountToday,
-                    PopUpTitle= popUpTitle,
-                    SearchEngine=generalOptionsDto.SearchEngine,
-                    SuppressClosingWithoutSubmitingAnswerWarning=generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning,
-                    TimeOutInMilliSeconds=generalOptionsDto.TimeOutInMilliSeconds,
-                    TotalQuestionsAnsweredCorrectlyEasy=generalOptionsDto.TotalQuestionsAnsweredCorrectlyEasy,
-                    TotalQuestionsAnsweredCorrectlyHard=generalOptionsDto.TotalQuestionsAnsweredCorrectlyHard,
-                    TotalQuestionsAnsweredCorrectlyMedium=generalOptionsDto.TotalQuestionsAnsweredCorrectlyMedium,
-                    TotalQuestionsAsked=generalOptionsDto.TotalQuestionsAsked,
+                    PopUpCountToday = generalOptionsDto.PopUpCountToday,
+                    PopUpTitle = popUpTitle,
+                    SearchEngine = generalOptionsDto.SearchEngine,
+                    SuppressClosingWithoutSubmitingAnswerWarning = generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning,
+                    TimeOutInMilliSeconds = generalOptionsDto.TimeOutInMilliSeconds,
+                    TotalQuestionsAnsweredCorrectlyEasy = generalOptionsDto.TotalQuestionsAnsweredCorrectlyEasy,
+                    TotalQuestionsAnsweredCorrectlyHard = generalOptionsDto.TotalQuestionsAnsweredCorrectlyHard,
+                    TotalQuestionsAnsweredCorrectlyMedium = generalOptionsDto.TotalQuestionsAnsweredCorrectlyMedium,
+                    TotalQuestionsAsked = generalOptionsDto.TotalQuestionsAsked,
                 };
 
                 var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(quizHelperDto);
@@ -139,6 +155,11 @@ namespace Quiz.Ui
 
             return new GeneralOptionsDto
             {
+                IncludeQuizCategoryCSharp = generalOptions.IncludeQuizCategoryCSharp,
+                IncludeQuizCategoryDotNet = generalOptions.IncludeQuizCategoryDotNet,
+                IncludeQuizCategoryGeek = generalOptions.IncludeQuizCategoryGeek,
+                IncludeQuizCategoryJavascript = generalOptions.IncludeQuizCategoryJavascript,
+                IncludeQuizCategoryWebDev = generalOptions.IncludeQuizCategoryWebDev,
                 LastPopUpDateTime = hiddenOptions.LastPopUpDateTime,
                 MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay.GetAsInteger(),
                 MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),

@@ -19,7 +19,7 @@ namespace Quiz.Ui
         public HiddenOptionsDto GetHiddenOptionsDto(QuizHelperDto quizHelperDto)
         {
             //gregt todo get category from options
-            var preferredCategoriesFromOptions = Category.DotNet | Category.Geek; 
+            var preferredCategoriesFromOptions = quizHelperDto.Category;//Category.DotNet | Category.Geek; 
 
             var quizQuestion = new QuizQuestionApi().GetQuizQuestion(preferredCategoriesFromOptions, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
