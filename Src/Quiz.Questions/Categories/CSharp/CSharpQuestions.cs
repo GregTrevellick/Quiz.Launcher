@@ -8,7 +8,7 @@ namespace Quiz.Questions.Categories.CSharp
     {
         public IEnumerable<QuizQuestion> GetQuizQuestions()
         {
-            //very hard question
+            //gregt very hard question
             //category &= ~Category.Unknown   https://stackoverflow.com/questions/4778166/how-to-remove-an-item-for-a-ord-enum
 
             var quizQuestions = new List<QuizQuestion>
