@@ -4,6 +4,8 @@ add points to ui (determine on the fly - 1 x easy + 2 x medium + 3 x hard)
 
 testcases.txt
 
+questions/answers capitalisation
+
 gregt
 
 BUG can select multiple radio buttons and submit !
@@ -28,7 +30,7 @@ test pop up trigger for open & close sln
 test pop up for start page
 test pop up frequency midweek & weekends
 test default pop up frequency is once a day
-
+cannot select > 1 radio button
 
 
 

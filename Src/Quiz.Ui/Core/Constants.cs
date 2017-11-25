@@ -1,9 +1,43 @@
 ﻿using System;
+using Quiz.Questions.Entities;
 
 namespace Quiz.Ui.Core
 {
     public static class Constants
     {
+        public const string DescriptionCSharp = "C#";//Category.CSharp.GetDescription();
+        public const string DescriptionDotNet = ".Net";//Category.DotNet.GetDescription();
+        public const string DescriptionGeek = "Geek";// Category.Geek.GetDescription();
+        public const string DescriptionJavascript = "Javascript";//Category.Javascript.GetDescription();
+        public const string DescriptionWebDev = "WebDev";//Category.WebDev.GetDescription();
+        public const string Questions = " questions";
+        public const string Include = "Include ";
+        public const string IncludeOrOmitQuestionsInThe = "Include or omit questions in the ";
+        public const string CategoryFromQuestions = " category.";
+
+        public const string CategorySubLevelQuizCategories = "Categories";
+
+        public const string IncludeQuizCategoryCSharpOptionDetailedDescription = IncludeOrOmitQuestionsInThe + DescriptionCSharp + CategoryFromQuestions;
+        public const string IncludeQuizCategoryCSharpOptionLabel = Include + DescriptionCSharp + Questions;
+
+        public const string IncludeQuizCategoryDotNetOptionDetailedDescription = IncludeOrOmitQuestionsInThe + DescriptionDotNet + CategoryFromQuestions;
+        public const string IncludeQuizCategoryDotNetOptionLabel = Include + DescriptionDotNet + Questions;
+
+        public const string IncludeQuizCategoryGeekOptionDetailedDescription = IncludeOrOmitQuestionsInThe + DescriptionGeek + CategoryFromQuestions;
+        public const string IncludeQuizCategoryGeekOptionLabel = Include + DescriptionGeek + Questions;
+
+        public const string IncludeQuizCategoryJavascriptOptionDetailedDescription = IncludeOrOmitQuestionsInThe + DescriptionJavascript + CategoryFromQuestions;
+        public const string IncludeQuizCategoryJavascriptOptionLabel = Include + DescriptionJavascript + Questions;
+
+        public const string IncludeQuizCategoryWebDevOptionDetailedDescription = IncludeOrOmitQuestionsInThe + DescriptionWebDev + CategoryFromQuestions;
+        public const string IncludeQuizCategoryWebDevOptionLabel = Include + DescriptionWebDev + Questions;
+
+
+
+        //gregt sort lines
+
+
+
         public const string CategorySubLevelGeneral = "General";
         public const string CategorySubLevelFrequency = "Frequency";
         public const string CategorySubLevelMiscellaneous = "Miscellaneous";
