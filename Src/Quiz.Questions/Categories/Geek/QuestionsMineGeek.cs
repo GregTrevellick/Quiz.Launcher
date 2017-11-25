@@ -9,29 +9,32 @@ namespace Quiz.Questions.Categories.Geek
         {
 
             //ddos?
-            //
-            //
-            //
-            //
+
+            //AAA?
+
+            //IDE?
+
+            //SKU?
+            
+            //Are u a geek?
+            
+            //Questions.xls?
+            
+            //Ecma?
 
             //iife?
-            //
-            //
-            //
-            //
-
-            //which is not podcast
-            //checkin
-            //merge conflict
-            //syntax
-            //request for commit
-            //herding code
 
             var gatewayResponses = new List<GatewayResponse>
             {
                 Common.Get(Category.Geek, DifficultyLevel.Hard, "You are a genius?",
                     "true",
                     "false"),
+                Common.Get(Category.Geek, DifficultyLevel.Easy, "which is not podcast?",
+                    "check in",
+                    "merge conflict",
+                    "syntax",
+                    "request for commit",
+                    "herding code"),
                 Common.Get(Category.Geek, DifficultyLevel.Easy, "What does cdn stand for?",
                     "content delivery network",
                     "content distribution network",

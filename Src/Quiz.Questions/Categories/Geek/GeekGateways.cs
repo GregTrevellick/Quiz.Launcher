@@ -1,5 +1,4 @@
-﻿using Quiz.Questions.Categories.Geek.WebCampTrainingKit;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Quiz.Questions.Categories.Geek.CocktailHeroku;
 using Quiz.Questions.Categories.Geek.OpenTdb;

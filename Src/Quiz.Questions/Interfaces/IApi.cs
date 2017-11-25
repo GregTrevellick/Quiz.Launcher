@@ -1,6 +1,6 @@
 ﻿using Quiz.Questions.Entities;
 
-namespace Quiz.Questions
+namespace Quiz.Questions.Interfaces
 {
     public interface IApi
     {

@@ -1,564 +1,245 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Quiz.Questions.Entities;
+﻿using Quiz.Questions.Entities;
+using System.Collections.Generic;
 
-namespace Quiz.Questions.Categories.Geek.WebCampTrainingKit
+namespace Quiz.Questions.Categories.Geek
 {
-    internal class WebCampTrainingKitAnswer
-    {
-        public string AnswerText { get; set; }
-        public bool IsCorrect { get; set; }
-    }
-
-    internal class WebCampTrainingKitQuestion
-    {
-        public List<WebCampTrainingKitAnswer> Answers { get; set; }
-        public Category Category = Category.Geek; ////////////{ get; set; }
-        public DifficultyLevel DifficultyLevel { get; set; }
-        public string QuestionText { get; set; }
-    }
-
-    internal class QuestionsWebCampTrainingKit: IGetGeeks
+    internal class QuestionsWebCampTrainingKit : IGetGeeks
     {
         public IEnumerable<GatewayResponse> GetGatewayResponses()
         {
-            IEnumerable<WebCampTrainingKitQuestion> triviaQuestions = GetQuestions();
-
-            var gatewayResponses = new List<GatewayResponse>();
-
-            foreach (var triviaQuestion in triviaQuestions)
+            var gatewayResponses = new List<GatewayResponse>
             {
-                var localTriviaQuestion = new GatewayResponse
-                {
-                    Category = triviaQuestion.Category,
-                    DifficultyLevel = triviaQuestion.DifficultyLevel,
-                    MultipleChoiceAnswers = triviaQuestion.Answers.Select(x => x.AnswerText),
-                    MultipleChoiceCorrectAnswer = triviaQuestion.Answers.Where(x => x.IsCorrect).Select(x => x.AnswerText).Single(),
-                    Question = triviaQuestion.QuestionText,
-                    QuestionType = QuestionType.MultiChoice
-                };
-
-                gatewayResponses.Add(localTriviaQuestion);
-            }
-
-            return gatewayResponses;
-        }
-
-        /// <summary>
-        /// https://github.com/Microsoft-Web/DEMO-GeekQuiz-Web-API-backend
-        /// </summary>
-        /// <returns></returns>
-        private static IEnumerable<WebCampTrainingKitQuestion> GetQuestions()
-        {
-            var triviaQuestions = new List<WebCampTrainingKitQuestion>
-            {
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "When was .NET first released?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "2000", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "2001", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "2002", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "2003", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "What fictional company did Nancy Davolio work for?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "Contoso Ltd.", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Initech", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Fabrikam, Inc.", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Northwind Traders", IsCorrect = true}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "The first / oldest domain name on the internet is:",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "Network.com", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Alpha4.com", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Symbolics.com", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "InterConnect.com", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "Which is not actually a Thing.js?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "Mustache.js", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Hammer.js", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Horseradish.js", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Uglify.js", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "In what year was the first Voice Over IP (VOIP) call made?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "1973", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "1982", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "1991", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "1994", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "\"Chicago\" was codename for what Microsoft product?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "Visual Basic", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Microsoft Surface", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Windows 95", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Xbox", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "How many loop constructs are there in C#?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "2", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "3", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "4", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "5", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "What was the first CodePlex.com project?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "EntLib", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "IronPython", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Ajax Toolkit", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "JSON.Net", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "Last name of the employee who wears Microsoft badge 00001",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "McDonald", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Gates", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Ballmer", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Allen", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "When did Scott Hanselman join Microsoft?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "2007", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "2000", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "2005", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "2009", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "How big is a nibble?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "4 bits", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "8 bits", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "16 bits", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "2 bits", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "How many function calls did Windows 1.0 approximately have?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "100", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "200", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "600", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "400", IsCorrect = true}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Easy,
-                    QuestionText = "What is the image name for the Windows Task Manager application?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "taskmgr", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "tmanager", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "wtaskmgr", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "wintaskm", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "When was the internet opened to commercial use?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "1989", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "1992", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "1990", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "1991", IsCorrect = true}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "When was the Xbox unveiled?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "2000", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "2001", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "2002", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "2003", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "What is the value of an Object + Array in JavaScript?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "0", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Array", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Object", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Type Error", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "Why was the IBM PCjr despised by users?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "Chicklet keyboard", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "No Hard Disk", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Not PC compatible", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "All the above", IsCorrect = true}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "What was the max memory supported by MS-DOS?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "256K", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "512K", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "640K", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "1M", IsCorrect = true}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Easy,
-                    QuestionText = "When was the first laser mouse released?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "2001", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "2002", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "2003", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "2004", IsCorrect = true}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "What was Microsoft's first product?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "DOS", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Altair Basic", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "PC Basic", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Windows", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "What building does not exist on the Microsoft campus?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "1", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "7", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "99", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "115", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel. Hard,
-                    QuestionText = "Who wrote the first computer program?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "Charles Babbage", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Herman Hollerith", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Ada Lovelace", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Jakob Bernoulli", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "Visual Basic was first released in what year?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "1990", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "1991", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "1992", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "1993", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "Which of the following is NOT a prime number?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "257", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "379", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "571", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "697", IsCorrect = true}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "Yukihiro Matsumoto conceived what programming language on February 24, 1993?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "Python", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Ruby", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Perl", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Boo", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "Which release of the .NET Framework introduced support for dynamic languages?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "1.1", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "2.0", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "3.5", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "4.0", IsCorrect = true}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Easy,
-                    QuestionText = "What is the package manager for Node.js?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "npm", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "yum", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "rpm", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "PEAR", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Easy,
-                    QuestionText = "In the acronym PaaS, what do the P stand for",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "Programming", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Power", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Platform", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Pedestrian", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "What is the speed of light in metres per second?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "299,792,458", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "312,123,156", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "100,000,000", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "541,123,102", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "What was the original name of the C# programming language?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "Boo", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "C+++", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Cool", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Anders", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "Which of the following is an example of Boxing in C#?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "int foo = 12;", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "System.Box(56);", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "int foo = (int)bar;", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "object bar = 42;", IsCorrect = true}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "Which of the following was not an alternative name considered for XML?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "MAGMA", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "SGML", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "SLIM", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "MGML", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                   DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "How many HTML tags are defined in the original description of the markup language?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "1", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "11", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "18", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "25", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "Which of the following ECMA standards represents the standardization of JavaScript?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "ECMA-123", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "ECMA-262", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "ECMA-301", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "ECMA-431", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "What was the first Web Browser called?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "WorldWideWeb", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Mosaic", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Lynx", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Gopher", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Easy,
-                    QuestionText = "In version control systems, the process of bringing together two sets of changes is called what?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "Branch", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Commit", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Merge", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Share", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "In 1980, Microsoft released there first operating system. What was it called?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "MS-DOS", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Windows", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Xenix", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Altair OS", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "Which ASCII code (in decimal) represents the character B?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "22", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "66", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "97", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "112", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "Which are the first 6 decimal digits of Pi?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "3.14159", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "3.14195", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "3.14132", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "3.14123", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Hard,
-                    QuestionText = "Internet Protocol v4 provides approximately how many addresses?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "1.5 billion", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "4.3 billion", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "55 billion", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "3.4 trillion", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Medium,
-                    QuestionText = "What is Layer 4 of the OSI Model?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "Network Layer", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Transport Layer", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "Session Layer", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "Presentation Layer", IsCorrect = false}
-                    }
-                },
-                new WebCampTrainingKitQuestion
-                {
-                    DifficultyLevel = DifficultyLevel.Easy,
-                    QuestionText = "Which of the following is NOT a value type in the .NET Framework Common Type System?",
-                    Answers = new List<WebCampTrainingKitAnswer>
-                    {
-                        new WebCampTrainingKitAnswer {AnswerText = "System.Integer", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "System.String", IsCorrect = true},
-                        new WebCampTrainingKitAnswer {AnswerText = "System.DateTime", IsCorrect = false},
-                        new WebCampTrainingKitAnswer {AnswerText = "System.Float", IsCorrect = false}
-                    }
-                }
+                Common.Get(Category.Geek, DifficultyLevel.Medium, "When was .NET first released?",
+                    "2002", // IsCorrect = true),
+                    "2000",
+                    "2001",
+                    "2003"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "What fictional company did Nancy Davolio work for?",
+                    "Northwind Traders", //// IsCorrect = true}
+                    "Contoso Ltd.",
+                    "Initech",
+                    "Fabrikam, Inc."),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "The first / oldest domain name on the internet is:",
+                    "Symbolics.com", // IsCorrect = true),
+                    "Network.com",
+                    "Alpha4.com",
+                    "InterConnect.com"),
+                Common.Get(Category.Geek, DifficultyLevel.Medium, "Which is not actually a Thing.js?",
+                    "Horseradish.js", // IsCorrect = true),
+                    "Mustache.js",
+                    "Hammer.js",
+                    "Uglify.js"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard,
+                    "In what year was the first Voice Over IP (VOIP) call made?",
+                    "1973", // IsCorrect = true),
+                    "1982",
+                    "1991",
+                    "1994"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "\"Chicago\" was codename for what Microsoft product?",
+                    "Windows 95", // IsCorrect = true),
+                    "Visual Basic",
+                    "Microsoft Surface",
+                    "Xbox"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "How many loop constructs are there in C#?",
+                    "4", // IsCorrect = true),
+                    "2",
+                    "3",
+                    "5"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "What was the first CodePlex.com project?",
+                    "IronPython", // IsCorrect = true),
+                    "EntLib",
+                    "Ajax Toolkit",
+                    "JSON.Net"),
+                Common.Get(Category.Geek, DifficultyLevel.Medium,
+                    "Last name of the employee who wears Microsoft badge 00001",
+                    "McDonald", // IsCorrect = true),
+                    "Gates",
+                    "Ballmer",
+                    "Allen"),
+                Common.Get(Category.Geek, DifficultyLevel.Medium, "When did Scott Hanselman join Microsoft?",
+                    "2007", // IsCorrect = true),
+                    "2000",
+                    "2005",
+                    "2009"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "How big is a nibble?",
+                    "4 bits", // IsCorrect = true),
+                    "8 bits",
+                    "16 bits",
+                    "2 bits"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard,
+                    "How many function calls did Windows 1.0 approximately have?",
+                    "400", // IsCorrect = true}
+                    "100",
+                    "200",
+                    "600"),
+                Common.Get(Category.Geek, DifficultyLevel.Easy,
+                    "What is the image name for the Windows Task Manager application?",
+                    "taskmgr", // IsCorrect = true),
+                    "tmanager",
+                    "wtaskmgr",
+                    "wintaskm"),
+                Common.Get(Category.Geek, DifficultyLevel.Medium, "When was the internet opened to commercial use?",
+                    "1991", //IsCorrect = true}
+                    "1989",
+                    "1992",
+                    "1990"),
+                Common.Get(Category.Geek, DifficultyLevel.Medium, "When was the Xbox unveiled?",
+                    "2001", // IsCorrect = true),
+                    "2000",
+                    "2002",
+                    "2003"),
+                Common.Get(Category.Geek, DifficultyLevel.Medium,
+                    "What is the value of an Object + Array in JavaScript?",
+                    "0", // IsCorrect = true),
+                    "Array",
+                    "Object",
+                    "Type Error"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "Why was the IBM PCjr despised by users?",
+                    "All the above", //IsCorrect = true}
+                    "Chicklet keyboard",
+                    "No Hard Disk",
+                    "Not PC compatible"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "What was the max memory supported by MS-DOS?",
+                    "1M", // IsCorrect = true}
+                    "256K",
+                    "512K",
+                    "640K"),
+                Common.Get(Category.Geek, DifficultyLevel.Easy, "When was the first laser mouse released?",
+                    "2004", // IsCorrect = true}
+                    "2001",
+                    "2002",
+                    "2003"),
+                Common.Get(Category.Geek, DifficultyLevel.Medium, "What was Microsoft's first product?",
+                    "Altair Basic", // IsCorrect = true),
+                    "DOS",
+                    "PC Basic",
+                    "Windows"),
+                Common.Get(Category.Geek, DifficultyLevel.Medium,
+                    "What building does not exist on the Microsoft campus?",
+                    "7", // IsCorrect = true),
+                    "1",
+                    "99",
+                    "115"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "Who wrote the first computer program?",
+                    "Ada Lovelace", // IsCorrect = true),
+                    "Charles Babbage",
+                    "Herman Hollerith",
+                    "Jakob Bernoulli"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "Visual Basic was first released in what year?",
+                    "1991", // IsCorrect = true),
+                    "1990",
+                    "1992",
+                    "1993"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "Which of the following is NOT a prime number?",
+                    "697", // IsCorrect = true}
+                    "257",
+                    "379",
+                    "571"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard,
+                    "Yukihiro Matsumoto conceived what programming language on February 24, 1993?",
+                    "Ruby", // IsCorrect = true),
+                    "Python",
+                    "Perl",
+                    "Boo"),
+                Common.Get(Category.Geek, DifficultyLevel.Medium,
+                    "Which release of the .NET Framework introduced support for dynamic languages?",
+                    "4.0", // IsCorrect = true}
+                    "1.1",
+                    "2.0",
+                    "3.5"),
+                Common.Get(Category.Geek, DifficultyLevel.Easy, "What is the package manager for Node.js?",
+                    "npm", // IsCorrect = true),
+                    "yum",
+                    "rpm",
+                    "PEAR"),
+                Common.Get(Category.Geek, DifficultyLevel.Easy, "In the acronym PaaS, what do the P stand for",
+                    "Platform", // IsCorrect = true),
+                    "Programming",
+                    "Power",
+                    "Pedestrian"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "What is the speed of light in metres per second?",
+                    "299,792,458", // IsCorrect = true),
+                    "312,123,156",
+                    "100,000,000",
+                    "541,123,102"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard,
+                    "What was the original name of the C# programming language?",
+                    "Cool", // IsCorrect = true),
+                    "Boo",
+                    "C+++",
+                    "Anders"),
+                Common.Get(Category.Geek, DifficultyLevel.Medium,
+                    "Which of the following is an example of Boxing in C#?",
+                    "object bar = 42;", // IsCorrect = true}
+                    "int foo = 12;",
+                    "System.Box(56);",
+                    "int foo = (int)bar;"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard,
+                    "Which of the following was not an alternative name considered for XML?",
+                    "SGML", // IsCorrect = true),
+                    "MAGMA",
+                    "SLIM",
+                    "MGML"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard,
+                    "How many HTML tags are defined in the original description of the markup language?",
+                    "18", // IsCorrect = true),
+                    "1",
+                    "11",
+                    "25"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard,
+                    "Which of the following ECMA standards represents the standardization of JavaScript?",
+                    "ECMA-262", // IsCorrect = true),
+                    "ECMA-123",
+                    "ECMA-301",
+                    "ECMA-431"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "What was the first Web Browser called?",
+                    "WorldWideWeb", // IsCorrect = true),
+                    "Mosaic",
+                    "Lynx",
+                    "Gopher"),
+                Common.Get(Category.Geek, DifficultyLevel.Easy,
+                    "In version control systems, the process of bringing together two sets of changes is called what?",
+                    "Merge", // IsCorrect = true),
+                    "Branch",
+                    "Commit",
+                    "Share"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard,
+                    "In 1980, Microsoft released there first operating system. What was it called?",
+                    "Xenix", // IsCorrect = true),
+                    "MS-DOS",
+                    "Windows",
+                    "Altair OS"),
+                Common.Get(Category.Geek, DifficultyLevel.Medium,
+                    "Which ASCII code (in decimal) represents the character B?",
+                    "66", // IsCorrect = true),
+                    "22",
+                    "97",
+                    "112"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard, "Which are the first 6 decimal digits of Pi?",
+                    "3.14159", // IsCorrect = true),
+                    "3.14195",
+                    "3.14132",
+                    "3.14123"),
+                Common.Get(Category.Geek, DifficultyLevel.Hard,
+                    "Internet Protocol v4 provides approximately how many addresses?",
+                    "4.3 billion", // IsCorrect = true),
+                    "1.5 billion",
+                    "55 billion",
+                    "3.4 trillion"),
+                Common.Get(Category.Geek, DifficultyLevel.Medium, "What is Layer 4 of the OSI Model?",
+                    "Transport Layer", // IsCorrect = true),
+                    "Network Layer",
+                    "Session Layer",
+                    "Presentation Layer"),
+                Common.Get(Category.Geek, DifficultyLevel.Easy,
+                    "Which of the following is NOT a value type in the .NET Framework Common Type System?",
+                    "System.String", // IsCorrect = true),
+                    "System.Integer",
+                    "System.DateTime",
+                    "System.Float")
             };
 
-            return triviaQuestions;
+            return gatewayResponses;
         }
     }
 }
