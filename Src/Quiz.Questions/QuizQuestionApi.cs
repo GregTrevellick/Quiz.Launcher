@@ -58,5 +58,9 @@ namespace Quiz.Questions
             }
         }
 
+        public void HandleUnexpectedError(Exception ex) 
+        {
+            ErrorHelper.HandleUnexpectedError(ex);
+        }
     }
 }

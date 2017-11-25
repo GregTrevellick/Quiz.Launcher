@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quiz.Questions.Entities;
 using RestSharp;
 
-namespace Quiz.Questions.UnitTests
+namespace Quiz.Questions.UnitTests2
 {
     [TestClass]
     public class CommonTests

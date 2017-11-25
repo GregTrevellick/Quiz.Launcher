@@ -1,4 +1,5 @@
-﻿using Quiz.Questions.Entities;
+﻿using System;
+using Quiz.Questions.Entities;
 
 namespace Quiz.Questions.Interfaces
 {
@@ -6,5 +7,6 @@ namespace Quiz.Questions.Interfaces
     {
         QuizQuestion GetQuizQuestion(Category preferredCategoriesFromOptions, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName);
         DifficultyLevel GetDifficultyLevel(string textBlockDifficultyText);
+        void HandleUnexpectedError(Exception ex);
     }
 }

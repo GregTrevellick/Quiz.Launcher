@@ -1,17 +1,13 @@
 ﻿using Quiz.Questions.Entities;
 using RestSharp;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Net;
-using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions
 {
-    public class ErrorHelper
+    internal class ErrorHelper
     {
-        //gregt put into api and make this internal
-        public static void HandleUnexpectedError(Exception ex)//, ResponseDto responseDto) //gregt todo get error into responseDto.ErrorDetails so that it is visible in the ui
+        internal static void HandleUnexpectedError(Exception ex)//, ResponseDto responseDto) //gregt todo get error into responseDto.ErrorDetails so that it is visible in the ui
         {
             Debug.WriteLine(ex.Message);
             //var exceptionTypeName = ex.GetType().Name;
