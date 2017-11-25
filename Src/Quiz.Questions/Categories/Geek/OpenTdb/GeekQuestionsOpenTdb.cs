@@ -10,9 +10,9 @@ namespace Quiz.Questions.Categories.Geek.OpenTdb
         {
             var url = "https://opentdb.com/api.php?amount=1&category=18";
 
-            var gatewayResponse = Common.GetGatewayResponse(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName, url, new GeekQuestionsOpenTdbGateway());
+            var quizQuestion = Common.GetQuizQuestion(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName, url, new GeekQuestionsOpenTdbGateway());
 
-            return new List<QuizQuestion> { gatewayResponse };
+            return new List<QuizQuestion> { quizQuestion };
         }
     }
 }

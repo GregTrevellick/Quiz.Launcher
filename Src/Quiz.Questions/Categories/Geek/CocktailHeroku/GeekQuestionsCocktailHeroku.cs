@@ -30,9 +30,9 @@ namespace Quiz.Questions.Categories.Geek.CocktailHeroku
                     break;
             }
             
-            var gatewayResponse = Common.GetGatewayResponse(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName, url, new GeekQuestionsCocktailHerokuGateway());
+            var quizQuestion = Common.GetQuizQuestion(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName, url, new GeekQuestionsCocktailHerokuGateway());
 
-            return new List<QuizQuestion>{gatewayResponse};
+            return new List<QuizQuestion>{ quizQuestion };
         }
     }
 }

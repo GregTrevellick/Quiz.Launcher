@@ -11,7 +11,7 @@ namespace Quiz.Questions
     {
         public QuizQuestion GetQuizQuestion(Category preferredCategoriesFromOptions, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
-            IEnumerable<QuizQuestion> gatewayResponses = null;
+            IEnumerable<QuizQuestion> quizQuestions = null;
 
             var categoryToSupply = CategoryHelper.GetCategoryToSupply(preferredCategoriesFromOptions);
 
@@ -23,11 +23,11 @@ namespace Quiz.Questions
                     break;
                 case Category.DotNet:
                     var gateways2 = new GeekGateways();
-                    gatewayResponses = gateways2.GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
+                    quizQuestions = gateways2.GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
                     break;
                 case Category.Geek:
                     var gateways = new GeekGateways();
-                    gatewayResponses = gateways.GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
+                    quizQuestions = gateways.GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
                     break;
                 case Category.Javascript:
                     break;
@@ -35,11 +35,11 @@ namespace Quiz.Questions
                     break;
             }
 
-            var result = gatewayResponses.RandomSubset(1).Single();
+            var quizQuestion = quizQuestions.RandomSubset(1).Single();
 
-            result.Category = categoryToSupply;
+            quizQuestion.Category = categoryToSupply;
 
-            return result;
+            return quizQuestion;
         }
     }
 }

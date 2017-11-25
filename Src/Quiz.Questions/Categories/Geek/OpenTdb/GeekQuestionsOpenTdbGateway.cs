@@ -12,11 +12,11 @@ namespace Quiz.Questions.Categories.Geek.OpenTdb
         public QuizQuestion SetQuizQuestionFromRestResponse(string responseContent)
         {
             var rootObject = JsonConvert.DeserializeObject<GeekQuestionsOpenTdbRootObject>(responseContent);
-            var gatewayResponse = GetGatewayResponse(rootObject);
-            return gatewayResponse;
+            var quizQuestion = GetQuizQuestion(rootObject);
+            return quizQuestion;
         }
 
-        private QuizQuestion GetGatewayResponse(GeekQuestionsOpenTdbRootObject rootObject)
+        private QuizQuestion GetQuizQuestion(GeekQuestionsOpenTdbRootObject rootObject)
         {
             var firstOfOne = rootObject.results.First();
 
@@ -28,7 +28,7 @@ namespace Quiz.Questions.Categories.Geek.OpenTdb
             var difficultyLevel = Common.UppercaseFirst(firstOfOne.difficulty);
             Enum.TryParse(difficultyLevel, out DifficultyLevel difficulty);
 
-            var gatewayResponse = new QuizQuestion
+            var quizQuestion = new QuizQuestion
             {
                 Category = Category.Geek,
                 DifficultyLevel = difficulty,
@@ -38,7 +38,7 @@ namespace Quiz.Questions.Categories.Geek.OpenTdb
                 QuestionType = GetQuestionType(firstOfOne)
             };
 
-            return gatewayResponse;
+            return quizQuestion;
         }
 
         public static QuestionType GetQuestionType(Result firstOfOne)

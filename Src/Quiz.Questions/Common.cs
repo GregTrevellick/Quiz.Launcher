@@ -10,9 +10,9 @@ namespace Quiz.Questions
 {
     public class Common
     {
-        internal static QuizQuestion GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName, string url, IQuestionsGateway questionsGateway)
+        internal static QuizQuestion GetQuizQuestion(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName, string url, IQuestionsGateway questionsGateway)
         {
-            var gatewayResponse = new QuizQuestion();
+            var quizQuestion = new QuizQuestion();
 
             if (!string.IsNullOrEmpty(url))
             {
@@ -20,27 +20,27 @@ namespace Quiz.Questions
 
                 if (!string.IsNullOrEmpty(responseDto.ErrorDetails))
                 {
-                    SetGatewayResponseFromErrorDetails(gatewayResponse, responseDto.ErrorDetails);
+                    SetQuizQuestionErrorDetailsFromErrorDetails(quizQuestion, responseDto.ErrorDetails);
                 }
                 else
                 {
                     try
                     {
-                        gatewayResponse = questionsGateway.SetQuizQuestionFromRestResponse(responseDto.ResponseContent);
+                        quizQuestion = questionsGateway.SetQuizQuestionFromRestResponse(responseDto.ResponseContent);
                     }
                     catch (Exception ex)
                     {
                         HandleUnexpectedError(ex, responseDto);
-                        SetGatewayResponseFromErrorDetails(gatewayResponse, responseDto.ErrorDetails);
+                        SetQuizQuestionErrorDetailsFromErrorDetails(quizQuestion, responseDto.ErrorDetails);
                     }
                 }
             }
-            return gatewayResponse;
+            return quizQuestion;
         }
 
         internal static QuizQuestion Get(Category category, DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2 = null, string wrongAnswer3 = null, string wrongAnswer4 = null)
         {
-            var result = new QuizQuestion
+            var quizQuestion = new QuizQuestion
             {
                 Category = category,
                 DifficultyLevel = difficultyLevel,
@@ -57,7 +57,7 @@ namespace Quiz.Questions
                 QuestionType = QuestionType.MultiChoice
             };
 
-            return result;
+            return quizQuestion;
         }
 
         private static ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
@@ -150,9 +150,9 @@ namespace Quiz.Questions
             return errorDetails;
         }
 
-        private static void SetGatewayResponseFromErrorDetails(QuizQuestion gatewayResponse, string errorDetails)
+        private static void SetQuizQuestionErrorDetailsFromErrorDetails(QuizQuestion quizQuestion, string errorDetails)
         {
-            gatewayResponse.ErrorDetails = errorDetails;
+            quizQuestion.ErrorDetails = errorDetails;
         }
 
         internal static string UppercaseFirst(string str)

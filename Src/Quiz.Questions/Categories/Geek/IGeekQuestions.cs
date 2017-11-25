@@ -5,6 +5,6 @@ namespace Quiz.Questions.Categories.Geek
 {
     interface IGeekQuestions
     {
-        IEnumerable<QuizQuestion> GetGatewayResponses();
+        IEnumerable<QuizQuestion> GetQuizQuestions();
     }
 }

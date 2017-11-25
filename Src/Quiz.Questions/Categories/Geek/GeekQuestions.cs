@@ -5,7 +5,7 @@ namespace Quiz.Questions.Categories.Geek
 {
     internal class GeekQuestions : IGeekQuestions
     {
-        public IEnumerable<QuizQuestion> GetGatewayResponses()
+        public IEnumerable<QuizQuestion> GetQuizQuestions()
         {
             //ddos?
 
@@ -23,7 +23,7 @@ namespace Quiz.Questions.Categories.Geek
 
             //iife?
 
-            var gatewayResponses = new List<QuizQuestion>
+            var quizQuestions = new List<QuizQuestion>
             {
                 Common.Get(Category.Geek, DifficultyLevel.Hard, "You are a genius?",
                     "true",
@@ -798,7 +798,7 @@ namespace Quiz.Questions.Categories.Geek
                 //    "Todo3"),
             };
 
-            return gatewayResponses;
+            return quizQuestions;
         }
 
     }

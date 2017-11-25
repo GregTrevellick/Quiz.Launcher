@@ -11,18 +11,18 @@ namespace Quiz.Questions.Categories.Geek.CocktailHeroku
         public QuizQuestion SetQuizQuestionFromRestResponse(string responseContent)
         {
             var rootObject = JsonConvert.DeserializeObject<List<GeekQuestionsCocktailHerokuRootObject>>(responseContent);
-            var gatewayResponse = GetGatewayResponse(rootObject.First());
-            return gatewayResponse;
+            var quizQuestion = GetQuizQuestion(rootObject.First());
+            return quizQuestion;
         }
 
-        private QuizQuestion GetGatewayResponse(GeekQuestionsCocktailHerokuRootObject rootObject)
+        private QuizQuestion GetQuizQuestion(GeekQuestionsCocktailHerokuRootObject rootObject)
         {
             var multipleChoiceCorrectAnswer = rootObject.answers.Single(x => x.correct).text;
             var multipleChoiceAnswers = rootObject.answers.Select(x => x.text);
 
             var question = Common.CharacterHandler(rootObject.text);
 
-            var gatewayResponse = new QuizQuestion
+            var quizQuestion = new QuizQuestion
             {
                 Category = Category.Geek,
                 DifficultyLevel = DifficultyLevel.Medium,
@@ -32,7 +32,7 @@ namespace Quiz.Questions.Categories.Geek.CocktailHeroku
                 QuestionType = GetQuestionType(multipleChoiceCorrectAnswer)
             };
 
-            return gatewayResponse;
+            return quizQuestion;
         }
 
         public static QuestionType GetQuestionType(string multipleChoiceCorrectAnswer)
