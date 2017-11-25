@@ -90,35 +90,11 @@ namespace Quiz.Ui
 
             if (quizDialogDto.QuestionType == QuestionType.TrueFalse)
             {
-                var trueFollowedByFalseAnswers = quizDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();
-                vsixQuizDialog.RadioButton1.Content = trueFollowedByFalseAnswers[0];
-                vsixQuizDialog.RadioButton2.Content = trueFollowedByFalseAnswers[1];
+                RandomlyPopulateUiTrueFalseAnswers(quizDialogDto, vsixQuizDialog);
             }
             else
             {
-                var random = new Random();
-                var randomlySortedAnswers = quizDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray();
-
-                if (randomlySortedAnswers.Length >= 1)
-                {
-                    vsixQuizDialog.RadioButton1.Content = randomlySortedAnswers[0].Trim();
-                }
-                if (randomlySortedAnswers.Length >= 2)
-                {
-                    vsixQuizDialog.RadioButton2.Content = randomlySortedAnswers[1].Trim();
-                }
-                if (randomlySortedAnswers.Length >= 3)
-                {
-                    vsixQuizDialog.RadioButton3.Content = randomlySortedAnswers[2].Trim();
-                }
-                if (randomlySortedAnswers.Length >= 4)
-                {
-                    vsixQuizDialog.RadioButton4.Content = randomlySortedAnswers[3].Trim();
-                }
-                if (randomlySortedAnswers.Length >= 5)
-                {
-                    vsixQuizDialog.RadioButton5.Content = randomlySortedAnswers[4].Trim();
-                }
+                RandomlyPopulateUiMultiChoiceAnswers(quizDialogDto, vsixQuizDialog);
             }
 
             SetRadioButtonVisibility(vsixQuizDialog.RadioButton1);
@@ -151,6 +127,41 @@ namespace Quiz.Ui
 
             window.ResizeMode = ResizeMode.CanResize;
             window.ShowDialog();
+        }
+
+        private static void RandomlyPopulateUiTrueFalseAnswers(QuizDialogDto quizDialogDto, VsixQuizDialog vsixQuizDialog)
+        {
+            var trueFollowedByFalseAnswers = quizDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();
+            vsixQuizDialog.RadioButton1.Content = trueFollowedByFalseAnswers[0];
+            vsixQuizDialog.RadioButton2.Content = trueFollowedByFalseAnswers[1];
+        }
+
+        private static void RandomlyPopulateUiMultiChoiceAnswers(QuizDialogDto quizDialogDto, VsixQuizDialog vsixQuizDialog)
+        {
+            var random = new Random();
+            var randomlySortedAnswers =
+                quizDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray();
+
+            if (randomlySortedAnswers.Length >= 1)
+            {
+                vsixQuizDialog.RadioButton1.Content = randomlySortedAnswers[0].Trim();
+            }
+            if (randomlySortedAnswers.Length >= 2)
+            {
+                vsixQuizDialog.RadioButton2.Content = randomlySortedAnswers[1].Trim();
+            }
+            if (randomlySortedAnswers.Length >= 3)
+            {
+                vsixQuizDialog.RadioButton3.Content = randomlySortedAnswers[2].Trim();
+            }
+            if (randomlySortedAnswers.Length >= 4)
+            {
+                vsixQuizDialog.RadioButton4.Content = randomlySortedAnswers[3].Trim();
+            }
+            if (randomlySortedAnswers.Length >= 5)
+            {
+                vsixQuizDialog.RadioButton5.Content = randomlySortedAnswers[4].Trim();
+            }
         }
 
         private void SetWindowIcon(Window window)
