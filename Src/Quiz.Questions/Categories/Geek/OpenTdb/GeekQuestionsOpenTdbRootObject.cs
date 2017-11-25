@@ -1,6 +1,6 @@
 ﻿namespace Quiz.Questions.Categories.Geek.OpenTdb
 {
-    internal class QuestionsOpenTdbRootObject
+    internal class GeekQuestionsOpenTdbRootObject
     {
         public int response_code { get; set; }
         public Result[] results { get; set; }

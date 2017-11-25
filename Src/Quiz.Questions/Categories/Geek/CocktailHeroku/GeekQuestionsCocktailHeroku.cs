@@ -5,9 +5,9 @@ using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions.Categories.Geek.CocktailHeroku
 {
-    internal class QuestionsCocktailHeroku : IGetGatewayResponses
+    internal class GeekQuestionsCocktailHeroku : IGetQuizQuestions
     {
-        public IEnumerable<GatewayResponse> GetGatewayResponses(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
+        public IEnumerable<QuizQuestion> GetQuizQuestions(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             var urlEasy = "http://cocktail-trivia-api.herokuapp.com/api/category/science-computers/difficulty/easy/count/1";
             var urlMedium = "http://cocktail-trivia-api.herokuapp.com/api/category/science-computers/difficulty/medium/count/1";
@@ -30,9 +30,9 @@ namespace Quiz.Questions.Categories.Geek.CocktailHeroku
                     break;
             }
             
-            var gatewayResponse = Common.GetGatewayResponse(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName, url, new QuestionsCocktailHerokuGateway());
+            var gatewayResponse = Common.GetGatewayResponse(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName, url, new GeekQuestionsCocktailHerokuGateway());
 
-            return new List<GatewayResponse>{gatewayResponse};
+            return new List<QuizQuestion>{gatewayResponse};
         }
     }
 }

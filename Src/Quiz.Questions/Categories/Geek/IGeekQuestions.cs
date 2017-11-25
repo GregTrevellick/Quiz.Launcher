@@ -3,8 +3,8 @@ using Quiz.Questions.Entities;
 
 namespace Quiz.Questions.Categories.Geek
 {
-    interface IGetGeeks
+    interface IGeekQuestions
     {
-        IEnumerable<GatewayResponse> GetGatewayResponses();
+        IEnumerable<QuizQuestion> GetGatewayResponses();
     }
 }

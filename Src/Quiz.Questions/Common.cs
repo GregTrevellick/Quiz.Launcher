@@ -10,9 +10,9 @@ namespace Quiz.Questions
 {
     public class Common
     {
-        internal static GatewayResponse GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName, string url, IQuestionsGateway questionsGateway)
+        internal static QuizQuestion GetGatewayResponse(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName, string url, IQuestionsGateway questionsGateway)
         {
-            var gatewayResponse = new GatewayResponse();
+            var gatewayResponse = new QuizQuestion();
 
             if (!string.IsNullOrEmpty(url))
             {
@@ -26,7 +26,7 @@ namespace Quiz.Questions
                 {
                     try
                     {
-                        gatewayResponse = questionsGateway.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
+                        gatewayResponse = questionsGateway.SetQuizQuestionFromRestResponse(responseDto.ResponseContent);
                     }
                     catch (Exception ex)
                     {
@@ -38,9 +38,9 @@ namespace Quiz.Questions
             return gatewayResponse;
         }
 
-        internal static GatewayResponse Get(Category category, DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2 = null, string wrongAnswer3 = null, string wrongAnswer4 = null)
+        internal static QuizQuestion Get(Category category, DifficultyLevel difficultyLevel, string question, string correctAnswer, string wrongAnswer1, string wrongAnswer2 = null, string wrongAnswer3 = null, string wrongAnswer4 = null)
         {
-            var result = new GatewayResponse
+            var result = new QuizQuestion
             {
                 Category = category,
                 DifficultyLevel = difficultyLevel,
@@ -150,7 +150,7 @@ namespace Quiz.Questions
             return errorDetails;
         }
 
-        private static void SetGatewayResponseFromErrorDetails(GatewayResponse gatewayResponse, string errorDetails)
+        private static void SetGatewayResponseFromErrorDetails(QuizQuestion gatewayResponse, string errorDetails)
         {
             gatewayResponse.ErrorDetails = errorDetails;
         }

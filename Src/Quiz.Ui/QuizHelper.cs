@@ -21,9 +21,9 @@ namespace Quiz.Ui
             //gregt todo get category from options
             var preferredCategoriesFromOptions = Category.DotNet | Category.Geek; 
 
-            var gatewayResponse = new Api().GetGatewayResponse(preferredCategoriesFromOptions, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
+            var quizQuestion = new QuizQuestionApi().GetQuizQuestion(preferredCategoriesFromOptions, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
-            var quizDialogDto = GetQuizDialogDto(gatewayResponse);
+            var quizDialogDto = GetQuizDialogDto(quizQuestion);
             DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
                 quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy, quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAnsweredCorrectlyHard, quizHelperDto.TotalQuestionsAsked, quizHelperDto.SearchEngine);
 
@@ -32,15 +32,15 @@ namespace Quiz.Ui
             return hiddenOptionsDto;
         }
 
-        private static QuizDialogDto GetQuizDialogDto(GatewayResponse gatewayResponse)
+        private static QuizDialogDto GetQuizDialogDto(QuizQuestion quizQuestion)
         {
             var quizDialogDto = new QuizDialogDto
             {
-                MultipleChoiceAnswers = gatewayResponse.MultipleChoiceAnswers,
-                MultipleChoiceCorrectAnswer = gatewayResponse.MultipleChoiceCorrectAnswer,
-                QuestionDifficulty = gatewayResponse.DifficultyLevel,
-                QuestionType = gatewayResponse.QuestionType,
-                QuizQuestion = gatewayResponse.Question,
+                MultipleChoiceAnswers = quizQuestion.MultipleChoiceAnswers,
+                MultipleChoiceCorrectAnswer = quizQuestion.MultipleChoiceCorrectAnswer,
+                QuestionDifficulty = quizQuestion.DifficultyLevel,
+                QuestionType = quizQuestion.QuestionType,
+                QuizQuestion = quizQuestion.Question,
                 PopUpTitle = Vsix.Name,
             };
 

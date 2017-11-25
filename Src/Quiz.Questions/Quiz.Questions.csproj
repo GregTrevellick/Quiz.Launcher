@@ -53,37 +53,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categories\CSharp\CSharpQuestions.cs" />
+    <Compile Include="Categories\Javascript\JavascriptQuestions.cs" />
+    <Compile Include="Categories\WebDev\WebDevQuestions.cs" />
+    <Compile Include="CategoryHelper.cs" />
     <Compile Include="Categories\Geek\GeekGateways.cs" />
-    <Compile Include="Api.cs" />
-    <Compile Include="Categories\Geek\IGetGeeks.cs" />
+    <Compile Include="QuizQuestionApi.cs" />
+    <Compile Include="Categories\Geek\IGeekQuestions.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\DifficultyLevel.cs" />
-    <Compile Include="Entities\GatewayResponse.cs" />
-    <Compile Include="Interfaces\IApi.cs" />
+    <Compile Include="Entities\QuizQuestion.cs" />
+    <Compile Include="Interfaces\IQuizQuestionApi.cs" />
     <Compile Include="Interfaces\IGetGatewayResponses.cs" />
     <Compile Include="Interfaces\IQuestionsGateway.cs" />
-    <Compile Include="Categories\DotNet\QuestionsMineDotNet.cs" />
+    <Compile Include="Categories\DotNet\DotNetQuestions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Categories\Geek\CocktailHeroku\QuestionsCocktailHeroku.cs" />
-    <Compile Include="Categories\Geek\CocktailHeroku\QuestionsCocktailHerokuGateway.cs" />
-    <Compile Include="Categories\Geek\CocktailHeroku\QuestionsCocktailHerokuRootObject.cs" />
-    <Compile Include="Categories\Geek\QuestionsJeopardy.cs" />
-    <Compile Include="Categories\Geek\QuestionsMineGeek.cs" />
-    <Compile Include="Categories\Geek\OpenTdb\QuestionsOpenTdb.cs" />
-    <Compile Include="Categories\Geek\OpenTdb\QuestionsOpenTdbGateway.cs" />
-    <Compile Include="Categories\Geek\OpenTdb\QuestionsOpenTdbRootObject.cs" />
-    <Compile Include="Categories\Geek\QuestionsWebCampTrainingKit.cs" />
+    <Compile Include="Categories\Geek\CocktailHeroku\GeekQuestionsCocktailHeroku.cs" />
+    <Compile Include="Categories\Geek\CocktailHeroku\GeekQuestionsCocktailHerokuGateway.cs" />
+    <Compile Include="Categories\Geek\CocktailHeroku\GeekQuestionsCocktailHerokuRootObject.cs" />
+    <Compile Include="Categories\Geek\GeekQuestions.cs" />
+    <Compile Include="Categories\Geek\OpenTdb\GeekQuestionsOpenTdb.cs" />
+    <Compile Include="Categories\Geek\OpenTdb\GeekQuestionsOpenTdbGateway.cs" />
+    <Compile Include="Categories\Geek\OpenTdb\GeekQuestionsOpenTdbRootObject.cs" />
     <Compile Include="Entities\QuestionType.cs" />
     <Compile Include="Entities\ResponseDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Categories\CSharp\" />
-    <Folder Include="Categories\Javascript\" />
-    <Folder Include="Categories\WebDev\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

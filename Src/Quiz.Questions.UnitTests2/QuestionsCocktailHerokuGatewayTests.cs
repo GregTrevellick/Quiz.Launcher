@@ -20,7 +20,7 @@ namespace Quiz.Questions.UnitTests
         [DataTestMethod]
         public void GetQuestionTypeTest(string multipleChoiceCorrectAnswer, QuestionType expected)
         {
-            Assert.AreEqual(expected, QuestionsCocktailHerokuGateway.GetQuestionType(multipleChoiceCorrectAnswer));
+            Assert.AreEqual(expected, GeekQuestionsCocktailHerokuGateway.GetQuestionType(multipleChoiceCorrectAnswer));
         }
     }
 }

@@ -7,27 +7,20 @@ using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions.Categories.Geek
 {
-    internal class GeekGateways : IGetGatewayResponses
+    internal class GeekGateways : IGetQuizQuestions
     {
-        public IEnumerable<GatewayResponse> GetGatewayResponses(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
+        public IEnumerable<QuizQuestion> GetQuizQuestions(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             //greg weight and do just one of these three
 
-            //remote
-            var gatewayResponses1 = new QuestionsOpenTdb().GetGatewayResponses(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
-            var gatewayResponses2 = new QuestionsCocktailHeroku().GetGatewayResponses(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
+            var gatewayResponses1 = new GeekQuestionsOpenTdb().GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
+            var gatewayResponses2 = new GeekQuestionsCocktailHeroku().GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
+            var gatewayResponses3 = new GeekQuestions().GetGatewayResponses();//approx 75 live, 75 commented out
 
-            //local
-            var gatewayResponsesMine = new QuestionsMineGeek().GetGatewayResponses();//approx 5-10
-            var gatewayResponsesJeopardy =new QuestionsJeopardy().GetGatewayResponses();//approx 241
-            var gatewayResponsesWebCampTrainingKit = new QuestionsWebCampTrainingKit().GetGatewayResponses();//approx 44
-
-            var result = new List<GatewayResponse>();
+            var result = new List<QuizQuestion>();
             result = result.Union(gatewayResponses1).ToList();
             result = result.Union(gatewayResponses2).ToList();
-            result = result.Union(gatewayResponsesMine).ToList();
-            result = result.Union(gatewayResponsesJeopardy).ToList();
-            result = result.Union(gatewayResponsesWebCampTrainingKit).ToList();
+            result = result.Union(gatewayResponses3).ToList();
             return result;
         }
     }

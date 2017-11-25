@@ -7,16 +7,16 @@ using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions.Categories.Geek.OpenTdb
 {
-    internal class QuestionsOpenTdbGateway : IQuestionsGateway
+    internal class GeekQuestionsOpenTdbGateway : IQuestionsGateway
     {
-        public GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
+        public QuizQuestion SetQuizQuestionFromRestResponse(string responseContent)
         {
-            var rootObject = JsonConvert.DeserializeObject<QuestionsOpenTdbRootObject>(responseContent);
+            var rootObject = JsonConvert.DeserializeObject<GeekQuestionsOpenTdbRootObject>(responseContent);
             var gatewayResponse = GetGatewayResponse(rootObject);
             return gatewayResponse;
         }
 
-        private GatewayResponse GetGatewayResponse(QuestionsOpenTdbRootObject rootObject)
+        private QuizQuestion GetGatewayResponse(GeekQuestionsOpenTdbRootObject rootObject)
         {
             var firstOfOne = rootObject.results.First();
 
@@ -28,7 +28,7 @@ namespace Quiz.Questions.Categories.Geek.OpenTdb
             var difficultyLevel = Common.UppercaseFirst(firstOfOne.difficulty);
             Enum.TryParse(difficultyLevel, out DifficultyLevel difficulty);
 
-            var gatewayResponse = new GatewayResponse
+            var gatewayResponse = new QuizQuestion
             {
                 Category = Category.Geek,
                 DifficultyLevel = difficulty,

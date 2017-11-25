@@ -3,8 +3,8 @@ using Quiz.Questions.Entities;
 
 namespace Quiz.Questions.Interfaces
 {
-    public interface IGetGatewayResponses
+    public interface IGetQuizQuestions
     {
-        IEnumerable<GatewayResponse> GetGatewayResponses(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName);
+        IEnumerable<QuizQuestion> GetQuizQuestions(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName);
     }
 }

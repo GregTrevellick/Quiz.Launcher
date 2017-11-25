@@ -6,23 +6,23 @@ using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions.Categories.Geek.CocktailHeroku
 {
-    internal class QuestionsCocktailHerokuGateway : IQuestionsGateway
+    internal class GeekQuestionsCocktailHerokuGateway : IQuestionsGateway
     {
-        public GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
+        public QuizQuestion SetQuizQuestionFromRestResponse(string responseContent)
         {
-            var rootObject = JsonConvert.DeserializeObject<List<QuestionsCocktailHerokuRootObject>>(responseContent);
+            var rootObject = JsonConvert.DeserializeObject<List<GeekQuestionsCocktailHerokuRootObject>>(responseContent);
             var gatewayResponse = GetGatewayResponse(rootObject.First());
             return gatewayResponse;
         }
 
-        private GatewayResponse GetGatewayResponse(QuestionsCocktailHerokuRootObject rootObject)
+        private QuizQuestion GetGatewayResponse(GeekQuestionsCocktailHerokuRootObject rootObject)
         {
             var multipleChoiceCorrectAnswer = rootObject.answers.Single(x => x.correct).text;
             var multipleChoiceAnswers = rootObject.answers.Select(x => x.text);
 
             var question = Common.CharacterHandler(rootObject.text);
 
-            var gatewayResponse = new GatewayResponse
+            var gatewayResponse = new QuizQuestion
             {
                 Category = Category.Geek,
                 DifficultyLevel = DifficultyLevel.Medium,

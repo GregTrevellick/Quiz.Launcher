@@ -2,7 +2,7 @@
 
 namespace Quiz.Questions.Entities
 {
-    public class GatewayResponse 
+    public class QuizQuestion 
     {
         public Category Category { get; set; }
         public DifficultyLevel DifficultyLevel { get; set; }
