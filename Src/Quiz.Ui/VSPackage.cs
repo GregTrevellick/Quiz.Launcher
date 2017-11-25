@@ -7,6 +7,7 @@ using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using EnvDTE80;
+using Quiz.Questions;
 using Quiz.Questions.Entities;
 
 namespace Quiz.Ui
@@ -95,11 +96,11 @@ namespace Quiz.Ui
 
                 var quizHelperDto = new QuizHelperDto
                 {
-                    PreferredCategoriesFromOptions = preferredCategoriesFromOptions,
                     LastPopUpDateTime = generalOptionsDto.LastPopUpDateTime,
                     OptionsName = Vsix.Name,
                     PopUpCountToday = generalOptionsDto.PopUpCountToday,
                     PopUpTitle = popUpTitle,
+                    PreferredCategoriesFromOptions = preferredCategoriesFromOptions,
                     SearchEngine = generalOptionsDto.SearchEngine,
                     SuppressClosingWithoutSubmitingAnswerWarning = generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning,
                     TimeOutInMilliSeconds = generalOptionsDto.TimeOutInMilliSeconds,
@@ -109,7 +110,7 @@ namespace Quiz.Ui
                     TotalQuestionsAsked = generalOptionsDto.TotalQuestionsAsked,
                 };
 
-                var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(quizHelperDto);
+                var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(quizHelperDto, new QuizQuestionApi());
 
                 if (hiddenOptionsDto != null)
                 {

@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
+using Quiz.Questions.Interfaces;
 
 namespace Quiz.Ui
 {
@@ -16,11 +17,11 @@ namespace Quiz.Ui
         public delegate void QuizHelperEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard);
         public event QuizHelperEventHandler PersistHiddenOptionsQuizHelperEventHandlerEventHandler;
 
-        public HiddenOptionsDto GetHiddenOptionsDto(QuizHelperDto quizHelperDto)
+        public HiddenOptionsDto GetHiddenOptionsDto(QuizHelperDto quizHelperDto, IQuizQuestionApi quizQuestionApi)
         {
             var preferredCategoriesFromOptions = quizHelperDto.PreferredCategoriesFromOptions;//e.g. Category.DotNet | Category.Geek; 
 
-            var quizQuestion = new QuizQuestionApi().GetQuizQuestion(preferredCategoriesFromOptions, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
+            var quizQuestion = quizQuestionApi.GetQuizQuestion(preferredCategoriesFromOptions, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
             var quizDialogDto = GetQuizDialogDto(quizQuestion);
             DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
