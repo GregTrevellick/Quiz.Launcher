@@ -58,6 +58,8 @@
     <Compile Include="Categories\WebDev\WebDevQuestions.cs" />
     <Compile Include="CategoryHelper.cs" />
     <Compile Include="Categories\Geek\GeekGateways.cs" />
+    <Compile Include="CharacterHelper.cs" />
+    <Compile Include="ErrorHelper.cs" />
     <Compile Include="QuizQuestionApi.cs" />
     <Compile Include="Categories\Geek\IGeekQuestions.cs" />
     <Compile Include="Common.cs" />

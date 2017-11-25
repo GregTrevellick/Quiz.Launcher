@@ -236,7 +236,7 @@ namespace Quiz.Ui
                     }
                     break;
                 default:
-                    Common.HandleUnexpectedError(new ArgumentOutOfRangeException($"Method={nameof(IncrementTotal)} {nameof(difficultyLevel)}={difficultyLevel}"));
+                    ErrorHelper.HandleUnexpectedError(new ArgumentOutOfRangeException($"Method={nameof(IncrementTotal)} {nameof(difficultyLevel)}={difficultyLevel}"));
                     break;
             }
         }
@@ -261,7 +261,7 @@ namespace Quiz.Ui
                     QuizReplyEmoticonIncorrect5.Visibility = Visibility.Visible;
                     break;
                 default:
-                    Common.HandleUnexpectedError(new ArgumentOutOfRangeException($"Method={nameof(ShowRedCross)} {nameof(chosenAnswerNumber)}={chosenAnswerNumber}"));
+                    ErrorHelper.HandleUnexpectedError(new ArgumentOutOfRangeException($"Method={nameof(ShowRedCross)} {nameof(chosenAnswerNumber)}={chosenAnswerNumber}"));
                     break;
             }
         }
@@ -286,7 +286,7 @@ namespace Quiz.Ui
                     QuizReplyEmoticonCorrect5.Visibility = Visibility.Visible;
                     break;
                 default:
-                    Common.HandleUnexpectedError(new ArgumentOutOfRangeException($"Method={nameof(ShowGreenTick)} {nameof(chosenAnswerNumber)}={chosenAnswerNumber}"));
+                    ErrorHelper.HandleUnexpectedError(new ArgumentOutOfRangeException($"Method={nameof(ShowGreenTick)} {nameof(chosenAnswerNumber)}={chosenAnswerNumber}"));
                     break;
             }
         }

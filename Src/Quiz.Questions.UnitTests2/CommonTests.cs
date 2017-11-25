@@ -37,20 +37,20 @@ namespace Quiz.Questions.UnitTests
         [DataTestMethod]
         public void UppercaseFirstTest(string str, string expected)
         {
-            Assert.AreEqual(expected, Common.UppercaseFirst(str));
+            Assert.AreEqual(expected, CharacterHelper.UppercaseFirst(str));
         }
 
         [TestMethod]
         public void HasErrorOccuredTest1()
         {
-            Assert.IsTrue(Common.HasErrorOccured(null));
+            Assert.IsTrue(ErrorHelper.HasErrorOccured(null));
         }
 
         [TestMethod]
         public void HasErrorOccuredTest2()
         {
             IRestResponse response = new RestResponse();
-            Assert.IsFalse(Common.HasErrorOccured(response));
+            Assert.IsFalse(ErrorHelper.HasErrorOccured(response));
         }
 
         [TestMethod]
@@ -60,7 +60,7 @@ namespace Quiz.Questions.UnitTests
             {
                 ErrorMessage = "abc"
             };
-            Assert.IsTrue(Common.HasErrorOccured(response));
+            Assert.IsTrue(ErrorHelper.HasErrorOccured(response));
         }
 
         [TestMethod]
@@ -70,7 +70,7 @@ namespace Quiz.Questions.UnitTests
             {
                 ErrorException = new Exception()
             };
-            Assert.IsTrue(Common.HasErrorOccured(response));
+            Assert.IsTrue(ErrorHelper.HasErrorOccured(response));
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Quiz.Questions.Categories.Geek.CocktailHeroku
             var multipleChoiceCorrectAnswer = rootObject.answers.Single(x => x.correct).text;
             var multipleChoiceAnswers = rootObject.answers.Select(x => x.text);
 
-            var question = Common.CharacterHandler(rootObject.text);
+            var question = CharacterHelper.CharacterHandler(rootObject.text);
 
             var quizQuestion = new QuizQuestion
             {
