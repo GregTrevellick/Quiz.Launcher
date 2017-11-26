@@ -2,10 +2,10 @@
 using Quiz.Questions.Categories.Geek.OpenTdb;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.UnitTests2
+namespace Quiz.Questions.UnitTests
 {
     [TestClass]
-    public class QuestionsOpenTdbGatewayTests
+    public class GeekQuestionsOpenTdbGatewayTests
     {
         [TestMethod]
         public void GetQuestionTypeTest()

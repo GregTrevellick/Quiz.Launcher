@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Quiz.Ui.UnitTests2
+namespace Quiz.Ui.UnitTests
 {
     [TestClass]
     public class QuizHelperTests
