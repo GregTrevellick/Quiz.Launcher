@@ -1,4 +1,6 @@
-﻿namespace Quiz.Ui.Core
+﻿using Quiz.Questions.Entities;
+
+namespace Quiz.Ui.Core
 {
     public class GeneralOptionsDto : HiddenOptionsDto
     {
@@ -16,5 +18,23 @@
         public bool ShowQuizUponOpeningSolution { get; set; }
         public bool SuppressClosingWithoutSubmitingAnswerWarning { get; set; }
         public int TimeOutInMilliSeconds { get; set; }
+
+        internal Category PreferredCategoriesFromOptions//gregt unit test this. 
+        {
+            get
+            {
+                Category preferredCategoriesFromOptions = 0;
+
+                preferredCategoriesFromOptions |= IncludeQuizCategoryCSharp ? Category.CSharp : Category.Unknown;
+                preferredCategoriesFromOptions |= IncludeQuizCategoryDotNet ? Category.DotNet : Category.Unknown;
+                preferredCategoriesFromOptions |= IncludeQuizCategoryGeek ? Category.Geek : Category.Unknown;
+                preferredCategoriesFromOptions |= IncludeQuizCategoryJavascript ? Category.Javascript : Category.Unknown;
+                preferredCategoriesFromOptions |= IncludeQuizCategoryWebDev ? Category.WebDev : Category.Unknown;
+
+                preferredCategoriesFromOptions &= ~Category.Unknown;
+
+                return preferredCategoriesFromOptions;
+            }
+        }
     }
 }

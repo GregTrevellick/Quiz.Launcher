@@ -92,15 +92,13 @@ namespace Quiz.Ui
                 var quizHelper = new QuizHelper();
                 quizHelper.PersistHiddenOptionsQuizHelperEventHandlerEventHandler += UpdateHiddenOptionsTotals;
                 
-                var preferredCategoriesFromOptions = GetPreferredCategoriesFromOptions();
-
                 var quizHelperDto = new QuizHelperDto
                 {
                     LastPopUpDateTime = generalOptionsDto.LastPopUpDateTime,
                     OptionsName = Vsix.Name,
                     PopUpCountToday = generalOptionsDto.PopUpCountToday,
                     PopUpTitle = popUpTitle,
-                    PreferredCategoriesFromOptions = preferredCategoriesFromOptions,
+                    PreferredCategoriesFromOptions = generalOptionsDto.PreferredCategoriesFromOptions,
                     SearchEngine = generalOptionsDto.SearchEngine,
                     SuppressClosingWithoutSubmitingAnswerWarning = generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning,
                     TimeOutInMilliSeconds = generalOptionsDto.TimeOutInMilliSeconds,
@@ -117,21 +115,6 @@ namespace Quiz.Ui
                     UpdateHiddenOptions(hiddenOptionsDto);
                 }
             }
-        }
-
-        private Category GetPreferredCategoriesFromOptions()//gregt unit test this. //gregt refactor to be a property of GeneralOptionsDto ?
-        {
-            Category preferredCategoriesFromOptions = 0;
-
-            preferredCategoriesFromOptions |= generalOptionsDto.IncludeQuizCategoryCSharp ? Category.CSharp : Category.Unknown;
-            preferredCategoriesFromOptions |= generalOptionsDto.IncludeQuizCategoryDotNet ? Category.DotNet : Category.Unknown;
-            preferredCategoriesFromOptions |= generalOptionsDto.IncludeQuizCategoryGeek ? Category.Geek : Category.Unknown;
-            preferredCategoriesFromOptions |= generalOptionsDto.IncludeQuizCategoryJavascript ? Category.Javascript : Category.Unknown;
-            preferredCategoriesFromOptions |= generalOptionsDto.IncludeQuizCategoryWebDev ? Category.WebDev : Category.Unknown;
-
-            preferredCategoriesFromOptions &= ~Category.Unknown;
-
-            return preferredCategoriesFromOptions;
         }
 
         private void UpdateHiddenOptionsTotals(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard)

@@ -6,20 +6,23 @@ namespace Quiz.Questions.Categories.CSharp
 {
     internal class CSharpQuestions : IGetQuizQuestions
     {
+        private const Category Category = Entities.Category.CSharp;
+
         public IEnumerable<QuizQuestion> GetQuizQuestions()
         {
-            //gregt very hard question
-            //category &= ~Category.Unknown   https://stackoverflow.com/questions/4778166/how-to-remove-an-item-for-a-ord-enum
-
             var quizQuestions = new List<QuizQuestion>
             {
-                Common.Get(Category.Geek, DifficultyLevel.Hard,
+                Common.Get(Category, DifficultyLevel.Hard,
+                    "The following valid C# code:   var weekDays &= ~WeekDays.Sunday   ?",
+                    "true",
+                    "false"),
+                Common.Get(Category, DifficultyLevel.Hard,
                     "What was the original name of the C# programming language?",
                     "Cool",
                     "Boo",
                     "C+++",
                     "Anders"),
-                Common.Get(Category.Geek, DifficultyLevel.Medium,
+                Common.Get(Category, DifficultyLevel.Medium,
                     "Which of the following is an example of Boxing in C#?",
                     "object bar = 42;",
                     "int foo = 12;",

@@ -49,12 +49,13 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ErrorHelperTests.cs" />
     <Compile Include="QuizQuestionApiTests.cs" />
     <Compile Include="CharacterHelperTests.cs" />
-    <Compile Include="CommonTests.cs" />
+    <Compile Include="QuizCategoryTests.cs" />
     <Compile Include="GeekQuestionsCocktailHerokuGatewayTests.cs" />
     <Compile Include="GeekQuestionsOpenTdbGateway.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
