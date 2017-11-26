@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneralOptionsDtoTests.cs" />
     <Compile Include="QuizHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,6 +57,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Quiz.Questions\Quiz.Questions.csproj">
+      <Project>{2efcc4d7-8c7b-4e06-b3b4-b041412d1604}</Project>
+      <Name>Quiz.Questions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Quiz.Ui\Quiz.Ui.csproj">
       <Project>{ce2abd86-da2b-432d-b218-f7c222882061}</Project>
       <Name>Quiz.Ui</Name>

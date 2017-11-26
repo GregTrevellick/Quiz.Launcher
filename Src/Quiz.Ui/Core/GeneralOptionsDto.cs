@@ -19,7 +19,7 @@ namespace Quiz.Ui.Core
         public bool SuppressClosingWithoutSubmitingAnswerWarning { get; set; }
         public int TimeOutInMilliSeconds { get; set; }
 
-        internal Category PreferredCategoriesFromOptions//gregt unit test this. 
+        internal Category PreferredCategoriesFromOptions
         {
             get
             {
