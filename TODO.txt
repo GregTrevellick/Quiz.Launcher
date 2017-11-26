@@ -11,7 +11,7 @@ gregt
 BUG can select multiple radio buttons and submit !
 
 
-Why ? 
+Why ?
 Just an ordinary coder, 9-5 job at a firm, not silicon valley, not contractor, not MVP.
 We get so much free stuff - utube videos, channel9 videos, jquery, chart.js, newtonsoft, etc).
 IT career has served me well, so I want to give something back.
