@@ -12,6 +12,12 @@ namespace Quiz.Questions.Categories.DotNet
         {
             var quizQuestions = new List<QuizQuestion>
             {
+                Common.Get(Category, DifficultyLevel.Hard, "Are you a .Netter ?",
+                    "Yes",
+                    "No",
+                    "Don't know",
+                    "Don't care",
+                    "What is .Net ?"),
                 Common.Get(Category, DifficultyLevel.Medium, "When was .NET first released?",
                     "2002",
                     "2000",

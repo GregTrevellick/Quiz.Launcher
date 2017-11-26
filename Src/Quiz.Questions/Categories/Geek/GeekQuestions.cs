@@ -9,29 +9,22 @@ namespace Quiz.Questions.Categories.Geek
 
         public IEnumerable<QuizQuestion> GetQuizQuestions()
         {
-            //gregt
-
             //ddos?
-
             //AAA?
-
             //IDE?
-
             //SKU?
-            
-            //Are u a geek?
-            
-            //Questions.xls?
-            
-            //Ecma?
-
-            //iife?
 
             var quizQuestions = new List<QuizQuestion>
             {
                 Common.Get(Category, DifficultyLevel.Hard, "You are a genius?",
                     "true",
                     "false"),
+                Common.Get(Category, DifficultyLevel.Hard, "Are you a geek?",
+                    "Yes",
+                    "No",
+                    "Don't know",
+                    "Don't care",
+                    "What's a geek ?"),
                 Common.Get(Category, DifficultyLevel.Easy, "which is not podcast?",
                     "check in",
                     "merge conflict",

@@ -10,6 +10,9 @@ namespace Quiz.Questions.Categories.Javascript
 
         public IEnumerable<QuizQuestion> GetQuizQuestions()
         {
+            //Ecma?
+            //iife?
+
             var quizQuestions = new List<QuizQuestion>
             {
                 Common.Get(Category, DifficultyLevel.Medium, "Which is not actually a Thing.js?",
