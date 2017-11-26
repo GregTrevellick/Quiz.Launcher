@@ -7,13 +7,17 @@
 [VisualStudioURL]: https://www.visualstudio.com/
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/search?term=trevellick&target=VS&sortBy=Relevance
 
-# Geek Quiz 
+# Visual Studio Quiz 
 
 [![Licence](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
 [![Build status][AppVeyorProjectBuildStatusBadgeSvg]][AppVeyorProjectUrl]
 [![][VersionNumberBadgeURL]][VSMarketplaceUrl]
 
-Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension, this is a light-hearted and meaningless [Visual Studio][VisualStudioURL] geek quiz extension when opening and/or closing a .Net solution file within the [Visual Studio][VisualStudioURL] IDE .
+An arbitrary [Visual Studio][VisualStudioURL] extension that asks tech-related quiz questions when opening (configurable) the [Visual Studio][VisualStudioURL] IDE.
+
+Not an official training or education tool, and all questions / answers are presented E&OE.
+
+Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension.
 
 This [Visual Studio][VisualStudioURL] extension is officially available at the [Visual Studio Marketplace][VSMarketplaceUrl].
 
@@ -26,6 +30,8 @@ See the [change log](CHANGELOG.md) for release history.
 ## Credits
 
 [Carlos J. Quintero](https://www.mztools.com/articles/2011/MZ2011010.aspx)
+
+[Cocktail Trivia](https://cocktail-trivia-api.herokuapp.com/)
 
 [jService](http://www.jservice.io)
 

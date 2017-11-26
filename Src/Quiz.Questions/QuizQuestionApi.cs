@@ -16,6 +16,8 @@ namespace Quiz.Questions
 
             var categoryToSupply = CategoryHelper.GetCategoryToSupply(preferredCategoriesFromOptions);
 
+            //gregt weight and do just one of these five
+
             switch (categoryToSupply)
             {
                 case Category.Unknown:
@@ -58,7 +60,7 @@ namespace Quiz.Questions
             }
         }
 
-        public void HandleUnexpectedError(Exception ex) 
+        public void HandleUnexpectedError(Exception ex) //gregt return a string for presentation in ui
         {
             ErrorHelper.HandleUnexpectedError(ex);
         }

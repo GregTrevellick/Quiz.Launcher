@@ -11,7 +11,7 @@ namespace Quiz.Questions.Categories.Geek
     {
         public IEnumerable<QuizQuestion> GetQuizQuestions(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
-            //greg weight and do just one of these three
+            //gregt weight and do just one of these three
 
             var quizQuestions1 = new GeekQuestionsOpenTdb().GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
             var quizQuestions2 = new GeekQuestionsCocktailHeroku().GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
