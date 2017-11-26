@@ -494,7 +494,7 @@ namespace Quiz.Questions.Categories.Geek
                     "powerpoint",
                     "visio",
                     "calculator"),
-                gregt decide which questions to use
+              //  gregt decide which questions to use
                 Common.Get(Category, DifficultyLevel.Medium, "Android's 4.1 O.S.  called this?",
                     "Jelly Bean",
                     "Todo1",
