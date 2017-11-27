@@ -18,11 +18,10 @@ IT career has served me well, so I want to give something back.
 No deep or complex questions, designed for quick so as to not interrupt your day. Not for certification or for job interviews, just fun. 
 Bonus: I can learn things I couldn't learn in day job (git, nuget, restsharp, markdown, .net 4.7, chrome extensions (angular, chart.js)).
 
-http://www.naukrieducation.com/100-top-real-time-c-net-multiple-choice-questions-and-answers-pdf/
-http://www.careerride.com/csharp-multiple-choice-questions.aspx
-https://www.scribd.com/mobile/document/342427307/20-Top-CSS-Multiple-Choice-Questions-and-Answers-PDF-Interview-Questions-MCQs-Placement-Papers-Online-Quiz-Questions-for-Interview-Preparation
-https://vbhuggi.jimdo.com/c-net-lectures/
-http://questionsandanswerspdf.com/tag/multiple-choice-questions-in-c-net-with-answers/
+
+//http://www.careerride.com/csharp-multiple-choice-questions.aspx
+//https://vbhuggi.jimdo.com/c-net-lectures/
+//http://questionsandanswerspdf.com/tag/multiple-choice-questions-in-c-net-with-answers/
 https://support.google.com/feedburner/answer/79408
 
 
