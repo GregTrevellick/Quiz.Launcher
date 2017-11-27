@@ -16,11 +16,12 @@ namespace Quiz.Questions
 
             var categoryToSupply = CategoryHelper.GetCategoryToSupply(preferredCategoriesFromOptions);
 
-            //gregt weight and do just one of these five
+            //gregt weight and do just one of these five - weight dynamically based upon size of questions in each collection ?
 
             switch (categoryToSupply)
             {
                 case Category.Unknown:
+                    //gregt error
                     break;
                 case Category.CSharp:
                     break;
@@ -35,6 +36,9 @@ namespace Quiz.Questions
                 case Category.Javascript:
                     break;
                 case Category.WebDev:
+                    break;
+                default:
+                    //gregt error
                     break;
             }
 

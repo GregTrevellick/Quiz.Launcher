@@ -11,11 +11,11 @@ namespace Quiz.Questions.Categories.Geek
     {
         public IEnumerable<QuizQuestion> GetQuizQuestions(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
-            //gregt weight and do just one of these three
+            //gregt weight and do just one of these three === 33% each
 
-            var quizQuestions1 = new GeekQuestionsOpenTdb().GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
-            var quizQuestions2 = new GeekQuestionsCocktailHeroku().GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
-            var quizQuestions3 = new GeekQuestions().GetQuizQuestions();//approx 75 live, 75 commented out
+            var quizQuestions1 = new GeekQuestionsOpenTdb().GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);//guestimate 100
+            var quizQuestions2 = new GeekQuestionsCocktailHeroku().GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);//guestimate 100
+            var quizQuestions3 = new GeekQuestions().GetQuizQuestions();//approx 130
 
             var quizQuestions = new List<QuizQuestion>();
             quizQuestions = quizQuestions.Union(quizQuestions1).ToList();
