@@ -49,8 +49,8 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: A
 
                 //3.SOAP stands for __________.
-                //A.Simple Object Access Program
                 //B.Simple Object Access Protocol
+                //A.Simple Object Access Program
                 //C.Simple Object Application Protocol
                 //D.Simple Object Account Protocol
                 //Ans: B
@@ -63,23 +63,23 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: A
 
                 //5.In C#, a subroutine is called a ________.
+                //C.Method
                 //A.Function
                 //B.Metadata
-                //C.Method
                 //D.Managed code
                 //Ans: C
 
                 //6.All C# applications begin execution by calling the _____ method.
-                //A.Class()
                 //B.Main()
+                //A.Class()
                 //C.Submain()
                 //D.Namespace
                 //Ans: B
 
                 //7.A _______ is an identifier that denotes a storage location
+                //C.Variable
                 //A.Constant
                 //B.Reference type
-                //C.Variable
                 //D.Object
                 //Ans: C
 
@@ -91,23 +91,23 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: A
 
                 //9.Boxing converts a value type on the stack to an ______ on the heap.
+                //D.Object type
                 //A.Bool type
                 //B.Instance type
                 //C.Class type
-                //D.Object type
                 //Ans: D
 
                 //10.The character pair?: is a________________available in C#.
-                //A.Unary operator
                 //B.Ternary operator
+                //A.Unary operator
                 //C.Decision operator
                 //D.Functional operator
                 //Ans: B
 
                 //11.In C#, all binary operators are ______.
+                //C.Left-associative
                 //A.Center-associative
                 //B.Right-associative
-                //C.Left-associative
                 //D.Top-associative
                 //Ans: C
 
@@ -119,31 +119,31 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: A
 
                 //13.A _____ is any valid C# variable ending with a colon.
-                //A.goto
                 //B.Label
+                //A.goto
                 //C.Logical
                 //D.Bitwise
                 //Ans: B
 
                 //14.C# has _______ operator, useful for making two way decisions.
+                //D.Conditional
                 //A.Looping
                 //B.Functional
                 //C.Exponential
-                //D.Conditional
                 //Ans: D
 
                 //15.________causes the loop to continue with the next iteration after skipping any statements in between.
+                //D.Continue
                 //A.Loop
                 //B.Exit
                 //C.Break
-                //D.Continue
                 //Ans: D
 
                 //16.An ____ is a group of contiguous or related data items that share a common name.
+                //D.Array
                 //A.Operator
                 //B.Integer
                 //C.Exponential
-                //D.Array
                 //Ans: D
 
                 //17.Arrays in C# are ______ objects
@@ -154,36 +154,36 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: A
 
                 //18.Multidimensional arrays are sometimes called _______ Arrays.
+                //C.Rectangular
                 //A.Square
                 //B.Triangular
-                //C.Rectangular
                 //D.Cube
                 //Ans: C
 
                 //19.______ parameters are used to pass results back to the calling method.
+                //D.Output
                 //A.Input
                 //B.Reference
                 //C.Value
-                //D.Output
                 //Ans: D
 
                 //20.The formal-parameter-list is always enclosed in _______.
+                //C.Parenthesis
                 //A.Square
                 //B.Semicolon
-                //C.Parenthesis
                 //D.Colon
                 //Ans: C
 
                 //21._______ variables are visible only in the block they are declared.
+                //C.Local
                 //A.System
                 //B.Global
-                //C.Local
                 //D.Console
                 //Ans: C
 
                 //22.C# does not support _____ constructors.
-                //A.parameterized
                 //B.parameter-less
+                //A.parameterized
                 //C.Class
                 //D.Method
                 //Ans: B
@@ -196,9 +196,9 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: A
 
                 //24.Struct’s data members are ____________ by default.
+                //C.Private
                 //A.Protected
                 //B.Public
-                //C.Private
                 //D.Default
                 //Ans: C
 
@@ -217,10 +217,10 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: A
 
                 //27.The C# provides special methods known as _____ methods to provide access to data members.
+                //D.Accessor
                 //A.Loop
                 //B.Functions
                 //C.Methods
-                //D.Accessor
                 //Ans: D
 
                 //28.When an instance method declaration includes the abstract modifier, the method is said to be an ______.
@@ -231,50 +231,50 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: A
 
                 //29.The theory of _____ implies that user can control the access to a class, method, or variable.
-                //A.Data hiding
                 //B.Encapsulation
+                //A.Data hiding
                 //C.Information Hiding
                 //D.Polymorphism
                 //Ans: B
 
                 //30.Inheritance is ______ in nature.
+                //C.Transitive
                 //A.Commutative
                 //B.Associative
-                //C.Transitive
                 //D.Iterative
                 //Ans: C
 
                 //31.The point at which an exception is thrown is called the _______.
+                //D.Throw point
                 //A.Default point
                 //B.Invoking point
                 //C.Calling point
-                //D.Throw point
                 //Ans: D
 
                 //32.In C#, having unreachable code is always an _____.
+                //C.Error
                 //A.Method
                 //B.Function
-                //C.Error
                 //D.Iterative
                 //Ans: C
 
                 //33.C# treats the multiple catch statements like cases in a _____________ statement.
-                //A.If
                 //B.Switch
+                //A.If
                 //C.For
                 //D.While
                 //Ans: B
 
                 //34.C# supports a technique known as________, which allows a method to specify explicitly the name of the interface it is implementing.
+                //C.Explicit Interface Implementation
                 //A.Method Implementaion
                 //B.Implicit Interface Implementation
-                //C.Explicit Interface Implementation
                 //D.Iterative Interface Implementation
                 //Ans: C
 
                 //35.The reason that C# does not support multiple inheritances is because of ______.
-                //A.Method collision
                 //B.Name collision
+                //A.Method collision
                 //C.Function collision
                 //D.Interface collision
                 //Ans: B
@@ -294,17 +294,17 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: A
 
                 //38.The ______ are the Graphical User Interface (GUI) components created for web based interactions..
-                //A.Web forms
                 //B.Window Forms
+                //A.Web forms
                 //C.Application Forms
                 //D.None of the above
                 //Ans: B
 
                 //39.In Microsoft Visual Studio, ______ technology and a programming language such as C# is used to create a Web based application.
+                //D.ASP.NET
                 //A.JAVA
                 //B.J#
                 //C.VB.NET
-                //D.ASP.NET
                 //Ans: D
 
                 //40.The controls available in the tool box of the ______ are used to create the user interface of a web based application.
@@ -315,24 +315,24 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: A
 
                 //41.The infrastructure that supports these dynamic operations at run time is called the__________.
+                //D.DLR
                 //A.CLR
                 //B.CTS
                 //C.CLS
-                //D.DLR
                 //Ans: D
 
                 //42.The___________keyword is new to C# 4.0, and is used to tell the compiler that a variable’s type can change or that it is not known until runtime.
-                //A.Covariance
                 //B.dynamic
+                //A.Covariance
                 //C.Contravariance
                 //D.Object
                 //Ans: B
 
                 //43._______ methods are not supported for dynamic types.
+                //D.Extension
                 //A.Anonymous
                 //B.Static
                 //C.Abstract
-                //D.Extension
                 //Ans: D
 
                 //44.myMobile.Accept(55, inReject: false); Above statement is an example of which new concept of C# 4.0?
@@ -343,15 +343,15 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: A
 
                 //45.COM Interop is simplified in C#4.0 e.g.var doc = Application.GetDocument(“MyFile.txt”); In above statement_______ keyword was essential in parameters of GetDocument() in previous versions of C#.
+                //D.ref
                 //A.out
                 //B.named
                 //C.base
-                //D.ref
                 //Ans: D
 
                 //46.Covariance and Contravariance are new features introduced in C# 4.0.True/False?
-                //A.False
                 //B.True
+                //A.False
                 //Ans: B
 
                 //47._________parameters allows you to give a method parameter a default value so that you do not have to specify it every time you call the method.
@@ -376,21 +376,21 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: A
 
                 //50.The ______ parentheses that follow _____ indicate that no information is passed to Main ().
+                //C.Empty, Main
                 //A.Empty, class
                 //B.Empty, submain
-                //C.Empty, Main
                 //D.Empty, Namespace
                 //Ans: C
 
                 //51.Is it possible to store multiple data types in System.Array?
-                //A.Yes
                 //B.No
+                //A.Yes
                 //Ans: B
 
                 //52.What is the wild card character in the SQL “like” statement?
+                //C. % (Percent)
                 //A.* (Asterisk)
                 //B.# (Pound)
-                //C. % (Percent)
                 //D.$ (Dollar)
                 //Ans:	C
 
@@ -402,17 +402,17 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans:	A
 
                 //54.C# doesnot support:
+                //C.multiple inheritance
                 //A.abstraction
                 //B.polymorphism
-                //C.multiple inheritance
                 //D.inheritance
                 //Ans:	C
 
                 //55.Your company uses Visual Studio.NET 2005 as its application development platform. You are developing an application using the .NET Framework 2.0. You are required to use a datatype that will store only numbers ranging from -32,768 to 32,767. Which of the following datatypes will you use to accomplish the task?
+                //D.a and b
                 //A.short
                 //B.System.Int16
                 //C.string
-                //D.a and b
                 //Ans:	D
 
                 //56.Which of the following jobs are NOT performed by Garbage Collector?
@@ -421,30 +421,30 @@ namespace Quiz.Questions.Categories.CSharp
                 //3.Freeing memory occupied by unreferenced objects.
                 //4.Closing unclosed database collections.
                 //5.Closing unclosed files.
-                //(A) 1, 2, 3
                 //(B) 1, 4, 5
+                //(A) 1, 2, 3
                 //(C) 3, 5
                 //(D) 3, 4
                 //Ans: B
 
                 //57.Which of the following statements is correct about Managed Code?
-                //A.Managed code is the code that runs on top of Windows.
                 //B.Managed code is the code that is written to target the services of the CLR.
+                //A.Managed code is the code that runs on top of Windows.
                 //C.Managed code is the code where resources are Garbage Collected.
                 //D.Managed code is the code that is compiled by the JIT compilers.
                 //Ans:	B
 
                 //58.How does assembly versioning in .NET prevent DLL Hell?
+                //C..NET allows assemblies to specify the name AND the version of any assemblies they need to run.
                 //A.The runtime checks to see that only one version of an assembly is on the machine at any one time.
                 //B.The compiler offers compile time checking for backward compatibility.
-                //C..NET allows assemblies to specify the name AND the version of any assemblies they need to run.
                 //D.It doesn.t.
                 //Ans:	C
 
                 //59.Which of the following is/are not types of arrays in C#?
+                //C.Jazzed arrays
                 //A.Single-Dimensional
                 //B.Multidimensional
-                //C.Jazzed arrays
                 //D.Jagged arrays
                 //Ans:	C
 
@@ -470,17 +470,17 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans:	A
 
                 //63.Features of Read only variables
+                //D.all of the above
                 //A.Declaration and initialization is separated
                 //B.It is allocated at compile time
                 //C.It is allocated at runtime
-                //D.all of the above
                 //Ans:	D
 
                 //64.Different ways a method can be overloaded in C#.NET
+                //D.All of above
                 //A.Different parameter data types
                 //B.Different order of parameters
                 //C.Different number of parameters
-                //D.All of above
                 //Ans:	D
 
                 //65.Is it possible to change the value of a variable while debugging a C# application?
@@ -494,9 +494,9 @@ namespace Quiz.Questions.Categories.CSharp
                 //3.Framework Class Library
                 //4.WinForm Applications
                 //5.Windows Services
+                //(C) 2, 3
                 //(A) 2, 5
                 //(B) 2, 1
-                //(C) 2, 3
                 //(D) 3, 4
                 //Ans: C
 
@@ -527,15 +527,15 @@ namespace Quiz.Questions.Categories.CSharp
                 //}
                 //}
                 //}
+                //C.The program will output: Base Derived
                 //A.The program will report an error in the statement base(ii).
                 //B.The program will work correctly if we replace base(ii) with base.Baseclass(ii).
-                //C.The program will output: Base Derived
                 //D.The program will work correctly only if we implement zero-argument constructors in Baseclass as well as Derived class.
                 //Ans:	C
 
                 //68.Managed methods will be marked as ———— in MSIL code
-                //A.mscorjit
                 //B.cil
+                //A.mscorjit
                 //C.dgclr
                 //D.None
                 //Ans:	B
@@ -548,32 +548,32 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans:	A
 
                 //70.Which of the following .NET components can be used to remove unused references from the managed heap?
-                //A.Class Loader
                 //B.Garbage Collector
+                //A.Class Loader
                 //C.CTS
                 //D.CLR
                 //Ans: B
               
                 //71.A local variable
-                //A.Can be used anywhere in the program
                 //B.Is declared within a method
+                //A.Can be used anywhere in the program
                 //C.Must accept a class
                 //D.Represent a class object
                 //Ans: b
 
                 //72.An instance variable
-                //A.is an object of a class
                 //B.represents an attribute of an object
+                //A.is an object of a class
                 //C.is a method of a class
                 //D.a and c
                 //Ans: b
 
                 //73.Private Button print = new button();
+                //E.a and c
                 //A.creates a button control
                 //B.initializes a button control
                 //C.instantiates button control
                 //D.a and b
-                //E.a and c
                 //Ans: e
 
                 //74.An instance method
@@ -584,54 +584,54 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: a
 
                 //75.A Constructor
+                //E.b and c
                 //A.is used to create objects
                 //B.must have the same name as the class it is declared within
                 //C.is a method of a class
                 //D.maybe overloaded
-                //E.b and c
                 //F.all of the above
                 //Ans: e
 
                 //76.class Test : Form { }
-                //A.Creates the class Test : Form
                 //B.Creates the class Test that inherits the class Form
+                //A.Creates the class Test : Form
                 //C.Creates the class form that inherits the class Test
                 //D.a and b
                 //Ans: b
 
                 //77.A variable declared inside a method is called a________variable
+                //C.Local
                 //A.Static
                 //B.Private
-                //C.Local
                 //D.Serial
                 //E.b and d
                 //Ans: c
 
                 //78.Defining two methods with the same name but with different parameters is called.
-                //A.Loading
                 //B.Overloading
+                //A.Loading
                 //C.Multiplexing
                 //D.Duplexing
                 //Ans: b
 
                 //79.Find any errors in the following BankAccount constructor: Public int BankAccount() { balance = 0; }
+                //C.Return type
                 //A.Name
                 //B.Formal parameters
-                //C.Return type
                 //D.No errors
                 //Ans: c
     
                 //80.In the body of a method, C# uses the variable named_____to refer to the current object whose method is being invoked
-                //A.call
                 //B.this
+                //A.call
                 //C.do
                 //D.that
                 //Ans: b
     
                 //81.String mystring; Creates a(n)
+                //C.Object
                 //A.class
                 //B.Constructor
-                //C.Object
                 //D.a and b
                 //Ans: c
 
@@ -642,8 +642,8 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: a
 
                 //83.A delegate defines
-                //A.a Wahsington representative
                 //B.a class that encapsulates methods
+                //A.a Wahsington representative
                 //C.a means of passing arrays into methods
                 //D.a substitue for an inherited method
                 //Ans: b
@@ -654,43 +654,43 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: a
 
                 //85.All interfaces must contain IDrivable
-                //A.True
                 //B.False
+                //A.True
                 //Ans: b
 
                 //86.What is the proper header for a class that intends to use an interface.
+                //C.class MyClass : IFace
                 //A.class MyClass IFace
                 //B.class MyClass ; IFace
-                //C.class MyClass : IFace
                 //D.class MyCalss { IFace }
                 //E.class MyCalss(IFace)
                 //Ans: c
 
                 //87.In order for a class to use an interface, it must
+                //E.all of the above
                 //A.inherit the properties of the interface
                 //B.contain the same methods as the interface
                 //C.create an interface objects
                 //D.a and b
-                //E.all of the above
                 //Ans: e
 
                 //88.Every class directly or indirectly extends the______class.
-                //A.System
                 //B.Object
+                //A.System
                 //C.Drawing
                 //D.Console
                 //Ans: b
 
                 //89.The concept of composition specifies that you can.
-                //A.Compose good code with C#
                 //B.Compose C# projects with different objects
+                //A.Compose good code with C#
                 //C.Reduce errors by remaining composed during programming
                 //D.all of the above
                 //Ans: b
 
                 //90.Polymorphism occurs when the methods of the child class.
-                //A.Override the parent class methods but maintain the implementation
                 //B.Maintain the same return type and arguments as the parent class, but implement it differently
+                //A.Override the parent class methods but maintain the implementation
                 //C.Have different return types and arguments than the parent class
                 //D.Are Virtual
                 //Ans: b
@@ -703,26 +703,26 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: a
 
                 //92.All methods in an abstract base class must be declared abstract.
-                //A.True
                 //B.False
+                //A.True
                 //Ans: b
 
                 //93.Methods that are declared abstract in the base class must show implementation at the time of declaration.
-                //A.True
                 //B.False
+                //A.True
                 //Ans: b
 
                 //94.The code public class B : A { }
-                //A.Defines a class that inherits all the methods of A
                 //B.Defines a class that inherits the public and protected methods of A only
+                //A.Defines a class that inherits all the methods of A
                 //C.Errors
                 //D.a and b
                 //Ans: b
 
                 //95.Assuming that public class B : A { public B(int i) : base(i) { } }
                 //compiles and runs correctly, what can we conclude about the constructors in the class A?
-                //A.One constructor takes an argument of type i
                 //B.There is only a default constructor
+                //A.One constructor takes an argument of type i
                 //C.One constructor takes an arguments of the type int
                 //D.False
                 //Ans: b
@@ -733,26 +733,26 @@ namespace Quiz.Questions.Categories.CSharp
                 //Ans: a
 
                 //97.A method_____an exception when that method detects that a problem has occured.
+                //C.Throws
                 //A.Trys
                 //B.Catches
-                //C.Throws
                 //D.a and b
                 //Ans: c
 
                 //98.Exception objects are derived from the class.
+                //C.Exception
                 //A.Try
                 //B.Catch
-                //C.Exception
                 //D.Event
                 //E.System
                 //Ans: c
 
                 //99.An abstract class
+                //E.all of the above
                 //A.may contain instance variables
                 //B.may contain constructors
                 //C.may extend another class
                 //D.a and b
-                //E.all of the above
                 //Ans: e
 
                 //100. A____block enclose the code that could throw an exception.
