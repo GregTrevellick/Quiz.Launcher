@@ -9,15 +9,15 @@ namespace Quiz.Questions.Categories.Geek
 
         public IEnumerable<QuizQuestion> GetQuizQuestions()
         {
-            //ansi
-            //ascii
-            //ddos?
-            //AAA?
-            //IDE?
-            //SKU?
-
             var quizQuestions = new List<QuizQuestion>
             {
+                #region mine
+                //ansi
+                //ascii
+                //ddos?
+                //AAA?
+                //IDE?
+                //SKU?
                 Common.Get(Category, DifficultyLevel.Hard, "You are a genius?",
                     "true",
                     "false"),
@@ -50,7 +50,7 @@ namespace Quiz.Questions.Categories.Geek
                     "cross site privacy",
                     "cascading style presentation",
                     "code security policy",
-                    "caught stealing panties"),
+                    "cgregt swearing partying"),
                 Common.Get(Category, DifficultyLevel.Hard, "AMPQ?",
                     "Rabbit",
                     "Cat",
@@ -192,6 +192,8 @@ namespace Quiz.Questions.Categories.Geek
                     "Strings that are formatted from strings and separately listed parametrized values",
                     "Strings that are formatted from strings and embedded parametrized values",
                     "Strings that contain the word 'verbatim'"),
+                #endregion
+                #region jeopardy / web camp training kit
                 Common.Get(Category, DifficultyLevel.Hard, "What fictional company did Nancy Davolio work for?",
                     "Northwind Traders",
                     "Contoso Ltd.",
@@ -494,7 +496,7 @@ namespace Quiz.Questions.Categories.Geek
                     "powerpoint",
                     "visio",
                     "calculator"),
-              //  gregt decide which questions to use
+              //  gregt fill in todo1/2/3 choices
                 Common.Get(Category, DifficultyLevel.Medium, "Android's 4.1 O.S.  called this?",
                     "Jelly Bean",
                     "Todo1",
@@ -705,6 +707,7 @@ namespace Quiz.Questions.Categories.Geek
                     "push and pull",
                     "todo2",
                     "Todo3"),
+                #endregion
             };
 
             return quizQuestions;

@@ -12,10 +12,13 @@ namespace Quiz.Questions.Categories.CSharp
         {
             var quizQuestions = new List<QuizQuestion>
             {
+                #region mine
                 Common.Get(Category, DifficultyLevel.Hard,
                     "The following valid C# code:   var weekDays &= ~WeekDays.Sunday   ?",
                     "true",
                     "false"),
+                #endregion
+                #region web camp training kit
                 Common.Get(Category, DifficultyLevel.Hard,
                     "What was the original name of the C# programming language?",
                     "Cool",
@@ -28,6 +31,7 @@ namespace Quiz.Questions.Categories.CSharp
                     "int foo = 12;",
                     "System.Box(56);",
                     "int foo = (int)bar;"),
+                #endregion
             };
 
             return quizQuestions;

@@ -12,12 +12,15 @@ namespace Quiz.Questions.Categories.DotNet
         {
             var quizQuestions = new List<QuizQuestion>
             {
+                #region mine
                 Common.Get(Category, DifficultyLevel.Hard, "Are you a .Netter ?",
                     "Yes",
                     "No",
                     "Don't know",
                     "Don't care",
                     "What is .Net ?"),
+                #endregion
+                #region web camp training kit
                 Common.Get(Category, DifficultyLevel.Medium, "When was .NET first released?",
                     "2002",
                     "2000",
@@ -40,9 +43,12 @@ namespace Quiz.Questions.Categories.DotNet
                     "System.Integer",
                     "System.DateTime",
                     "System.Float"),
+                #endregion
             };
 
             return quizQuestions;
         }
     }
 }
+
+
