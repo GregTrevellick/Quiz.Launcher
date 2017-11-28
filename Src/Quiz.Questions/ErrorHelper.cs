@@ -7,11 +7,12 @@ namespace Quiz.Questions
 {
     internal class ErrorHelper
     {
-        internal static void HandleUnexpectedError(Exception ex)//, ResponseDto responseDto) //gregt todo get error into responseDto.ErrorDetails so that it is visible in the ui
+        internal static string HandleArgumentOutOfRangeException(string argumentName, int argumentValue)
         {
+            var ex = new ArgumentOutOfRangeException($"argumentName={argumentName};argumentValue={argumentValue}");
             Debug.WriteLine(ex.Message);
-            //var exceptionTypeName = ex.GetType().Name;
-            //responseDto.ErrorDetails = $"An unexpected error of type {exceptionTypeName} has occurred (possible JSON de-serialization error).";
+            var exceptionTypeName = ex.GetType().Name;
+            return $"An unexpected error of type {exceptionTypeName} has occurred ({argumentName}{argumentValue}).";
         }
 
         internal static void HandleUnexpectedError(Exception ex, ResponseDto responseDto)

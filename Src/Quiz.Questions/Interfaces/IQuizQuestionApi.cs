@@ -7,6 +7,6 @@ namespace Quiz.Questions.Interfaces
     {
         DifficultyLevel GetDifficultyLevel(string textBlockDifficultyText);
         QuizQuestion GetQuizQuestion(Category preferredCategoriesFromOptions, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName);
-        void HandleUnexpectedError(Exception ex);
+        string HandleArgumentOutOfRangeException(string argumentName, int argumentValue);
     }
 }

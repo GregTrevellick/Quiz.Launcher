@@ -10,6 +10,8 @@ namespace Quiz.Questions
 {
     public class QuizQuestionApi : IQuizQuestionApi
     {
+        private string errorDetails;
+
         public QuizQuestion GetQuizQuestion(Category preferredCategoriesFromOptions, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             IEnumerable<QuizQuestion> quizQuestions = null;
@@ -21,7 +23,7 @@ namespace Quiz.Questions
             switch (categoryToSupply)
             {
                 case Category.Unknown:
-                    //gregt error
+                    errorDetails = ErrorHelper.HandleArgumentOutOfRangeException(nameof(categoryToSupply), (int)categoryToSupply);
                     break;
                 case Category.CSharp:
                     break;
@@ -38,15 +40,22 @@ namespace Quiz.Questions
                 case Category.WebDev:
                     break;
                 default:
-                    //gregt error
+                    errorDetails = ErrorHelper.HandleArgumentOutOfRangeException(nameof(categoryToSupply), (int)categoryToSupply);
                     break;
             }
 
-            var quizQuestion = quizQuestions.RandomSubset(1).Single();
+            if (string.IsNullOrEmpty(errorDetails))
+            {
+                var quizQuestion = quizQuestions.RandomSubset(1).Single();
 
-            quizQuestion.Category = categoryToSupply;
+                quizQuestion.Category = categoryToSupply;
 
-            return quizQuestion;
+                return quizQuestion;
+            }
+            else
+            {
+                return new QuizQuestion { ErrorDetails = errorDetails };
+            }
         }
 
         public DifficultyLevel GetDifficultyLevel(string textBlockDifficultyText)
@@ -64,9 +73,9 @@ namespace Quiz.Questions
             }
         }
 
-        public void HandleUnexpectedError(Exception ex) //gregt return a string for presentation in ui
+        public string HandleArgumentOutOfRangeException(string argumentName, int argumentValue) 
         {
-            ErrorHelper.HandleUnexpectedError(ex);
+            return ErrorHelper.HandleArgumentOutOfRangeException(argumentName, argumentValue);
         }
     }
 }
