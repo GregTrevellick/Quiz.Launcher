@@ -14,6 +14,7 @@ namespace Quiz.Questions.Categories.WebDev
             {
                 #region mine
                 //webkit=?
+                //pwa=?
                 #endregion
                 #region jeopardy / web camp training kit
                 Common.Get(Category, DifficultyLevel.Hard,

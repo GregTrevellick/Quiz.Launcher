@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Quiz.Questions.Categories.Geek.CocktailHeroku;
 using Quiz.Questions.Categories.Geek.OpenTdb;
@@ -11,17 +12,34 @@ namespace Quiz.Questions.Categories.Geek
     {
         public IEnumerable<QuizQuestion> GetQuizQuestions(int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
-            //gregt weight and do just one of these three === 33% each
-
-            var quizQuestions1 = new GeekQuestionsOpenTdb().GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);//guestimate 100
-            var quizQuestions2 = new GeekQuestionsCocktailHeroku().GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);//guestimate 100
-            var quizQuestions3 = new GeekQuestions().GetQuizQuestions();//approx 130
+            var rand = GetRandom();
 
             var quizQuestions = new List<QuizQuestion>();
-            quizQuestions = quizQuestions.Union(quizQuestions1).ToList();
-            quizQuestions = quizQuestions.Union(quizQuestions2).ToList();
-            quizQuestions = quizQuestions.Union(quizQuestions3).ToList();
+
+            switch (rand)
+            {
+                case 1:
+                    //guestimate 100
+                    quizQuestions = new GeekQuestionsOpenTdb().GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName).ToList();
+                    break;
+                case 2:
+                    //guestimate 100
+                    quizQuestions = new GeekQuestionsCocktailHeroku().GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName).ToList();
+                    break;
+                case 3:
+                    //approx 130
+                    quizQuestions = new GeekQuestions().GetQuizQuestions().ToList();
+                    break;
+            }
+
             return quizQuestions;
+        }
+
+        private static int GetRandom()//gregt unit test
+        {
+            var random = new Random();
+            var rand = random.Next(1, 3);
+            return rand;
         }
     }
 }
