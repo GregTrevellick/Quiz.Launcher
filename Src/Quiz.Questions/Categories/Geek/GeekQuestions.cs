@@ -50,7 +50,7 @@ namespace Quiz.Questions.Categories.Geek
                     "cross site privacy",
                     "cascading style presentation",
                     "code security policy",
-                    "cgregt swearing partying"),
+                    "caught swearing partying"),
                 Common.Get(Category, DifficultyLevel.Hard, "AMPQ?",
                     "Rabbit",
                     "Cat",

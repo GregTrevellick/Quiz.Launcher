@@ -48,7 +48,7 @@ namespace Quiz.Questions
             {
                 var quizQuestion = quizQuestions.RandomSubset(1).Single();
 
-                quizQuestion.Category = categoryToSupply;
+                quizQuestion.Category = categoryToSupply;//gregt this should be unnecessary as they are both the same but this is not always the case
 
                 return quizQuestion;
             }

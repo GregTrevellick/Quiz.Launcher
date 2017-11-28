@@ -29,9 +29,12 @@ namespace Quiz.Questions
         {
             var categoryWeightingDictionary = new Dictionary<Category, int>
             {
-                {Category.CSharp, 30},
+                //gregt assess these weightings
+                {Category.CSharp, 20},
                 {Category.DotNet, 20},
-                {Category.Geek, 50}
+                {Category.Geek, 50},
+                {Category.Javascript, 5},
+                {Category.WebDev, 5},
             };
 
             var validCategories = Enum.GetValues(typeof(Category));
@@ -57,9 +60,10 @@ namespace Quiz.Questions
         {
             var index = weightingDictionary.Count;
 
-            for (int i = index; i <= weighting; i++)
+            for (int i = 0; i < weighting; i++)
             {
-                weightingDictionary.Add(i, category);
+                weightingDictionary.Add(index, category);
+                index++;
             }
         }
     }

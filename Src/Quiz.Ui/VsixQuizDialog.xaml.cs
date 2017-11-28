@@ -167,6 +167,12 @@ namespace Quiz.Ui
                 }
             }
 
+            RadioButton1.IsEnabled = false;
+            RadioButton2.IsEnabled = false;
+            RadioButton3.IsEnabled = false;
+            RadioButton4.IsEnabled = false;
+            RadioButton5.IsEnabled = false;
+
             var difficultyLevel = new QuizQuestionApi().GetDifficultyLevel(TextBlockDifficulty.Text);
 
             ActOnAnswerGiven(response, chosenAnswerNumber, difficultyLevel);

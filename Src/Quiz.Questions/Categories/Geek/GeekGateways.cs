@@ -35,7 +35,7 @@ namespace Quiz.Questions.Categories.Geek
             return quizQuestions;
         }
 
-        private static int GetRandom()//gregt unit test
+        private static int GetRandom()
         {
             var random = new Random();
             var rand = random.Next(1, 3);
