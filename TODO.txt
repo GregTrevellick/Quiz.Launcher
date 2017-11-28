@@ -8,7 +8,8 @@ questions/answers capitalisation
 
 gregt
 
-BUG can select multiple radio buttons and submit !
+
+
 
 
 

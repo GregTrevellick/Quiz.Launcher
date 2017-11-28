@@ -11,27 +11,27 @@
             <TextBlock Margin="10,10,10,10" Name="TextBlockDifficulty" />
             <TextBlock Margin="10,10,10,10" Name="TextBlockQuestion" />
             <StackPanel Orientation="Horizontal">
-                <RadioButton Margin="10,5,5,5" Name="RadioButton1" Visibility="Collapsed" Checked="RadioButton1_OnChecked"  />
+                <RadioButton Margin="10,5,5,5" Name="RadioButton1" Visibility="Collapsed" Checked="RadioButton1_OnChecked" GroupName="AnswersGroup" />
                 <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonCorrect1" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
                 <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonIncorrect1" Stretch="None" Source="Core/Resources/IncorrectAnswer.png" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <RadioButton Margin="10,5,5,5" Name="RadioButton2" Visibility="Collapsed" Checked="RadioButton2_OnChecked" />
+                <RadioButton Margin="10,5,5,5" Name="RadioButton2" Visibility="Collapsed" Checked="RadioButton2_OnChecked" GroupName="AnswersGroup" />
                 <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonCorrect2" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
                 <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonIncorrect2" Stretch="None" Source="Core/Resources/IncorrectAnswer.png" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <RadioButton Margin="10,5,5,5" Name="RadioButton3" Visibility="Collapsed" Checked="RadioButton3_OnChecked"/>
+                <RadioButton Margin="10,5,5,5" Name="RadioButton3" Visibility="Collapsed" Checked="RadioButton3_OnChecked" GroupName="AnswersGroup" />
                 <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonCorrect3" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
                 <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonIncorrect3" Stretch="None" Source="Core/Resources/IncorrectAnswer.png" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <RadioButton Margin="10,5,5,5" Name="RadioButton4" Visibility="Collapsed" Checked="RadioButton4_OnChecked"/>
+                <RadioButton Margin="10,5,5,5" Name="RadioButton4" Visibility="Collapsed" Checked="RadioButton4_OnChecked" GroupName="AnswersGroup" />
                 <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonCorrect4" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
                 <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonIncorrect4" Stretch="None" Source="Core/Resources/IncorrectAnswer.png" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <RadioButton Margin="10,5,5,5" Name="RadioButton5" Visibility="Collapsed" Checked="RadioButton5_OnChecked"/>
+                <RadioButton Margin="10,5,5,5" Name="RadioButton5" Visibility="Collapsed" Checked="RadioButton5_OnChecked" GroupName="AnswersGroup" />
                 <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonCorrect5" Stretch="None" Source="Core/Resources/CorrectAnswer.png" />
                 <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonIncorrect5" Stretch="None" Source="Core/Resources/IncorrectAnswer.png" />
             </StackPanel>

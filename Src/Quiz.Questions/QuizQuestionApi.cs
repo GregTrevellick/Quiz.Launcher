@@ -5,6 +5,10 @@ using Quiz.Questions.Entities;
 using Quiz.Questions.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using Quiz.Questions.Categories.CSharp;
+using Quiz.Questions.Categories.DotNet;
+using Quiz.Questions.Categories.Javascript;
+using Quiz.Questions.Categories.WebDev;
 
 namespace Quiz.Questions
 {
@@ -20,24 +24,32 @@ namespace Quiz.Questions
 
             //gregt weight and do just one of these five - weight dynamically based upon size of questions in each collection ?
 
+            IGetQuizQuestions getQuizQuestions;
+
             switch (categoryToSupply)
             {
                 case Category.Unknown:
                     errorDetails = ErrorHelper.HandleArgumentOutOfRangeException(nameof(categoryToSupply), (int)categoryToSupply);
                     break;
                 case Category.CSharp:
+                    getQuizQuestions = new CSharpQuestions();
+                    quizQuestions = getQuizQuestions.GetQuizQuestions();
                     break;
                 case Category.DotNet:
-                    var gateways2 = new GeekGateways();
-                    quizQuestions = gateways2.GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
+                    getQuizQuestions = new DotNetQuestions();
+                    quizQuestions = getQuizQuestions.GetQuizQuestions();
                     break;
                 case Category.Geek:
-                    var gateways = new GeekGateways();
-                    quizQuestions = gateways.GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
+                    var geekGateways = new GeekGateways();
+                    quizQuestions = geekGateways.GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
                     break;
                 case Category.Javascript:
+                    getQuizQuestions = new JavascriptQuestions();
+                    quizQuestions = getQuizQuestions.GetQuizQuestions();
                     break;
                 case Category.WebDev:
+                    getQuizQuestions = new WebDevQuestions();
+                    quizQuestions = getQuizQuestions.GetQuizQuestions();
                     break;
                 default:
                     errorDetails = ErrorHelper.HandleArgumentOutOfRangeException(nameof(categoryToSupply), (int)categoryToSupply);
