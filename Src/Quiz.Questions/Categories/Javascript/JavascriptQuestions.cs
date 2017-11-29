@@ -16,6 +16,7 @@ namespace Quiz.Questions.Categories.Javascript
                 //Ecma?
                 //iife?
                 #endregion
+             
                 #region web camp training kit
                 Common.Get(Category, DifficultyLevel.Medium, "Which is not actually a Thing.js?",
                     "Horseradish.js",

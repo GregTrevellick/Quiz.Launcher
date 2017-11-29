@@ -12,12 +12,35 @@ namespace Quiz.Questions.Categories.Geek
             var quizQuestions = new List<QuizQuestion>
             {
                 #region mine
+                //Foo?
+                //Bar
+                //Poo
+                //Boo
+                //Pub
+                //Foo
+
+                //TLD?
+                //Top level domain
+                //Too long don't read
+                //The longest day
+                //Top level developer
+                //Three legged donkey
+
+                //TLDR?
+                //Too long don't read
+                //Top level domain registrar
+                //Technology licence delivery realm
+                //Technology licence delivery region
+                //Televison lets dogs rule
+
+                //pwa?
                 //ansi
                 //ascii
                 //ddos?
                 //AAA?
                 //IDE?
                 //SKU?
+                //Git flow / Gitter / Git tower / Git lab / Git hub / Git pup
                 Common.Get(Category, DifficultyLevel.Hard, "You are a genius?",
                     "true",
                     "false"),
@@ -193,6 +216,7 @@ namespace Quiz.Questions.Categories.Geek
                     "Strings that are formatted from strings and embedded parametrized values",
                     "Strings that contain the word 'verbatim'"),
                 #endregion
+
                 #region jeopardy / web camp training kit
                 Common.Get(Category, DifficultyLevel.Hard, "What fictional company did Nancy Davolio work for?",
                     "Northwind Traders",

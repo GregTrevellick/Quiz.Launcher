@@ -12,12 +12,28 @@ namespace Quiz.Questions.Categories.CSharp
         {
             var quizQuestions = new List<QuizQuestion>
             {
+                #region https://www.codeproject.com/Articles/827091/Csharp-Attributes-in-minutes
+                //What does[Obsolete("Please use NewMethod1", true)] do ?
+                //If you want to be bit strict and do not want developers to use that method, you can pass ‘true” to the “Obsolete” attribute as shown in the below code.
+                
+                //Is it possible to restrict a custom attribute to a method only?
+                //By using the “AttributeUsage” and “AttributeTargets” you can restrict the attribute to a particular section like class , method , property etc.Below is a simple custom attribute is now confined only to methods.
+                
+                //Do attributes get inherited ?
+                //Yes, they get inherited in the child classes.
+                
+                //If I want an attribute to be used only once in a program?
+                //If you specify “AllowMultiple” as true it can be used multiple times in the same program.
+                //[AttributeUsage(AttributeTargets.Property, AllowMultiple = false)] Multiple = false)]
+                #endregion
+
                 #region mine
                 Common.Get(Category, DifficultyLevel.Hard,
                     "The following valid C# code:   var weekDays &= ~WeekDays.Sunday   ?",
                     "true",
                     "false"),
                 #endregion
+     
                 #region web camp training kit
                 Common.Get(Category, DifficultyLevel.Hard,
                     "What was the original name of the C# programming language?",

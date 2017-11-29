@@ -4,6 +4,7 @@ using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions.Categories.WebDev
 {
+    //gregt rename to FrontEnd
     internal class WebDevQuestions : IGetQuizQuestions
     {
         private const Category Category = Entities.Category.WebDev;
@@ -16,6 +17,7 @@ namespace Quiz.Questions.Categories.WebDev
                 //webkit=?
                 //pwa=?
                 #endregion
+
                 #region jeopardy / web camp training kit
                 Common.Get(Category, DifficultyLevel.Hard,
                     "How many HTML tags are defined in the original description of the markup language?",

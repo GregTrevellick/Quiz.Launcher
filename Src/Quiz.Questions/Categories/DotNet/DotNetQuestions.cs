@@ -13,6 +13,7 @@ namespace Quiz.Questions.Categories.DotNet
             var quizQuestions = new List<QuizQuestion>
             {
                 #region mine
+                //DACPAC=? Data-tier Application Component Packages
                 Common.Get(Category, DifficultyLevel.Hard, "Are you a .Netter ?",
                     "Yes",
                     "No",
@@ -20,6 +21,7 @@ namespace Quiz.Questions.Categories.DotNet
                     "Don't care",
                     "What is .Net ?"),
                 #endregion
+
                 #region web camp training kit
                 Common.Get(Category, DifficultyLevel.Medium, "When was .NET first released?",
                     "2002",
