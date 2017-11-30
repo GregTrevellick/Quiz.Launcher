@@ -28,6 +28,11 @@ namespace Quiz.Questions.Categories.CSharp
                 #endregion
 
                 #region mine
+                //Min date sql=?
+                //Min date=?
+                //Int.max=?
+                //Decimal.max=?
+                //Is [Flags] w/o =1/2/4/8 useless ? yes it is
                 Common.Get(Category, DifficultyLevel.Hard,
                     "The following valid C# code:   var weekDays &= ~WeekDays.Sunday   ?",
                     "true",

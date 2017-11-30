@@ -6,11 +6,14 @@ testcases.txt
 
 questions/answers capitalisation
 
+add Launcher.sln
+add popquiz.csproj
+move shared code to a class library project
+
 gregt
 
 
 http://www.knowledge-pills.com/comkp1/kp/series/005_INFORMATION%20SYSTEMS/002_DEMO_Open%20Source,%20every%20one%20has%20got%20an%20interest/the07/01the07z.htm
-https://www.dropbox.com/s/fv1azv1yk2qv7ix/interview_questions.pdf?dl=0
 https://github.com/MaximAbramchuck/awesome-interview-questions
 https://github.com/freeCodeCamp/multiple-choice-questions
 
