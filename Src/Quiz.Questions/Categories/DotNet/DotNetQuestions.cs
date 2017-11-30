@@ -13,7 +13,12 @@ namespace Quiz.Questions.Categories.DotNet
             var quizQuestions = new List<QuizQuestion>
             {
                 #region mine
-                //DACPAC=? Data-tier Application Component Packages
+                //Common.Get(Category, DifficultyLevel.Hard, "What is meant by DACPAC?",
+                //"Data-tier Application Component Packages",
+                //"Todo",
+                //"Todo",
+                //"Todo",
+                //"Todo"),
                 Common.Get(Category, DifficultyLevel.Hard, "Are you a .Netter ?",
                     "Yes",
                     "No",

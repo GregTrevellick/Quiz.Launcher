@@ -13,26 +13,58 @@ namespace Quiz.Questions.Categories.CSharp
             var quizQuestions = new List<QuizQuestion>
             {
                 #region https://www.codeproject.com/Articles/827091/Csharp-Attributes-in-minutes
-                //What does[Obsolete("Please use NewMethod1", true)] do ?
-                //If you want to be bit strict and do not want developers to use that method, you can pass ‘true” to the “Obsolete” attribute as shown in the below code.
-                
-                //Is it possible to restrict a custom attribute to a method only?
-                //By using the “AttributeUsage” and “AttributeTargets” you can restrict the attribute to a particular section like class , method , property etc.Below is a simple custom attribute is now confined only to methods.
-                
-                //Do attributes get inherited ?
-                //Yes, they get inherited in the child classes.
-                
-                //If I want an attribute to be used only once in a program?
-                //If you specify “AllowMultiple” as true it can be used multiple times in the same program.
-                //[AttributeUsage(AttributeTargets.Property, AllowMultiple = false)] Multiple = false)]
+                //Common.Get(Category, DifficultyLevel.Hard, "What does[Obsolete(\"Please use NewMethod1\", true)] do ?",
+                //"If you want to be bit strict and do not want developers to use that method, you can pass ‘true” to the “Obsolete” attribute",
+                //"Todo",
+                //"Todo",
+                //"Todo",
+                //"Todo"),                
+                //Common.Get(Category, DifficultyLevel.Hard, "Is it possible to restrict a custom attribute to a method only?",
+                //"By using the “AttributeUsage” and “AttributeTargets” you can restrict the attribute to a particular section like class , method , property etc.",
+                //"Todo",
+                //"Todo",
+                //"Todo",
+                //"Todo"),
+                //Common.Get(Category, DifficultyLevel.Hard, "Do attributes get inherited ?",
+                //"Yes, they get inherited in the child classes.",
+                //"Todo",
+                //"Todo",
+                //"Todo",
+                //"Todo"),
+                //Common.Get(Category, DifficultyLevel.Hard, "If I want an attribute to be used only once in a program?",
+                //"specify “AllowMultiple” as true e.g. [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)] Multiple = false)]",
+                //"Todo",
+                //"Todo",
+                //"Todo",
+                //"Todo"),
                 #endregion
 
                 #region mine
-                //Min date sql=?
-                //Min date=?
-                //Int.max=?
-                //Decimal.max=?
-                //Is [Flags] w/o =1/2/4/8 useless ? yes it is
+                //Common.Get(Category, DifficultyLevel.Hard, "Min date sql=?",
+                //"Todo",
+                //"Todo",
+                //"Todo",
+                //"Todo"),
+                //Common.Get(Category, DifficultyLevel.Hard, "Min date=?",
+                //"Todo",
+                //"Todo",
+                //"Todo",
+                //"Todo"),
+                //Common.Get(Category, DifficultyLevel.Hard, "Int.max=?",
+                //"Todo",
+                //"Todo",
+                //"Todo",
+                //"Todo"),
+                //Common.Get(Category, DifficultyLevel.Hard, "Decimal.max=?",
+                //"Todo",
+                //"Todo",
+                //"Todo",
+                //"Todo"),
+                //Common.Get(Category, DifficultyLevel.Hard, "Is [Flags] w/o =1/2/4/8 useless ?",
+                //"yes it is",
+                //"Todo",
+                //"Todo",
+                //"Todo"),
                 Common.Get(Category, DifficultyLevel.Hard,
                     "The following valid C# code:   var weekDays &= ~WeekDays.Sunday   ?",
                     "true",

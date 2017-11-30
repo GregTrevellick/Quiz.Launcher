@@ -12,26 +12,24 @@ namespace Quiz.Questions.Categories.Geek
             var quizQuestions = new List<QuizQuestion>
             {
                 #region mine
-                //Foo?
-                //Bar
-                //Poo
-                //Boo
-                //Pub
-                //Foo
-
-                //TLD?
-                //Top level domain
-                //Too long don't read
-                //The longest day
-                //Top level developer
-                //Three legged donkey
-
-                //TLDR?
-                //Too long don't read
-                //Top level domain registrar
-                //Technology licence delivery realm
-                //Technology licence delivery region
-                //Televison lets dogs rule
+                Common.Get(Category, DifficultyLevel.e, "Foo?",
+                "Bar",
+                "Poo",
+                "Boo",
+                "Pub",
+                "Foo"),
+                Common.Get(Category, DifficultyLevel.e, "TLD?",
+                "Top level domain",
+                "Too long don't read",
+                "The longest day",
+                "Top level developer",
+                "Three legged donkey"),
+                Common.Get(Category, DifficultyLevel.Easy, "TLDR?",
+                "Too long don't read",
+                "Top level domain registrar",
+                "Technology licence delivery realm",
+                "Technology licence delivery region",
+                "Television lets dogs rule"),
 
                 //pwa?
                 //ansi
