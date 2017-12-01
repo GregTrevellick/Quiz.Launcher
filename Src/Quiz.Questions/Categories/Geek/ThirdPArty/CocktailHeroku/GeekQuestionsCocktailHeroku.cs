@@ -13,6 +13,8 @@ namespace Quiz.Questions.Categories.Geek.CocktailHeroku
             var urlMedium = "http://cocktail-trivia-api.herokuapp.com/api/category/science-computers/difficulty/medium/count/1";
             var urlHard = "http://cocktail-trivia-api.herokuapp.com/api/category/science-computers/difficulty/hard/count/1";
 
+                            
+
             var random = new Random();
             var remote = random.Next(1, 3);
             var url = string.Empty;

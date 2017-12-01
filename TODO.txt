@@ -26,6 +26,19 @@ No deep or complex questions, designed for quick so as to not interrupt your day
 Bonus: I can learn things I couldn't learn in day job (git, nuget, restsharp, markdown, .net 4.7, chrome extensions (angular, chart.js), wpf, gulp).
 
 
+
+
+
+POP QUIZ
+https://opentdb.com/api.php?amount=1&category=12
+http://cocktail-trivia-api.herokuapp.com/api/category/entertainment-music/difficulty/easy/count/1
+http://cocktail-trivia-api.herokuapp.com/api/category/entertainment-music/difficulty/medium/count/1
+http://cocktail-trivia-api.herokuapp.com/api/category/entertainment-music/difficulty/hard/count/1
+
+
+
+
+
 //http://www.careerride.com/csharp-multiple-choice-questions.aspx
 //https://vbhuggi.jimdo.com/c-net-lectures/
 //http://questionsandanswerspdf.com/tag/multiple-choice-questions-in-c-net-with-answers/

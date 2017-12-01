@@ -12,24 +12,6 @@ namespace Quiz.Questions.Categories.Geek
             var quizQuestions = new List<QuizQuestion>
             {
                 #region mine
-                Common.Get(Category, DifficultyLevel.e, "Foo?",
-                "Bar",
-                "Poo",
-                "Boo",
-                "Pub",
-                "Foo"),
-                Common.Get(Category, DifficultyLevel.e, "TLD?",
-                "Top level domain",
-                "Too long don't read",
-                "The longest day",
-                "Top level developer",
-                "Three legged donkey"),
-                Common.Get(Category, DifficultyLevel.Easy, "TLDR?",
-                "Too long don't read",
-                "Top level domain registrar",
-                "Technology licence delivery realm",
-                "Technology licence delivery region",
-                "Television lets dogs rule"),
 
                 //pwa?
                 //ansi
@@ -38,7 +20,31 @@ namespace Quiz.Questions.Categories.Geek
                 //AAA?
                 //IDE?
                 //SKU?
-                //Git flow / Gitter / Git tower / Git lab / Git hub / Git pup
+
+                Common.Get(Category, DifficultyLevel.e, "Foo?",
+                    "Bar",
+                    "Poo",
+                    "Boo",
+                    "Pub",
+                    "Foo"),
+                Common.Get(Category, DifficultyLevel.e, "TLD?",
+                    "Top level domain",
+                    "Too long don't read",
+                    "The longest day",
+                    "Top level developer",
+                    "Three legged donkey"),
+                Common.Get(Category, DifficultyLevel.Easy, "TLDR?",
+                    "Too long don't read",
+                    "Top level domain registrar",
+                    "Technology licence delivery realm",
+                    "Technology licence delivery region",
+                    "Television lets dogs rule"),
+                 Common.Get(Category, DifficultyLevel.Medium, "Which is not a git-thing?",
+                    "Git Pup",
+                    "Gitter",
+                    "Git Lab",
+                    "Git Hub",
+                    "Git Tower"),
                 Common.Get(Category, DifficultyLevel.Hard, "You are a genius?",
                     "true",
                     "false"),
