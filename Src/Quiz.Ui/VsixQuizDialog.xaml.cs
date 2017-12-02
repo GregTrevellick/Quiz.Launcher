@@ -42,24 +42,7 @@ namespace Quiz.Ui
 
             SetHelpHyperLink();
             SetSupplyAQuestionHyperLink();
-
-            //#if DEBUG
-            //            ButtonAgain.Visibility = Visibility.Visible;
-            //#endif
         }
-
-        //#if DEBUG
-        //        private void ButtonAgain_OnClick(object sender, RoutedEventArgs e)
-        //        {
-        //            var quizHelper = new QuizHelper();
-        //            var random = new Random();
-        //            var totalQuestionsAnsweredCorrectlyEasy = random.Next(1, 100);
-        //            var totalQuestionsAnsweredCorrectlyMedium = random.Next(1, 100);
-        //            var totalQuestionsAnsweredCorrectlyHard = random.Next(1, 100);
-        //            quizHelper.GetHiddenOptionsDto("Again1", DateTime.Now, 789, 5000, "Again2", true,
-        //                totalQuestionsAnsweredCorrectlyEasy, totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAnsweredCorrectlyHard, 100, SearchEngine.Google);
-        //        }
-        //#endif
 
         private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
         {
@@ -108,19 +91,6 @@ namespace Quiz.Ui
             return shouldCloseWindow;
         }
 
-        //private void ButtonHelp_OnClick(object sender, RoutedEventArgs e)
-        //{
-        //    if (TextBlockHelp.Visibility == Visibility.Visible)
-        //    {
-        //        TextBlockHelp.Visibility = Visibility.Collapsed;
-        //    }
-        //    else
-        //    {
-        //        TextBlockHelp.Text = Constants.HelpText(_optionsName);
-        //        TextBlockHelp.Visibility = Visibility.Visible;
-        //    }
-        //}
-
         private void ButtonSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)
         {
             string response;
@@ -167,12 +137,6 @@ namespace Quiz.Ui
                     }
                 }
             }
-
-            ////////////////////////////////RadioButton1.IsEnabled = false;
-            ////////////////////////////////RadioButton2.IsEnabled = false;
-            ////////////////////////////////RadioButton3.IsEnabled = false;
-            ////////////////////////////////RadioButton4.IsEnabled = false;
-            ////////////////////////////////RadioButton5.IsEnabled = false;
 
             var difficultyLevel = new QuizQuestionApi().GetDifficultyLevel(TextBlockDifficulty.Text);
 
@@ -344,8 +308,8 @@ namespace Quiz.Ui
 
             TextBlockTotalQuestionsAsked.Text = TotalQuestionsAsked.ToString();
             TextBlockTotalQuestionsAnsweredCorrectly.Text = totalQuestionsAnsweredCorrectly.ToString();
-            TextBlockUserStatus.Text = GetUserStatus(percentageSuccess);
-            TextBlockUserRank.Text = GetUserRank(percentageSuccess);
+            TextBlockUserStatus.Text = QuizHelperCore.GetUserStatus(percentageSuccess);
+            TextBlockUserRank.Text = QuizHelperCore.GetUserRank(percentageSuccess);
 
             PersistHiddenOptionsEventHandler?.Invoke(TotalQuestionsAsked, TotalQuestionsAnsweredCorrectlyEasy, TotalQuestionsAnsweredCorrectlyMedium, TotalQuestionsAnsweredCorrectlyHard);
         }
@@ -398,18 +362,6 @@ namespace Quiz.Ui
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
-        }
-
-        internal string GetUserStatus(int percentageSuccess)
-        {
-            var successRate = $"{percentageSuccess}%";
-            return successRate;
-        }
-
-        internal string GetUserRank(int percentageSuccess)
-        {
-            var userStatusDescription = percentageSuccess.UserStatusDescription();
-            return userStatusDescription;
         }
 
         private void SetQuizReplyColour(Color color)

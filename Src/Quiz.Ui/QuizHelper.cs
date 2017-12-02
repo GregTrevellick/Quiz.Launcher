@@ -93,9 +93,9 @@ namespace Quiz.Ui
                 vsixQuizDialog.TextBlockTotalQuestionsAnsweredCorrectly.Text = totalQuestionsAnsweredCorrectlyMedium.ToString();
                 vsixQuizDialog.TextBlockTotalQuestionsAsked.Text = totalQuestionsAsked.ToString();
                 var percentageSuccess = QuizHelperCore.GetPercentageSuccess(totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAsked);
-                var userStatus = vsixQuizDialog.GetUserStatus(percentageSuccess);
+                var userStatus = QuizHelperCore.GetUserStatus(percentageSuccess);
                 vsixQuizDialog.TextBlockUserStatus.Text = userStatus;
-                var userRank = vsixQuizDialog.GetUserRank(percentageSuccess);
+                var userRank = QuizHelperCore.GetUserRank(percentageSuccess);
                 vsixQuizDialog.TextBlockUserRank.Text = userRank;
             }
 

@@ -67,5 +67,17 @@ namespace Quiz.Ui
 
             return percentageSuccess;
         }
+
+        public static string GetUserStatus(int percentageSuccess)
+        {
+            var successRate = $"{percentageSuccess}%";
+            return successRate;
+        }
+
+        public static string GetUserRank(int percentageSuccess)
+        {
+            var userStatusDescription = percentageSuccess.UserStatusDescription();
+            return userStatusDescription;
+        }
     }
 }
