@@ -1,6 +1,7 @@
 ﻿using MoreLinq;
-using Quiz.Questions;
+using Quiz.Core;
 using Quiz.Questions.Entities;
+using Quiz.Questions.Interfaces;
 using Quiz.Ui.Core;
 using System;
 using System.Linq;
@@ -8,8 +9,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
-using Quiz.Core;
-using Quiz.Questions.Interfaces;
 
 namespace Quiz.Ui
 {
@@ -24,28 +23,13 @@ namespace Quiz.Ui
 
             var quizQuestion = quizQuestionApi.GetQuizQuestion(preferredCategoriesFromOptions, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
-            var quizDialogDto = GetQuizDialogDto(quizQuestion);
+            var quizDialogDto = QuizHelperCore.GetQuizDialogDto(quizQuestion, Vsix.Name);
             DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
                 quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy, quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAnsweredCorrectlyHard, quizHelperDto.TotalQuestionsAsked, quizHelperDto.SearchEngine);
 
             var hiddenOptionsDto = QuizHelperCore.GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
 
             return hiddenOptionsDto;
-        }
-
-        private static QuizDialogDto GetQuizDialogDto(QuizQuestion quizQuestion)
-        {
-            var quizDialogDto = new QuizDialogDto
-            {
-                MultipleChoiceAnswers = quizQuestion.MultipleChoiceAnswers,
-                MultipleChoiceCorrectAnswer = quizQuestion.MultipleChoiceCorrectAnswer,
-                QuestionDifficulty = quizQuestion.DifficultyLevel,
-                QuestionType = quizQuestion.QuestionType,
-                QuizQuestion = quizQuestion.Question,
-                PopUpTitle = Vsix.Name,
-            };
-
-            return quizDialogDto;
         }
 
         void PersistHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard)

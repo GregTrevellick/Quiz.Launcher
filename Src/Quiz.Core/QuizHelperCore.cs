@@ -1,10 +1,26 @@
 ﻿using Quiz.Ui.Core;
 using System;
+using Quiz.Questions.Entities;
 
 namespace Quiz.Ui
 {
     public class QuizHelperCore
     {
+        public static QuizDialogDto GetQuizDialogDto(QuizQuestion quizQuestion, string vsixName)
+        {
+            var quizDialogDto = new QuizDialogDto
+            {
+                MultipleChoiceAnswers = quizQuestion.MultipleChoiceAnswers,
+                MultipleChoiceCorrectAnswer = quizQuestion.MultipleChoiceCorrectAnswer,
+                QuestionDifficulty = quizQuestion.DifficultyLevel,
+                QuestionType = quizQuestion.QuestionType,
+                QuizQuestion = quizQuestion.Question,
+                PopUpTitle = vsixName,
+            };
+
+            return quizDialogDto;
+        }
+
         public static HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
         {
             var hiddenOptionsDto = new HiddenOptionsDto();
