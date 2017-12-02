@@ -201,11 +201,11 @@
     <Content Include="..\..\..\LICENSE.txt">
       <Link>LICENSE.txt</Link>
     </Content>
-    <Resource Include="Core\Resources\CorrectAnswer.png">
+    <Resource Include="Resources\CorrectAnswer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Content Include="Core\Resources\Generic_ReadMeScreenShot_OptionsGeneral.png" />
-    <Resource Include="Core\Resources\IncorrectAnswer.png">
+    <Content Include="Resources\Generic_ReadMeScreenShot_OptionsGeneral.png" />
+    <Resource Include="Resources\IncorrectAnswer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Content Include="Resources\VsixExtensionIcon_16x16.png">
