@@ -1,8 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Quiz.Core;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Ui.UnitTests
+namespace Quiz.Core.UnitTests
 {
     [TestClass]
     public class GeneralOptionsDtoTests

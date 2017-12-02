@@ -1,10 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Quiz.Core;
 
-namespace Quiz.Ui.UnitTests
+namespace Quiz.Core.UnitTests
 {
     [TestClass]
-    public class QuizHelperTests
+    public class QuizHelperCoreTests
     {
         [DataRow(5, 20, 25)]
         [DataRow(1, 1, 100)]
