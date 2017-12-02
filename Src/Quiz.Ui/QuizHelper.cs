@@ -186,7 +186,7 @@ namespace Quiz.Ui
             }
         }
 
-        private HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
+        private HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)//gregt move to core
         {
             var hiddenOptionsDto = new HiddenOptionsDto();
 
@@ -206,13 +206,13 @@ namespace Quiz.Ui
             return hiddenOptionsDto;
         }
 
-        private bool IsANewDay(DateTime lastPopUpDateTime, DateTime baseDateTime)
+        private bool IsANewDay(DateTime lastPopUpDateTime, DateTime baseDateTime)//gregt move to core
         {
             //If last pop up was yesterday, then we have gone past midnight, so this is first pop up for today
             return lastPopUpDateTime.Date < baseDateTime.Date;
         }
 
-        public static int GetPercentageSuccess(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        public static int GetPercentageSuccess(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)//gregt move to core
         {
             int percentageSuccess;
 
