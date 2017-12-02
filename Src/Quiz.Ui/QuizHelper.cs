@@ -28,7 +28,7 @@ namespace Quiz.Ui
             DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
                 quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy, quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAnsweredCorrectlyHard, quizHelperDto.TotalQuestionsAsked, quizHelperDto.SearchEngine);
 
-            var hiddenOptionsDto = GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
+            var hiddenOptionsDto = QuizHelperCore.GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
 
             return hiddenOptionsDto;
         }
@@ -108,7 +108,7 @@ namespace Quiz.Ui
             {
                 vsixQuizDialog.TextBlockTotalQuestionsAnsweredCorrectly.Text = totalQuestionsAnsweredCorrectlyMedium.ToString();
                 vsixQuizDialog.TextBlockTotalQuestionsAsked.Text = totalQuestionsAsked.ToString();
-                var percentageSuccess = GetPercentageSuccess(totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAsked);
+                var percentageSuccess = QuizHelperCore.GetPercentageSuccess(totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAsked);
                 var userStatus = vsixQuizDialog.GetUserStatus(percentageSuccess);
                 vsixQuizDialog.TextBlockUserStatus.Text = userStatus;
                 var userRank = vsixQuizDialog.GetUserRank(percentageSuccess);
@@ -184,53 +184,6 @@ namespace Quiz.Ui
             {
                 radioButton.Visibility = Visibility.Visible;
             }
-        }
-
-        private HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)//gregt move to core
-        {
-            var hiddenOptionsDto = new HiddenOptionsDto();
-
-            var baseDateTime = DateTime.Now;
-
-            if (IsANewDay(lastPopUpDateTime, baseDateTime))
-            {
-                hiddenOptionsDto.PopUpCountToday = 1;
-            }
-            else
-            {
-                hiddenOptionsDto.PopUpCountToday = popUpCountToday + 1;
-            }
-
-            hiddenOptionsDto.LastPopUpDateTime = baseDateTime;
-
-            return hiddenOptionsDto;
-        }
-
-        private bool IsANewDay(DateTime lastPopUpDateTime, DateTime baseDateTime)//gregt move to core
-        {
-            //If last pop up was yesterday, then we have gone past midnight, so this is first pop up for today
-            return lastPopUpDateTime.Date < baseDateTime.Date;
-        }
-
-        public static int GetPercentageSuccess(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)//gregt move to core
-        {
-            int percentageSuccess;
-
-            if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
-            {
-                var percentage = ((double)totalQuestionsAnsweredCorrectly.Value / totalQuestionsAsked.Value) * 100;
-                percentageSuccess = (int)Math.Round(percentage, MidpointRounding.AwayFromZero);
-                if (percentageSuccess < 0)
-                {
-                    percentageSuccess = 0;
-                }
-            }
-            else
-            {
-                percentageSuccess = 0;
-            }
-
-            return percentageSuccess;
         }
     }
 }

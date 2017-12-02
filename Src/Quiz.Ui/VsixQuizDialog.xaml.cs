@@ -340,7 +340,7 @@ namespace Quiz.Ui
 
             var totalQuestionsAnsweredCorrectly = TotalQuestionsAnsweredCorrectlyEasy + TotalQuestionsAnsweredCorrectlyMedium + TotalQuestionsAnsweredCorrectlyHard;
 
-            var percentageSuccess = QuizHelper.GetPercentageSuccess(totalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
+            var percentageSuccess = QuizHelperCore.GetPercentageSuccess(totalQuestionsAnsweredCorrectly, TotalQuestionsAsked);
 
             TextBlockTotalQuestionsAsked.Text = TotalQuestionsAsked.ToString();
             TextBlockTotalQuestionsAnsweredCorrectly.Text = totalQuestionsAnsweredCorrectly.ToString();

@@ -17,7 +17,7 @@ namespace Quiz.Ui.UnitTests
         [DataTestMethod]
         public void GetPercentageSuccessTest(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked, int expected)
         {
-            Assert.AreEqual(expected, QuizHelper.GetPercentageSuccess(totalQuestionsAnsweredCorrectly, totalQuestionsAsked));
+            Assert.AreEqual(expected, QuizHelperCore.GetPercentageSuccess(totalQuestionsAnsweredCorrectly, totalQuestionsAsked));
         }
     }
 }
