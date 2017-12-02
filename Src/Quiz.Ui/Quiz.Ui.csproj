@@ -56,14 +56,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Core\zConstants.cs" />
-    <Compile Include="Core\zDecisionMaker.cs" />
-    <Compile Include="Core\zGeneralOptionsDto.cs" />
-    <Compile Include="Core\zHiddenOptionsDto.cs" />
-    <Compile Include="Core\zIntegerExtensions.cs" />
     <Compile Include="Core\MessageBoxes.cs" />
-    <Compile Include="Core\zSearchEngine.cs" />
-    <Compile Include="Core\zStringExtensions.cs" />
     <Compile Include="Core\QuizDialogDto.cs" />
     <Compile Include="Options\GeneralOptions.cs">
       <SubType>Component</SubType>
