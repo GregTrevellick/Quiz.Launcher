@@ -1,4 +1,4 @@
-﻿namespace Quiz.Ui.Core
+﻿namespace Quiz.Core
 {
     public static class StringExtensions
     {

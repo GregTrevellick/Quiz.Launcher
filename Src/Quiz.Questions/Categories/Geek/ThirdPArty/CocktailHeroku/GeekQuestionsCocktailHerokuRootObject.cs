@@ -1,4 +1,4 @@
-﻿namespace Quiz.Questions.Categories.Geek.CocktailHeroku
+﻿namespace Quiz.Questions.Categories.Geek.ThirdParty.CocktailHeroku
 {
     internal class GeekQuestionsCocktailHerokuRootObject
     {

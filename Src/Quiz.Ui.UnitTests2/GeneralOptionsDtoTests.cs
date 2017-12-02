@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Quiz.Core;
 using Quiz.Questions.Entities;
-using Quiz.Ui.Core;
 
 namespace Quiz.Ui.UnitTests
 {

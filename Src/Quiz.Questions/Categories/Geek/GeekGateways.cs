@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Quiz.Questions.Categories.Geek.CocktailHeroku;
-using Quiz.Questions.Categories.Geek.OpenTdb;
+using Quiz.Questions.Categories.Geek.ThirdParty.CocktailHeroku;
+using Quiz.Questions.Categories.Geek.ThirdParty.OpenTdb;
 using Quiz.Questions.Entities;
 using Quiz.Questions.Interfaces;
 

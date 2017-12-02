@@ -1,8 +1,7 @@
-﻿using Quiz.Ui.Core;
-using System;
+﻿using System;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Ui
+namespace Quiz.Core
 {
     public class QuizHelperCore
     {

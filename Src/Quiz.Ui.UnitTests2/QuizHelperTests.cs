@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Quiz.Core;
 
 namespace Quiz.Ui.UnitTests
 {

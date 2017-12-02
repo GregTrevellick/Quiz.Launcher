@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using Quiz.Questions.Entities;
 using Quiz.Questions.Interfaces;
 
-namespace Quiz.Questions.Categories.Geek.CocktailHeroku
+namespace Quiz.Questions.Categories.Geek.ThirdParty.CocktailHeroku
 {
     internal class GeekQuestionsCocktailHerokuGateway : IQuestionsGateway
     {

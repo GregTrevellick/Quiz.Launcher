@@ -2,7 +2,6 @@
 using Quiz.Core;
 using Quiz.Questions.Entities;
 using Quiz.Questions.Interfaces;
-using Quiz.Ui.Core;
 using System;
 using System.Linq;
 using System.Windows;

@@ -1,7 +1,7 @@
-﻿using Quiz.Questions.Entities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Quiz.Questions.Entities;
 
-namespace Quiz.Ui.Core
+namespace Quiz.Core
 {
     public class QuizDialogDto
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quiz.Ui.Core
+namespace Quiz.Core
 {
     public class DecisionMaker
     {

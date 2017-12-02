@@ -1,7 +1,6 @@
 ﻿using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using Quiz.Ui.Core;
 using Quiz.Ui.Options;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;

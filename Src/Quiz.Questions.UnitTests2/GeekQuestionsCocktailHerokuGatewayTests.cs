@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Quiz.Questions.Categories.Geek.CocktailHeroku;
+using Quiz.Questions.Categories.Geek.ThirdParty.CocktailHeroku;
 using Quiz.Questions.Entities;
 
 namespace Quiz.Questions.UnitTests

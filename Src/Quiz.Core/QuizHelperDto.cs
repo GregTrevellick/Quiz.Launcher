@@ -1,8 +1,7 @@
 ﻿using System;
-using Quiz.Core;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Ui.Core
+namespace Quiz.Core
 {
     public class QuizHelperDto
     {

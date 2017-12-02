@@ -1,5 +1,4 @@
-﻿using Quiz.Ui.Core;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Net;
 using System.Windows;
