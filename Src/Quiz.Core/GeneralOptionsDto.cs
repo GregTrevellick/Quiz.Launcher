@@ -1,4 +1,5 @@
-﻿using Quiz.Questions.Entities;
+﻿using Quiz.Core;
+using Quiz.Questions.Entities;
 
 namespace Quiz.Ui.Core
 {
@@ -19,7 +20,7 @@ namespace Quiz.Ui.Core
         public bool SuppressClosingWithoutSubmitingAnswerWarning { get; set; }
         public int TimeOutInMilliSeconds { get; set; }
 
-        internal Category PreferredCategoriesFromOptions
+        public Category PreferredCategoriesFromOptions
         {
             get
             {

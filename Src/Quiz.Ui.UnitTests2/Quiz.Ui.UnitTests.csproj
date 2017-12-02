@@ -57,6 +57,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Quiz.Core\Quiz.Core.csproj">
+      <Project>{2B4BF22D-DF25-4B85-BA12-8A056D010C12}</Project>
+      <Name>Quiz.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Quiz.Questions\Quiz.Questions.csproj">
       <Project>{2efcc4d7-8c7b-4e06-b3b4-b041412d1604}</Project>
       <Name>Quiz.Questions</Name>

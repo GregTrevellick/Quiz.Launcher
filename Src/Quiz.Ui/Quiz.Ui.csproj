@@ -56,14 +56,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Core\Constants.cs" />
-    <Compile Include="Core\DecisionMaker.cs" />
-    <Compile Include="Core\GeneralOptionsDto.cs" />
-    <Compile Include="Core\HiddenOptionsDto.cs" />
-    <Compile Include="Core\IntegerExtensions.cs" />
+    <Compile Include="Core\zConstants.cs" />
+    <Compile Include="Core\zDecisionMaker.cs" />
+    <Compile Include="Core\zGeneralOptionsDto.cs" />
+    <Compile Include="Core\zHiddenOptionsDto.cs" />
+    <Compile Include="Core\zIntegerExtensions.cs" />
     <Compile Include="Core\MessageBoxes.cs" />
-    <Compile Include="Core\SearchEngine.cs" />
-    <Compile Include="Core\StringExtensions.cs" />
+    <Compile Include="Core\zSearchEngine.cs" />
+    <Compile Include="Core\zStringExtensions.cs" />
     <Compile Include="Core\QuizDialogDto.cs" />
     <Compile Include="Options\GeneralOptions.cs">
       <SubType>Component</SubType>
@@ -259,6 +259,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Quiz.Core\Quiz.Core.csproj">
+      <Project>{2b4bf22d-df25-4b85-ba12-8a056d010c12}</Project>
+      <Name>Quiz.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Quiz.Questions\Quiz.Questions.csproj">
       <Project>{2efcc4d7-8c7b-4e06-b3b4-b041412d1604}</Project>
       <Name>Quiz.Questions</Name>

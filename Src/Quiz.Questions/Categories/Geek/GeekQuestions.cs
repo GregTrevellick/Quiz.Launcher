@@ -21,13 +21,13 @@ namespace Quiz.Questions.Categories.Geek
                 //IDE?
                 //SKU?
 
-                Common.Get(Category, DifficultyLevel.e, "Foo?",
+                Common.Get(Category, DifficultyLevel.Easy, "Foo?",
                     "Bar",
                     "Poo",
                     "Boo",
                     "Pub",
                     "Foo"),
-                Common.Get(Category, DifficultyLevel.e, "TLD?",
+                Common.Get(Category, DifficultyLevel.Easy, "TLD?",
                     "Top level domain",
                     "Too long don't read",
                     "The longest day",

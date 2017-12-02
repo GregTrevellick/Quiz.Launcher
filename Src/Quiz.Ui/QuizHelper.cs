@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
+using Quiz.Core;
 using Quiz.Questions.Interfaces;
 
 namespace Quiz.Ui

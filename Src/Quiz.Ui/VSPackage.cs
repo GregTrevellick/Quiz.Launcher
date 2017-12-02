@@ -7,6 +7,7 @@ using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using EnvDTE80;
+using Quiz.Core;
 using Quiz.Questions;
 using Quiz.Questions.Entities;
 
