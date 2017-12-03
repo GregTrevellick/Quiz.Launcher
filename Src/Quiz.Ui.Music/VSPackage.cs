@@ -141,11 +141,12 @@ namespace Quiz.Ui.Music
 
             return new GeneralOptionsDto
             {
-                IncludeQuizCategoryCSharp = generalOptions.IncludeQuizCategoryCSharp,
-                IncludeQuizCategoryDotNet = generalOptions.IncludeQuizCategoryDotNet,
-                IncludeQuizCategoryGeek = generalOptions.IncludeQuizCategoryGeek,
-                IncludeQuizCategoryJavascript = generalOptions.IncludeQuizCategoryJavascript,
-                IncludeQuizCategoryWebDev = generalOptions.IncludeQuizCategoryWebDev,
+                //IncludeQuizCategoryCSharp = generalOptions.IncludeQuizCategoryCSharp,
+                //IncludeQuizCategoryDotNet = generalOptions.IncludeQuizCategoryDotNet,
+                //IncludeQuizCategoryGeek = generalOptions.IncludeQuizCategoryGeek,
+                //IncludeQuizCategoryJavascript = generalOptions.IncludeQuizCategoryJavascript,
+                //IncludeQuizCategoryWebDev = generalOptions.IncludeQuizCategoryWebDev
+                IncludeQuizCategoryMusic = true,
                 LastPopUpDateTime = hiddenOptions.LastPopUpDateTime,
                 MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay.GetAsInteger(),
                 MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),

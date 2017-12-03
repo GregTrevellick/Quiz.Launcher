@@ -1,6 +1,6 @@
-﻿namespace Quiz.Questions.Categories.Geek.ThirdParty.OpenTdb
+﻿namespace Quiz.Questions.Categories.ThirdParty.OpenTdb
 {
-    internal class GeekQuestionsOpenTdbRootObject
+    internal class QuestionsOpenTdbRootObject
     {
         public int response_code { get; set; }
         public Result[] results { get; set; }

@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using Quiz.Questions.Entities;
-using Quiz.Questions.Interfaces;
 
-namespace Quiz.Questions.Categories.Geek.ThirdParty.OpenTdb
+namespace Quiz.Questions.Categories.ThirdParty.OpenTdb
 {
-    internal class GeekQuestionsOpenTdbGateway : IQuestionsGateway
+    internal class QuestionsOpenTdbGateway : IQuestionsGateway
     {
         public QuizQuestion SetQuizQuestionFromRestResponse(string responseContent)
         {
-            var rootObject = JsonConvert.DeserializeObject<GeekQuestionsOpenTdbRootObject>(responseContent);
+            var rootObject = JsonConvert.DeserializeObject<QuestionsOpenTdbRootObject>(responseContent);
             var quizQuestion = GetQuizQuestion(rootObject);
             return quizQuestion;
         }
 
-        private QuizQuestion GetQuizQuestion(GeekQuestionsOpenTdbRootObject rootObject)
+        private QuizQuestion GetQuizQuestion(QuestionsOpenTdbRootObject rootObject)
         {
             var firstOfOne = rootObject.results.First();
 

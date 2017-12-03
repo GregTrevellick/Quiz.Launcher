@@ -7,7 +7,8 @@ namespace Quiz.Core
         public bool IncludeQuizCategoryCSharp { get; set; } 
         public bool IncludeQuizCategoryDotNet { get; set; } 
         public bool IncludeQuizCategoryGeek { get; set; } 
-        public bool IncludeQuizCategoryJavascript { get; set; } 
+        public bool IncludeQuizCategoryJavascript { get; set; }
+        public bool IncludeQuizCategoryMusic { get; set; }
         public bool IncludeQuizCategoryWebDev { get; set; } 
         public int MaximumPopUpsWeekDay { get; set; }
         public int MaximumPopUpsWeekEnd { get; set; }
@@ -29,6 +30,7 @@ namespace Quiz.Core
                 preferredCategoriesFromOptions |= IncludeQuizCategoryDotNet ? Category.DotNet : Category.Unknown;
                 preferredCategoriesFromOptions |= IncludeQuizCategoryGeek ? Category.Geek : Category.Unknown;
                 preferredCategoriesFromOptions |= IncludeQuizCategoryJavascript ? Category.Javascript : Category.Unknown;
+                preferredCategoriesFromOptions |= IncludeQuizCategoryMusic ? Category.Music : Category.Unknown;
                 preferredCategoriesFromOptions |= IncludeQuizCategoryWebDev ? Category.WebDev : Category.Unknown;
 
                 preferredCategoriesFromOptions &= ~Category.Unknown;

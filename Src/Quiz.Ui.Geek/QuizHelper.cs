@@ -1,13 +1,13 @@
 ﻿using MoreLinq;
 using Quiz.Core;
 using Quiz.Questions.Entities;
-using Quiz.Questions.Interfaces;
 using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
+using Quiz.Questions;
 
 namespace Quiz.Ui
 {

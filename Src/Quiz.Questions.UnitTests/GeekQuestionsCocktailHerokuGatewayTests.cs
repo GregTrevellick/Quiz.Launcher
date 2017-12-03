@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Quiz.Questions.Categories.Geek.ThirdParty.CocktailHeroku;
+using Quiz.Questions.Categories.ThirdParty.CocktailHeroku;
 using Quiz.Questions.Entities;
 
 namespace Quiz.Questions.UnitTests
@@ -20,7 +20,7 @@ namespace Quiz.Questions.UnitTests
         [DataTestMethod]
         public void GetQuestionTypeTest(string multipleChoiceCorrectAnswer, QuestionType expected)
         {
-            Assert.AreEqual(expected, GeekQuestionsCocktailHerokuGateway.GetQuestionType(multipleChoiceCorrectAnswer));
+            Assert.AreEqual(expected, QuestionsCocktailHerokuGateway.GetQuestionType(multipleChoiceCorrectAnswer));
         }
     }
 }

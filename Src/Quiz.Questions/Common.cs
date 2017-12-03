@@ -1,8 +1,8 @@
 ﻿using Quiz.Questions.Entities;
-using Quiz.Questions.Interfaces;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using Quiz.Questions.Categories.ThirdParty;
 
 namespace Quiz.Questions
 {

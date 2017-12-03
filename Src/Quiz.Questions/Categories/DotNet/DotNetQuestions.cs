@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Quiz.Questions.Entities;
-using Quiz.Questions.Interfaces;
 
 namespace Quiz.Questions.Categories.DotNet
 {

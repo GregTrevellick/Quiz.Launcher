@@ -2,20 +2,19 @@
 using System.Linq;
 using Newtonsoft.Json;
 using Quiz.Questions.Entities;
-using Quiz.Questions.Interfaces;
 
-namespace Quiz.Questions.Categories.Geek.ThirdParty.CocktailHeroku
+namespace Quiz.Questions.Categories.ThirdParty.CocktailHeroku
 {
-    internal class GeekQuestionsCocktailHerokuGateway : IQuestionsGateway
+    internal class QuestionsCocktailHerokuGateway : IQuestionsGateway
     {
         public QuizQuestion SetQuizQuestionFromRestResponse(string responseContent)
         {
-            var rootObject = JsonConvert.DeserializeObject<List<GeekQuestionsCocktailHerokuRootObject>>(responseContent);
+            var rootObject = JsonConvert.DeserializeObject<List<QuestionsCocktailHerokuRootObject>>(responseContent);
             var quizQuestion = GetQuizQuestion(rootObject.First());
             return quizQuestion;
         }
 
-        private QuizQuestion GetQuizQuestion(GeekQuestionsCocktailHerokuRootObject rootObject)
+        private QuizQuestion GetQuizQuestion(QuestionsCocktailHerokuRootObject rootObject)
         {
             var multipleChoiceCorrectAnswer = rootObject.answers.Single(x => x.correct).text;
             var multipleChoiceAnswers = rootObject.answers.Select(x => x.text);

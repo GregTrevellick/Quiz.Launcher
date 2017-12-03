@@ -29,11 +29,6 @@ Bonus: I can learn things I couldn't learn in day job (git, nuget, restsharp, ma
 
 
 
-POP QUIZ
-https://opentdb.com/api.php?amount=1&category=12
-http://cocktail-trivia-api.herokuapp.com/api/category/entertainment-music/difficulty/easy/count/1
-http://cocktail-trivia-api.herokuapp.com/api/category/entertainment-music/difficulty/medium/count/1
-http://cocktail-trivia-api.herokuapp.com/api/category/entertainment-music/difficulty/hard/count/1
 
 
 

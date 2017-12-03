@@ -2,12 +2,13 @@
 using MoreLinq;
 using Quiz.Questions.Categories.Geek;
 using Quiz.Questions.Entities;
-using Quiz.Questions.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using Quiz.Questions.Categories;
 using Quiz.Questions.Categories.CSharp;
 using Quiz.Questions.Categories.DotNet;
 using Quiz.Questions.Categories.Javascript;
+using Quiz.Questions.Categories.Music;
 using Quiz.Questions.Categories.WebDev;
 
 namespace Quiz.Questions
@@ -46,6 +47,10 @@ namespace Quiz.Questions
                 case Category.Javascript:
                     getQuizQuestions = new JavascriptQuestions();
                     quizQuestions = getQuizQuestions.GetQuizQuestions();
+                    break;
+                case Category.Music:
+                    var musicGateways = new MusicGateways();
+                    quizQuestions = musicGateways.GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
                     break;
                 case Category.WebDev:
                     getQuizQuestions = new WebDevQuestions();

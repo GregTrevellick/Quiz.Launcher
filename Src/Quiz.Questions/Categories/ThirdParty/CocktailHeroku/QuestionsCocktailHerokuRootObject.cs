@@ -1,6 +1,6 @@
-﻿namespace Quiz.Questions.Categories.Geek.ThirdParty.CocktailHeroku
+﻿namespace Quiz.Questions.Categories.ThirdParty.CocktailHeroku
 {
-    internal class GeekQuestionsCocktailHerokuRootObject
+    internal class QuestionsCocktailHerokuRootObject
     {
         public string text { get; set; }
         public Answer[] answers { get; set; }

@@ -141,30 +141,30 @@ namespace Quiz.Ui.Music.Options
         [Description(Constants.SuppressClosingWithoutSubmitingAnswerWarningOptionDetailedDescription)]
         public bool SuppressClosingWithoutSubmitingAnswerWarning { get; set; } = false;
 
-        [Category(Constants.CategorySubLevelQuizCategories)]
-        [DisplayName(Constants.IncludeQuizCategoryCSharpOptionLabel)]
-        [Description(Constants.IncludeQuizCategoryCSharpOptionDetailedDescription)]
-        public bool IncludeQuizCategoryCSharp { get; set; } = true;
+        //[Category(Constants.CategorySubLevelQuizCategories)]
+        //[DisplayName(Constants.IncludeQuizCategoryCSharpOptionLabel)]
+        //[Description(Constants.IncludeQuizCategoryCSharpOptionDetailedDescription)]
+        //public bool IncludeQuizCategoryCSharp { get; set; } = true;
 
-        [Category(Constants.CategorySubLevelQuizCategories)]
-        [DisplayName(Constants.IncludeQuizCategoryDotNetOptionLabel)]
-        [Description(Constants.IncludeQuizCategoryDotNetOptionDetailedDescription)]
-        public bool IncludeQuizCategoryDotNet { get; set; } = true;
+        //[Category(Constants.CategorySubLevelQuizCategories)]
+        //[DisplayName(Constants.IncludeQuizCategoryDotNetOptionLabel)]
+        //[Description(Constants.IncludeQuizCategoryDotNetOptionDetailedDescription)]
+        //public bool IncludeQuizCategoryDotNet { get; set; } = true;
 
-        [Category(Constants.CategorySubLevelQuizCategories)]
-        [DisplayName(Constants.IncludeQuizCategoryGeekOptionLabel)]
-        [Description(Constants.IncludeQuizCategoryGeekOptionDetailedDescription)]
-        public bool IncludeQuizCategoryGeek { get; set; } = true;
+        //[Category(Constants.CategorySubLevelQuizCategories)]
+        //[DisplayName(Constants.IncludeQuizCategoryGeekOptionLabel)]
+        //[Description(Constants.IncludeQuizCategoryGeekOptionDetailedDescription)]
+        //public bool IncludeQuizCategoryGeek { get; set; } = true;
 
-        [Category(Constants.CategorySubLevelQuizCategories)]
-        [DisplayName(Constants.IncludeQuizCategoryJavascriptOptionLabel)]
-        [Description(Constants.IncludeQuizCategoryJavascriptOptionDetailedDescription)]
-        public bool IncludeQuizCategoryJavascript { get; set; } = true;
+        //[Category(Constants.CategorySubLevelQuizCategories)]
+        //[DisplayName(Constants.IncludeQuizCategoryJavascriptOptionLabel)]
+        //[Description(Constants.IncludeQuizCategoryJavascriptOptionDetailedDescription)]
+        //public bool IncludeQuizCategoryJavascript { get; set; } = true;
 
-        [Category(Constants.CategorySubLevelQuizCategories)]
-        [DisplayName(Constants.IncludeQuizCategoryWebDevOptionLabel)]
-        [Description(Constants.IncludeQuizCategoryWebDevOptionDetailedDescription)]
-        public bool IncludeQuizCategoryWebDev { get; set; } = true;
+        //[Category(Constants.CategorySubLevelQuizCategories)]
+        //[DisplayName(Constants.IncludeQuizCategoryWebDevOptionLabel)]
+        //[Description(Constants.IncludeQuizCategoryWebDevOptionDetailedDescription)]
+        //public bool IncludeQuizCategoryWebDev { get; set; } = true;
 
     }
 }

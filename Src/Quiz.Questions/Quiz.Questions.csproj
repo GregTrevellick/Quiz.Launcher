@@ -54,37 +54,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categories\CSharp\CSharpQuestions.cs" />
+    <Compile Include="Categories\Music\MusicGateways.cs" />
     <Compile Include="Categories\Javascript\JavascriptQuestions.cs" />
     <Compile Include="Categories\WebDev\WebDevQuestions.cs" />
     <Compile Include="CategoryHelper.cs" />
     <Compile Include="Categories\Geek\GeekGateways.cs" />
     <Compile Include="CharacterHelper.cs" />
     <Compile Include="ErrorHelper.cs" />
-    <Compile Include="Interfaces\IGetQuizQuestions.cs" />
+    <Compile Include="Categories\IGetQuizQuestions.cs" />
     <Compile Include="QuizQuestionApi.cs" />
     <Compile Include="Categories\Geek\IGeekQuestions.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\DifficultyLevel.cs" />
     <Compile Include="Entities\QuizQuestion.cs" />
-    <Compile Include="Interfaces\IQuizQuestionApi.cs" />
-    <Compile Include="Interfaces\IGetQuizQuestionsExternally.cs" />
-    <Compile Include="Interfaces\IQuestionsGateway.cs" />
+    <Compile Include="IQuizQuestionApi.cs" />
+    <Compile Include="Categories\IGetThirdPartyQuizQuestions.cs" />
+    <Compile Include="Categories\ThirdParty\IQuestionsGateway.cs" />
     <Compile Include="Categories\DotNet\DotNetQuestions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Categories\Geek\ThirdParty\CocktailHeroku\GeekQuestionsCocktailHeroku.cs" />
-    <Compile Include="Categories\Geek\ThirdParty\CocktailHeroku\GeekQuestionsCocktailHerokuGateway.cs" />
-    <Compile Include="Categories\Geek\ThirdParty\CocktailHeroku\GeekQuestionsCocktailHerokuRootObject.cs" />
+    <Compile Include="Categories\ThirdParty\CocktailHeroku\QuestionsCocktailHeroku.cs" />
+    <Compile Include="Categories\ThirdParty\CocktailHeroku\QuestionsCocktailHerokuGateway.cs" />
+    <Compile Include="Categories\ThirdParty\CocktailHeroku\QuestionsCocktailHerokuRootObject.cs" />
     <Compile Include="Categories\Geek\GeekQuestions.cs" />
-    <Compile Include="Categories\Geek\ThirdParty\OpenTdb\GeekQuestionsOpenTdb.cs" />
-    <Compile Include="Categories\Geek\ThirdParty\OpenTdb\GeekQuestionsOpenTdbGateway.cs" />
-    <Compile Include="Categories\Geek\ThirdParty\OpenTdb\GeekQuestionsOpenTdbRootObject.cs" />
+    <Compile Include="Categories\ThirdParty\OpenTdb\QuestionsOpenTdb.cs" />
+    <Compile Include="Categories\ThirdParty\OpenTdb\QuestionsOpenTdbGateway.cs" />
+    <Compile Include="Categories\ThirdParty\OpenTdb\QuestionsOpenTdbRootObject.cs" />
     <Compile Include="Entities\QuestionType.cs" />
     <Compile Include="Entities\ResponseDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Categories\Music\ThirdParty\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

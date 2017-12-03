@@ -1,6 +1,6 @@
 ﻿using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.Interfaces
+namespace Quiz.Questions.Categories.ThirdParty
 {
     public interface IQuestionsGateway
     {
