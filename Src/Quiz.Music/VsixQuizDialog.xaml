@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="Quiz.Ui.Music.VsixQuizDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Quiz.Ui.Music"
+             mc:Ignorable="d" >
+
+    <StackPanel Orientation="Vertical" Name="StackPanelQuiz">
+        <StackPanel Orientation="Vertical" Name="StackPanelMain">
+            <TextBlock Margin="10,10,10,10" Name="TextBlockDifficulty" />
+            <TextBlock Margin="10,10,10,10" Name="TextBlockQuestion" />
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Margin="10,5,5,5" Name="RadioButton1" Visibility="Collapsed" Checked="RadioButton1_OnChecked" GroupName="AnswersGroup" />
+                <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonCorrect1" Stretch="None" Source="Resources/CorrectAnswer.png" />
+                <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonIncorrect1" Stretch="None" Source="Resources/IncorrectAnswer.png" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Margin="10,5,5,5" Name="RadioButton2" Visibility="Collapsed" Checked="RadioButton2_OnChecked" GroupName="AnswersGroup" />
+                <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonCorrect2" Stretch="None" Source="Resources/CorrectAnswer.png" />
+                <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonIncorrect2" Stretch="None" Source="Resources/IncorrectAnswer.png" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Margin="10,5,5,5" Name="RadioButton3" Visibility="Collapsed" Checked="RadioButton3_OnChecked" GroupName="AnswersGroup" />
+                <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonCorrect3" Stretch="None" Source="Resources/CorrectAnswer.png" />
+                <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonIncorrect3" Stretch="None" Source="Resources/IncorrectAnswer.png" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Margin="10,5,5,5" Name="RadioButton4" Visibility="Collapsed" Checked="RadioButton4_OnChecked" GroupName="AnswersGroup" />
+                <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonCorrect4" Stretch="None" Source="Resources/CorrectAnswer.png" />
+                <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonIncorrect4" Stretch="None" Source="Resources/IncorrectAnswer.png" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Margin="10,5,5,5" Name="RadioButton5" Visibility="Collapsed" Checked="RadioButton5_OnChecked" GroupName="AnswersGroup" />
+                <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonCorrect5" Stretch="None" Source="Resources/CorrectAnswer.png" />
+                <Image Visibility="Collapsed" Margin="10,10,10,10" Name="QuizReplyEmoticonIncorrect5" Stretch="None" Source="Resources/IncorrectAnswer.png" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockQuizReply" />
+            <TextBlock Visibility="Collapsed" Margin="1,10,10,10" Name="TextBlockBingle">
+                <Hyperlink Name="HyperLinkBingle" RequestNavigate="HyperLinkBingle_RequestNavigate" />
+            </TextBlock>
+        </StackPanel>
+        <StackPanel>
+            <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" IsEnabled="False"  HorizontalAlignment="Left" Click="ButtonSubmitMultiChoiceAnwser_OnClick" Name="ButtonSubmitMultiChoiceAnwser"/>
+        </StackPanel>
+        <StackPanel>
+            <Grid ShowGridLines="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,1,1,1" Text="Total Questions:" />
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,1,1,1" Text="Correct Answers:" />
+                <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,1,1,1" Text="Success Rate:" />
+                <TextBlock Grid.Row="3" Grid.Column="0" Margin="10,1,1,1" Text="Your Status:" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,1,1,1" Name="TextBlockTotalQuestionsAsked" />
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,1,1,1" Name="TextBlockTotalQuestionsAnsweredCorrectly" />
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,1,1,1" Name="TextBlockUserStatus" />
+                <TextBlock Grid.Row="3" Grid.Column="1" Margin="10,1,1,1" Name="TextBlockUserRank" />
+            </Grid>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonClose_OnClick" Name="ButtonClose"/>
+            <!--<Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonHelp_OnClick" Name="ButtonHelp"/>-->
+            <TextBlock Margin="10,10,10,10" Name="TextBlockHelp2">
+                <Hyperlink Name="HyperLinkHelp" RequestNavigate="HyperLinkHelp_RequestNavigate" />
+            </TextBlock>
+            <TextBlock Margin="10,10,10,10" Name="TextBlockSupplyAQuestion">
+                <Hyperlink Name="HyperLinkSupplyAQuestion" RequestNavigate="HyperLinkSupplyAQuestion_RequestNavigate" />
+            </TextBlock>
+        </StackPanel>
+        <!--<StackPanel>
+            <TextBlock Margin="10,10,10,10" Name="TextBlockHelp" Visibility="Collapsed"/>
+        </StackPanel>-->
+        <StackPanel>
+            <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockErrorDetails" />
+        </StackPanel>
+        <!--<StackPanel>
+            <Button Content="Again" Margin="10,10,10,10" Padding="5,5,5,5" Click="ButtonAgain_OnClick" Name="ButtonAgain"/>
+        </StackPanel>-->
+
+    </StackPanel>
+
+
+</UserControl>

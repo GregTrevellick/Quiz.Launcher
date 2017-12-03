@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Core.UnitTests", "Quiz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Core", "Quiz.Core\Quiz.Core.csproj", "{2B4BF22D-DF25-4B85-BA12-8A056D010C12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Ui.Music", "Quiz.Music\Quiz.Ui.Music.csproj", "{9148D1CF-E982-4C2C-9DC7-02794701D63C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{2B4BF22D-DF25-4B85-BA12-8A056D010C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B4BF22D-DF25-4B85-BA12-8A056D010C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B4BF22D-DF25-4B85-BA12-8A056D010C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9148D1CF-E982-4C2C-9DC7-02794701D63C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9148D1CF-E982-4C2C-9DC7-02794701D63C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9148D1CF-E982-4C2C-9DC7-02794701D63C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9148D1CF-E982-4C2C-9DC7-02794701D63C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
