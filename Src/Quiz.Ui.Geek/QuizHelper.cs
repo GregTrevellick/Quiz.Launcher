@@ -17,12 +17,13 @@ namespace Quiz.Ui
         public event QuizHelperEventHandler PersistHiddenOptionsQuizHelperEventHandlerEventHandler;
 
         public HiddenOptionsDto GetHiddenOptionsDto(QuizHelperDto quizHelperDto, IQuizQuestionApi quizQuestionApi)
-        {
-            var preferredCategoriesFromOptions = quizHelperDto.PreferredCategoriesFromOptions;//e.g. Category.DotNet | Category.Geek; 
+        {       
+            var categoryToSupply = CategoryHelper.GetCategoryToSupply(quizHelperDto.PreferredCategoriesFromOptions);
 
-            var quizQuestion = quizQuestionApi.GetQuizQuestion(preferredCategoriesFromOptions, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
+            var quizQuestion = quizQuestionApi.GetQuizQuestion(categoryToSupply, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
             var quizDialogDto = QuizHelperCore.GetQuizDialogDto(quizQuestion, Vsix.Name);
+
             DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
                 quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy, quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAnsweredCorrectlyHard, quizHelperDto.TotalQuestionsAsked, quizHelperDto.SearchEngine);
 

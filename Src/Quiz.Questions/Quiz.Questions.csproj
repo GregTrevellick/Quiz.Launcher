@@ -57,7 +57,6 @@
     <Compile Include="Categories\Music\MusicGateways.cs" />
     <Compile Include="Categories\Javascript\JavascriptQuestions.cs" />
     <Compile Include="Categories\WebDev\WebDevQuestions.cs" />
-    <Compile Include="CategoryHelper.cs" />
     <Compile Include="Categories\Geek\GeekGateways.cs" />
     <Compile Include="CharacterHelper.cs" />
     <Compile Include="ErrorHelper.cs" />

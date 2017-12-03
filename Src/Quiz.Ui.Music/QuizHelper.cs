@@ -1,12 +1,6 @@
-﻿using System;
-using System.Linq;
-using System.Windows;
-using System.Windows.Documents;
-using System.Windows.Media.Imaging;
+﻿using MoreLinq;
 using Quiz.Core;
-using Quiz.Questions.Entities;
-using MoreLinq;
-using Quiz.Core;
+using Quiz.Questions;
 using Quiz.Questions.Entities;
 using System;
 using System.Linq;
@@ -14,7 +8,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
-using Quiz.Questions;
 
 namespace Quiz.Ui.Music
 {
@@ -25,11 +18,10 @@ namespace Quiz.Ui.Music
 
         public HiddenOptionsDto GetHiddenOptionsDto(QuizHelperDto quizHelperDto, IQuizQuestionApi quizQuestionApi)
         {
-            var preferredCategoriesFromOptions = quizHelperDto.PreferredCategoriesFromOptions;//e.g. Category.DotNet | Category.Geek; 
-
-            var quizQuestion = quizQuestionApi.GetQuizQuestion(preferredCategoriesFromOptions, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
+            var quizQuestion = quizQuestionApi.GetQuizQuestion(Category.Music, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
             var quizDialogDto = QuizHelperCore.GetQuizDialogDto(quizQuestion, Vsix.Name);
+
             DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
                 quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy, quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAnsweredCorrectlyHard, quizHelperDto.TotalQuestionsAsked, quizHelperDto.SearchEngine);
 
@@ -105,7 +97,6 @@ namespace Quiz.Ui.Music
                 vsixQuizDialog.TextBlockUserRank.Text = userRank;
             }
 
-            //triviaDialog.Show();
             var window = new Window
             {
                 Title = quizDialogDto.PopUpTitle,

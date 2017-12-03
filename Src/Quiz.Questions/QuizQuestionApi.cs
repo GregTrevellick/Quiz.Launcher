@@ -17,20 +17,16 @@ namespace Quiz.Questions
     {
         private string errorDetails;
 
-        public QuizQuestion GetQuizQuestion(Category preferredCategoriesFromOptions, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
+        public QuizQuestion GetQuizQuestion(Category singleCategory, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             IEnumerable<QuizQuestion> quizQuestions = null;
 
-            var categoryToSupply = CategoryHelper.GetCategoryToSupply(preferredCategoriesFromOptions);
-
-            //gregt weight and do just one of these five - weight dynamically based upon size of questions in each collection ?
-
             IGetQuizQuestions getQuizQuestions;
 
-            switch (categoryToSupply)
+            switch (singleCategory)
             {
                 case Category.Unknown:
-                    errorDetails = ErrorHelper.HandleArgumentOutOfRangeException(nameof(categoryToSupply), (int)categoryToSupply);
+                    errorDetails = ErrorHelper.HandleArgumentOutOfRangeException(nameof(singleCategory), (int)singleCategory);
                     break;
                 case Category.CSharp:
                     getQuizQuestions = new CSharpQuestions();
@@ -57,7 +53,7 @@ namespace Quiz.Questions
                     quizQuestions = getQuizQuestions.GetQuizQuestions();
                     break;
                 default:
-                    errorDetails = ErrorHelper.HandleArgumentOutOfRangeException(nameof(categoryToSupply), (int)categoryToSupply);
+                    errorDetails = ErrorHelper.HandleArgumentOutOfRangeException(nameof(singleCategory), (int)singleCategory);
                     break;
             }
 
@@ -65,7 +61,7 @@ namespace Quiz.Questions
             {
                 var quizQuestion = quizQuestions.RandomSubset(1).Single();
 
-                quizQuestion.Category = categoryToSupply;//gregt this should be unnecessary as they are both the same but this is not always the case
+                quizQuestion.Category = singleCategory;//gregt this should be unnecessary as they are both the same but this is not always the case
 
                 return quizQuestion;
             }
