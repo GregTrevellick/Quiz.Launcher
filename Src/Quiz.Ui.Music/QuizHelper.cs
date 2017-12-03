@@ -154,7 +154,7 @@ namespace Quiz.Ui.Music
 
         private Uri GetIconUri()
         {
-            var assemblyName = "Quiz.Ui";
+            var assemblyName = "Quiz.Ui.Music";
             var packUri = $"pack://application:,,,/{assemblyName};component/Resources/vsixextensionicon_90x90_resource_bb6_icon.ico";
             return new Uri(packUri, UriKind.RelativeOrAbsolute);
         }
