@@ -3,7 +3,6 @@ using Quiz.Questions.Entities;
 
 namespace Quiz.Questions.CategoryQuestions.FrontEnd
 {
-    //gregt rename to FrontEnd
     internal class FrontEndQuestions : IGetQuizQuestions
     {
         private const Category Category = Entities.Category.FrontEnd;

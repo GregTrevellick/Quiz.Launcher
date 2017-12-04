@@ -6,10 +6,6 @@ testcases.txt
 
 questions/answers capitalisation
 
-add Launcher.sln
-add popquiz.csproj
-move shared code to a class library project
-
 gregt
 
 
