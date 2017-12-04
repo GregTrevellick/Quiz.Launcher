@@ -2,6 +2,7 @@
 using MoreLinq;
 using Quiz.Questions.Entities;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Quiz.Questions.CategoryQuestions;
 using Quiz.Questions.CategoryQuestions.CSharp;
@@ -61,7 +62,11 @@ namespace Quiz.Questions
             {
                 var quizQuestion = quizQuestions.RandomSubset(1).Single();
 
-                quizQuestion.Category = singleCategory;//gregt this should be unnecessary as they are both the same but this is not always the case
+                if (quizQuestion.Category != singleCategory)
+                {
+                    throw new Exception("gregt");
+                    //quizQuestion.Category = singleCategory;//Should be unnecessary as they are both the same but this is not always the case
+                }
 
                 return quizQuestion;
             }
