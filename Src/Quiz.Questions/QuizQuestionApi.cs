@@ -64,7 +64,7 @@ namespace Quiz.Questions
 
                 if (quizQuestion.Category != singleCategory)
                 {
-                    quizQuestion.Category = singleCategory;//gregt Should be unnecessary as they are both the same but this is not always the case
+                    quizQuestion.Category = singleCategory;//Shouldn't be necessary as they are both the same but this is not always the case
                 }
 
                 return quizQuestion;

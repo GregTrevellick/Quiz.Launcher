@@ -327,7 +327,7 @@ namespace Quiz.Ui.Music
 
         private void SetHelpHyperLink()
         {
-            var uri = "https://github.com/GregTrevellick/OpenInApp.Launcher/blob/master/CHANGELOG.md";
+            var uri = "https://github.com/GregTrevellick/Quiz.Launcher/wiki/Help";
             HyperLinkHelp.NavigateUri = new Uri(uri);
             HyperLinkHelp.Inlines.Clear();
             HyperLinkHelp.Inlines.Add("Help");
@@ -335,7 +335,7 @@ namespace Quiz.Ui.Music
 
         private void SetSupplyAQuestionHyperLink()
         {
-            var uri = "https://github.com/GregTrevellick/SolutionOpenPopUp/blob/master/CHANGELOG.md";
+            var uri = "https://github.com/GregTrevellick/Quiz.Launcher/wiki/Submit-A-Question";
             HyperLinkSupplyAQuestion.NavigateUri = new Uri(uri);
             HyperLinkSupplyAQuestion.Inlines.Clear();
             HyperLinkSupplyAQuestion.Inlines.Add("Submit a question");
