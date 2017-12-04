@@ -203,12 +203,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\..\LICENSE.txt">
-      <Link>LICENSE.txt</Link>
-    </Content>
     <Resource Include="Resources\CorrectAnswer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Content Include="..\..\LICENSE.txt">
+      <Link>LICENSE.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="VsmpAssets\ReadMeScreenShot_Options.png" />
     <Resource Include="Resources\IncorrectAnswer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

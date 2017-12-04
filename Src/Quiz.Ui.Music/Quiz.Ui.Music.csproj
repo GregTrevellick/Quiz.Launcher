@@ -92,6 +92,8 @@
   <ItemGroup>
     <Content Include="..\..\LICENSE.txt">
       <Link>LICENSE.txt</Link>
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Resources\vsixextensionicon_90x90_resource_bb6_icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
