@@ -7,9 +7,7 @@ testcases.txt
 questions/answers capitalisation
 
 github wiki page for submitting question
-
 github wiki page for help
-
 github wiki home page
 
 

@@ -320,7 +320,7 @@ namespace Quiz.Ui.Music
 
             HyperLinkBingle.NavigateUri = new Uri(uri);
             HyperLinkBingle.Inlines.Clear();
-            HyperLinkBingle.Inlines.Add("Bingle it!");
+            HyperLinkBingle.Inlines.Add(Constants.BingleIt);
 
             TextBlockBingle.Visibility = Visibility.Visible;
         }

@@ -6,6 +6,7 @@ namespace Quiz.Core
     {
         public const int RecommendedMaximumTimeoutMilliSeconds = 3000;
         public const int RecommendedMinimumTimeoutMilliSeconds = 400;
+        public const string BingleIt = "bingle it";
         public const string CategoryFromQuestions = " category.";
         public const string CategorySubLevelFrequency = "Frequency";
         public const string CategorySubLevelGeneral = "General";

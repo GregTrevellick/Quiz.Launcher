@@ -8,7 +8,7 @@ namespace Quiz.Ui
 {
     internal class CategoryHelper
     {
-        private static IDictionary<GeekCategory, int> preferredGeekCategoriesFromOptionsDictionary = new Dictionary<GeekCategory, int>();
+        private static IDictionary<GeekCategory, int> preferredGeekCategoriesFromOptionsDictionary;//= new Dictionary<GeekCategory, int>();
         private static IDictionary<int, Category> weightingDictionary = new Dictionary<int, Category>();
 
         internal static Category GetCategoryToSupply(GeekCategory preferredGeekCategoriesFromOptions)
@@ -39,6 +39,8 @@ namespace Quiz.Ui
             };
 
             var validGeekCategories = Enum.GetValues(typeof(GeekCategory));
+
+            preferredGeekCategoriesFromOptionsDictionary = new Dictionary<GeekCategory, int>();
 
             foreach (GeekCategory geekCategory in validGeekCategories)
             {
