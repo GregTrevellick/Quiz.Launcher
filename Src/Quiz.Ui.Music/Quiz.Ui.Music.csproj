@@ -96,12 +96,11 @@
     <Content Include="source.extension.ico">
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
     </Content>
-    <Content Include="VsmpAssets\ReadMeScreenShot.png" />
-    <Content Include="VsmpAssets\ReadMeScreenShot_Answer.png" />
+    <Content Include="VsmpAssets\ReadMeScreenShot_PopUp.png" />
     <Resource Include="Resources\CorrectAnswer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Content Include="Resources\Generic_ReadMeScreenShot_OptionsGeneral.png" />
+    <Content Include="VsmpAssets\ReadMeScreenShot_Options.png" />
     <Resource Include="Resources\IncorrectAnswer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

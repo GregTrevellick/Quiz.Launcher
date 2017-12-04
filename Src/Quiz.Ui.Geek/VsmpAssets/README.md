@@ -1,34 +1,28 @@
-[GitHubRepoURL]: https://github.com/GregTrevellick/TrivialApisForIDE
-[GitHubRepoIssuesURL]: https://github.com/GregTrevellick/TrivialApisForIDE/issues
-[GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
+[GitHubRepoURL]: https://github.com/GregTrevellick/Quiz.Launcher
+[GitHubRepoIssuesURL]: https://github.com/GregTrevellick/Quiz.Launcher/issues
+[GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/Quiz.Launcher/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.GeekQuiz#review-details
 
-A trivial extension that poses a geeky question when opening and/or closing a solution file.
+A trivial extension that poses a geek quiz question when opening the Start Page.
+
+Configurable to also / only pose questions when opening and / or closing a solution.
 
 - Simple escapism from the day to day pressures of software development.
 
 - If you like this ***free*** extension, please give it a [review][VSMarketplaceUrl].
 
-- Questions and answers gratefully supplied by free of charge by [Open Trivia Database](https://opentdb.com/).
-
 - Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
 
-- Example question
- 
-  ![](ReadMeScreenShot.png)
-
-- Example answer
-
-  ![](ReadMeScreenShot_Answer.png)
+  ![](ReadMeScreenShot_PopUp.png)
 
 ### Options
 
-- Frequency of pop-up message delivery configurable
+- Configurable frequency of delivery of quiz question 
 
-- Upper limit of pop-up messages per day configurable, with different values for midweek and weekends
+- Upper limit of quiz questions per day configurable, with different values for midweek and weekends
 
 - Configurable timeout (in milliseconds) for third party data retrieval process 
 
-- Ability to request pop-up when opening and/or when closing a solution file
+- Ability to begin quiz when opening start page, opening a solution, closing a solution
 
-  ![](../../Trivial.Ui.Common/Resources/Generic_ReadMeScreenShot_OptionsGeneral.png)
+  ![](ReadMeScreenShot_Options.png)
