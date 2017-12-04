@@ -1,9 +1,9 @@
-[AppVeyorProjectUrl]: https://ci.appveyor.com/project/GregTrevellick/trivialapisforide
+[AppVeyorProjectUrl]: https://ci.appveyor.com/project/GregTrevellick/quizlauncher
 [AppVeyorProjectBuildStatusBadgeSvg]: https://ci.appveyor.com/api/projects/status/iapcrndog6fvdd9l?svg=true
-[GitHubRepoURL]: https://github.com/GregTrevellick/TrivialApisForIDE
-[GitHubRepoIssuesURL]: https://github.com/GregTrevellick/TrivialApisForIDE/issues
-[GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
-[VersionNumberBadgeURL]: https://vsmarketplacebadge.apphb.com/version/GregTrevellick.TrivialApisForIDE.svg
+[GitHubRepoURL]: https://github.com/GregTrevellick/Quiz.Launcher
+[GitHubRepoIssuesURL]: https://github.com/GregTrevellick/Quiz.Launcher/issues
+[GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/Quiz.Launcher/pulls
+[VersionNumberBadgeURL]: https://vsmarketplacebadge.apphb.com/version/GregTrevellick.Quiz.Launcher.svg
 [VisualStudioURL]: https://www.visualstudio.com/
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/search?term=trevellick&target=VS&sortBy=Relevance
 
@@ -13,13 +13,13 @@
 [![Build status][AppVeyorProjectBuildStatusBadgeSvg]][AppVeyorProjectUrl]
 [![][VersionNumberBadgeURL]][VSMarketplaceUrl]
 
-An arbitrary [Visual Studio][VisualStudioURL] extension that asks tech-related quiz questions when opening (configurable) the [Visual Studio][VisualStudioURL] IDE.
+An arbitrary quiz extension for the [Visual Studio][VisualStudioURL] IDE.
 
-Not an official training or education tool, and all questions / answers are presented E&OE.
+In no way an official quiz, training or educational tool, just a bit of fun.
 
 Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension.
 
-This [Visual Studio][VisualStudioURL] extension is officially available at the [Visual Studio Marketplace][VSMarketplaceUrl].
+Available at the [Visual Studio Marketplace][VSMarketplaceUrl].
 
 Contributions to this project are welcome, including submissions of new questions / answers, by raising an [Issue][GitHubRepoIssuesURL] or submitting a [Pull Request][GitHubRepoPullRequestsURL].
 
