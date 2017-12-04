@@ -69,7 +69,7 @@ namespace Quiz.Ui
             }
         }
 
-        private static Category MapGeekCategoryToCategory(GeekCategory geekCategory)//gregt unit test reqd
+        private static Category MapGeekCategoryToCategory(GeekCategory geekCategory)
         {
             switch (geekCategory)
             {
