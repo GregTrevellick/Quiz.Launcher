@@ -6,12 +6,12 @@ testcases.txt
 
 questions/answers capitalisation
 
-gregt
+github wiki page for submitting question
+
+github wiki page for help
 
 
-http://www.knowledge-pills.com/comkp1/kp/series/005_INFORMATION%20SYSTEMS/002_DEMO_Open%20Source,%20every%20one%20has%20got%20an%20interest/the07/01the07z.htm
-https://github.com/MaximAbramchuck/awesome-interview-questions
-https://github.com/freeCodeCamp/multiple-choice-questions
+
 
 
 Why ?
@@ -34,6 +34,9 @@ Bonus: I can learn things I couldn't learn in day job (git, nuget, restsharp, ma
 //https://vbhuggi.jimdo.com/c-net-lectures/
 //http://questionsandanswerspdf.com/tag/multiple-choice-questions-in-c-net-with-answers/
 https://support.google.com/feedburner/answer/79408
+http://www.knowledge-pills.com/comkp1/kp/series/005_INFORMATION%20SYSTEMS/002_DEMO_Open%20Source,%20every%20one%20has%20got%20an%20interest/the07/01the07z.htm
+https://github.com/MaximAbramchuck/awesome-interview-questions
+https://github.com/freeCodeCamp/multiple-choice-questions
 
 
 
@@ -67,18 +70,8 @@ cannot select > 1 radio button
 
 
 
-FUTURE put questions source into different repo ?
-FUTURE add categories for questions categories (general, c#, JavaScript)
-FUTURE help - about - ask another question
-FUTURE daz's hawkings app ???
-FUTURE add icons questions
-FUTURE add podcast theme questions
-FUTURE Help to include a link to a github MD page to submit questions via issue or email
 FUTURE add in rating review chaser
-FUTURE rating for free extns only https://marketplace.visualstudio.com/services/VStudio/Extension.svc (use fiddler when running the Extension and Updates dialog)
 FUTURE close all popups when sln is closed
-FUTURE allow user to reset the % success back to zero
-FUTURE if uptake is significant allow user to request a second question, but not anymore than that (show "go back to work" message)
 FUTURE if uptake is significant add option for user to select easy / medium / hard
 FUTURE if uptake is significant play correct / incorrect sound ?
 FUTURE countdown timer ? hard 43-67 secs randomly, medium 28-48, easy 18-33
