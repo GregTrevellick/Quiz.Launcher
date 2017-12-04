@@ -65,6 +65,10 @@
       <Project>{2efcc4d7-8c7b-4e06-b3b4-b041412d1604}</Project>
       <Name>Quiz.Questions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Quiz.Ui.Geek\Quiz.Ui.csproj">
+      <Project>{CE2ABD86-DA2B-432D-B218-F7C222882061}</Project>
+      <Name>Quiz.Ui</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

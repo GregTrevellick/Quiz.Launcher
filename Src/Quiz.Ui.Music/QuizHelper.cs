@@ -18,14 +18,14 @@ namespace Quiz.Ui.Music
 
         public HiddenOptionsDto GetHiddenOptionsDto(QuizHelperDto quizHelperDto, IQuizQuestionApi quizQuestionApi)
         {
-            var quizQuestion = quizQuestionApi.GetQuizQuestion(Category.Music, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
+            var quizQuestion = quizQuestionApi.GetQuizQuestion(quizHelperDto.Category, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
             var quizDialogDto = QuizHelperCore.GetQuizDialogDto(quizQuestion, Vsix.Name);
 
             DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
                 quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy, quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAnsweredCorrectlyHard, quizHelperDto.TotalQuestionsAsked, quizHelperDto.SearchEngine);
 
-            var hiddenOptionsDto = QuizHelperCore.GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
+            var hiddenOptionsDto = QuizHelper.GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
 
             return hiddenOptionsDto;
         }
@@ -165,6 +165,27 @@ namespace Quiz.Ui.Music
             {
                 radioButton.Visibility = Visibility.Visible;
             }
+        }
+
+
+        public static HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
+        {
+            var hiddenOptionsDto = new HiddenOptionsDto();
+
+            var baseDateTime = DateTime.Now;
+
+            if (QuizHelperCore.IsANewDay(lastPopUpDateTime, baseDateTime))
+            {
+                hiddenOptionsDto.PopUpCountToday = 1;
+            }
+            else
+            {
+                hiddenOptionsDto.PopUpCountToday = popUpCountToday + 1;
+            }
+
+            hiddenOptionsDto.LastPopUpDateTime = baseDateTime;
+
+            return hiddenOptionsDto;
         }
     }
 }

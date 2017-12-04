@@ -4,13 +4,13 @@ namespace Quiz.Core
 {
     public class DecisionMaker
     {
-        public bool ShouldShowQuiz(GeneralOptionsDto generalOptionsDto)
+        public bool ShouldShowQuiz(int popUpCountToday, int maximumPopUpsWeekEnd, int maximumPopUpsWeekDay, DateTime lastPopUpDateTime, int popUpIntervalInMins)
         {
             var dateTimeNow = DateTime.Now;
 
-            if (!HaveExceededTodaysPopUpCount(generalOptionsDto, dateTimeNow))
+            if (!HaveExceededTodaysPopUpCount(popUpCountToday, maximumPopUpsWeekEnd, maximumPopUpsWeekDay, dateTimeNow))
             {
-                if (LastPopUpMoreThanXMinutesAgo(generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins, dateTimeNow))
+                if (LastPopUpMoreThanXMinutesAgo(lastPopUpDateTime, popUpIntervalInMins, dateTimeNow))
                 {
                     return true;
                 }
@@ -19,18 +19,18 @@ namespace Quiz.Core
             return false;
         }
 
-        private bool HaveExceededTodaysPopUpCount(GeneralOptionsDto generalOptionsDto, DateTime dateTimeNow)
+        private bool HaveExceededTodaysPopUpCount(int popUpCountToday, int maximumPopUpsWeekEnd, int maximumPopUpsWeekDay, DateTime dateTimeNow)
         {
             var isWeekend = IsWeekend(dateTimeNow);
             bool haveExceededPopUpCountToday;
 
             if (isWeekend)
             {
-                haveExceededPopUpCountToday = HaveExceededTodaysPopUpCount(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd);
+                haveExceededPopUpCountToday = HaveExceededTodaysPopUpCount(popUpCountToday, maximumPopUpsWeekEnd);
             }
             else
             {
-                haveExceededPopUpCountToday = HaveExceededTodaysPopUpCount(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekDay);
+                haveExceededPopUpCountToday = HaveExceededTodaysPopUpCount(popUpCountToday, maximumPopUpsWeekDay);
             }
 
             return haveExceededPopUpCountToday;

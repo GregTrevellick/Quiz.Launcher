@@ -7,16 +7,16 @@ namespace Quiz.Ui
 {
     internal class CategoryHelper
     {
-        private static IDictionary<Category, int> preferredCategoriesFromOptionsDictionary = new Dictionary<Category, int>();
+        private static IDictionary<GeekCategory, int> preferredGeekCategoriesFromOptionsDictionary = new Dictionary<GeekCategory, int>();
         private static IDictionary<int, Category> weightingDictionary = new Dictionary<int, Category>();
 
-        internal static Category GetCategoryToSupply(Category preferredCategoriesFromOptions)
+        internal static Category GetCategoryToSupply(GeekCategory preferredGeekCategoriesFromOptions)
         {
-            SetPreferredCategoriesFromOptionsDictionary(preferredCategoriesFromOptions);
+            SetPreferredGeekCategoriesFromOptionsDictionary(preferredGeekCategoriesFromOptions);
 
-            foreach (var preferredCategoryFromOptions in preferredCategoriesFromOptionsDictionary)
+            foreach (var preferredGeekCategoryFromOptions in preferredGeekCategoriesFromOptionsDictionary)
             {
-                SetWeightingDictionry(preferredCategoryFromOptions.Value,preferredCategoryFromOptions.Key);
+                SetWeightingDictionry(preferredGeekCategoryFromOptions.Value,preferredGeekCategoryFromOptions.Key);
             }
 
             var random = new Random();
@@ -25,45 +25,69 @@ namespace Quiz.Ui
             return result.Value;
         }
 
-        private static void SetPreferredCategoriesFromOptionsDictionary(Category preferredCategoriesFromOptions)
+        private static void SetPreferredGeekCategoriesFromOptionsDictionary(GeekCategory preferredGeekCategoriesFromOptions)
         {
-            var categoryWeightingDictionary = new Dictionary<Category, int>
+            var geekCategoryWeightingDictionary = new Dictionary<GeekCategory, int>
             {
                 //gregt assess these weightings
-                {Category.CSharp, 20},
-                {Category.DotNet, 20},
-                {Category.Geek, 50},
-                {Category.Javascript, 5},
-                {Category.WebDev, 5},
+                {GeekCategory.CSharp, 20},
+                {GeekCategory.DotNet, 20},
+                {GeekCategory.Geek, 50},
+                {GeekCategory.Javascript, 5},
+                {GeekCategory.WebDev, 5},
             };
 
-            var validCategories = Enum.GetValues(typeof(Category));
+            var validGeekCategories = Enum.GetValues(typeof(GeekCategory));
 
-            foreach (Category category in validCategories)
+            foreach (GeekCategory geekCategory in validGeekCategories)
             {
-                if (category > 0)
+                if (geekCategory > 0)
                 {
-                    SetPreferredCategoriesFromOptionsDictionary(preferredCategoriesFromOptions, category, categoryWeightingDictionary);
+                    SetPreferredGeekCategoriesFromOptionsDictionary(preferredGeekCategoriesFromOptions, geekCategory, geekCategoryWeightingDictionary);
                 }
             }
         }
 
-        private static void SetPreferredCategoriesFromOptionsDictionary(Category preferredCategoriesFromOptions, Category preferredCategoryFromOptions, Dictionary<Category, int> categoryWeightingDictionary)
+        private static void SetPreferredGeekCategoriesFromOptionsDictionary(GeekCategory preferredGeekCategoriesFromOptions, GeekCategory preferredGeekCategoryFromOptions, Dictionary<GeekCategory, int> geekCategoryWeightingDictionary)
         {
-            if (preferredCategoriesFromOptions.HasFlag(preferredCategoryFromOptions))
+            if (preferredGeekCategoriesFromOptions.HasFlag(preferredGeekCategoryFromOptions))
             {
-                preferredCategoriesFromOptionsDictionary.Add(preferredCategoryFromOptions, categoryWeightingDictionary.Single(x => x.Key == preferredCategoryFromOptions).Value);
+                preferredGeekCategoriesFromOptionsDictionary.Add(preferredGeekCategoryFromOptions, geekCategoryWeightingDictionary.Single(x => x.Key == preferredGeekCategoryFromOptions).Value);
             }
         }
 
-        private static void SetWeightingDictionry(int weighting, Category category)
+        private static void SetWeightingDictionry(int weighting, GeekCategory geekCategory)
         {
             var index = weightingDictionary.Count;
 
             for (int i = 0; i < weighting; i++)
             {
+                var category = MapGeekCategoryToCategory(geekCategory);
                 weightingDictionary.Add(index, category);
                 index++;
+            }
+        }
+
+        private static Category MapGeekCategoryToCategory(GeekCategory geekCategory)//gregt unit test reqd
+        {
+            switch (geekCategory)
+            {
+                case GeekCategory.Unknown:
+                    //gregt error here
+                    return Category.Unknown;
+                case GeekCategory.CSharp:
+                    return Category.CSharp;
+                case GeekCategory.DotNet:
+                    return Category.DotNet;
+                case GeekCategory.Geek:
+                    return Category.Geek;
+                case GeekCategory.Javascript:
+                    return Category.Javascript;
+                case GeekCategory.WebDev:
+                    return Category.WebDev;
+                default:
+                    //gregt error here
+                    return Category.Unknown;
             }
         }
     }

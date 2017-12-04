@@ -84,7 +84,7 @@ namespace Quiz.Ui
         {
             //TODO ChaseRatings();
 
-            var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(generalOptionsDto);
+            var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd, generalOptionsDto.MaximumPopUpsWeekDay, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins);
 
             if (shouldShowQuiz)
             {
@@ -96,9 +96,9 @@ namespace Quiz.Ui
                 {
                     LastPopUpDateTime = generalOptionsDto.LastPopUpDateTime,
                     OptionsName = Vsix.Name,
+                    PreferredGeekCategoriesFromOptions = generalOptionsDto.PreferredGeekCategoriesFromOptions,
                     PopUpCountToday = generalOptionsDto.PopUpCountToday,
                     PopUpTitle = popUpTitle,
-                    PreferredCategoriesFromOptions = generalOptionsDto.PreferredCategoriesFromOptions,
                     SearchEngine = generalOptionsDto.SearchEngine,
                     SuppressClosingWithoutSubmitingAnswerWarning = generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning,
                     TimeOutInMilliSeconds = generalOptionsDto.TimeOutInMilliSeconds,

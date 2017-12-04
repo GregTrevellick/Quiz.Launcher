@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quiz.Questions.Entities;
+using Quiz.Ui;
 
 namespace Quiz.Core.UnitTests
 {
@@ -20,7 +21,7 @@ namespace Quiz.Core.UnitTests
             };
 
             // Act
-            var actual = sut.PreferredCategoriesFromOptions;
+            var actual = sut.PreferredGeekCategoriesFromOptions;
 
             // Assert
             //Assert.IsFalse(actual.HasFlag(Category.Unknown)); gregt reinstate this

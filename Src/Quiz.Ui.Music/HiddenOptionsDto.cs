@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quiz.Core
+namespace Quiz.Ui.Music
 {
     public class HiddenOptionsDto
     {

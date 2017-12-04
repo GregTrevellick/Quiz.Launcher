@@ -79,7 +79,7 @@ namespace Quiz.Ui.Music
 
         private void StartQuiz()
         {
-            var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(generalOptionsDto);
+            var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd, generalOptionsDto.MaximumPopUpsWeekDay, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins);
 
             if (shouldShowQuiz)
             {
@@ -93,7 +93,6 @@ namespace Quiz.Ui.Music
                     OptionsName = Vsix.Name,
                     PopUpCountToday = generalOptionsDto.PopUpCountToday,
                     PopUpTitle = popUpTitle,
-                    PreferredCategoriesFromOptions = generalOptionsDto.PreferredCategoriesFromOptions,
                     SearchEngine = generalOptionsDto.SearchEngine,
                     SuppressClosingWithoutSubmitingAnswerWarning = generalOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning,
                     TimeOutInMilliSeconds = generalOptionsDto.TimeOutInMilliSeconds,
