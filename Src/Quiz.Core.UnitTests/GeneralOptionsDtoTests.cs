@@ -8,28 +8,27 @@ namespace Quiz.Core.UnitTests
     public class GeneralOptionsDtoTests
     {
         [TestMethod]
-        public void PreferredCategoriesFromOptionsTest()
+        public void PreferredGeekCategoriesFromOptionsTest()
         {
             // Arrange 
             var sut = new GeneralOptionsDto
             {
                 IncludeQuizCategoryCSharp = true,
                 IncludeQuizCategoryDotNet = false,
-                IncludeQuizCategoryGeek = true,
-                IncludeQuizCategoryJavascript = false,
-                IncludeQuizCategoryFrontEnd = true
+                IncludeQuizCategoryFrontEnd = true,
+                IncludeQuizCategoryGeek = false,
+                IncludeQuizCategoryJavascript = true,
             };
 
             // Act
             var actual = sut.PreferredGeekCategoriesFromOptions;
 
             // Assert
-            //Assert.IsFalse(actual.HasFlag(Category.Unknown)); gregt reinstate this
-            Assert.IsTrue(actual.HasFlag(Category.CSharp));
-            Assert.IsFalse(actual.HasFlag(Category.DotNet));
-            Assert.IsTrue(actual.HasFlag(Category.Geek));
-            Assert.IsFalse(actual.HasFlag(Category.Javascript));
-            Assert.IsTrue(actual.HasFlag(Category.FrontEnd));
+            Assert.IsTrue(actual.HasFlag(GeekCategory.CSharp));
+            Assert.IsFalse(actual.HasFlag(GeekCategory.DotNet));
+            Assert.IsTrue(actual.HasFlag(GeekCategory.FrontEnd));
+            Assert.IsFalse(actual.HasFlag(GeekCategory.Geek));
+            Assert.IsTrue(actual.HasFlag(GeekCategory.Javascript));
         }
     }
 }
