@@ -69,7 +69,20 @@ namespace Quiz.Ui
             }
 
             quizDialogDto.MultipleChoiceAnswers =
-                quizDialogDto.MultipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));
+                quizDialogDto.MultipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));//gregt System.ArgumentNullException occurred
+            //HResult = 0x80004003
+            //Message = Value cannot be null.
+            //    Parameter name: source
+            //    Source = System.Core
+            //StackTrace:
+            //at System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+            //at Quiz.Ui.QuizHelper.DisplayPopUpMessage(QuizDialogDto quizDialogDto, Nullable`1 suppressClosingWithoutSubmitingAnswerWarning, Nullable`1 totalQuestionsAnsweredCorrectlyEasy, Nullable`1 totalQuestionsAnsweredCorrectlyMedium, Nullable`1 totalQuestionsAnsweredCorrectlyHard, Nullable`1 totalQuestionsAsked, SearchEngine searchEngine) in C: \Users\gtrev\Source\Repos\Quiz.Launcher\Src\Quiz.Ui.Geek\QuizHelper.cs:line 71
+            //at Quiz.Ui.QuizHelper.GetHiddenOptionsDto(QuizHelperDto quizHelperDto, IQuizQuestionApi quizQuestionApi) in C: \Users\gtrev\Source\Repos\Quiz.Launcher\Src\Quiz.Ui.Geek\QuizHelper.cs:line 25
+            //at Quiz.Ui.VSPackage.StartQuiz() in C: \Users\gtrev\Source\Repos\Quiz.Launcher\Src\Quiz.Ui.Geek\VSPackage.cs:line 111
+            //at Quiz.Ui.VSPackage.windowVisibilityEvents_WindowShowing(Window window) in C: \Users\gtrev\Source\Repos\Quiz.Launcher\Src\Quiz.Ui.Geek\VSPackage.cs:line 58
+            //at EnvDTE80._dispWindowVisibilityEvents_WindowShowingEventHandler.Invoke(Window Window)
+            //at Microsoft.VisualStudio.Platform.WindowManagement.DTE.WindowVisibilityEvents.InternalFireShowing(Window window)
+
 
             if (quizDialogDto.QuestionType == QuestionType.TrueFalse)
             {
