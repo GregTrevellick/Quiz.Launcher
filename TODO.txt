@@ -13,29 +13,6 @@ github wiki page for help
 github wiki home page
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//http://www.careerride.com/csharp-multiple-choice-questions.aspx
-//https://vbhuggi.jimdo.com/c-net-lectures/
-//http://questionsandanswerspdf.com/tag/multiple-choice-questions-in-c-net-with-answers/
-https://support.google.com/feedburner/answer/79408
-http://www.knowledge-pills.com/comkp1/kp/series/005_INFORMATION%20SYSTEMS/002_DEMO_Open%20Source,%20every%20one%20has%20got%20an%20interest/the07/01the07z.htm
-https://github.com/MaximAbramchuck/awesome-interview-questions
-https://github.com/freeCodeCamp/multiple-choice-questions
-
-
-
-
 TEST CASES
 close top right, having selected a radio button, w/o submitting answer & w/submitting an answer
 close bottom left, having selected a radio button, w/o submitting answer & w/submitting an answer
@@ -65,9 +42,16 @@ cannot select > 1 radio button
 
 
 
-FUTURE add in rating review chaser
-FUTURE close all popups when sln is closed
-FUTURE if uptake is significant add option for user to select easy / medium / hard
-FUTURE if uptake is significant play correct / incorrect sound ?
-FUTURE countdown timer ? hard 43-67 secs randomly, medium 28-48, easy 18-33
-
+FUTURE
+add in rating review chaser
+close all popups when sln is closed
+if uptake is significant add option for user to select easy / medium / hard
+if uptake is significant play correct / incorrect sound ?
+countdown timer ? hard 43-67 secs randomly, medium 28-48, easy 18-33
+//http://www.careerride.com/csharp-multiple-choice-questions.aspx
+//https://vbhuggi.jimdo.com/c-net-lectures/
+//http://questionsandanswerspdf.com/tag/multiple-choice-questions-in-c-net-with-answers/
+https://support.google.com/feedburner/answer/79408
+http://www.knowledge-pills.com/comkp1/kp/series/005_INFORMATION%20SYSTEMS/002_DEMO_Open%20Source,%20every%20one%20has%20got%20an%20interest/the07/01the07z.htm
+https://github.com/MaximAbramchuck/awesome-interview-questions
+https://github.com/freeCodeCamp/multiple-choice-questions
