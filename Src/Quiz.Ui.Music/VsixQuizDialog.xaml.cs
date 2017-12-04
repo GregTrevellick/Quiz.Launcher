@@ -160,7 +160,7 @@ namespace Quiz.Ui.Music
             {
                 ShowGreenTick(chosenAnswerNumber);
 
-                TextBlockQuizReply.Text = "Correct!";
+                TextBlockQuizReply.Text = Constants.Correct;
                 SetQuizReplyColour(Colors.Green);
 
                 if (!_userStatusTotalsIncremented)
@@ -174,7 +174,7 @@ namespace Quiz.Ui.Music
 
                 if (QuestionType == QuestionType.MultiChoice)
                 {
-                    TextBlockQuizReply.Text = $"The correct answer is {CorrectAnswer}";
+                    TextBlockQuizReply.Text = $"{Constants.Wrong} {CorrectAnswer}";
                 }
 
                 SetQuizReplyColour(Colors.Red);

@@ -13,7 +13,9 @@ namespace Quiz.Core
         public const string CategorySubLevelMiscellaneous = "Miscellaneous";
         public const string CategorySubLevelPreferences = "Preferences";
         public const string CategorySubLevelQuizCategories = "Categories";
-        public const string CategorySubLevelTriggers = "Triggers";        
+        public const string CategorySubLevelTriggers = "Triggers";
+        public const string Correct = "Correct";
+        public const string Wrong = "Wrong - the correct answer is";
         public const string DefaultMaximumPopUpsPerDay = "1";
         public const string DefaultMaximumPopUpsWeekDay = "1";
         public const string DefaultMaximumPopUpsWeekEnd = "99";
@@ -66,10 +68,5 @@ namespace Quiz.Core
         {
             return $"Invalid integer value specified for '{labelName}'";
         }
-
-        //public static string HelpText(string optionsName)
-        //{
-        //    return $"To alter the frequency and volume of quiz questions go to Tools | Options | {optionsName}";
-        //}
     }
 }   

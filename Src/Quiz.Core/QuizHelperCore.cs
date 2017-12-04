@@ -20,26 +20,6 @@ namespace Quiz.Core
             return quizDialogDto;
         }
 
-        //public static HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
-        //{
-        //    var hiddenOptionsDto = new HiddenOptionsDto();
-
-        //    var baseDateTime = DateTime.Now;
-
-        //    if (IsANewDay(lastPopUpDateTime, baseDateTime))
-        //    {
-        //        hiddenOptionsDto.PopUpCountToday = 1;
-        //    }
-        //    else
-        //    {
-        //        hiddenOptionsDto.PopUpCountToday = popUpCountToday + 1;
-        //    }
-
-        //    hiddenOptionsDto.LastPopUpDateTime = baseDateTime;
-
-        //    return hiddenOptionsDto;
-        //}
-
         public static bool IsANewDay(DateTime lastPopUpDateTime, DateTime baseDateTime)
         {
             //If last pop up was yesterday, then we have gone past midnight, so this is first pop up for today

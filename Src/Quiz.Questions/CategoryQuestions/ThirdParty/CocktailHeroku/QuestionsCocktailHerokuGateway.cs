@@ -20,6 +20,7 @@ namespace Quiz.Questions.CategoryQuestions.ThirdParty.CocktailHeroku
             var multipleChoiceAnswers = rootObject.answers.Select(x => x.text);
 
             var question = CharacterHelper.CharacterHandler(rootObject.text);
+            //gregt call CharacterHandler for all in multipleChoiceAnswers
 
             var quizQuestion = new QuizQuestion
             {

@@ -1,5 +1,4 @@
 ﻿using System;
-using Quiz.Questions.Entities;
 
 namespace Quiz.Core
 {
@@ -9,7 +8,6 @@ namespace Quiz.Core
         public string OptionsName;
         public int PopUpCountToday;
         public string PopUpTitle;
-        //////////////////////public Category PreferredCategoriesFromOptions;
         public SearchEngine SearchEngine;
         public bool SuppressClosingWithoutSubmitingAnswerWarning;
         public int TimeOutInMilliSeconds;

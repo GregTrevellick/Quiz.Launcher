@@ -24,6 +24,8 @@ namespace Quiz.Questions.CategoryQuestions.ThirdParty.OpenTdb
             var multipleChoiceAnswers = multipleChoiceCorrectAnswerAsCollection.Union(firstOfOne.incorrect_answers);
 
             var question = CharacterHelper.CharacterHandler(firstOfOne.question);
+            //gregt call CharacterHandler for all in multipleChoiceAnswers
+
             var difficultyLevel = CharacterHelper.UppercaseFirst(firstOfOne.difficulty);
             Enum.TryParse(difficultyLevel, out DifficultyLevel difficulty);
 
