@@ -3,10 +3,10 @@
     <Metadata>
         <Identity Id="ea0eead2-1392-4c13-bb81-6f6c5de8a936" Version="1.0" Language="en-US" Publisher="Greg Trevellick" />
         <DisplayName>Geek Quiz</DisplayName>
-        <Description xml:space="preserve">A multi-choice computer science quiz whenever you open a solution.</Description>
-        <MoreInfo>https://github.com/GregTrevellick/GeekQuiz</MoreInfo>
+        <Description xml:space="preserve">A multi-choice geek quiz when you open the Visual Studio start page (configurable).</Description>
+        <MoreInfo>https://github.com/GregTrevellick/Quiz.Launcher</MoreInfo>
         <License>LICENSE.txt</License>
-        <ReleaseNotes>https://github.com/GregTrevellick/GeekQuiz/blob/master/CHANGELOG.md</ReleaseNotes>
+        <ReleaseNotes>https://github.com/GregTrevellick/Quiz.Launcher/blob/master/CHANGELOG.md</ReleaseNotes>
         <Icon>Resources\VsixExtensionIcon_90x90.png</Icon>
         <PreviewImage>Resources\VsixExtensionPreview_175x175.png</PreviewImage>
         <Tags>GeekQuiz, geek, quiz, fun, trivia, trivial</Tags>

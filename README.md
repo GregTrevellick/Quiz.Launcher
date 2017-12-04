@@ -1,5 +1,5 @@
-[AppVeyorProjectUrl]: https://ci.appveyor.com/project/GregTrevellick/quizlauncher
-[AppVeyorProjectBuildStatusBadgeSvg]: https://ci.appveyor.com/api/projects/status/iapcrndog6fvdd9l?svg=true
+[AppVeyorProjectUrl]: https://ci.appveyor.com/project/GregTrevellick/geekquiz
+[AppVeyorProjectBuildStatusBadgeSvg]: https://ci.appveyor.com/api/projects/status/jqxgkp5agw1seyxo?svg=true
 [GitHubRepoURL]: https://github.com/GregTrevellick/Quiz.Launcher
 [GitHubRepoIssuesURL]: https://github.com/GregTrevellick/Quiz.Launcher/issues
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/Quiz.Launcher/pulls

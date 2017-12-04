@@ -3,13 +3,13 @@
     <Metadata>
         <Identity Id="422e4080-3af8-48f7-870b-1800fa9fd60b" Version="1.0" Language="en-US" Publisher="Greg Trevellick" />
         <DisplayName>Music Quiz</DisplayName>
-        <Description xml:space="preserve">A multi-choice computer science quiz whenever you open a solution.</Description>
-        <MoreInfo>https://github.com/GregTrevellick/GeekQuiz</MoreInfo>
+        <Description xml:space="preserve">A multi-choice music quiz when you open the Visual Studio start page (configurable).</Description>
+        <MoreInfo>https://github.com/GregTrevellick/Quiz.Launcher</MoreInfo>
         <License>LICENSE.txt</License>
-        <ReleaseNotes>https://github.com/GregTrevellick/GeekQuiz/blob/master/CHANGELOG.md</ReleaseNotes>
+        <ReleaseNotes>https://github.com/GregTrevellick/Quiz.Launcher/blob/master/CHANGELOG.md</ReleaseNotes>
         <Icon>Resources\VsixExtensionIcon_90x90.png</Icon>
         <PreviewImage>Resources\VsixExtensionPreview_175x175.png</PreviewImage>
-        <Tags>GeekQuiz, geek, quiz, fun, trivia, trivial</Tags>
+        <Tags>MusicQuiz, music, quiz, fun, trivia, trivial</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[11.0,16.0)" />

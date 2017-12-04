@@ -9,7 +9,7 @@ namespace Quiz.Ui
     {
         public const string Id = "ea0eead2-1392-4c13-bb81-6f6c5de8a936";
         public const string Name = "Geek Quiz";
-        public const string Description = @"A multi-choice computer science quiz whenever you open a solution.";
+        public const string Description = @"A multi-choice geek quiz when you open the Visual Studio start page (configurable).";
         public const string Language = "en-US";
         public const string Version = "1.0";
         public const string Author = "Greg Trevellick";
