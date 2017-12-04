@@ -7,7 +7,7 @@
         <MoreInfo>https://github.com/GregTrevellick/Quiz.Launcher</MoreInfo>
         <License>LICENSE.txt</License>
         <ReleaseNotes>https://github.com/GregTrevellick/Quiz.Launcher/blob/master/CHANGELOG.md</ReleaseNotes>
-        <Icon>Resources\VsixExtensionIcon_90x90.png</Icon>
+        <Icon>Resources\VsixExtensionPreview_90x90.png</Icon>
         <PreviewImage>Resources\VsixExtensionPreview_175x175.png</PreviewImage>
         <Tags>MusicQuiz, music, quiz, fun, trivia, trivial</Tags>
     </Metadata>
