@@ -146,7 +146,7 @@ namespace Quiz.Ui
                 IncludeQuizCategoryDotNet = generalOptions.IncludeQuizCategoryDotNet,
                 IncludeQuizCategoryGeek = generalOptions.IncludeQuizCategoryGeek,
                 IncludeQuizCategoryJavascript = generalOptions.IncludeQuizCategoryJavascript,
-                IncludeQuizCategoryWebDev = generalOptions.IncludeQuizCategoryWebDev,
+                IncludeQuizCategoryFrontEnd = generalOptions.IncludeQuizCategoryFrontEnd,
                 LastPopUpDateTime = hiddenOptions.LastPopUpDateTime,
                 MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay.GetAsInteger(),
                 MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.Categories.ThirdParty.OpenTdb
+namespace Quiz.Questions.CategoryQuestions.ThirdParty.OpenTdb
 {
     internal class QuestionsOpenTdb 
     {

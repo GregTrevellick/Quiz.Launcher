@@ -1,15 +1,15 @@
 ﻿using System;
 using MoreLinq;
-using Quiz.Questions.Categories.Geek;
 using Quiz.Questions.Entities;
 using System.Collections.Generic;
 using System.Linq;
-using Quiz.Questions.Categories;
-using Quiz.Questions.Categories.CSharp;
-using Quiz.Questions.Categories.DotNet;
-using Quiz.Questions.Categories.Javascript;
-using Quiz.Questions.Categories.Music;
-using Quiz.Questions.Categories.WebDev;
+using Quiz.Questions.CategoryQuestions;
+using Quiz.Questions.CategoryQuestions.CSharp;
+using Quiz.Questions.CategoryQuestions.DotNet;
+using Quiz.Questions.CategoryQuestions.FrontEnd;
+using Quiz.Questions.CategoryQuestions.Geek;
+using Quiz.Questions.CategoryQuestions.Javascript;
+using Quiz.Questions.CategoryQuestions.Music;
 
 namespace Quiz.Questions
 {
@@ -36,6 +36,10 @@ namespace Quiz.Questions
                     getQuizQuestions = new DotNetQuestions();
                     quizQuestions = getQuizQuestions.GetQuizQuestions();
                     break;
+                case Category.FrontEnd:
+                    getQuizQuestions = new FrontEndQuestions();
+                    quizQuestions = getQuizQuestions.GetQuizQuestions();
+                    break;
                 case Category.Geek:
                     var geekGateways = new GeekGateways();
                     quizQuestions = geekGateways.GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
@@ -47,10 +51,6 @@ namespace Quiz.Questions
                 case Category.Music:
                     var musicGateways = new MusicGateways();
                     quizQuestions = musicGateways.GetQuizQuestions(timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
-                    break;
-                case Category.WebDev:
-                    getQuizQuestions = new WebDevQuestions();
-                    quizQuestions = getQuizQuestions.GetQuizQuestions();
                     break;
                 default:
                     errorDetails = ErrorHelper.HandleArgumentOutOfRangeException(nameof(singleCategory), (int)singleCategory);

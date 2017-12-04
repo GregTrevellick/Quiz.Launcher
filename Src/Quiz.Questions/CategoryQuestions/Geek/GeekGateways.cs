@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Quiz.Questions.Categories.ThirdParty.CocktailHeroku;
-using Quiz.Questions.Categories.ThirdParty.OpenTdb;
+using Quiz.Questions.CategoryQuestions.ThirdParty.CocktailHeroku;
+using Quiz.Questions.CategoryQuestions.ThirdParty.OpenTdb;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.Categories.Geek
+namespace Quiz.Questions.CategoryQuestions.Geek
 {
     internal class GeekGateways : IGetThirdPartyQuizQuestions
     {

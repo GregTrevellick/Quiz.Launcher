@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.Categories.Geek
+namespace Quiz.Questions.CategoryQuestions.Geek
 {
     interface IGeekQuestions
     {

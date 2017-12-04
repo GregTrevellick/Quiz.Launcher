@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.Categories.CSharp
+namespace Quiz.Questions.CategoryQuestions.CSharp
 {
     internal class CSharpQuestions : IGetQuizQuestions
     {

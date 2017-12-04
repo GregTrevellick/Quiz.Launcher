@@ -162,9 +162,9 @@ namespace Quiz.Ui.Options
         public bool IncludeQuizCategoryJavascript { get; set; } = true;
 
         [Category(Constants.CategorySubLevelQuizCategories)]
-        [DisplayName(Constants.IncludeQuizCategoryWebDevOptionLabel)]
-        [Description(Constants.IncludeQuizCategoryWebDevOptionDetailedDescription)]
-        public bool IncludeQuizCategoryWebDev { get; set; } = true;
+        [DisplayName(Constants.IncludeQuizCategoryFrontEndOptionLabel)]
+        [Description(Constants.IncludeQuizCategoryFrontEndOptionDetailedDescription)]
+        public bool IncludeQuizCategoryFrontEnd { get; set; } = true;
 
     }
 }

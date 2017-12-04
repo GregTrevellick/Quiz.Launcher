@@ -1,11 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Quiz.Questions.Categories.CSharp;
-using Quiz.Questions.Categories.DotNet;
-using Quiz.Questions.Categories.Geek;
-using Quiz.Questions.Categories.Javascript;
-using Quiz.Questions.Categories.WebDev;
 using Quiz.Questions.Entities;
 using System.Linq;
+using Quiz.Questions.CategoryQuestions.CSharp;
+using Quiz.Questions.CategoryQuestions.DotNet;
+using Quiz.Questions.CategoryQuestions.FrontEnd;
+using Quiz.Questions.CategoryQuestions.Geek;
+using Quiz.Questions.CategoryQuestions.Javascript;
 
 namespace Quiz.Questions.UnitTests
 {
@@ -65,16 +65,16 @@ namespace Quiz.Questions.UnitTests
         }
 
         [TestMethod]
-        public void WebDevQuestionsTest()
+        public void FrontEndQuestionsTest()
         {
             // Arrange
-            var sut = new WebDevQuestions();
+            var sut = new FrontEndQuestions();
 
             // Act
             var actual = sut.GetQuizQuestions();
 
             // Assert
-            Assert.AreEqual(0, actual.Where(x => x.Category != Category.WebDev).Count());
+            Assert.AreEqual(0, actual.Where(x => x.Category != Category.FrontEnd).Count());
         }
     }
 }

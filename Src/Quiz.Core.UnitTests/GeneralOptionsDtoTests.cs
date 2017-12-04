@@ -17,7 +17,7 @@ namespace Quiz.Core.UnitTests
                 IncludeQuizCategoryDotNet = false,
                 IncludeQuizCategoryGeek = true,
                 IncludeQuizCategoryJavascript = false,
-                IncludeQuizCategoryWebDev = true
+                IncludeQuizCategoryFrontEnd = true
             };
 
             // Act
@@ -29,7 +29,7 @@ namespace Quiz.Core.UnitTests
             Assert.IsFalse(actual.HasFlag(Category.DotNet));
             Assert.IsTrue(actual.HasFlag(Category.Geek));
             Assert.IsFalse(actual.HasFlag(Category.Javascript));
-            Assert.IsTrue(actual.HasFlag(Category.WebDev));
+            Assert.IsTrue(actual.HasFlag(Category.FrontEnd));
         }
     }
 }

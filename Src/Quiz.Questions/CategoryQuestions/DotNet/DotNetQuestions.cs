@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.Categories.DotNet
+namespace Quiz.Questions.CategoryQuestions.DotNet
 {
     internal class DotNetQuestions : IGetQuizQuestions
     {

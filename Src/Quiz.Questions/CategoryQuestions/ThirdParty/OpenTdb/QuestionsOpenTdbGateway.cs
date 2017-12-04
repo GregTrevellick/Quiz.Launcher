@@ -4,7 +4,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.Categories.ThirdParty.OpenTdb
+namespace Quiz.Questions.CategoryQuestions.ThirdParty.OpenTdb
 {
     internal class QuestionsOpenTdbGateway : IQuestionsGateway
     {

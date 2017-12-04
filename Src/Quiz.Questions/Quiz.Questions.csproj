@@ -56,7 +56,7 @@
     <Compile Include="CategoryQuestions\CSharp\CSharpQuestions.cs" />
     <Compile Include="CategoryQuestions\Music\MusicGateways.cs" />
     <Compile Include="CategoryQuestions\Javascript\JavascriptQuestions.cs" />
-    <Compile Include="CategoryQuestions\WebDev\WebDevQuestions.cs" />
+    <Compile Include="CategoryQuestions\FrontEnd\FrontEndQuestions.cs" />
     <Compile Include="CategoryQuestions\Geek\GeekGateways.cs" />
     <Compile Include="CharacterHelper.cs" />
     <Compile Include="ErrorHelper.cs" />

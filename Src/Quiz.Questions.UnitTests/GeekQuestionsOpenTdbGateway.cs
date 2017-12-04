@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Quiz.Questions.Categories.ThirdParty.OpenTdb;
+using Quiz.Questions.CategoryQuestions.ThirdParty.OpenTdb;
 using Quiz.Questions.Entities;
 
 namespace Quiz.Questions.UnitTests

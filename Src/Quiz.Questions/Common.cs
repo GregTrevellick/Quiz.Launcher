@@ -2,7 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using Quiz.Questions.Categories.ThirdParty;
+using Quiz.Questions.CategoryQuestions.ThirdParty;
 
 namespace Quiz.Questions
 {

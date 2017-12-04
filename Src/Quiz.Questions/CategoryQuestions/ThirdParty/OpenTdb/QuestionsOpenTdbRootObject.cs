@@ -1,4 +1,4 @@
-﻿namespace Quiz.Questions.Categories.ThirdParty.OpenTdb
+﻿namespace Quiz.Questions.CategoryQuestions.ThirdParty.OpenTdb
 {
     internal class QuestionsOpenTdbRootObject
     {

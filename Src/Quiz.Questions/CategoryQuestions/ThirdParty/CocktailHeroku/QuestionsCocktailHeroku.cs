@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.Categories.ThirdParty.CocktailHeroku
+namespace Quiz.Questions.CategoryQuestions.ThirdParty.CocktailHeroku
 {
     internal class QuestionsCocktailHeroku
     {

@@ -1,17 +1,16 @@
 ﻿using System;
-using System.ComponentModel;
 
-namespace Quiz.Questions.Entities
+namespace Quiz.Ui
 {
     [Flags]
     public enum GeekCategory
     {
         Unknown = 0,
-        Geek = 1,
-        CSharp = 2,
-        DotNet = 4,
-        Javascript = 8,
-        WebDev = 16,//gregt rename to front end
+        CSharp = 1,
+        DotNet = 2,
+        FrontEnd = 4,
+        Geek = 8,
+        Javascript = 16,
     }
 }
 

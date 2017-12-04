@@ -32,9 +32,9 @@ namespace Quiz.Ui
                 //gregt assess these weightings
                 {GeekCategory.CSharp, 20},
                 {GeekCategory.DotNet, 20},
+                {GeekCategory.FrontEnd, 5},
                 {GeekCategory.Geek, 50},
                 {GeekCategory.Javascript, 5},
-                {GeekCategory.WebDev, 5},
             };
 
             var validGeekCategories = Enum.GetValues(typeof(GeekCategory));
@@ -79,12 +79,12 @@ namespace Quiz.Ui
                     return Category.CSharp;
                 case GeekCategory.DotNet:
                     return Category.DotNet;
+                case GeekCategory.FrontEnd:
+                    return Category.FrontEnd;
                 case GeekCategory.Geek:
                     return Category.Geek;
                 case GeekCategory.Javascript:
                     return Category.Javascript;
-                case GeekCategory.WebDev:
-                    return Category.WebDev;
                 default:
                     //gregt error here
                     return Category.Unknown;

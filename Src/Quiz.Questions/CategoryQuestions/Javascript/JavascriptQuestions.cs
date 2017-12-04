@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.Categories.Javascript
+namespace Quiz.Questions.CategoryQuestions.Javascript
 {
     internal class JavascriptQuestions : IGetQuizQuestions
     {

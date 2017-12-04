@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using Quiz.Questions.Entities;
 
-namespace Quiz.Questions.Categories.WebDev
+namespace Quiz.Questions.CategoryQuestions.FrontEnd
 {
     //gregt rename to FrontEnd
-    internal class WebDevQuestions : IGetQuizQuestions
+    internal class FrontEndQuestions : IGetQuizQuestions
     {
-        private const Category Category = Entities.Category.WebDev;
+        private const Category Category = Entities.Category.FrontEnd;
 
         public IEnumerable<QuizQuestion> GetQuizQuestions()
         {
