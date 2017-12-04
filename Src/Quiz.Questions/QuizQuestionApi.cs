@@ -64,8 +64,7 @@ namespace Quiz.Questions
 
                 if (quizQuestion.Category != singleCategory)
                 {
-                    throw new Exception("gregt");
-                    //quizQuestion.Category = singleCategory;//Should be unnecessary as they are both the same but this is not always the case
+                    quizQuestion.Category = singleCategory;//gregt Should be unnecessary as they are both the same but this is not always the case
                 }
 
                 return quizQuestion;
