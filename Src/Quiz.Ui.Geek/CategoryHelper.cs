@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Quiz.Questions;
 using Quiz.Questions.Entities;
 
 namespace Quiz.Ui
@@ -73,7 +74,7 @@ namespace Quiz.Ui
             switch (geekCategory)
             {
                 case GeekCategory.Unknown:
-                    //gregt error here
+                    new QuizQuestionApi().HandleArgumentOutOfRangeException(nameof(geekCategory), (int)geekCategory);
                     return Category.Unknown;
                 case GeekCategory.CSharp:
                     return Category.CSharp;
@@ -86,7 +87,7 @@ namespace Quiz.Ui
                 case GeekCategory.Javascript:
                     return Category.Javascript;
                 default:
-                    //gregt error here
+                    new QuizQuestionApi().HandleArgumentOutOfRangeException(nameof(geekCategory), (int)geekCategory);
                     return Category.Unknown;
             }
         }
