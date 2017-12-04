@@ -14,22 +14,23 @@ github wiki home page
 
 
 TEST CASES
-close top right, having selected a radio button, w/o submitting answer & w/submitting an answer
-close bottom left, having selected a radio button, w/o submitting answer & w/submitting an answer
-after submitting an answer, click a radio button - s/be disallowed
-check questions are only for the users chosen categories
-check help hyperlink
-check supply a questions hyperlink
-check all category options are false
+==========
+closing & reopening start page
+PASS close top right, having selected a radio button, w/o submitting answer & w/submitting an answer
+PASS close bottom left, having selected a radio button, w/o submitting answer & w/submitting an answer
+PASS after submitting an answer, click a radio button - s/be disallowed
+N/A  check questions are only for the users chosen categories
+PASS check help hyperlink
+PASS check supply a questions hyperlink
+N/A  check all category options are false
 check timeouts
 check remote sites down
 check hidden options are being accurately recorded
-check unit tests are all green
 test pop up trigger for open & close sln
-test pop up for start page
+PASS test pop up for start page
 test pop up frequency midweek & weekends
 test default pop up frequency is once a day
-cannot select > 1 radio button
+PASS test that cannot select more than one radio button
 
 
 
@@ -43,6 +44,7 @@ cannot select > 1 radio button
 
 
 FUTURE
+======
 add in rating review chaser
 close all popups when sln is closed
 if uptake is significant add option for user to select easy / medium / hard
