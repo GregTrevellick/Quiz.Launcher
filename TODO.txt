@@ -4,8 +4,6 @@ add points to ui (determine on the fly - 1 x easy + 2 x medium + 3 x hard)
 
 testcases.txt
 
-questions/answers capitalisation
-
 github wiki page for submitting question
 github wiki page for help
 github wiki home page
