@@ -16,7 +16,6 @@ namespace Quiz.Core
             {
                 return new Dictionary<int, string>
                 {
-                    //gregthi tidy up words
                     {0, "Rubbish"},
                     {1, "Go back to school"},
                     {2, "Homer Simpson"},
@@ -98,23 +97,23 @@ namespace Quiz.Core
                     {78, "Brain box"},
                     {79, "Brainiac"},
                     {80, "A-plus"},
-                    {81, "Watson"},
+                    {81, "Great"},
                     {82, "Lisa Simpson"},
                     {83, "Wunderbar"},
                     {84, "IQ buster"},
                     {85, "Awesome"},
-                    {86, "Liskov"},
+                    {86, "Fantastic"},
                     {87, "Cerebral"},
                     {88, "Egg head"},
-                    {89, "Skeet"},
+                    {89, "Pinnacle"},
                     {90, "Rocket scientist"},
                     {91, "Top of the class"},
-                    {92, "Alan Turing"},
-                    {93, "Charles Babbage"},
+                    {92, "Exemplary"},
+                    {93, "Magical"},
                     {94, "Exceptional"},
-                    {95, "Ada Lovelace"},
+                    {95, "Supreme"},
                     {96, "Expert"},
-                    {97, "Einstein"},
+                    {97, "Master"},
                     {98, "10 out of 10"},
                     {99, "11 out of 10"},
                     {100, "Genius"},
@@ -123,31 +122,3 @@ namespace Quiz.Core
         }
     }
 }
-
-
-
-//internal static string GetDescription<T>(this T e) where T : IConvertible
-//{
-//    string description = null;
-//    if (e is Enum)
-//    {
-//        Type type = e.GetType();
-//        Array values = System.Enum.GetValues(type);
-//        foreach (int val in values)
-//        {
-//            if (val == e.ToInt32(CultureInfo.InvariantCulture))
-//            {
-//                var memInfo = type.GetMember(type.GetEnumName(val));
-//                var descriptionAttributes = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
-//                if (descriptionAttributes.Length > 0)
-//                {
-//                    // we're only getting the first description we find
-//                    // others will be ignored
-//                    description = ((DescriptionAttribute)descriptionAttributes[0]).Description;
-//                }
-//                break;
-//            }
-//        }
-//    }
-//    return description;
-//}
