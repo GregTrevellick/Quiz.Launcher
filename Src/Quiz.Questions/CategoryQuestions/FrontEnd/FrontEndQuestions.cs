@@ -12,8 +12,6 @@ namespace Quiz.Questions.CategoryQuestions.FrontEnd
             var quizQuestions = new List<QuizQuestion>
             {
                 #region mine
-                //webkit=?
-                //pwa=?
                 #endregion
 
                 #region jeopardy / web camp training kit
@@ -33,14 +31,14 @@ namespace Quiz.Questions.CategoryQuestions.FrontEnd
                 //D.Computer Style Sheets
                 //Ans: C
 
-                //2.What is the correct HTML for referring to an external style sheet ?
+                //2.What is the correct HTML for referring to an external style sheet?
                 //A. < stylesheet > mystyle.css </ stylesheet />
                 //B. < style src =”mystyle.css” />
                 //C. < link rel =”stylesheet” type =”text / css” href =”mystyle.css”>
                 //Ans: C
 
 
-                //3.Where in an HTML document is the correct place to refer to an external style sheet ?
+                //3.Where in an HTML document is the correct place to refer to an external style sheet?
                 //A.At the end of the document
                 //B.In the < head > section
                 //C.At the top of the document
@@ -107,7 +105,7 @@ namespace Quiz.Questions.CategoryQuestions.FrontEnd
                 //D.text - size
                 //Ans: A
 
-                //12.What is the correct CSS syntax for making all the < p > elements bold ?
+                //12.What is the correct CSS syntax for making all the < p > elements bold?
                 //A. < p style =”text - size:bold”>
                 //B.p { font - weight:bold}
                 //C.p { text - size:bold}

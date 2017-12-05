@@ -12,8 +12,16 @@ namespace Quiz.Questions.CategoryQuestions.Javascript
             var quizQuestions = new List<QuizQuestion>
             {
                 #region mine
-                //Ecma?
-                //iife?
+                //Common.Get(Category, DifficultyLevel.Medium, "What is an IIFE?",
+                //    "",
+                //    "",
+                //    "",
+                //    ""),
+                //Common.Get(Category, DifficultyLevel.Medium, "What is ECMA?",
+                //    "",
+                //    "",
+                //    "",
+                //    ""),
                 #endregion
              
                 #region web camp training kit

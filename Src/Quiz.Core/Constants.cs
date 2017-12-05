@@ -57,7 +57,7 @@ namespace Quiz.Core
         public const string TimeOutInMilliSecondsOptionLabel = "Timeout limit (milliseconds)";
         public const string UseBingInsteadOfGoogleOptionDetailedDescription = "Once a question has been answered a hyperlink for the question appears. By default this link will search for the question using the google search engine. If you prefer the bing search engine set this to 'true'.";
         public const string UseBingInsteadOfGoogleOptionLabel = "Bing instead of Google";
-        public static string TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits = $"Are you sure ?{Environment.NewLine}{Environment.NewLine}The value for '{TimeOutInMilliSecondsOptionLabel}' is outside the recommended limits, which means the data retrieval may timeout before completion or may wait for a long time to complete.";
+        public static string TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits = $"Are you sure?{Environment.NewLine}{Environment.NewLine}The value for '{TimeOutInMilliSecondsOptionLabel}' is outside the recommended limits, which means the data retrieval may timeout before completion or may wait for a long time to complete.";
 
         public static string GetCaption(string vsixName, string vsixVersion)
         {

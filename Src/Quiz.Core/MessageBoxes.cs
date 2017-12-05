@@ -10,7 +10,7 @@ namespace Quiz.Core
             var result = false;
 
             var box = MessageBox.Show(
-                $"You clicked the 'Close' button without having submitted your answer - are you sure ?{Environment.NewLine}{Environment.NewLine}You can disable this warning in Tools | Options | {optionsName}",
+                $"You clicked the 'Close' button without having submitted your answer - are you sure?{Environment.NewLine}{Environment.NewLine}You can disable this warning in Tools | Options | {optionsName}",
                 optionsName,
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Warning);

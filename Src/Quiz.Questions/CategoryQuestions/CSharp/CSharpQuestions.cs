@@ -12,7 +12,7 @@ namespace Quiz.Questions.CategoryQuestions.CSharp
             var quizQuestions = new List<QuizQuestion>
             {
                 #region https://www.codeproject.com/Articles/827091/Csharp-Attributes-in-minutes
-                //Common.Get(Category, DifficultyLevel.Hard, "What does[Obsolete(\"Please use NewMethod1\", true)] do ?",
+                //Common.Get(Category, DifficultyLevel.Hard, "What does[Obsolete(\"Please use NewMethod1\", true)] do?",
                 //"If you want to be bit strict and do not want developers to use that method, you can pass ‘true” to the “Obsolete” attribute",
                 //"Todo",
                 //"Todo",
@@ -24,14 +24,14 @@ namespace Quiz.Questions.CategoryQuestions.CSharp
                 //"Todo",
                 //"Todo",
                 //"Todo"),
-                //Common.Get(Category, DifficultyLevel.Hard, "Do attributes get inherited ?",
+                //Common.Get(Category, DifficultyLevel.Hard, "Do attributes get inherited?",
                 //"Yes, they get inherited in the child classes.",
                 //"Todo",
                 //"Todo",
                 //"Todo",
                 //"Todo"),
                 //Common.Get(Category, DifficultyLevel.Hard, "If I want an attribute to be used only once in a program?",
-                //"specify “AllowMultiple” as true e.g. [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)] Multiple = false)]",
+                //"Specify “AllowMultiple” as true e.g. [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)] Multiple = false)]",
                 //"Todo",
                 //"Todo",
                 //"Todo",
@@ -59,13 +59,13 @@ namespace Quiz.Questions.CategoryQuestions.CSharp
                 //"Todo",
                 //"Todo",
                 //"Todo"),
-                //Common.Get(Category, DifficultyLevel.Hard, "Is [Flags] w/o =1/2/4/8 useless ?",
+                //Common.Get(Category, DifficultyLevel.Hard, "Is [Flags] w/o =1/2/4/8 useless?",
                 //"yes it is",
                 //"Todo",
                 //"Todo",
                 //"Todo"),
                 Common.Get(Category, DifficultyLevel.Hard,
-                    "The following valid C# code:   var weekDays &= ~WeekDays.Sunday   ?",
+                    "Is the following valid C# code?    var weekDays &= ~WeekDays.Sunday",
                     "true",
                     "false"),
                 #endregion
@@ -86,140 +86,116 @@ namespace Quiz.Questions.CategoryQuestions.CSharp
                 #endregion
 
                 #region http://www.naukrieducation.com/100-top-real-time-c-net-multiple-choice-questions-and-answers-pdf/
-                Common.Get(Category, DifficultyLevel.Medium,"CLR is the .NET equivalent of what ?",
+                Common.Get(Category, DifficultyLevel.Medium,"CLR is the .NET equivalent of what?",
                 "Java Virtual Machine",
                 "Common Language Runtime",
                 "Common Type System",
                 "Common Language Specification"),
-
-                Common.Get(Category, DifficultyLevel.Medium,"The CLR is physically represented by which assembly ?",
+                Common.Get(Category, DifficultyLevel.Medium,"The CLR is physically represented by which assembly?",
                 "mscoree.dll",
                 "mcoree.dll",
                 "msoree.dll",
                 "mscor.dll"),
-
-                Common.Get(Category, DifficultyLevel.Medium,"SOAP is short for ?",
+                Common.Get(Category, DifficultyLevel.Medium,"SOAP is short for?",
                 "Simple Object Access Protocol",
                 "Simple Object Access Program",
                 "Simple Object Application Protocol",
                 "Simple Object Account Protocol"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"Which language allows more than one method in a single class?",
                 "C#",
                 "J#",
                 "C++",
                 "C"),
-
-                Common.Get(Category, DifficultyLevel.Medium,"In C#, a subroutine is called a what ?",
+                Common.Get(Category, DifficultyLevel.Medium,"In C#, a subroutine is called a what?",
                 "Method",
                 "Function",
                 "Metadata",
                 "Managed code"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"All C# applications begin execution by calling which method?",
                 "Main()",
                 "Class()",
                 "Submain()",
                 "Namespace"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"A _______ is an identifier that denotes a storage location?",
                 "Variable",
                 "Constant",
                 "Reference type",
                 "Object"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"_________ are reserved, and cannot be used as identifiers?",
                 "Keywords",
                 "literal",
                 "variables",
                 "Identifiers"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"Boxing converts a value type on the stack to an ______ on the heap?",
                 "Object type",
                 "Bool type",
                 "Instance type",
                 "Class type"),
-
-                Common.Get(Category, DifficultyLevel.Medium,"The character pair ?: is a________________available in C#?",
+                Common.Get(Category, DifficultyLevel.Medium,"The character pair?: is a________________available in C#?",
                 "Ternary operator",
                 "Unary operator",
                 "Decision operator",
                 "Functional operator"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"In C#, all binary operators are ______?",
                 "Left-associative",
                 "Center-associative",
                 "Right-associative",
                 "Top-associative"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"An _______ is a symbol that tells the computer to perform certain mathematical or logical manipulations?",
                 "Operator",
                 "Expression",
                 "Condition",
                 "Logic"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"A _____ is any valid C# variable ending with a colon?",
                 "Label",
                 "goto",
                 "Logical",
                 "Bitwise"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"C# has _______ operator, useful for making two way decisions?",
                 "Conditional",
                 "Looping",
                 "Functional",
                 "Exponential"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"________causes the loop to continue with the next iteration after skipping any statements in between?",
                 "Continue",
                 "Loop",
                 "Exit",
                 "Break"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"An ____ is a group of contiguous or related data items that share a common name?",
                 "Array",
                 "Operator",
                 "Integer",
                 "Exponential"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"Arrays in C# are ______ objects?",
                 "Reference",
                 "Logical",
                 "Value",
                 "Arithmetic"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"Multidimensional arrays are sometimes called _______ Arrays?",
                 "Rectangular",
                 "Square",
                 "Triangular",
                 "Cube"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"______ parameters are used to pass results back to the calling method?",
                 "Output",
                 "Input",
                 "Reference",
                 "Value"),
-
                 Common.Get(Category, DifficultyLevel.Medium,"The formal-parameter-list is always enclosed in _______?",
                 "Parenthesis",
                 "Square",
                 "Semicolon",
                 "Colon"),
-
-
                 Common.Get(Category, DifficultyLevel.Medium,"_______ variables are visible only in the block they are declared?",
                 "Local",
                 "System",
                 "Global",
                 "Console"),
-
-
                 Common.Get(Category, DifficultyLevel.Medium,"C# does not support _____ constructors?",
                 "parameter-less",
                 "parameterized",
                 "Class",
                 "Method"),
-                
 
                 //23.A structure in C# provides a unique way of packing together data of ______ types?",
                 //"Different

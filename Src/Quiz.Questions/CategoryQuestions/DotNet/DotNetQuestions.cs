@@ -18,12 +18,12 @@ namespace Quiz.Questions.CategoryQuestions.DotNet
                 //"Todo",
                 //"Todo",
                 //"Todo"),
-                Common.Get(Category, DifficultyLevel.Hard, "Are you a .Netter ?",
+                Common.Get(Category, DifficultyLevel.Hard, "Are you a .Netter?",
                     "Yes",
                     "No",
                     "Don't know",
                     "Don't care",
-                    "What is .Net ?"),
+                    "What is .Net?"),
                 #endregion
 
                 #region web camp training kit
