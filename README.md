@@ -27,6 +27,10 @@ Bugs can be logged [here][GitHubRepoIssuesURL].
 
 See the [change log](CHANGELOG.md) for release history.
 
+[Submit or correct a question](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Submit-A-Question)
+
+[Why ?](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Why-%3F)
+
 ## Credits
 
 [Carlos J. Quintero](https://www.mztools.com/articles/2011/MZ2011010.aspx)
