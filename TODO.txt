@@ -1,8 +1,6 @@
-test that hidden options are being accurately recorded
-
 add points to ui (determine on the fly - 1 x easy + 2 x medium + 3 x hard)
 
-testcases.txt
+new icon
 
 github wiki page for submitting question
 github wiki page for help
@@ -11,6 +9,7 @@ github wiki home page
 
 TEST CASES
 ==========
+test that hidden options are being accurately recorded
 closing & reopening start page
 PASS close top right, having selected a radio button, w/o submitting answer & w/submitting an answer
 PASS close bottom left, having selected a radio button, w/o submitting answer & w/submitting an answer
