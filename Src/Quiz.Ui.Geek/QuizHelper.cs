@@ -69,7 +69,7 @@ namespace Quiz.Ui
             }
 
             quizDialogDto.MultipleChoiceAnswers =
-                quizDialogDto.MultipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));//gregt System.ArgumentNullException occurred
+                quizDialogDto.MultipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));//gregthi System.ArgumentNullException occurred
             //HResult = 0x80004003
             //Message = Value cannot be null.
             //    Parameter name: source

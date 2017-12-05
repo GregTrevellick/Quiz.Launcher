@@ -16,7 +16,7 @@ namespace Quiz.Core
             {
                 return new Dictionary<int, string>
                 {
-                    //gregt tidy up words
+                    //gregthi tidy up words
                     {0, "Rubbish"},
                     {1, "Go back to school"},
                     {2, "Homer Simpson"},

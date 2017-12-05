@@ -524,7 +524,7 @@ namespace Quiz.Questions.CategoryQuestions.Geek
                     "powerpoint",
                     "visio",
                     "calculator"),
-              //  gregt fill in todo1/2/3 choices
+                //gregtlo fill in todo1/2/3 choices
                 Common.Get(Category, DifficultyLevel.Medium, "Android's 4.1 O.S.  called this?",
                     "Jelly Bean",
                     "Todo1",

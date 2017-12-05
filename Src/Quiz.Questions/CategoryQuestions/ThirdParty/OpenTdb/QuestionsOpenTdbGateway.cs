@@ -19,19 +19,17 @@ namespace Quiz.Questions.CategoryQuestions.ThirdParty.OpenTdb
         {
             var firstOfOne = rootObject.results.First();
 
-            var multipleChoiceCorrectAnswer = firstOfOne.correct_answer;
-            var multipleChoiceCorrectAnswerAsCollection = new List<string> {multipleChoiceCorrectAnswer};
-            var multipleChoiceAnswers = multipleChoiceCorrectAnswerAsCollection.Union(firstOfOne.incorrect_answers);
-
             var question = CharacterHelper.CharacterHandler(firstOfOne.question);
-            //gregt call CharacterHandler for all in multipleChoiceAnswers
+            var multipleChoiceCorrectAnswer = CharacterHelper.CharacterHandler(firstOfOne.correct_answer);
+            var multipleChoiceCorrectAnswerAsCollection = new List<string> { CharacterHelper.CharacterHandler(multipleChoiceCorrectAnswer) };
+            var multipleChoiceAnswers = multipleChoiceCorrectAnswerAsCollection.Union(firstOfOne.incorrect_answers);
 
             var difficultyLevel = CharacterHelper.UppercaseFirst(firstOfOne.difficulty);
             Enum.TryParse(difficultyLevel, out DifficultyLevel difficulty);
 
             var quizQuestion = new QuizQuestion
             {
-                Category = Category.Geek,
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////Category = Category.Geek,
                 DifficultyLevel = difficulty,
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,

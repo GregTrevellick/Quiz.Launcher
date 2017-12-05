@@ -30,7 +30,7 @@ namespace Quiz.Ui
         {
             var geekCategoryWeightingDictionary = new Dictionary<GeekCategory, int>
             {
-                //gregt assess these weightings
+                //gregtlo assess these weightings
                 {GeekCategory.CSharp, 20},
                 {GeekCategory.DotNet, 20},
                 {GeekCategory.FrontEnd, 5},

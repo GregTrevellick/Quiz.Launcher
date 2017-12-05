@@ -16,15 +16,13 @@ namespace Quiz.Questions.CategoryQuestions.ThirdParty.CocktailHeroku
 
         private QuizQuestion GetQuizQuestion(QuestionsCocktailHerokuRootObject rootObject)
         {
-            var multipleChoiceCorrectAnswer = rootObject.answers.Single(x => x.correct).text;
-            var multipleChoiceAnswers = rootObject.answers.Select(x => x.text);
-
             var question = CharacterHelper.CharacterHandler(rootObject.text);
-            //gregt call CharacterHandler for all in multipleChoiceAnswers
+            var multipleChoiceCorrectAnswer = CharacterHelper.CharacterHandler(rootObject.answers.Single(x => x.correct).text);
+            var multipleChoiceAnswers = rootObject.answers.Select(x => CharacterHelper.CharacterHandler(x.text));
 
             var quizQuestion = new QuizQuestion
             {
-                Category = Category.Geek,
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Category = Category.Geek,
                 DifficultyLevel = DifficultyLevel.Medium,
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,
