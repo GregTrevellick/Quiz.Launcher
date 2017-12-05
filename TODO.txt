@@ -1,5 +1,3 @@
-add points to ui (determine on the fly - 1 x easy + 2 x medium + 3 x hard)
-
 new icon
 
 github wiki page for submitting question
@@ -9,23 +7,23 @@ github wiki home page
 
 TEST CASES
 ==========
-test that hidden options are being accurately recorded
+check default pop up frequency is once a day
+check hidden options are being accurately recorded
+check pop up frequency midweek & weekends
+check pop up trigger for open & close sln
+check remote sites down
+check timeouts
 closing & reopening start page
-PASS close top right, having selected a radio button, w/o submitting answer & w/submitting an answer
-PASS close bottom left, having selected a radio button, w/o submitting answer & w/submitting an answer
-PASS after submitting an answer, click a radio button - s/be disallowed
+N/A  check all category options are false
 N/A  check questions are only for the users chosen categories
+PASS after submitting an answer, click a radio button - s/be disallowed
 PASS check help hyperlink
 PASS check supply a questions hyperlink
-N/A  check all category options are false
-check timeouts
-check remote sites down
-check hidden options are being accurately recorded
-test pop up trigger for open & close sln
+PASS close bottom left, having selected a radio button, w/o submitting answer & w/submitting an answer
+PASS close top right, having selected a radio button, w/o submitting answer & w/submitting an answer
 PASS test pop up for start page
-test pop up frequency midweek & weekends
-test default pop up frequency is once a day
 PASS test that cannot select more than one radio button
+PASS test that hidden options are being accurately recorded
 
 
 
@@ -45,6 +43,7 @@ close all popups when sln is closed
 if uptake is significant add option for user to select easy / medium / hard
 if uptake is significant play correct / incorrect sound ?
 countdown timer ? hard 43-67 secs randomly, medium 28-48, easy 18-33
+add points to ui (determine on the fly - 1 x easy + 2 x medium + 3 x hard)
 //http://www.careerride.com/csharp-multiple-choice-questions.aspx
 //https://vbhuggi.jimdo.com/c-net-lectures/
 //http://questionsandanswerspdf.com/tag/multiple-choice-questions-in-c-net-with-answers/
