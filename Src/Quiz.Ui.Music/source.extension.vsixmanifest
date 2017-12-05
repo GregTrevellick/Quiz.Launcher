@@ -3,7 +3,7 @@
     <Metadata>
         <Identity Id="422e4080-3af8-48f7-870b-1800fa9fd60b" Version="1.0" Language="en-US" Publisher="Greg Trevellick" />
         <DisplayName>Music Quiz</DisplayName>
-        <Description xml:space="preserve">A multi-choice music quiz when you open the Visual Studio start page (configurable).</Description>
+        <Description xml:space="preserve">A multi-choice music quiz when you open Visual Studio.</Description>
         <MoreInfo>https://github.com/GregTrevellick/Quiz.Launcher</MoreInfo>
         <License>LICENSE.txt</License>
         <ReleaseNotes>https://github.com/GregTrevellick/Quiz.Launcher/blob/master/CHANGELOG.md</ReleaseNotes>

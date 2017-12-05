@@ -3,7 +3,7 @@
     <Metadata>
         <Identity Id="ea0eead2-1392-4c13-bb81-6f6c5de8a936" Version="1.0" Language="en-US" Publisher="Greg Trevellick" />
         <DisplayName>Geek Quiz</DisplayName>
-        <Description xml:space="preserve">A multi-choice geek quiz when you open the Visual Studio start page (configurable).</Description>
+        <Description xml:space="preserve">A multi-choice geek quiz when you open Visual Studio.</Description>
         <MoreInfo>https://github.com/GregTrevellick/Quiz.Launcher</MoreInfo>
         <License>LICENSE.txt</License>
         <ReleaseNotes>https://github.com/GregTrevellick/Quiz.Launcher/blob/master/CHANGELOG.md</ReleaseNotes>
