@@ -4,6 +4,8 @@ namespace Quiz.Core
 {
     public static class Constants
     {
+        public const string HelpUrl = "https://github.com/GregTrevellick/Quiz.Launcher/wiki/Options";
+        public const string SupplyAQuestionUrl = "https://github.com/GregTrevellick/Quiz.Launcher/wiki/Submit-A-Question";
         public const int RecommendedMaximumTimeoutMilliSeconds = 3000;
         public const int RecommendedMinimumTimeoutMilliSeconds = 400;
         public const string BingleIt = "bingle it";

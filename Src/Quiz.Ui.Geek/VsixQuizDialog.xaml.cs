@@ -328,7 +328,7 @@ namespace Quiz.Ui
 
         private void SetHelpHyperLink()
         {
-            var uri = "https://github.com/GregTrevellick/Quiz.Launcher/wiki/Help";
+            var uri = Constants.HelpUrl;
             HyperLinkHelp.NavigateUri = new Uri(uri);
             HyperLinkHelp.Inlines.Clear();
             HyperLinkHelp.Inlines.Add("Help");
@@ -336,7 +336,7 @@ namespace Quiz.Ui
 
         private void SetSupplyAQuestionHyperLink()
         {
-            var uri = "https://github.com/GregTrevellick/Quiz.Launcher/wiki/Submit-A-Question";
+            var uri = Constants.SupplyAQuestionUrl;
             HyperLinkSupplyAQuestion.NavigateUri = new Uri(uri);
             HyperLinkSupplyAQuestion.Inlines.Clear();
             HyperLinkSupplyAQuestion.Inlines.Add("Submit a question");

@@ -25,7 +25,7 @@ See the [change log](CHANGELOG.md) for release history.
 
 Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension.
 
-[Why](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Why-%3F) build this extension ?
+[Why](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Why) build this extension ?
 
 ## Credits
 
