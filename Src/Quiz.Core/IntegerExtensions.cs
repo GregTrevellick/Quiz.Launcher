@@ -91,7 +91,7 @@ namespace Quiz.Core
                     {72, "Heavyweight"},
                     {73, "Unbelievable"},
                     {74, "Sage"},
-                    {75, "Whiz"},
+                    {75, "Boffin"},
                     {76, "Wow"},
                     {77, "Ace"},
                     {78, "Brain box"},
