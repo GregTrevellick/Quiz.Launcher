@@ -26,8 +26,7 @@ namespace Quiz.Ui
             {
                 var quizDialogDto = QuizHelperCore.GetQuizDialogDto(quizQuestion, Vsix.Name);
 
-                DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
-                    quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy, quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAnsweredCorrectlyHard, quizHelperDto.TotalQuestionsAsked, quizHelperDto.SearchEngine);
+                DisplayPopUpMessage(quizDialogDto, quizHelperDto);
 
                 var hiddenOptionsDto = QuizHelper.GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
 
@@ -42,19 +41,18 @@ namespace Quiz.Ui
             PersistHiddenOptionsQuizHelperEventHandlerEventHandler?.Invoke(totalQuestionsAsked, totalQuestionsAnsweredCorrectlyEasy, totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAnsweredCorrectlyHard);
         }
 
-        private void DisplayPopUpMessage(QuizDialogDto quizDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning,
-            int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard, int? totalQuestionsAsked, SearchEngine searchEngine)//gregtlo long list of params
+        private void DisplayPopUpMessage(QuizDialogDto quizDialogDto, QuizHelperDto quizHelperDto)
         {
             var vsixQuizDialog = new VsixQuizDialog
             {
                 CorrectAnswer = quizDialogDto.MultipleChoiceCorrectAnswer,
                 QuestionType = quizDialogDto.QuestionType,
-                SearchEngine = searchEngine,
-                SuppressClosingWithoutSubmitingAnswerWarning = suppressClosingWithoutSubmitingAnswerWarning.HasValue ? suppressClosingWithoutSubmitingAnswerWarning.Value : false,
-                TotalQuestionsAnsweredCorrectlyEasy = totalQuestionsAnsweredCorrectlyEasy,
-                TotalQuestionsAnsweredCorrectlyMedium = totalQuestionsAnsweredCorrectlyMedium,
-                TotalQuestionsAnsweredCorrectlyHard = totalQuestionsAnsweredCorrectlyHard,
-                TotalQuestionsAsked = totalQuestionsAsked,
+                SearchEngine = quizHelperDto.SearchEngine,
+                SuppressClosingWithoutSubmitingAnswerWarning = quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
+                TotalQuestionsAnsweredCorrectlyEasy = quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy,
+                TotalQuestionsAnsweredCorrectlyMedium = quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium,
+                TotalQuestionsAnsweredCorrectlyHard = quizHelperDto.TotalQuestionsAnsweredCorrectlyHard,
+                TotalQuestionsAsked = quizHelperDto.TotalQuestionsAsked,
             };
 
             vsixQuizDialog.TextBlockErrorDetails.Text = quizDialogDto.ErrorDetails;
@@ -92,16 +90,13 @@ namespace Quiz.Ui
             SetRadioButtonVisibility(vsixQuizDialog.RadioButton4);
             SetRadioButtonVisibility(vsixQuizDialog.RadioButton5);
 
-            if (totalQuestionsAnsweredCorrectlyMedium.HasValue && totalQuestionsAsked.HasValue)
-            {
-                vsixQuizDialog.TextBlockTotalQuestionsAnsweredCorrectly.Text = totalQuestionsAnsweredCorrectlyMedium.ToString();
-                vsixQuizDialog.TextBlockTotalQuestionsAsked.Text = totalQuestionsAsked.ToString();
-                var percentageSuccess = QuizHelperCore.GetPercentageSuccess(totalQuestionsAnsweredCorrectlyMedium, totalQuestionsAsked);
-                var userStatus = QuizHelperCore.GetUserStatus(percentageSuccess);
-                vsixQuizDialog.TextBlockUserStatus.Text = userStatus;
-                var userRank = QuizHelperCore.GetUserRank(percentageSuccess);
-                vsixQuizDialog.TextBlockUserRank.Text = userRank;
-            }
+            vsixQuizDialog.TextBlockTotalQuestionsAnsweredCorrectly.Text = quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium.ToString();
+            vsixQuizDialog.TextBlockTotalQuestionsAsked.Text = quizHelperDto.TotalQuestionsAsked.ToString();
+            var percentageSuccess = QuizHelperCore.GetPercentageSuccess(quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAsked);
+            var userStatus = QuizHelperCore.GetUserStatus(percentageSuccess);
+            vsixQuizDialog.TextBlockUserStatus.Text = userStatus;
+            var userRank = QuizHelperCore.GetUserRank(percentageSuccess);
+            vsixQuizDialog.TextBlockUserRank.Text = userRank;
 
             //triviaDialog.Show();
             var window = new Window
