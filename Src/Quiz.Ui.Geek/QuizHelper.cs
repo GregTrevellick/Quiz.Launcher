@@ -90,9 +90,15 @@ namespace Quiz.Ui
             SetRadioButtonVisibility(vsixQuizDialog.RadioButton4);
             SetRadioButtonVisibility(vsixQuizDialog.RadioButton5);
 
-            vsixQuizDialog.TextBlockTotalQuestionsAnsweredCorrectly.Text = quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium.ToString();
+            vsixQuizDialog.TextBlockTotalQuestionsAnsweredCorrectly.Text =
+            (quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy +
+             quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium +
+             quizHelperDto.TotalQuestionsAnsweredCorrectlyHard).ToString();//gregt dedupe
+            var gregt = (quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy +
+                         quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium +
+                         quizHelperDto.TotalQuestionsAnsweredCorrectlyHard);//gregt dedupe
             vsixQuizDialog.TextBlockTotalQuestionsAsked.Text = quizHelperDto.TotalQuestionsAsked.ToString();
-            var percentageSuccess = QuizHelperCore.GetPercentageSuccess(quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAsked);
+            var percentageSuccess = QuizHelperCore.GetPercentageSuccess(gregt, quizHelperDto.TotalQuestionsAsked);
             var userStatus = QuizHelperCore.GetUserStatus(percentageSuccess);
             vsixQuizDialog.TextBlockUserStatus.Text = userStatus;
             var userRank = QuizHelperCore.GetUserRank(percentageSuccess);
