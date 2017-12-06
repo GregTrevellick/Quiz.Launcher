@@ -43,7 +43,7 @@ namespace Quiz.Ui
         }
 
         private void DisplayPopUpMessage(QuizDialogDto quizDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning,
-            int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard, int? totalQuestionsAsked, SearchEngine searchEngine)//gregt long list of params
+            int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard, int? totalQuestionsAsked, SearchEngine searchEngine)//gregtlo long list of params
         {
             var vsixQuizDialog = new VsixQuizDialog
             {

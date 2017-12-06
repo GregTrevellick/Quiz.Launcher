@@ -61,7 +61,7 @@ namespace Quiz.Core
             return userStatusDescription;
         }
 
-        public static int GetPopUpCountToday(DateTime lastPopUpDateTime, int popUpCountToday, DateTime baseDateTime)//gregt unit test reqd
+        public static int GetPopUpCountToday(DateTime lastPopUpDateTime, int popUpCountToday, DateTime baseDateTime)//gregtlo unit test reqd
         {
             int result;
 
@@ -77,20 +77,20 @@ namespace Quiz.Core
             return result;
         }
 
-        public static string[] GetRandomlySortedAnswers(IEnumerable<string> multipleChoiceAnswers)//gregt unit test reqd
+        public static string[] GetRandomlySortedAnswers(IEnumerable<string> multipleChoiceAnswers)//gregtlo unit test reqd
         {
             var random = new Random();
             var randomlySortedAnswers = multipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray(); 
             return randomlySortedAnswers;
         }
 
-        public static string[] GetTrueFollowedByFalseAnswers(IEnumerable<string> multipleChoiceAnswers)//gregt unit test reqd
+        public static string[] GetTrueFollowedByFalseAnswers(IEnumerable<string> multipleChoiceAnswers)//gregtlo unit test reqd
         {
             var trueFollowedByFalseAnswers = multipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray(); 
             return trueFollowedByFalseAnswers;
         }
 
-        public static IEnumerable<string> GetPopulatedAnswers(IEnumerable<string> multipleChoiceAnswers)//gregt unit test reqd
+        public static IEnumerable<string> GetPopulatedAnswers(IEnumerable<string> multipleChoiceAnswers)//gregtlo unit test reqd
         {
             var result = multipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));
             return result;
