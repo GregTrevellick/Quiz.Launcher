@@ -1,9 +1,11 @@
+[VSMarketplaceUrl]: https://marketplace.visualstudio.com/search?term=trevellick&target=VS&sortBy=Relevance
+
 # Change log
 
-These are the incremental changes to each version that has been released on the official Visual Studio Market Place (aka Visual Studio Gallery).
+These are the incremental changes to each version that has been released on the official [Visual Studio Marketplace][VSMarketplaceUrl].
 
 Individual releases are tagged as such in GitHub.
 
-## 1.x.x
-**20yy-mm-dd**
-- [x] Initial release
+## 1.0.1
+**2017-12-dd**
+- [x] Music quiz initial release
