@@ -20,7 +20,7 @@ namespace Quiz.Core
             return quizDialogDto;
         }
 
-        public static bool IsANewDay(DateTime lastPopUpDateTime, DateTime baseDateTime)
+        private static bool IsANewDay(DateTime lastPopUpDateTime, DateTime baseDateTime)
         {
             //If last pop up was yesterday, then we have gone past midnight, so this is first pop up for today
             return lastPopUpDateTime.Date < baseDateTime.Date;
@@ -57,6 +57,22 @@ namespace Quiz.Core
         {
             var userStatusDescription = percentageSuccess.UserStatusDescription();
             return userStatusDescription;
+        }
+
+        public static int GetPopUpCountToday(DateTime lastPopUpDateTime, int popUpCountToday, DateTime baseDateTime)//gregt unit test reqd
+        {
+            int result;
+
+            if (IsANewDay(lastPopUpDateTime, baseDateTime))
+            {
+                result = 1;
+            }
+            else
+            {
+                result = popUpCountToday + 1;
+            }
+
+            return result;
         }
     }
 }

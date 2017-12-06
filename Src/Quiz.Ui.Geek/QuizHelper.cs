@@ -175,16 +175,7 @@ namespace Quiz.Ui
 
             var baseDateTime = DateTime.Now;
 
-            //gregt dedupe
-            if (QuizHelperCore.IsANewDay(lastPopUpDateTime, baseDateTime))
-            {
-                hiddenOptionsDto.PopUpCountToday = 1;
-            }
-            else
-            {
-                hiddenOptionsDto.PopUpCountToday = popUpCountToday + 1;
-            }
-
+            hiddenOptionsDto.PopUpCountToday = QuizHelperCore.GetPopUpCountToday(lastPopUpDateTime, popUpCountToday, baseDateTime);
             hiddenOptionsDto.LastPopUpDateTime = baseDateTime;
 
             return hiddenOptionsDto;
