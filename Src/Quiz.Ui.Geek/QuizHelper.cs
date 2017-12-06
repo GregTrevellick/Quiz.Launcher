@@ -1,5 +1,5 @@
-﻿using MoreLinq;
-using Quiz.Core;
+﻿using Quiz.Core;
+using Quiz.Questions;
 using Quiz.Questions.Entities;
 using System;
 using System.Linq;
@@ -7,7 +7,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
-using Quiz.Questions;
 
 namespace Quiz.Ui
 {
@@ -20,15 +19,22 @@ namespace Quiz.Ui
         {       
             var quizQuestion = quizQuestionApi.GetQuizQuestion(quizHelperDto.Category, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
-            var quizDialogDto = QuizHelperCore.GetQuizDialogDto(quizQuestion, Vsix.Name);
+            if (!string.IsNullOrEmpty(quizQuestion?.ErrorDetails) &&
+                !string.IsNullOrEmpty(quizQuestion.Question) &&
+                !string.IsNullOrEmpty(quizQuestion.MultipleChoiceCorrectAnswer) &&
+                quizQuestion.MultipleChoiceAnswers.Any())
+            {
+                var quizDialogDto = QuizHelperCore.GetQuizDialogDto(quizQuestion, Vsix.Name);
 
-            //gregt surround with "if (quizDialogDto.MultipleChoiceAnswers.Any())"
-            DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
-                quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy, quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAnsweredCorrectlyHard, quizHelperDto.TotalQuestionsAsked, quizHelperDto.SearchEngine);
+                DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
+                    quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy, quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAnsweredCorrectlyHard, quizHelperDto.TotalQuestionsAsked, quizHelperDto.SearchEngine);
 
-            var hiddenOptionsDto = QuizHelper.GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
+                var hiddenOptionsDto = QuizHelper.GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
 
-            return hiddenOptionsDto;
+                return hiddenOptionsDto;
+            }
+
+            return null;
         }
 
         void PersistHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard)
