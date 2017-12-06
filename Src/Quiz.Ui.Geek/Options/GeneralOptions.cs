@@ -134,7 +134,7 @@ namespace Quiz.Ui.Options
         [Category(Constants.CategorySubLevelTriggers)]
         [DisplayName(Constants.ShowQuizUponOpeningStartPageOptionLabel)]
         [Description(Constants.ShowQuizUponOpeningStartPageOptionDetailedDescription)]
-        public bool ShowQuizUponOpeningStartPage { get; set; } = false;
+        public bool ShowQuizUponOpeningStartPage { get; set; } = true;
 
         [Category(Constants.CategorySubLevelPreferences)]
         [DisplayName(Constants.SuppressClosingWithoutSubmitingAnswerWarningOptionLabel)]
