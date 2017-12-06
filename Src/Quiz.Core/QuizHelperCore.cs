@@ -79,9 +79,14 @@ namespace Quiz.Core
         public static string[] GetRandomlySortedAnswers(QuizDialogDto quizDialogDto)//gregt unit test reqd
         {
             var random = new Random();
-            var randomlySortedAnswers =
-                quizDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray(); 
+            var randomlySortedAnswers = quizDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray(); 
             return randomlySortedAnswers;
+        }
+
+        public static string[] GetTrueFollowedByFalseAnswers(QuizDialogDto quizDialogDto)//gregt unit test reqd
+        {
+            var trueFollowedByFalseAnswers = quizDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray(); 
+            return trueFollowedByFalseAnswers;
         }
     }
 }

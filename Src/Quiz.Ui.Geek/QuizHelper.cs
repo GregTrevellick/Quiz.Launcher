@@ -114,7 +114,7 @@ namespace Quiz.Ui
 
         private static void RandomlyPopulateUiTrueFalseAnswers(QuizDialogDto quizDialogDto, VsixQuizDialog vsixQuizDialog)
         {
-            var trueFollowedByFalseAnswers = quizDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();//gregt dedupe
+            var trueFollowedByFalseAnswers = QuizHelperCore.GetTrueFollowedByFalseAnswers(quizDialogDto);
             vsixQuizDialog.RadioButton1.Content = trueFollowedByFalseAnswers[0];
             vsixQuizDialog.RadioButton2.Content = trueFollowedByFalseAnswers[1];
         }
