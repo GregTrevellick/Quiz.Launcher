@@ -112,18 +112,16 @@ namespace Quiz.Ui
             window.ShowDialog();
         }
 
-        private static void RandomlyPopulateUiTrueFalseAnswers(QuizDialogDto quizDialogDto, VsixQuizDialog vsixQuizDialog)//gregt dedupe
+        private static void RandomlyPopulateUiTrueFalseAnswers(QuizDialogDto quizDialogDto, VsixQuizDialog vsixQuizDialog)
         {
-            var trueFollowedByFalseAnswers = quizDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();
+            var trueFollowedByFalseAnswers = quizDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();//gregt dedupe
             vsixQuizDialog.RadioButton1.Content = trueFollowedByFalseAnswers[0];
             vsixQuizDialog.RadioButton2.Content = trueFollowedByFalseAnswers[1];
         }
 
         private static void RandomlyPopulateUiMultiChoiceAnswers(QuizDialogDto quizDialogDto, VsixQuizDialog vsixQuizDialog)
         {
-            var random = new Random();
-            var randomlySortedAnswers =
-                quizDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray();//gregt dedupe
+            var randomlySortedAnswers = QuizHelperCore.GetRandomlySortedAnswers(quizDialogDto);
 
             if (randomlySortedAnswers.Length >= 1)
             {

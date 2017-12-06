@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Quiz.Questions.Entities;
 
 namespace Quiz.Core
@@ -73,6 +74,14 @@ namespace Quiz.Core
             }
 
             return result;
+        }
+
+        public static string[] GetRandomlySortedAnswers(QuizDialogDto quizDialogDto)//gregt unit test reqd
+        {
+            var random = new Random();
+            var randomlySortedAnswers =
+                quizDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray(); 
+            return randomlySortedAnswers;
         }
     }
 }
