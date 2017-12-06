@@ -114,6 +114,8 @@ namespace Quiz.Ui
                 {
                     UpdateHiddenOptions(hiddenOptionsDto);
                 }
+
+                generalOptionsDto = GetGeneralOptionsDto();
             }
         }
 

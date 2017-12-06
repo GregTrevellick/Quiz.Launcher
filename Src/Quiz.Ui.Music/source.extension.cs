@@ -11,7 +11,7 @@ namespace Quiz.Ui.Music
         public const string Name = "Music Quiz";
         public const string Description = @"A multi-choice music quiz when you open Visual Studio.";
         public const string Language = "en-US";
-        public const string Version = "1.0.2";
+        public const string Version = "1.0.3";
         public const string Author = "Greg Trevellick";
         public const string Tags = "MusicQuiz, music, quiz, fun, trivia, trivial";
     }

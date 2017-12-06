@@ -108,6 +108,8 @@ namespace Quiz.Ui.Music
                 {
                     UpdateHiddenOptions(hiddenOptionsDto);
                 }
+
+                generalOptionsDto = GetGeneralOptionsDto();
             }
         }
 
