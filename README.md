@@ -49,6 +49,8 @@ Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?
 
 [Web Camps Team again](https://github.com/Microsoft-Web/WebCampTrainingKit/tree/master/Presentation/02-ASPNET-and-VS-Web-Tooling/Visual-Studio-and-Web-Essentials)
 
+[Anonymous](https://cdn.pixabay.com/photo/2016/11/19/20/44/treble-clef-1841082_960_720.png)
+
 ## License
 
 Software License is available [here](/LICENSE.txt).
