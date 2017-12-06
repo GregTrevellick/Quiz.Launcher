@@ -22,6 +22,7 @@ namespace Quiz.Ui.Music
 
             var quizDialogDto = QuizHelperCore.GetQuizDialogDto(quizQuestion, Vsix.Name);
 
+            //gregt surround with "if (quizDialogDto.MultipleChoiceAnswers.Any())"
             DisplayPopUpMessage(quizDialogDto, quizHelperDto.SuppressClosingWithoutSubmitingAnswerWarning,
                 quizHelperDto.TotalQuestionsAnsweredCorrectlyEasy, quizHelperDto.TotalQuestionsAnsweredCorrectlyMedium, quizHelperDto.TotalQuestionsAnsweredCorrectlyHard, quizHelperDto.TotalQuestionsAsked, quizHelperDto.SearchEngine);
 
@@ -36,7 +37,7 @@ namespace Quiz.Ui.Music
         }
 
         private void DisplayPopUpMessage(QuizDialogDto quizDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning,
-            int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard, int? totalQuestionsAsked, SearchEngine searchEngine)
+            int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard, int? totalQuestionsAsked, SearchEngine searchEngine)//gregt long list of params
         {
             var vsixQuizDialog = new VsixQuizDialog
             {
@@ -68,8 +69,7 @@ namespace Quiz.Ui.Music
                 vsixQuizDialog.TextBlockErrorDetails.Visibility = Visibility.Visible;
             }
 
-            quizDialogDto.MultipleChoiceAnswers =
-                quizDialogDto.MultipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));
+            quizDialogDto.MultipleChoiceAnswers = quizDialogDto.MultipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));//gregt dedupe
 
             if (quizDialogDto.QuestionType == QuestionType.TrueFalse)
             {
@@ -111,7 +111,7 @@ namespace Quiz.Ui.Music
             window.ShowDialog();
         }
 
-        private static void RandomlyPopulateUiTrueFalseAnswers(QuizDialogDto quizDialogDto, VsixQuizDialog vsixQuizDialog)
+        private static void RandomlyPopulateUiTrueFalseAnswers(QuizDialogDto quizDialogDto, VsixQuizDialog vsixQuizDialog)//gregt dedupe
         {
             var trueFollowedByFalseAnswers = quizDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();
             vsixQuizDialog.RadioButton1.Content = trueFollowedByFalseAnswers[0];
@@ -122,7 +122,7 @@ namespace Quiz.Ui.Music
         {
             var random = new Random();
             var randomlySortedAnswers =
-                quizDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray();
+                quizDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray();//gregt dedupe
 
             if (randomlySortedAnswers.Length >= 1)
             {
@@ -167,13 +167,13 @@ namespace Quiz.Ui.Music
             }
         }
 
-
         public static HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
         {
             var hiddenOptionsDto = new HiddenOptionsDto();
 
             var baseDateTime = DateTime.Now;
 
+            //gregt dedupe
             if (QuizHelperCore.IsANewDay(lastPopUpDateTime, baseDateTime))
             {
                 hiddenOptionsDto.PopUpCountToday = 1;

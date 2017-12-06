@@ -3,15 +3,17 @@
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/Quiz.Launcher/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz#review-details
 
-A trivial extension that poses a music quiz question when opening the Start Page.
+A just-for-fun extension that poses a music quiz question when opening the Start Page
 
-Configurable to also / only pose questions when opening and / or closing a solution.
+- Configurable to also or only pose questions when opening and/or closing a solution
 
-- Simple escapism from the day to day pressures of software development.
+- In no way official nor for certification or job interviews, but are hopefully educational
 
-- If you like this ***free*** extension, please give it a [review][VSMarketplaceUrl].
+- If you like this ***free*** extension, please give it a [review][VSMarketplaceUrl]
 
-- Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
+- Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension
+
+- Arguably pointless, arguably helpful, definitely arbitrary
 
   ![](ReadMeScreenShot_PopUp.png)
 
@@ -24,5 +26,7 @@ Configurable to also / only pose questions when opening and / or closing a solut
 - Configurable timeout (in milliseconds) for third party data retrieval process 
 
 - Ability to begin quiz when opening start page, opening a solution, closing a solution
+
+- Further help available [here](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Help)
 
   ![](ReadMeScreenShot_Options.png)
