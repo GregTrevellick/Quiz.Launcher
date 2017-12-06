@@ -35,6 +35,8 @@ Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?
 
 [jService](http://www.jservice.io)
 
+[Maciej Szewczyk](https://pixabay.com/en/treble-clef-note-staff-colored-1841082/)
+
 [Open Trivia Database](https://opentdb.com/)
 
 [Phil Haack](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage)
@@ -48,8 +50,6 @@ Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?
 [Web Camps Team](https://docs.microsoft.com/en-us/aspnet/web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs)
 
 [Web Camps Team again](https://github.com/Microsoft-Web/WebCampTrainingKit/tree/master/Presentation/02-ASPNET-and-VS-Web-Tooling/Visual-Studio-and-Web-Essentials)
-
-[Anonymous](https://cdn.pixabay.com/photo/2016/11/19/20/44/treble-clef-1841082_960_720.png)
 
 ## License
 
