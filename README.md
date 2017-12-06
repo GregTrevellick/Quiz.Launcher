@@ -15,21 +15,17 @@
 
 An arbitrary quiz extension for the [Visual Studio][VisualStudioURL] IDE.
 
-In no way an official quiz, training or educational tool, just a bit of fun.
+Available for download at the [Visual Studio Marketplace][VSMarketplaceUrl].
 
-Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension.
-
-Available at the [Visual Studio Marketplace][VSMarketplaceUrl].
-
-Contributions to this project are welcome, including submissions of new questions / answers, by raising an [Issue][GitHubRepoIssuesURL] or submitting a [Pull Request][GitHubRepoPullRequestsURL].
+New questions can be submitted as described [here](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Submit-A-Question).
 
 Bugs can be logged [here][GitHubRepoIssuesURL].
 
 See the [change log](CHANGELOG.md) for release history.
 
-[Submit or correct a question](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Submit-A-Question)
+Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension.
 
-[Why ?](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Why-%3F)
+[Why](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Why-%3F) build this extension ?
 
 ## Credits
 
