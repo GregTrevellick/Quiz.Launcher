@@ -37,6 +37,8 @@ Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?
 
 [Maciej Szewczyk](https://pixabay.com/en/treble-clef-note-staff-colored-1841082/)
 
+[Maciej Szewczyk again](https://pixabay.com/en/users/maciej326-1771256/)
+
 [Open Trivia Database](https://opentdb.com/)
 
 [Phil Haack](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage)
