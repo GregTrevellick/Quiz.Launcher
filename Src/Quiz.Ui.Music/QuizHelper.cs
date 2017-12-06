@@ -19,21 +19,21 @@ namespace Quiz.Ui.Music
         {
             var quizQuestion = quizQuestionApi.GetQuizQuestion(quizHelperDto.Category, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
-            if (!string.IsNullOrEmpty(quizQuestion?.ErrorDetails) &&
-                !string.IsNullOrEmpty(quizQuestion.Question) &&
-                !string.IsNullOrEmpty(quizQuestion.MultipleChoiceCorrectAnswer) &&
-                quizQuestion.MultipleChoiceAnswers.Any())
+            if (!string.IsNullOrEmpty(quizQuestion?.ErrorDetails) ||
+                string.IsNullOrEmpty(quizQuestion?.Question) ||
+                string.IsNullOrEmpty(quizQuestion.MultipleChoiceCorrectAnswer) ||
+                !quizQuestion.MultipleChoiceAnswers.Any())
             {
-                var quizDialogDto = QuizHelperCore.GetQuizDialogDto(quizQuestion, Vsix.Name);
-
-                DisplayPopUpMessage(quizDialogDto, quizHelperDto);
-
-                var hiddenOptionsDto = QuizHelper.GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
-
-                return hiddenOptionsDto;
+                return null;
             }
 
-            return null;
+            var quizDialogDto = QuizHelperCore.GetQuizDialogDto(quizQuestion, Vsix.Name);
+
+            DisplayPopUpMessage(quizDialogDto, quizHelperDto);
+
+            var hiddenOptionsDto = GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
+
+            return hiddenOptionsDto;
         }
 
         void PersistHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard)
