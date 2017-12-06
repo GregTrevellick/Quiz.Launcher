@@ -3,6 +3,7 @@ using Quiz.Core;
 using Quiz.Questions;
 using Quiz.Questions.Entities;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -69,7 +70,7 @@ namespace Quiz.Ui.Music
                 vsixQuizDialog.TextBlockErrorDetails.Visibility = Visibility.Visible;
             }
 
-            quizDialogDto.MultipleChoiceAnswers = quizDialogDto.MultipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));//gregt dedupe
+            quizDialogDto.MultipleChoiceAnswers = QuizHelperCore.GetPopulatedAnswers(quizDialogDto.MultipleChoiceAnswers);
 
             if (quizDialogDto.QuestionType == QuestionType.TrueFalse)
             {
@@ -113,14 +114,14 @@ namespace Quiz.Ui.Music
 
         private static void RandomlyPopulateUiTrueFalseAnswers(QuizDialogDto quizDialogDto, VsixQuizDialog vsixQuizDialog)
         {
-            var trueFollowedByFalseAnswers = QuizHelperCore.GetTrueFollowedByFalseAnswers(quizDialogDto);
+            var trueFollowedByFalseAnswers = QuizHelperCore.GetTrueFollowedByFalseAnswers(quizDialogDto.MultipleChoiceAnswers);
             vsixQuizDialog.RadioButton1.Content = trueFollowedByFalseAnswers[0];
             vsixQuizDialog.RadioButton2.Content = trueFollowedByFalseAnswers[1];
         }
 
         private static void RandomlyPopulateUiMultiChoiceAnswers(QuizDialogDto quizDialogDto, VsixQuizDialog vsixQuizDialog)
         {
-            var randomlySortedAnswers = QuizHelperCore.GetRandomlySortedAnswers(quizDialogDto);
+            var randomlySortedAnswers = QuizHelperCore.GetRandomlySortedAnswers(quizDialogDto.MultipleChoiceAnswers);
 
             if (randomlySortedAnswers.Length >= 1)
             {

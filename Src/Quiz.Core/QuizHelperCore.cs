@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Quiz.Questions.Entities;
 
@@ -76,17 +77,23 @@ namespace Quiz.Core
             return result;
         }
 
-        public static string[] GetRandomlySortedAnswers(QuizDialogDto quizDialogDto)//gregt unit test reqd
+        public static string[] GetRandomlySortedAnswers(IEnumerable<string> multipleChoiceAnswers)//gregt unit test reqd
         {
             var random = new Random();
-            var randomlySortedAnswers = quizDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray(); 
+            var randomlySortedAnswers = multipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray(); 
             return randomlySortedAnswers;
         }
 
-        public static string[] GetTrueFollowedByFalseAnswers(QuizDialogDto quizDialogDto)//gregt unit test reqd
+        public static string[] GetTrueFollowedByFalseAnswers(IEnumerable<string> multipleChoiceAnswers)//gregt unit test reqd
         {
-            var trueFollowedByFalseAnswers = quizDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray(); 
+            var trueFollowedByFalseAnswers = multipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray(); 
             return trueFollowedByFalseAnswers;
+        }
+
+        public static IEnumerable<string> GetPopulatedAnswers(IEnumerable<string> multipleChoiceAnswers)//gregt unit test reqd
+        {
+            var result = multipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));
+            return result;
         }
     }
 }
