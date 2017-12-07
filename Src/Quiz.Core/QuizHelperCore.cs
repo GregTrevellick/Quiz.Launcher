@@ -22,12 +22,6 @@ namespace Quiz.Core
             return quizDialogDto;
         }
 
-        private static bool IsANewDay(DateTime lastPopUpDateTime, DateTime baseDateTime)
-        {
-            //If last pop up was yesterday, then we have gone past midnight, so this is first pop up for today
-            return lastPopUpDateTime.Date < baseDateTime.Date;
-        }
-
         public static int GetPercentageSuccess(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             int percentageSuccess;
@@ -75,6 +69,12 @@ namespace Quiz.Core
             }
 
             return result;
+        }
+
+        private static bool IsANewDay(DateTime lastPopUpDateTime, DateTime baseDateTime)
+        {
+            //If last pop up was yesterday, then we have gone past midnight, so this is first pop up for today
+            return lastPopUpDateTime.Date < baseDateTime.Date;
         }
 
         public static string[] GetRandomlySortedAnswers(IEnumerable<string> multipleChoiceAnswers)//gregtlo unit test reqd
