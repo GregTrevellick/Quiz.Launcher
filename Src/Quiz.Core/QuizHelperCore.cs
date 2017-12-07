@@ -77,14 +77,14 @@ namespace Quiz.Core
             return lastPopUpDateTime.Date < baseDateTime.Date;
         }
 
-        public static string[] GetRandomlySortedAnswers(IEnumerable<string> multipleChoiceAnswers)//gregtlo unit test reqd
+        public static string[] GetRandomlySortedAnswers(IEnumerable<string> multipleChoiceAnswers)
         {
             var random = new Random();
             var randomlySortedAnswers = multipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray(); 
             return randomlySortedAnswers;
         }
 
-        public static string[] GetTrueFollowedByFalseAnswers(IEnumerable<string> multipleChoiceAnswers)//gregtlo unit test reqd
+        public static string[] GetTrueFollowedByFalseAnswers(IEnumerable<string> multipleChoiceAnswers)
         {
             var trueFollowedByFalseAnswers = multipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray(); 
             return trueFollowedByFalseAnswers;
