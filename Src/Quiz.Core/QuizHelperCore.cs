@@ -90,7 +90,7 @@ namespace Quiz.Core
             return trueFollowedByFalseAnswers;
         }
 
-        public static IEnumerable<string> GetPopulatedAnswers(IEnumerable<string> multipleChoiceAnswers)//gregtlo unit test reqd
+        public static IEnumerable<string> GetPopulatedAnswers(IEnumerable<string> multipleChoiceAnswers)
         {
             var result = multipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));
             return result;

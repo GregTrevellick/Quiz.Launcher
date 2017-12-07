@@ -6,7 +6,7 @@ namespace Quiz.Core.UnitTests
     public class QuizHelperBaseDtoTests
     {
         [TestMethod]
-        public void TotalQuestionsAnsweredCorrectlyTest(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked, int expected)
+        public void TotalQuestionsAnsweredCorrectlyTest()
         {
             // Arrange
             var sut = new QuizHelperBaseDto
