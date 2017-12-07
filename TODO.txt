@@ -1,14 +1,21 @@
+avoid re-starting for options (midweek/weekend/interval) take effect
+
+
+
 TEST CASES
 ==========
-check default pop up frequency is once a day
-check hidden options are being accurately recorded
+
+check timeouts
+check remote sites down
+
 check pop up frequency midweek & weekends
 check pop up trigger for open & close sln
-check remote sites down
-check timeouts
-closing & reopening start page
+
 N/A  check all category options are false
 N/A  check questions are only for the users chosen categories
+PASS closing & reopening start page
+PASS check default pop up frequency is once a day
+PASS check hidden options are being accurately recorded
 PASS after submitting an answer, click a radio button - s/be disallowed
 PASS check help hyperlink
 PASS check supply a questions hyperlink
