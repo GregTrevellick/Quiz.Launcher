@@ -16,7 +16,7 @@ namespace Quiz.Core
         public int TotalQuestionsAnsweredCorrectlyMedium;
         public int TotalQuestionsAsked;
 
-        public int TotalQuestionsAnsweredCorrectly//gregtlo unit test reqd
+        public int TotalQuestionsAnsweredCorrectly
         {
             get
             {

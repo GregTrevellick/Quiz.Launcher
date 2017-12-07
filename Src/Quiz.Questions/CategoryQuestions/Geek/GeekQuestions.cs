@@ -12,6 +12,14 @@ namespace Quiz.Questions.CategoryQuestions.Geek
             var quizQuestions = new List<QuizQuestion>
             {
                 #region mine
+                //gherkin, cucumber, specflow
+                //cake, chef, puppet
+                //mavern, jenkins,
+                //chocolatey
+                //what % coverage to aim for ?
+                //yeoman,bower
+                //sonarqube
+                //
                 //Common.Get(Category, DifficultyLevel.Easy, "What is ANSI?",
                 //    "",
                 //    "",
