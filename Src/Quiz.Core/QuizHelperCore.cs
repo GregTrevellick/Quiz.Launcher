@@ -92,8 +92,15 @@ namespace Quiz.Core
 
         public static IEnumerable<string> GetPopulatedAnswers(IEnumerable<string> multipleChoiceAnswers)
         {
-            var result = multipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));
-            return result;
+            if (multipleChoiceAnswers == null)
+            {
+                return null;
+            }
+            else
+            {
+                var result = multipleChoiceAnswers.Where(x => !string.IsNullOrWhiteSpace(x));
+                return result;
+            }
         }
     }
 }
