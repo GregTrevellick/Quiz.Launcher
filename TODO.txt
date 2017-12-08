@@ -1,4 +1,3 @@
-avoid re-starting for options (midweek/weekend/interval) take effect
 more music apis
 
 

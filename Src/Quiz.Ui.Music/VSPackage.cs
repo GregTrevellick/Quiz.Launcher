@@ -79,8 +79,8 @@ namespace Quiz.Ui.Music
 
         private void StartQuiz()
         {
-            ////////////////////////////////////////////////////////////////////////Re-get options to avoid having to restart VS if user amends options
-            //////////////////////////////////////////////////////////////////////generalOptionsDto = GetGeneralOptionsDto();
+            //Re-get options to avoid having to restart VS if user amends options
+            generalOptionsDto = GetGeneralOptionsDto();
 
             var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd, generalOptionsDto.MaximumPopUpsWeekDay, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins);
 
