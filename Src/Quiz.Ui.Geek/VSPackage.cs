@@ -115,6 +115,7 @@ namespace Quiz.Ui
                     UpdateHiddenOptions(hiddenOptionsDto);
                 }
 
+                //Refresh questions answered count values from options
                 generalOptionsDto = GetGeneralOptionsDto();
             }
         }

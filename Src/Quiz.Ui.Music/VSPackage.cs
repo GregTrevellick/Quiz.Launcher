@@ -79,6 +79,9 @@ namespace Quiz.Ui.Music
 
         private void StartQuiz()
         {
+            ////////////////////////////////////////////////////////////////////////Re-get options to avoid having to restart VS if user amends options
+            //////////////////////////////////////////////////////////////////////generalOptionsDto = GetGeneralOptionsDto();
+
             var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd, generalOptionsDto.MaximumPopUpsWeekDay, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins);
 
             if (shouldShowQuiz)
@@ -109,6 +112,7 @@ namespace Quiz.Ui.Music
                     UpdateHiddenOptions(hiddenOptionsDto);
                 }
 
+                //Refresh questions answered count values from options
                 generalOptionsDto = GetGeneralOptionsDto();
             }
         }
