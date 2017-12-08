@@ -11,7 +11,7 @@ namespace Quiz.Core.UnitTests
         public void PreferredGeekCategoriesFromOptionsTest()
         {
             // Arrange 
-            var sut = new GeneralOptionsDto
+            var sut = new GeneralOptionsDto//C:\Users\gtrev\Source\Repos\Quiz.Launcher\Src\Quiz.Ui.Geek\GeneralOptionsDto.cs
             {
                 IncludeQuizCategoryCSharp = true,
                 IncludeQuizCategoryDotNet = false,
