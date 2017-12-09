@@ -11,6 +11,20 @@ namespace Quiz.Questions.CategoryQuestions.Geek
         {
             var quizQuestions = new List<QuizQuestion>
             {
+                #region spiceworks
+                Common.Get(Category, DifficultyLevel.Hard, "What can be used to protect you from receiving email messages with a forged sender address?",
+                    "SPF",
+                    "Secure SMTP",
+                    "IMAP",
+                    "Digital ID",
+                    "US Postal Service"),
+                Common.Get(Category, DifficultyLevel.Easy, "Which of the following does ROBOCOPY stand for?",
+                    "Robust File Copy",
+                    "Robot Copy",
+                    "Recursive File Copy",
+                    "Read Only Block Option Copy"),
+                #endregion
+
                 #region mine
                 //gherkin, cucumber, specflow
                 //cake, chef, puppet
@@ -56,12 +70,6 @@ namespace Quiz.Questions.CategoryQuestions.Geek
                     "Automatic Assert Architecture",
                     "Act, Arrange, Assert",
                     "Automobile Association of America"),
-                Common.Get(Category, DifficultyLevel.Hard, "What can be used to protect you from receiving email messages with a forged sender address?",
-                    "SPF",
-                    "Secure SMTP",
-                    "IMAP",
-                    "Digital ID",
-                    "US Postal Service"),
                 Common.Get(Category, DifficultyLevel.Easy, "Foo?",
                     "Bar",
                     "Poo",
