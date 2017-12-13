@@ -12,6 +12,18 @@ namespace Quiz.Questions.CategoryQuestions.Geek
             var quizQuestions = new List<QuizQuestion>
             {
                 #region spiceworks
+                //In Hyper-V what is the feature that allows a virtual machine to raise or lower its memory based on demand?
+                //Dynamic Memory CORRECT
+                //Memory Optimization
+                //Demand Based Memory Scaling
+                //Memory Overcommit
+
+                //The Android operating system is based on which of the following? 
+                //Linux CORRECT
+                //Windows Mobile
+                //Microsoft Windows
+                //Mac OS X
+                
                 Common.Get(Category, DifficultyLevel.Hard, "What can be used to protect you from receiving email messages with a forged sender address?",
                     "SPF",
                     "Secure SMTP",
