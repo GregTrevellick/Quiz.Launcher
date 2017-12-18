@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Questions", "Quiz.Questions\Quiz.Questions.csproj", "{2EFCC4D7-8C7B-4E06-B3B4-B041412D1604}"
 EndProject
@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\CHANGELOG.md = ..\CHANGELOG.md
 		..\LICENSE.txt = ..\LICENSE.txt
 		..\README.md = ..\README.md
-		..\TODO.txt = ..\TODO.txt
+		TODO.txt = TODO.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Questions.UnitTests", "Quiz.Questions.UnitTests\Quiz.Questions.UnitTests.csproj", "{0B5330E2-5C50-4AFA-82AB-F328C7258B00}"
