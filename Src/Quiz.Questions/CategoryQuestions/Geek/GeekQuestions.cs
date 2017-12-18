@@ -23,15 +23,24 @@ namespace Quiz.Questions.CategoryQuestions.Geek
                 //Windows Mobile
                 //Microsoft Windows
                 //Mac OS X
-                
+
                 //What is DCL used for in SQL ?
                 //Control access to data stored in a database CORRECT
                 //Control database size and archiving schedule
                 //Solving deadlock situations
                 //Monitor database transactions
 
+                //What date/time is UNIX time calculated based off of?
+                //00:00:00 1 January 1970 CORRECT
+                //00:00:00 31 December 1967
+                //00:00:00 1 January 0000
+                //00:00:00 1 January, 1900
 
-
+                //What Linux command sets a files permission?
+                //chmod CORRECT
+                //rights
+                //properties
+                //attrib
 
                 Common.Get(Category, DifficultyLevel.Hard, "What can be used to protect you from receiving email messages with a forged sender address?",
                     "SPF",
