@@ -10,7 +10,7 @@ A just-for-fun [CharityWare][CharityWareURL] extension that poses a music quiz q
 
 - In no way official nor for certification or job interviews, but are hopefully educational
 
-- If you like this ***free*** extension, please give it a [review][VSMarketplaceUrl]
+- If you like this ***FREE*** extension, please give it a [review][VSMarketplaceUrl] and/or [help others][CharityWareURL]
 
 - Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension
 

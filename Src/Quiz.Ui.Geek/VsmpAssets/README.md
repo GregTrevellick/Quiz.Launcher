@@ -10,7 +10,8 @@ Configurable to also / only pose questions when opening and / or closing a solut
 
 - Simple escapism from the day to day pressures of software development.
 
-- If you like this ***free*** extension, please give it a [review][VSMarketplaceUrl].
+- If you like this ***FREE*** extension, please give it a [review][VSMarketplaceUrl] and/or [help others][CharityWareURL]
+
 
 - Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
 
