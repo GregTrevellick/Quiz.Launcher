@@ -6,7 +6,7 @@
 [VersionNumberBadgeURL]: https://vsmarketplacebadge.apphb.com/version/GregTrevellick.Quiz.Launcher.svg
 [VisualStudioURL]: https://www.visualstudio.com/
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/search?term=trevellick&target=VS&sortBy=Relevance
-[CharityWareURL]: https://github.com/GregTrevellick/Misc/blob/master/Misc/CharityWare.MD
+[CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/blob/master/MiscellaneousArtefacts/CharityWare.MD
 
 # Visual Studio Quiz 
 

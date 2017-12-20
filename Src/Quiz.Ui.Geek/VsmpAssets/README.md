@@ -2,7 +2,7 @@
 [GitHubRepoIssuesURL]: https://github.com/GregTrevellick/Quiz.Launcher/issues
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/Quiz.Launcher/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.GeekQuiz#review-details
-[CharityWareURL]: https://github.com/GregTrevellick/Misc/blob/master/Misc/CharityWare.MD
+[CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/blob/master/MiscellaneousArtefacts/CharityWare.MD
 
 A trivial [CharityWare][CharityWareURL] extension that poses a geek quiz question when opening the Start Page.
 
