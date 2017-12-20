@@ -6,6 +6,7 @@
 [VersionNumberBadgeURL]: https://vsmarketplacebadge.apphb.com/version/GregTrevellick.Quiz.Launcher.svg
 [VisualStudioURL]: https://www.visualstudio.com/
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/search?term=trevellick&target=VS&sortBy=Relevance
+[CharityWareURL]: https://github.com/GregTrevellick/Misc/blob/master/Misc/CharityWare.MD
 
 # Visual Studio Quiz 
 
@@ -13,7 +14,7 @@
 [![Build status][AppVeyorProjectBuildStatusBadgeSvg]][AppVeyorProjectUrl]
 [![][VersionNumberBadgeURL]][VSMarketplaceUrl]
 
-An arbitrary quiz extension for the [Visual Studio][VisualStudioURL] IDE.
+An arbitrary [CharityWare][CharityWareURL] quiz extension for the [Visual Studio][VisualStudioURL] IDE.
 
 Available for download at the [Visual Studio Marketplace][VSMarketplaceUrl].
 

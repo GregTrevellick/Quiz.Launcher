@@ -2,8 +2,9 @@
 [GitHubRepoIssuesURL]: https://github.com/GregTrevellick/Quiz.Launcher/issues
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/Quiz.Launcher/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz#review-details
+[CharityWareURL]: https://github.com/GregTrevellick/Misc/blob/master/Misc/CharityWare.MD
 
-A just-for-fun extension that poses a music quiz question when opening the Start Page
+A just-for-fun [CharityWare][CharityWareURL] extension that poses a music quiz question when opening the Start Page
 
 - Configurable to also or only pose questions when opening and/or closing a solution
 
