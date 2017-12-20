@@ -7,6 +7,7 @@
 [VisualStudioURL]: https://www.visualstudio.com/
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/search?term=trevellick&target=VS&sortBy=Relevance
 [CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware
+[WhyURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Why
 
 # Visual Studio Quiz 
 
@@ -27,7 +28,7 @@ See the [change log](CHANGELOG.md) for release history.
 
 Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension.
 
-[Why](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Why) build this extension ?
+[Why build this extension?][WhyURL]
 
 ## Credits
 

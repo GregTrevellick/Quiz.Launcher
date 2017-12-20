@@ -3,6 +3,7 @@
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/Quiz.Launcher/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz#review-details
 [CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware
+[WhyURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Why
 
 A just-for-fun [CharityWare][CharityWareURL] extension that poses a music quiz question when opening the Start Page
 
@@ -17,6 +18,8 @@ A just-for-fun [CharityWare][CharityWareURL] extension that poses a music quiz q
 - Arguably pointless, arguably helpful, definitely arbitrary
 
   ![](ReadMeScreenShot_PopUp.png)
+
+[Why?][WhyURL]  
 
 ### Options
 
