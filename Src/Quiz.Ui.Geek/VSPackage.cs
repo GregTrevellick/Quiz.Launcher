@@ -1,14 +1,14 @@
 ﻿using EnvDTE;
+using EnvDTE80;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
+using Quiz.Core;
+using Quiz.Questions;
 using Quiz.Ui.Options;
+using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
-using EnvDTE80;
-using Quiz.Core;
-using Quiz.Questions;
-using Quiz.Questions.Entities;
 
 namespace Quiz.Ui
 {
@@ -35,6 +35,9 @@ namespace Quiz.Ui
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
             generalOptionsDto = GetGeneralOptionsDto();
 
+            Logger.Initialize(this, Vsix.Name);
+            //Logger.Log(Vsix.Name);
+
             AttachToWindowShowingEvent();
             AttachToSolutionOpenedOrClosedEvents();
         }
@@ -44,15 +47,13 @@ namespace Quiz.Ui
             if (generalOptionsDto.ShowQuizUponOpeningStartPage)
             {
                 var events2 = (Events2)dte.Events;
-                //var toolBoxWindowFilter = dte.Windows.Item(Constants.vsWindowKindToolbox);
-                toolBoxWindowVisibilityEvents = events2.get_WindowVisibilityEvents();//(toolBoxWindowFilter);
+                toolBoxWindowVisibilityEvents = events2.get_WindowVisibilityEvents();
                 toolBoxWindowVisibilityEvents.WindowShowing += windowVisibilityEvents_WindowShowing;
             }
         }
 
         private void windowVisibilityEvents_WindowShowing(Window window)
         {
-            //System.Windows.Forms.MessageBox.Show("window.ObjectKind =" + window.ObjectKind + " window.Type=" + window.Type);
             if (window.Type == vsWindowType.vsWindowTypeToolWindow && window.Caption == "Start Page")
             {
                 StartQuiz();
@@ -87,14 +88,17 @@ namespace Quiz.Ui
             //Re-get options to avoid having to restart VS if user amends options
             generalOptionsDto = GetGeneralOptionsDto();
 
-            var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd, generalOptionsDto.MaximumPopUpsWeekDay, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins);
+            var popUpCountToday = QuizHelperCore.GetPopUpCountToday(generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpCountToday, DateTime.Now);
+            var decisionMaker = new DecisionMaker();
+            var shouldShowQuiz = decisionMaker.ShouldShowQuiz(popUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd, generalOptionsDto.MaximumPopUpsWeekDay, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins);
 
             if (shouldShowQuiz)
             {
-                var popUpTitle = Core.Constants.GetCaption(Vsix.Name, Vsix.Version);
                 var quizHelper = new QuizHelper();
                 quizHelper.PersistHiddenOptionsQuizHelperEventHandlerEventHandler += UpdateHiddenOptionsTotals;
-                
+
+                var popUpTitle = Core.Constants.GetCaption(Vsix.Name, Vsix.Version);
+
                 var quizHelperDto = new QuizHelperDto
                 {
                     LastPopUpDateTime = generalOptionsDto.LastPopUpDateTime,
@@ -126,10 +130,10 @@ namespace Quiz.Ui
         private void UpdateHiddenOptionsTotals(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard)
         {
             var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
-            hiddenOptions.TotalQuestionsAnsweredCorrectlyEasy = totalQuestionsAnsweredCorrectlyEasy.HasValue ? totalQuestionsAnsweredCorrectlyEasy.Value : 0;
-            hiddenOptions.TotalQuestionsAnsweredCorrectlyMedium = totalQuestionsAnsweredCorrectlyMedium.HasValue ? totalQuestionsAnsweredCorrectlyMedium.Value : 0;
-            hiddenOptions.TotalQuestionsAnsweredCorrectlyHard = totalQuestionsAnsweredCorrectlyHard.HasValue ? totalQuestionsAnsweredCorrectlyHard.Value : 0;
-            hiddenOptions.TotalQuestionsAsked = totalQuestionsAsked.HasValue ? totalQuestionsAsked.Value : 0;
+            hiddenOptions.TotalQuestionsAnsweredCorrectlyEasy = totalQuestionsAnsweredCorrectlyEasy ?? 0;
+            hiddenOptions.TotalQuestionsAnsweredCorrectlyMedium = totalQuestionsAnsweredCorrectlyMedium ?? 0;
+            hiddenOptions.TotalQuestionsAnsweredCorrectlyHard = totalQuestionsAnsweredCorrectlyHard ?? 0;
+            hiddenOptions.TotalQuestionsAsked = totalQuestionsAsked ?? 0;
             hiddenOptions.SaveSettingsToStorage();
         }
 

@@ -1,14 +1,14 @@
-﻿using System;
-using System.ComponentModel.Design;
-using System.Diagnostics.CodeAnalysis;
-using System.Runtime.InteropServices;
-using EnvDTE;
+﻿using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Quiz.Core;
 using Quiz.Questions;
 using Quiz.Ui.Music.Options;
+using System;
+using System.ComponentModel.Design;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
 
 namespace Quiz.Ui.Music
 {
