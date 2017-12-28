@@ -3,22 +3,20 @@
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/Quiz.Launcher/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.GeekQuiz#review-details
 [CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware
-[WhyURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Why
 
 A trivial [CharityWare][CharityWareURL] extension that poses a geek quiz question when opening the Start Page.
 
-Configurable to also / only pose questions when opening and / or closing a solution.
+- Configurable to also or only pose questions when opening and/or closing a solution
 
 - Simple escapism from the day to day pressures of software development.
 
 - If you like this ***FREE*** extension, please give it a [review][VSMarketplaceUrl] and/or [help others][CharityWareURL]
 
+- Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension
 
-- Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
+- Arguably pointless, arguably helpful, definitely arbitrary
 
   ![](ReadMeScreenShot_PopUp.png)
-
-- [Why?][WhyURL]
 
 ### Options
 
@@ -29,5 +27,7 @@ Configurable to also / only pose questions when opening and / or closing a solut
 - Configurable timeout (in milliseconds) for third party data retrieval process 
 
 - Ability to begin quiz when opening start page, opening a solution, closing a solution
+
+- Further help available [here](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Options)
 
   ![](ReadMeScreenShot_Options.png)
