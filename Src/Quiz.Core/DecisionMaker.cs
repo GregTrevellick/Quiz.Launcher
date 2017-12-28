@@ -6,6 +6,12 @@ namespace Quiz.Core
     {
         public bool ShouldShowQuiz(int popUpCountToday, int maximumPopUpsWeekEnd, int maximumPopUpsWeekDay, DateTime lastPopUpDateTime, int popUpIntervalInMins)
         {
+            //Logger.Log("popUpCountToday=" + popUpCountToday +
+            //           " maximumPopUpsWeekEnd=" + maximumPopUpsWeekEnd +
+            //           " maximumPopUpsWeekDay=" + maximumPopUpsWeekDay +
+            //           " lastPopUpDateTime=" + lastPopUpDateTime +
+            //           " popUpIntervalInMins=" + popUpIntervalInMins);
+
             var dateTimeNow = DateTime.Now;
 
             if (!HaveExceededTodaysPopUpCount(popUpCountToday, maximumPopUpsWeekEnd, maximumPopUpsWeekDay, dateTimeNow))

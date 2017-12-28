@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.Design;
+﻿using System;
+using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using EnvDTE;
@@ -33,6 +34,9 @@ namespace Quiz.Ui.Music
             IServiceContainer serviceContainer = this as IServiceContainer;
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
             generalOptionsDto = GetGeneralOptionsDto();
+
+            Logger.Initialize(this, Vsix.Name);
+            //Logger.Log(Vsix.Name);
 
             AttachToWindowShowingEvent();
             AttachToSolutionOpenedOrClosedEvents();
@@ -83,8 +87,9 @@ namespace Quiz.Ui.Music
             //Re-get options to avoid having to restart VS if user amends options
             generalOptionsDto = GetGeneralOptionsDto();
 
+            var popUpCountToday = QuizHelperCore.GetPopUpCountToday(generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpCountToday, DateTime.Now);
             var decisionMaker = new DecisionMaker();
-            var shouldShowQuiz = decisionMaker.ShouldShowQuiz(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd, generalOptionsDto.MaximumPopUpsWeekDay, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins);
+            var shouldShowQuiz = decisionMaker.ShouldShowQuiz(popUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd, generalOptionsDto.MaximumPopUpsWeekDay, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins);
 
             if (shouldShowQuiz)
             {

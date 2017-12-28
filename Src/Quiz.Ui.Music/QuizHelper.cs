@@ -31,7 +31,7 @@ namespace Quiz.Ui.Music
 
             DisplayPopUpMessage(quizDialogDto, quizHelperDto);
 
-            var hiddenOptionsDto = DisplayPopUpQuiz(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
+            var hiddenOptionsDto = GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
 
             return hiddenOptionsDto;
         }
@@ -166,7 +166,7 @@ namespace Quiz.Ui.Music
             }
         }
 
-        public static HiddenOptionsDto DisplayPopUpQuiz(DateTime lastPopUpDateTime, int popUpCountToday)
+        public static HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
         {
             var hiddenOptionsDto = new HiddenOptionsDto();
 
