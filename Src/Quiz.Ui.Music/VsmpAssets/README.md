@@ -31,6 +31,6 @@ A just-for-fun [CharityWare][CharityWareURL] extension that poses a music quiz q
 
 - Ability to begin quiz when opening start page, opening a solution, closing a solution
 
-- Further help available [here](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Help)
+- Further help available [here](https://github.com/GregTrevellick/Quiz.Launcher/wiki/Options)
 
   ![](ReadMeScreenShot_Options.png)
