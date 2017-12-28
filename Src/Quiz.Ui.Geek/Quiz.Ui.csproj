@@ -60,6 +60,7 @@
     <Compile Include="CategoryHelper.cs" />
     <Compile Include="GeneralOptionsDto.cs" />
     <Compile Include="HiddenOptionsDto.cs" />
+    <Compile Include="IQuizHelper.cs" />
     <Compile Include="Options\GeneralOptions.cs">
       <SubType>Component</SubType>
     </Compile>

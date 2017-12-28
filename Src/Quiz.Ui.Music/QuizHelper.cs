@@ -10,12 +10,12 @@ using System.Windows.Media.Imaging;
 
 namespace Quiz.Ui.Music
 {
-    public class QuizHelper
+    public class QuizHelper : IQuizHelper
     {
         public delegate void QuizHelperEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard);
         public event QuizHelperEventHandler PersistHiddenOptionsQuizHelperEventHandlerEventHandler;
 
-        public HiddenOptionsDto GetHiddenOptionsDto(QuizHelperDto quizHelperDto, IQuizQuestionApi quizQuestionApi)
+        public HiddenOptionsDto DisplayPopUpQuiz(QuizHelperDto quizHelperDto, IQuizQuestionApi quizQuestionApi)
         {
             var quizQuestion = quizQuestionApi.GetQuizQuestion(quizHelperDto.Category, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
@@ -31,7 +31,7 @@ namespace Quiz.Ui.Music
 
             DisplayPopUpMessage(quizDialogDto, quizHelperDto);
 
-            var hiddenOptionsDto = GetHiddenOptionsDto(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
+            var hiddenOptionsDto = DisplayPopUpQuiz(quizHelperDto.LastPopUpDateTime, quizHelperDto.PopUpCountToday);
 
             return hiddenOptionsDto;
         }
@@ -166,7 +166,7 @@ namespace Quiz.Ui.Music
             }
         }
 
-        public static HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
+        public static HiddenOptionsDto DisplayPopUpQuiz(DateTime lastPopUpDateTime, int popUpCountToday)
         {
             var hiddenOptionsDto = new HiddenOptionsDto();
 

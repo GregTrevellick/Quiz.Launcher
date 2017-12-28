@@ -73,6 +73,7 @@ namespace Quiz.Ui.Music
                 {
                     solutionEvents = dte.Events.SolutionEvents;
                 }
+
                 solutionEvents.AfterClosing += StartQuiz;
             }
         }
@@ -82,13 +83,15 @@ namespace Quiz.Ui.Music
             //Re-get options to avoid having to restart VS if user amends options
             generalOptionsDto = GetGeneralOptionsDto();
 
-            var shouldShowQuiz = new DecisionMaker().ShouldShowQuiz(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd, generalOptionsDto.MaximumPopUpsWeekDay, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins);
+            var decisionMaker = new DecisionMaker();
+            var shouldShowQuiz = decisionMaker.ShouldShowQuiz(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd, generalOptionsDto.MaximumPopUpsWeekDay, generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins);
 
             if (shouldShowQuiz)
             {
-                var popUpTitle = Core.Constants.GetCaption(Vsix.Name, Vsix.Version);
                 var quizHelper = new QuizHelper();
                 quizHelper.PersistHiddenOptionsQuizHelperEventHandlerEventHandler += UpdateHiddenOptionsTotals;
+
+                var popUpTitle = Core.Constants.GetCaption(Vsix.Name, Vsix.Version);
 
                 var quizHelperDto = new QuizHelperDto
                 {
@@ -105,7 +108,7 @@ namespace Quiz.Ui.Music
                     TotalQuestionsAsked = generalOptionsDto.TotalQuestionsAsked,
                 };
 
-                var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(quizHelperDto, new QuizQuestionApi());
+                var hiddenOptionsDto = quizHelper.DisplayPopUpQuiz(quizHelperDto, new QuizQuestionApi());
 
                 if (hiddenOptionsDto != null)
                 {

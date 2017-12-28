@@ -2,7 +2,7 @@
 
 namespace Quiz.Core
 {
-    public class DecisionMaker
+    public class DecisionMaker : IDecisionMaker
     {
         public bool ShouldShowQuiz(int popUpCountToday, int maximumPopUpsWeekEnd, int maximumPopUpsWeekDay, DateTime lastPopUpDateTime, int popUpIntervalInMins)
         {

@@ -111,7 +111,7 @@ namespace Quiz.Ui
                     TotalQuestionsAsked = generalOptionsDto.TotalQuestionsAsked,
                 };
 
-                var hiddenOptionsDto = quizHelper.GetHiddenOptionsDto(quizHelperDto, new QuizQuestionApi());
+                var hiddenOptionsDto = quizHelper.DisplayPopUpQuiz(quizHelperDto, new QuizQuestionApi());
 
                 if (hiddenOptionsDto != null)
                 {

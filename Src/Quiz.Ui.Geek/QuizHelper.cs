@@ -10,12 +10,12 @@ using System.Windows.Media.Imaging;
 
 namespace Quiz.Ui
 {
-    public class QuizHelper
+    public class QuizHelper : IQuizHelper
     {
         public delegate void QuizHelperEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectlyEasy, int? totalQuestionsAnsweredCorrectlyMedium, int? totalQuestionsAnsweredCorrectlyHard);
         public event QuizHelperEventHandler PersistHiddenOptionsQuizHelperEventHandlerEventHandler;
 
-        public HiddenOptionsDto GetHiddenOptionsDto(QuizHelperDto quizHelperDto, IQuizQuestionApi quizQuestionApi)
+        public HiddenOptionsDto DisplayPopUpQuiz(QuizHelperDto quizHelperDto, IQuizQuestionApi quizQuestionApi)
         {       
             var quizQuestion = quizQuestionApi.GetQuizQuestion(quizHelperDto.Category, quizHelperDto.TimeOutInMilliSeconds, Constants.TimeOutInMilliSecondsOptionLabel, quizHelperDto.OptionsName);
 
