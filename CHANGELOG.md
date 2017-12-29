@@ -6,6 +6,6 @@ These are the incremental changes to each version that has been released on the 
 
 Individual releases are tagged as such in GitHub.
 
-## 1.0.1
+## 1.0.7
 **2017-12-dd**
-- [x] Music quiz initial release
+- [x] Daily Music Quiz initial release
