@@ -8,4 +8,5 @@ Individual releases are tagged as such in GitHub.
 
 ## 1.0.7
 **2017-12-dd**
-- [x] Daily Music Quiz initial release
+- [x] Initial release
+  - [x] Daily Music Quiz
