@@ -1,4 +1,4 @@
-﻿using Quiz.Rating;
+﻿using VsixRatingChaser.Dtos;
 using VsixRatingChaser.Interfaces;
 using static Quiz.Rating.ChaserGateway;
 
