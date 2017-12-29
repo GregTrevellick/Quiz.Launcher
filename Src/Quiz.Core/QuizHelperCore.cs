@@ -102,5 +102,16 @@ namespace Quiz.Core
                 return result;
             }
         }
+
+        public static SearchEngine GetSearchEngine(bool useBingInsteadOfGoogle)
+        {
+            var searchEngine = SearchEngine.Google;
+            if (useBingInsteadOfGoogle)
+            {
+                searchEngine = SearchEngine.Bing;
+            }
+            return searchEngine;
+        }
+
     }
 }

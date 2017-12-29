@@ -36,7 +36,6 @@ namespace Quiz.Ui
             generalOptionsDto = GetGeneralOptionsDto();
 
             Logger.Initialize(this, Vsix.Name);
-            //Logger.Log(Vsix.Name);
 
             AttachToWindowShowingEvent();
             AttachToSolutionOpenedOrClosedEvents();
@@ -150,6 +149,8 @@ namespace Quiz.Ui
             var generalOptions = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
             var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
 
+            var searchEngine = QuizHelperCore.GetSearchEngine(generalOptions.UseBingInsteadOfGoogle);
+
             return new GeneralOptionsDto
             {
                 IncludeQuizCategoryCSharp = generalOptions.IncludeQuizCategoryCSharp,
@@ -162,7 +163,7 @@ namespace Quiz.Ui
                 MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
                 PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
                 PopUpCountToday = hiddenOptions.PopUpCountToday,
-                SearchEngine = generalOptions.UseBingInsteadOfGoogle ? SearchEngine.Bing : SearchEngine.Google,
+                SearchEngine = searchEngine,
                 ShowQuizUponOpeningStartPage = generalOptions.ShowQuizUponOpeningStartPage,
                 ShowQuizUponClosingSolution = generalOptions.ShowQuizUponClosingSolution,
                 ShowQuizUponOpeningSolution = generalOptions.ShowQuizUponOpeningSolution,

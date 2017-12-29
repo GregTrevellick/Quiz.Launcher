@@ -148,6 +148,8 @@ namespace Quiz.Ui.Music
             var generalOptions = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
             var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
 
+            var searchEngine = QuizHelperCore.GetSearchEngine(generalOptions.UseBingInsteadOfGoogle);
+
             return new GeneralOptionsDto
             {
                 LastPopUpDateTime = hiddenOptions.LastPopUpDateTime,
@@ -155,7 +157,7 @@ namespace Quiz.Ui.Music
                 MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
                 PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
                 PopUpCountToday = hiddenOptions.PopUpCountToday,
-                SearchEngine = generalOptions.UseBingInsteadOfGoogle ? SearchEngine.Bing : SearchEngine.Google,
+                SearchEngine = searchEngine,
                 ShowQuizUponOpeningStartPage = generalOptions.ShowQuizUponOpeningStartPage,
                 ShowQuizUponClosingSolution = generalOptions.ShowQuizUponClosingSolution,
                 ShowQuizUponOpeningSolution = generalOptions.ShowQuizUponOpeningSolution,
@@ -167,5 +169,6 @@ namespace Quiz.Ui.Music
                 TotalQuestionsAsked = hiddenOptions.TotalQuestionsAsked,
             };
         }
+
     }
 }

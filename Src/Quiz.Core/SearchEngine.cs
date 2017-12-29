@@ -2,7 +2,7 @@
 {
     public enum SearchEngine
     {
-        Bing,
+        Bing = 1,
         Google = 0
     }
 }
