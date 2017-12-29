@@ -2,7 +2,7 @@
 using VsixRatingChaser.Enums;
 using VsixRatingChaser.Interfaces;
 
-namespace Quiz.Core.Ratings
+namespace Quiz.RatingChaser
 {
     public class RatingChaser
     {

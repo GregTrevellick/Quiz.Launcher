@@ -9,7 +9,7 @@ using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
-using static Quiz.Core.Ratings.RatingChaser;
+using static Quiz.RatingChaser.RatingChaser;
 
 namespace Quiz.Ui.Music
 {
