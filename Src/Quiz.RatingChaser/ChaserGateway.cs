@@ -5,11 +5,11 @@ namespace Quiz.Rating
 {
     public class ChaserGateway
     {
-        public static IChaseVerdict Probe(IHiddenChaserOptions hiddenChaserOptions, IRatingInstructions ratingInstructions)
+        public static IChaseOutcomeDto Probe(IRatingDetailsDto ratingDetailsDto, IExtensionDetailsDto extensionDetailsDto)
         {
             var chaser = new Chaser();
-            var chaseVerdict = chaser.Chase(hiddenChaserOptions, ratingInstructions);
-            return chaseVerdict;
+            var chaseOutcomeDto = chaser.Chase(ratingDetailsDto, extensionDetailsDto);
+            return chaseOutcomeDto;
         }
     }
 }

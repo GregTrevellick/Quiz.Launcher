@@ -174,7 +174,7 @@ namespace Quiz.Ui.Music
 
         private void ChaseRating()
         {
-            var hiddenChaserOptions = (IHiddenChaserOptions)GetDialogPage(typeof(HiddenChaserOptions));
+            var hiddenChaserOptions = (IRatingDetailsDto)GetDialogPage(typeof(HiddenRatingDetailsDto));
             var packageRatingChaser = new PackageRatingChaser();
             packageRatingChaser.Hunt(hiddenChaserOptions);
         }

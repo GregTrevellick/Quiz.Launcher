@@ -4,7 +4,7 @@ using VsixRatingChaser.Interfaces;
 
 namespace Quiz.Ui.Music.Options
 {
-    public class HiddenChaserOptions : DialogPage, IHiddenChaserOptions
+    public class HiddenRatingDetailsDto : DialogPage, IRatingDetailsDto
     {
         public DateTime LastRatingRequest { get; set; }
         public int RatingRequestCount { get; set; }      

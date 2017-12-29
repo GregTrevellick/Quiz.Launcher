@@ -61,7 +61,7 @@
     <Compile Include="Options\GeneralOptions.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Options\HiddenChaserOptions.cs">
+    <Compile Include="Options\HiddenRatingDetailsDto.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Options\HiddenOptions.cs">

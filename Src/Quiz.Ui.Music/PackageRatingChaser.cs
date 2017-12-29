@@ -6,15 +6,16 @@ namespace Quiz.Ui.Music
 {
     public class PackageRatingChaser
     {
-        public void Hunt(IHiddenChaserOptions hiddenChaserOptions)
+        public void Hunt(IRatingDetailsDto ratingDetailsDto)
         {
-            var ratingInstructionsDto = new RatingInstructionsDto
+            var extensionDetailsDto = new ExtensionDetailsDto
             {
-                VsixAuthor = Vsix.Author,
-                VsixName = Vsix.Name,
+                AuthorName = Vsix.Author,
+                ExtensionName = Vsix.Name,
+                MarketPlaceUrl = "https://marketplace.visualstudio.com/items?itemName=GregTrevellick.OpeninPaintNET"
             };
 
-            Probe(hiddenChaserOptions, ratingInstructionsDto);
+            Probe(ratingDetailsDto, extensionDetailsDto);
         }
     }
 }
