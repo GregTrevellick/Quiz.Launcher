@@ -1,7 +1,7 @@
 ﻿using VsixRatingChaser.Enums;
 using VsixRatingChaser.Interfaces;
 
-namespace Quiz.RatingChaser
+namespace Quiz.Rating
 {
     public class RatingInstructionsDto : IRatingInstructions
     {

@@ -81,6 +81,7 @@
     <Compile Include="VsixQuizDialog.xaml.cs">
       <DependentUpon>VsixQuizDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PackageRatingChaser.cs" />
     <Compile Include="VSPackage.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -255,9 +256,9 @@
       <Project>{2efcc4d7-8c7b-4e06-b3b4-b041412d1604}</Project>
       <Name>Quiz.Questions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Quiz.RatingChaser\Quiz.RatingChaser.csproj">
+    <ProjectReference Include="..\Quiz.RatingChaser\Quiz.Rating.csproj">
       <Project>{afba0c8b-28a0-48d7-a8f7-04d857f0cf5b}</Project>
-      <Name>Quiz.RatingChaser</Name>
+      <Name>Quiz.Rating</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

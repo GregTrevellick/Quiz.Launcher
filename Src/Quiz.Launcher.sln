@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Core", "Quiz.Core\Quiz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Ui.Music", "Quiz.Ui.Music\Quiz.Ui.Music.csproj", "{9148D1CF-E982-4C2C-9DC7-02794701D63C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.RatingChaser", "Quiz.RatingChaser\Quiz.RatingChaser.csproj", "{AFBA0C8B-28A0-48D7-A8F7-04D857F0CF5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz.Rating", "Quiz.RatingChaser\Quiz.Rating.csproj", "{AFBA0C8B-28A0-48D7-A8F7-04D857F0CF5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

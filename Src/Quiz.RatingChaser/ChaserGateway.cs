@@ -1,11 +1,11 @@
 ﻿using VsixRatingChaser;
 using VsixRatingChaser.Interfaces;
 
-namespace Quiz.RatingChaser
+namespace Quiz.Rating
 {
-    public class RatingChaser
+    public class ChaserGateway
     {
-        public static IChaseVerdict ChaseRatings(IHiddenChaserOptions hiddenChaserOptions, IRatingInstructions ratingInstructions)
+        public static IChaseVerdict Probe(IHiddenChaserOptions hiddenChaserOptions, IRatingInstructions ratingInstructions)
         {
             var chaser = new Chaser();
             var chaseVerdict = chaser.Chase(hiddenChaserOptions, ratingInstructions);
