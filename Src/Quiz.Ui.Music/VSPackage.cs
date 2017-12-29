@@ -8,7 +8,11 @@ using Quiz.Ui.Music.Options;
 using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using Quiz.RatingChaser;
+using VsixRatingChaser.Enums;
+using VsixRatingChaser.Interfaces;
 using static Quiz.RatingChaser.RatingChaser;
 
 namespace Quiz.Ui.Music
@@ -37,7 +41,6 @@ namespace Quiz.Ui.Music
             generalOptionsDto = GetGeneralOptionsDto();
 
             Logger.Initialize(this, Vsix.Name);
-            //Logger.Log(Vsix.Name);
 
             AttachToWindowShowingEvent();
             AttachToSolutionOpenedOrClosedEvents();
@@ -175,8 +178,44 @@ namespace Quiz.Ui.Music
 
         private void ChaseRating()
         {
-            var hiddenChaserOptions = (HiddenChaserOptions)GetDialogPage(typeof(HiddenChaserOptions));
-            ChaseRatings(hiddenChaserOptions);
+            var hiddenChaserOptions = (IHiddenChaserOptions)GetDialogPage(typeof(HiddenChaserOptions));
+
+            var imageByteArray = GetImageByteArray();
+
+            var ratingInstructionsDto = new RatingInstructionsDto
+            {
+                AggressionLevel = AggressionLevel.High,
+                CostCategory = CostCategory.Free,
+                DialogType = DialogType.NonModal,
+                ImageByteArray = imageByteArray,
+                VsixAuthor = Vsix.Author,
+                VsixName = Vsix.Name,
+            };
+
+            ChaseRatings(hiddenChaserOptions, ratingInstructionsDto);
         }
+
+        private static byte[] GetImageByteArray()
+        {
+            byte[] imageByteArray;
+            ////////////////////var imageResourceNameArray = Assembly.GetExecutingAssembly().GetManifestResourceNames();
+            var imageResourceName = "Trivial.Ui.GeekQuiz.Resources.VsixExtensionIcon_90x90_Embedded.png";//imageResourceNameArray[2];
+            var assembly = Assembly.GetExecutingAssembly();
+            var stream = assembly.GetManifestResourceStream(imageResourceName);
+            if (stream == null)
+            {
+                imageByteArray = null;
+            }
+            else
+            {
+                using (stream)
+                {
+                    imageByteArray = new byte[stream.Length];
+                    stream.Read(imageByteArray, 0, imageByteArray.Length);
+                }
+            }
+            return imageByteArray;
+        }
+
     }
 }

@@ -1,46 +1,4 @@
-﻿private static byte[] GetImageByteArray()
-{
-    byte[] imageByteArray;
-    ////////////////////var imageResourceNameArray = Assembly.GetExecutingAssembly().GetManifestResourceNames();
-    var imageResourceName = "Trivial.Ui.GeekQuiz.Resources.VsixExtensionIcon_90x90_Embedded.png";//imageResourceNameArray[2];
-    var assembly = Assembly.GetExecutingAssembly();
-    var stream = assembly.GetManifestResourceStream(imageResourceName);
-    if (stream == null)
-    {
-        imageByteArray = null;
-    }
-    else
-    {
-        using (stream)
-        {
-            imageByteArray = new byte[stream.Length];
-            stream.Read(imageByteArray, 0, imageByteArray.Length);
-        }
-    }
-    return imageByteArray;
-}
-
-
-
-private void ChaseRatings()
-{
-    var hiddenChaserOptions = (IHiddenChaserOptions)GetDialogPage(typeof(HiddenChaserOptions));
-    var imageByteArray = GetImageByteArray();
-    var ratingInstructionsDto = new RatingInstructionsDto
-    {
-        AggressionLevel = AggressionLevel.High,
-        CostCategory = CostCategory.Free,
-        DialogType = DialogType.NonModal,
-        ImageByteArray = imageByteArray,
-        VsixAuthor = Vsix.Author,
-        VsixName = Vsix.Name,
-    };
-    RatingChaser.ChaseRatings(hiddenChaserOptions, ratingInstructionsDto);
-}
-
-
-
-private void windowVisibilityEvents_WindowShowing(Window window)
+﻿private void windowVisibilityEvents_WindowShowing(Window window)
 {
     if (window.Type == vsWindowType.vsWindowTypeToolWindow && window.Caption == "Start Page")
     {
@@ -48,7 +6,6 @@ private void windowVisibilityEvents_WindowShowing(Window window)
         StartQuiz();
     }
 }
-
 
 //internal static string GetDescription<T>(this T e) where T : IConvertible
 //{
