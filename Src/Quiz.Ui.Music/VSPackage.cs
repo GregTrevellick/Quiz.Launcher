@@ -9,6 +9,7 @@ using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using static Quiz.Core.Ratings.RatingChaser;
 
 namespace Quiz.Ui.Music
 {
@@ -84,6 +85,8 @@ namespace Quiz.Ui.Music
 
         private void StartQuiz()
         {
+            ChaseRating();
+
             //Re-get options to avoid having to restart VS if user amends options
             generalOptionsDto = GetGeneralOptionsDto();
 
@@ -170,5 +173,10 @@ namespace Quiz.Ui.Music
             };
         }
 
+        private void ChaseRating()
+        {
+            var hiddenChaserOptions = (HiddenChaserOptions)GetDialogPage(typeof(HiddenChaserOptions));
+            ChaseRatings(hiddenChaserOptions);
+        }
     }
 }

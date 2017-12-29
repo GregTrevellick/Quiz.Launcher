@@ -61,6 +61,9 @@
     <Compile Include="Options\GeneralOptions.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Options\HiddenChaserOptions.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Options\HiddenOptions.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -236,6 +239,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="VsixLogger, Version=1.1.44.0, Culture=neutral, PublicKeyToken=29d32695dc822296, processorArchitecture=MSIL">
       <HintPath>..\packages\VsixLogger.1.1.44.0\lib\net45\VsixLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="VsixRatingChaser">
+      <HintPath>..\..\..\VsixRatingChaser\src\VsixRatingChaser\bin\Debug\VsixRatingChaser.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
