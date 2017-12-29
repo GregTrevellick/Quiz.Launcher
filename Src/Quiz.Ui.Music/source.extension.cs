@@ -8,11 +8,11 @@ namespace Quiz.Ui.Music
     static class Vsix
     {
         public const string Id = "422e4080-3af8-48f7-870b-1800fa9fd60b";
-        public const string Name = "Music Quiz";
-        public const string Description = @"A multi-choice music quiz when you open Visual Studio.";
+        public const string Name = "Daily Pop Music Quiz";
+        public const string Description = @"A pop music quiz when you open the Start page in Visual Studio";
         public const string Language = "en-US";
-        public const string Version = "1.0.5";
+        public const string Version = "1.0.4";
         public const string Author = "Greg Trevellick";
-        public const string Tags = "MusicQuiz, music, quiz, fun, trivia, trivial";
+        public const string Tags = "pop, music, quiz, fun, trivia, trivial";
     }
 }

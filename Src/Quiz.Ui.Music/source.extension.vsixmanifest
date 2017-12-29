@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="422e4080-3af8-48f7-870b-1800fa9fd60b" Version="1.0.5" Language="en-US" Publisher="Greg Trevellick" />
-        <DisplayName>Music Quiz</DisplayName>
-        <Description xml:space="preserve">A multi-choice music quiz when you open Visual Studio.</Description>
+        <Identity Id="422e4080-3af8-48f7-870b-1800fa9fd60b" Version="1.0.4" Language="en-US" Publisher="Greg Trevellick" />
+        <DisplayName>Daily Pop Music Quiz</DisplayName>
+        <Description xml:space="preserve">A pop music quiz when you open the Start page in Visual Studio</Description>
         <MoreInfo>https://github.com/GregTrevellick/Quiz.Launcher</MoreInfo>
         <License>LICENSE.txt</License>
         <ReleaseNotes>https://github.com/GregTrevellick/Quiz.Launcher/blob/master/CHANGELOG.md</ReleaseNotes>
         <Icon>Resources\VsixExtensionPreview_90x90.png</Icon>
         <PreviewImage>Resources\VsixExtensionPreview_175x175.png</PreviewImage>
-        <Tags>MusicQuiz, music, quiz, fun, trivia, trivial</Tags>
+        <Tags>pop, music, quiz, fun, trivia, trivial</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[11.0,16.0)" />

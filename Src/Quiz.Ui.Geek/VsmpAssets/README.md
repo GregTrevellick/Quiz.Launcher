@@ -4,7 +4,7 @@
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.GeekQuiz#review-details
 [CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware
 
-A trivial [CharityWare][CharityWareURL] extension that poses a geek quiz question when opening the Start Page.
+A trivial [charity ware][CharityWareURL] extension that poses a geek quiz question when opening the Start Page.
 
 - Configurable to also or only pose questions when opening and/or closing a solution
 

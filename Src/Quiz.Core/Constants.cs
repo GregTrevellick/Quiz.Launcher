@@ -18,7 +18,7 @@ namespace Quiz.Core
         public const string CategorySubLevelTriggers = "Triggers";
         public const string Correct = "Correct";
         public const string Wrong = "Wrong - the correct answer is";
-        public const string DefaultMaximumPopUpsPerDay = "1";
+        //public const string DefaultMaximumPopUpsPerDay = "1";
         public const string DefaultMaximumPopUpsWeekDay = "1";
         public const string DefaultMaximumPopUpsWeekEnd = "99";
         public const string DefaultPopUpIntervalInMins = "0";
