@@ -4,7 +4,7 @@
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz#review-details
 [CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware
 
-A pop music quiz in a pop-up window when you open the Start page in Visual Studio.
+A daily music quiz in a pop-up window when you open the Start page in Visual Studio.
 
 - Purely for fun, just simple escapism
 
