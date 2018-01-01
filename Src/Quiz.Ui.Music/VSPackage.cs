@@ -9,6 +9,7 @@ using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using VsixRatingChaser.Interfaces;
 
 namespace Quiz.Ui.Music
 {
@@ -36,7 +37,6 @@ namespace Quiz.Ui.Music
             generalOptionsDto = GetGeneralOptionsDto();
 
             Logger.Initialize(this, Vsix.Name);
-            //Logger.Log(Vsix.Name);
 
             AttachToWindowShowingEvent();
             AttachToSolutionOpenedOrClosedEvents();
@@ -84,6 +84,8 @@ namespace Quiz.Ui.Music
 
         private void StartQuiz()
         {
+            ChaseRating();
+
             //Re-get options to avoid having to restart VS if user amends options
             generalOptionsDto = GetGeneralOptionsDto();
 
@@ -170,5 +172,11 @@ namespace Quiz.Ui.Music
             };
         }
 
+        private void ChaseRating()
+        {
+            var hiddenChaserOptions = (IRatingDetailsDto)GetDialogPage(typeof(HiddenRatingDetailsDto));
+            var packageRatingChaser = new PackageRatingChaser();
+            packageRatingChaser.Hunt(hiddenChaserOptions);
+        }
     }
 }

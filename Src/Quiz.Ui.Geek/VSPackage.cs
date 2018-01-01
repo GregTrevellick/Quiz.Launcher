@@ -82,8 +82,6 @@ namespace Quiz.Ui
 
         private void StartQuiz()
         {
-            //TODO ChaseRatings();
-
             //Re-get options to avoid having to restart VS if user amends options
             generalOptionsDto = GetGeneralOptionsDto();
 
