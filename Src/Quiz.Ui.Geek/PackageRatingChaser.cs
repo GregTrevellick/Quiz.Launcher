@@ -2,7 +2,7 @@
 using VsixRatingChaser.Interfaces;
 using static Quiz.Rating.ChaserGateway;
 
-namespace Quiz.Ui.Music
+namespace Quiz.Ui
 {
     public class PackageRatingChaser
     {
@@ -12,7 +12,7 @@ namespace Quiz.Ui.Music
             {
                 AuthorName = Vsix.Author,
                 ExtensionName = Vsix.Name,
-                MarketPlaceUrl = "https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DailyMusicQuiz"
+                MarketPlaceUrl = "https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DailyGeekQuiz"
             };
 
             Probe(ratingDetailsDto, extensionDetailsDto);

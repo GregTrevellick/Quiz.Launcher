@@ -9,6 +9,7 @@ using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using VsixRatingChaser.Interfaces;
 
 namespace Quiz.Ui
 {
@@ -91,6 +92,8 @@ namespace Quiz.Ui
 
             if (shouldShowQuiz)
             {
+                ChaseRating();
+
                 var quizHelper = new QuizHelper();
                 quizHelper.PersistHiddenOptionsQuizHelperEventHandlerEventHandler += UpdateHiddenOptionsTotals;
 
@@ -172,6 +175,13 @@ namespace Quiz.Ui
                 TotalQuestionsAnsweredCorrectlyHard = hiddenOptions.TotalQuestionsAnsweredCorrectlyHard,
                 TotalQuestionsAsked = hiddenOptions.TotalQuestionsAsked,
             };
+        }
+
+        private void ChaseRating()
+        {
+            var hiddenChaserOptions = (IRatingDetailsDto)GetDialogPage(typeof(HiddenRatingDetailsDto));
+            var packageRatingChaser = new PackageRatingChaser();
+            packageRatingChaser.Hunt(hiddenChaserOptions);
         }
     }
 }

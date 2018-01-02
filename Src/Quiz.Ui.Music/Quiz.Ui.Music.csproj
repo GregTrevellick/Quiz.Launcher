@@ -103,7 +103,6 @@
     <Resource Include="Resources\vsixextensionicon_90x90_resource_bb6_icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Content Include="RatingRequestScreenshot.png" />
     <Content Include="Resources\VsixExtensionPreview_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>

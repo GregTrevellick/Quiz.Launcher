@@ -67,6 +67,10 @@
     <Compile Include="Options\HiddenOptions.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Options\HiddenRatingDetailsDto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PackageRatingChaser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -236,7 +240,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="RatingRequestScreenshot.png" />
     <Content Include="VsmpAssets\ReadMeScreenShot_Options.png" />
     <Resource Include="Resources\IncorrectAnswer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -288,6 +291,10 @@
     <ProjectReference Include="..\Quiz.Questions\Quiz.Questions.csproj">
       <Project>{2efcc4d7-8c7b-4e06-b3b4-b041412d1604}</Project>
       <Name>Quiz.Questions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Quiz.RatingChaser\Quiz.Rating.csproj">
+      <Project>{afba0c8b-28a0-48d7-a8f7-04d857f0cf5b}</Project>
+      <Name>Quiz.Rating</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

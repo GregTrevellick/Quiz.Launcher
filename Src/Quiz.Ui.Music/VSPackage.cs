@@ -84,8 +84,6 @@ namespace Quiz.Ui.Music
 
         private void StartQuiz()
         {
-            ChaseRating();
-
             //Re-get options to avoid having to restart VS if user amends options
             generalOptionsDto = GetGeneralOptionsDto();
 
@@ -95,6 +93,8 @@ namespace Quiz.Ui.Music
 
             if (shouldShowQuiz)
             {
+                ChaseRating();
+
                 var quizHelper = new QuizHelper();
                 quizHelper.PersistHiddenOptionsQuizHelperEventHandlerEventHandler += UpdateHiddenOptionsTotals;
 
