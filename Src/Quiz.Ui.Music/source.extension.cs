@@ -11,7 +11,7 @@ namespace Quiz.Ui.Music
         public const string Name = "Daily Music Quiz";
         public const string Description = @"A music quiz when you open the Start page in Visual Studio";
         public const string Language = "en-US";
-        public const string Version = "1.0.7";
+        public const string Version = "1.0.8";
         public const string Author = "Greg Trevellick";
         public const string Tags = "pop, music, quiz, fun, trivia, trivial";
     }
