@@ -19,7 +19,7 @@ namespace Quiz.Core
         public const string Correct = "Correct";
         public const string Wrong = "Wrong - the correct answer is";
         public const string DefaultMaximumPopUpsWeekDay = "1";
-        public const string DefaultMaximumPopUpsWeekEnd = "99";
+        public const string DefaultMaximumPopUpsWeekEnd = "3";
         public const string DefaultPopUpIntervalInMins = "0";
         public const string DefaultTimeOutInMilliSeconds = "1500";     
         public const string DescriptionCSharp = "C#";
