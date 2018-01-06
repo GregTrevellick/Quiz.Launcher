@@ -110,7 +110,7 @@ namespace Quiz.Ui
             SetWindowIcon(window);
 
             window.ResizeMode = ResizeMode.CanResize;
-            window.ShowDialog();
+            window.Show();
         }
 
         private static void RandomlyPopulateUiTrueFalseAnswers(QuizDialogDto quizDialogDto, VsixQuizDialog vsixQuizDialog)
