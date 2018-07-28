@@ -1,2 +1,2 @@
 language: csharp
-solution: Quiz.Launcher.sln
+solution: Src/Quiz.Launcher.sln
