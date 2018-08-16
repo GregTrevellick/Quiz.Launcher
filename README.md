@@ -35,6 +35,7 @@
 
 
 
+
 An arbitrary [CharityWare][CharityWareURL] quiz extension for the [Visual Studio][VisualStudioURL] IDE.
 
 Available for download at the [Visual Studio Marketplace][VSMarketplaceUrl].
