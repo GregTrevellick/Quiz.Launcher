@@ -27,6 +27,7 @@
 [![Charity Ware](https://img.shields.io/badge/charity%20ware-thank%20you-brightgreen.svg)](https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware)
 [![License](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
 
+[![Visual Studio Marketplace version](https://img.shields.io/badge/-MusicQuiz-%23e2165e.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz)
 [![Visual Studio Marketplace downloads](https://vsmarketplacebadge.apphb.com/installs/GregTrevellick.MusicQuiz.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz)
 [![Visual Studio Marketplace ratings](https://vsmarketplacebadge.apphb.com/rating/GregTrevellick.MusicQuiz.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz)
 [![Visual Studio Marketplace version](https://vsmarketplacebadge.apphb.com/version/GregTrevellick.MusicQuiz.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz)
