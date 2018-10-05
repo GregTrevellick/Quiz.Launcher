@@ -20,6 +20,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/Quiz.Launcher/badge)](https://www.codefactor.io/repository/github/GregTrevellick/Quiz.Launcher)
 [![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/Quiz.Launcher.svg)](https://github.com/GregTrevellick/Quiz.Launcher)
 [![Github language count](https://img.shields.io/github/languages/count/GregTrevellick/Quiz.Launcher.svg)](https://github.com/GregTrevellick/Quiz.Launcher)
+[![GitHub issues](https://img.shields.io/github/issues-raw/GregTrevellick/Quiz.Launcher.svg)](https://github.com/GregTrevellick/Quiz.Launcher/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/GregTrevellick/Quiz.Launcher.svg)](https://github.com/GregTrevellick/Quiz.Launcher/pulls)
 [![Sonar&metric=alert_status](https://sonarcloud.io/api/project_badges/measure?project=Quiz.Launcher&metric=alert_status)](https://sonarcloud.io/dashboard?id=Quiz.Launcher)
 [![Sonar&metric=bugs](https://sonarcloud.io/api/project_badges/measure?project=Quiz.Launcher&metric=bugs)](https://sonarcloud.io/component_measures?id=Quiz.Launcher&metric=bugs)
