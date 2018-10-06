@@ -15,6 +15,7 @@
 [![Read Me Synchronizer](https://img.shields.io/badge/-powered%20by%20read%20me%20synchronizer-brightgreen.svg)](https://github.com/GregTrevellick/ReadMeSynchronizer)
 <!-- Powered by https://github.com/GregTrevellick/ReadMeSynchronizer -->
 
+**[Subscribe](https://github.com/GregTrevellick/Quiz.Launcher/subscription) to receive notificatons.**
 [![BetterCodeHub compliance](https://bettercodehub.com/edge/badge/GregTrevellick/Quiz.Launcher?branch=master)](https://bettercodehub.com/results/GregTrevellick/Quiz.Launcher)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b1a2d4b9fd774d64ae56a8ffdd80b978)](https://www.codacy.com/project/gtrevellick/Quiz.Launcher/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GregTrevellick/Quiz.Launcher&amp;utm_campaign=Badge_Grade_Dashboard)
 [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/Quiz.Launcher/badge)](https://www.codefactor.io/repository/github/GregTrevellick/Quiz.Launcher)
