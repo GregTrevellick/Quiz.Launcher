@@ -93,6 +93,8 @@
       <LastGenOutput>source.extension.resx</LastGenOutput>
     </None>
     <None Include="VsmpAssets\README.md" />
+    <None Include="VsmpPublish.json" />
+    <None Include="VsmpPublish.ps" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\..\LICENSE.txt">
