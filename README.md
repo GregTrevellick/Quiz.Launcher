@@ -22,7 +22,6 @@
 <!-- no md -->
 <!-- no md -->
 <!-- no md -->
-<!-- no md -->
 [![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/Quiz.Launcher.svg)](https://github.com/GregTrevellick/Quiz.Launcher)
 [![Github language count](https://img.shields.io/github/languages/count/GregTrevellick/Quiz.Launcher.svg)](https://github.com/GregTrevellick/Quiz.Launcher)
 [![GitHub issues](https://img.shields.io/github/issues-raw/GregTrevellick/Quiz.Launcher.svg)](https://github.com/GregTrevellick/Quiz.Launcher/issues)
@@ -48,6 +47,7 @@
 [![Charity Ware](https://img.shields.io/badge/charity%20ware-thank%20you-brightgreen.svg)](https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware)
 [![License](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
 [![Subscribe](https://img.shields.io/badge/subscribe%20to%20receive%20notificatons-grey.svg)](https://github.com/GregTrevellick/Quiz.Launcher/subscription)
+<!-- no md -->
 
 [![Visual Studio Marketplace version](https://img.shields.io/badge/-MusicQuiz-%23e2165e.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz)
 [![Visual Studio Marketplace downloads](https://vsmarketplacebadge.apphb.com/installs/GregTrevellick.MusicQuiz.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz)
