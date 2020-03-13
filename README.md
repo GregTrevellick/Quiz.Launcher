@@ -16,13 +16,8 @@
 [![Read Me Synchronizer](https://img.shields.io/badge/-powered%20by%20ReadMeSynchronizer-brightgreen.svg)](https://github.com/GregTrevellick/ReadMeSynchronizer)
 [![BetterCodeHub compliance](https://bettercodehub.com/edge/badge/GregTrevellick/Quiz.Launcher?branch=master)](https://bettercodehub.com/results/GregTrevellick/Quiz.Launcher)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b1a2d4b9fd774d64ae56a8ffdd80b978)](https://www.codacy.com/project/gtrevellick/Quiz.Launcher/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GregTrevellick/Quiz.Launcher&amp;utm_campaign=Badge_Grade_Dashboard)
-<!-- no md -->
-[![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/Quiz.Launcher/badge)](https://www.codefactor.io/repository/github/GregTrevellick/Quiz.Launcher)
-<!-- no md -->
-<!-- no md -->
-<!-- no md -->
-<!-- no md -->
-[![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/Quiz.Launcher.svg)](https://github.com/GregTrevellick/Quiz.Launcher)
+ [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/Quiz.Launcher/badge)](https://www.codefactor.io/repository/github/GregTrevellick/Quiz.Launcher)
+    [![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/Quiz.Launcher.svg)](https://github.com/GregTrevellick/Quiz.Launcher)
 [![Github language count](https://img.shields.io/github/languages/count/GregTrevellick/Quiz.Launcher.svg)](https://github.com/GregTrevellick/Quiz.Launcher)
 [![GitHub issues](https://img.shields.io/github/issues-raw/GregTrevellick/Quiz.Launcher.svg)](https://github.com/GregTrevellick/Quiz.Launcher/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/GregTrevellick/Quiz.Launcher.svg)](https://github.com/GregTrevellick/Quiz.Launcher/pulls)
@@ -47,8 +42,7 @@
 [![Charity Ware](https://img.shields.io/badge/charity%20ware-thank%20you-brightgreen.svg)](https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware)
 [![License](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
 [![Subscribe](https://img.shields.io/badge/subscribe%20to%20receive%20notificatons-grey.svg)](https://github.com/GregTrevellick/Quiz.Launcher/subscription)
-<!-- no md -->
-
+ 
 [![Visual Studio Marketplace version](https://img.shields.io/badge/-MusicQuiz-%23e2165e.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz)
 [![Visual Studio Marketplace downloads](https://vsmarketplacebadge.apphb.com/installs/GregTrevellick.MusicQuiz.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz)
 [![Visual Studio Marketplace ratings](https://vsmarketplacebadge.apphb.com/rating/GregTrevellick.MusicQuiz.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.MusicQuiz)
