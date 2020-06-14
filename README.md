@@ -9,7 +9,7 @@
 [CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware
 [WhyURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Why
 
-# Visual Studio Quiz 
+# Visual Studio Quiz
 
 <!--BadgesSTART-->
 <!-- Powered by https://github.com/GregTrevellick/ReadMeSynchronizer -->
